@@ -95,6 +95,10 @@ In this manuscript we focus on dissecting the fundamental trade-off between tran
 
 \section{Model}
 
+In defining a complex macro-parasitic life cycle we assume hosts at two tropic levels.
+The intermediate hosts can harbour one or at most two parasites ($I_1$ or $I_2$).
+
+
 Trying to list of the main questions that we aim to tackle
 \subsection{Parasite life cycles}
 \begin{itemize}
@@ -106,60 +110,6 @@ Trying to list of the main questions that we aim to tackle
 
 Decide on traits of interest! - manipulation (transmission)/fecundity tradeoff
 Is manipulation cooperative? spiteful?
-
-\subsection{Parasite dynamics only - infinite vectors/hosts}
-
-We assume a large population for hosts and vectors to simplify the model and focus on the effect of multiple parasites on the trait evolution
-
-We look at the evolution of manipulation of a parasite with complex lifecycle, that is, the parasite requires two hosts to complete its lifecycle. Parasites with complex lifecycle enter the intermediate host (vector) from external environment (parasite pool), then the infected intermediate host got eaten by the final host (host), finally the parasite reproduce inside the final host and its offspring is released into the parasite pool.
-
-If we only take into account the dynamics of the parasites, and consider the populations of the vector and the host as infinite and do not have any feedback on the parasite population, then the fitness of a mutant parasite will be:
-
-\textbf{Parasite fitness = Transmission from parasite pool to the vector x Transmission from vector to host x Reproduction in host}
-
-For simplicity, we ignore the competition among parasites in the pool, and ignore that the success of the transmission from the pool to the vector depends on the number of parasite in the vector, then the transmission from the parasite pool to the vector can be consider a fix parameter (let's call it $\tau$).
-
-The transmission from vector to host depends on the strategy of the mutant and the strategy of the resident parasites that coexist with it inside the vector. Let's consider the case when co-infection augment the manipulative ability of all parasites, thus, it augment the transmission rate of all parasite (In reality, coinfection can sabotage the transmission). In this case, we assume that the transmission is a sigmoid function of the net manipulation strategy of all parasite inside the vector
-
-$$\beta(x_m, x_r) = \frac{\beta_0}{1 + e^{-(x_m + x_r k)}}$$
-
-where $k$ is the number of the resident parasites that cohabit with the mutant parasite. We assume that the parasite distribution inside vector follow a negative binomial distribution. Thus, for different number of parasites inside the vector, we will obtain a different value of transmission from vector to host, and so the final transmission value will be
-
-\begin{align*}
-    \beta_{total}(x_m) = \sum_{k = 0}^{k = kmax} \frac{\beta_0}{1 + e^{-(x_r + x_m  k)}} \mathcal{BN}(r, k, p)
-\end{align*}
-
-where 
-
-$$\mathcal{BN}(r, k, p)
-= \begin{pmatrix} k + r - 1 \\ k\end{pmatrix}p^r (1 -p)^k$$
-
-is the negative binomial distribution with $r$ the coefficient that describes the skew of the distribution ($r \rightarrow \inf$ means that the distribution of the parasites follow a normal distribution). $k$ is the number of resident parasites inside the vector, and $p$ is the prevalence of the parasites inside the vector. $kmax$ is the maximum number of neighbour parasites that can coexist with the focal parasite.
-
-The reproduction inside the final host is negatively correlated with the investment in manipulation. Thus the more the parasite invest in manipulation at the vector stage, the lesser investment it will spend on reproduction 
-
-\begin{align*}
-    \rho(x) = \frac{\rho_{max}}{1 + a x}
-\end{align*}
-
-where $a$ determine the concavity of the function. The more concave the function, the faster the parasite will lose the reproduction value as it invests more in manipulation. If the parasite does not have to invest in manipulation, it will have a maximum $\rho_{max}$. As it invest more in vector manipulation, its reproduction will diminish to 0.
-
-With all the reasoning above, the fitness of a mutant parasite becomes
-\begin{align*}
-    W(x_m) = \tau \beta_{total}(x_m) r(x_m) = \tau \sum_{k = 0}^{k = kmax} \frac{\beta_0}{1 + e^{-(x_m + x_r  k)}} \begin{pmatrix} k + r - 1 \\ k\end{pmatrix}p^r (1 -p)^k  \frac{\rho_{max}}{1 + a x_m}
-\end{align*}
-This model does not take into account the order in which the mutant enter the vector and the final host compare to the resident. There is also no ecological feedback of the host and vector dynamics on the selective force on the manipulation.
-
-\textbf{Some thoughts:} 
-- We can play around with parameter $r$ that change the skewness of the negative binomial distribution. So what will change if the majority of vectors are infected with only 1 parasites compared with if the majority of vectors are infected with 3 - 4 parasites.
-
-- It's still not clear to me what's the meaning if we take into account the order of entering the host and vector of the mutant. I think that it will require a very careful analysis of the SI model with two strains of parasites. 
-
-- And what if we analyse this model with $k = 2$ and compare with the other model with ecological feedback?
-
-- Here I did not take into account the relatedness between mutants and resident. 
-
-- We can also let the reproduction inside the host affected by the density of the parasites inside the host. But I'm not sure if it would be useful in this case when there is no ecological feedback. Still thinking about this.
 
 \subsection{Host - Vector - Parasite dynamics ?}
 
@@ -318,5 +268,61 @@ Appropriate {\tt{xyz}} computer code describing the model is available at {\url{
 \bibliographystyle{naturemag}
 \bibliography{references.bib}
 
+
+\appendix
+
+\subsection{Parasite dynamics only - infinite vectors/hosts}
+
+We assume a large population for hosts and vectors to simplify the model and focus on the effect of multiple parasites on the trait evolution
+
+We look at the evolution of manipulation of a parasite with complex lifecycle, that is, the parasite requires two hosts to complete its lifecycle. Parasites with complex lifecycle enter the intermediate host (vector) from external environment (parasite pool), then the infected intermediate host got eaten by the final host (host), finally the parasite reproduce inside the final host and its offspring is released into the parasite pool.
+
+If we only take into account the dynamics of the parasites, and consider the populations of the vector and the host as infinite and do not have any feedback on the parasite population, then the fitness of a mutant parasite will be:
+
+\textbf{Parasite fitness = Transmission from parasite pool to the vector x Transmission from vector to host x Reproduction in host}
+
+For simplicity, we ignore the competition among parasites in the pool, and ignore that the success of the transmission from the pool to the vector depends on the number of parasite in the vector, then the transmission from the parasite pool to the vector can be consider a fix parameter (let's call it $\tau$).
+
+The transmission from vector to host depends on the strategy of the mutant and the strategy of the resident parasites that coexist with it inside the vector. Let's consider the case when co-infection augment the manipulative ability of all parasites, thus, it augment the transmission rate of all parasite (In reality, coinfection can sabotage the transmission). In this case, we assume that the transmission is a sigmoid function of the net manipulation strategy of all parasite inside the vector
+
+$$\beta(x_m, x_r) = \frac{\beta_0}{1 + e^{-(x_m + x_r k)}}$$
+
+where $k$ is the number of the resident parasites that cohabit with the mutant parasite. We assume that the parasite distribution inside vector follow a negative binomial distribution. Thus, for different number of parasites inside the vector, we will obtain a different value of transmission from vector to host, and so the final transmission value will be
+
+\begin{align*}
+    \beta_{total}(x_m) = \sum_{k = 0}^{k = kmax} \frac{\beta_0}{1 + e^{-(x_r + x_m  k)}} \mathcal{BN}(r, k, p)
+\end{align*}
+
+where 
+
+$$\mathcal{BN}(r, k, p)
+= \begin{pmatrix} k + r - 1 \\ k\end{pmatrix}p^r (1 -p)^k$$
+
+is the negative binomial distribution with $r$ the coefficient that describes the skew of the distribution ($r \rightarrow \inf$ means that the distribution of the parasites follow a normal distribution). $k$ is the number of resident parasites inside the vector, and $p$ is the prevalence of the parasites inside the vector. $kmax$ is the maximum number of neighbour parasites that can coexist with the focal parasite.
+
+The reproduction inside the final host is negatively correlated with the investment in manipulation. Thus the more the parasite invest in manipulation at the vector stage, the lesser investment it will spend on reproduction 
+
+\begin{align*}
+    \rho(x) = \frac{\rho_{max}}{1 + a x}
+\end{align*}
+
+where $a$ determine the concavity of the function. The more concave the function, the faster the parasite will lose the reproduction value as it invests more in manipulation. If the parasite does not have to invest in manipulation, it will have a maximum $\rho_{max}$. As it invest more in vector manipulation, its reproduction will diminish to 0.
+
+With all the reasoning above, the fitness of a mutant parasite becomes
+\begin{align*}
+    W(x_m) = \tau \beta_{total}(x_m) r(x_m) = \tau \sum_{k = 0}^{k = kmax} \frac{\beta_0}{1 + e^{-(x_m + x_r  k)}} \begin{pmatrix} k + r - 1 \\ k\end{pmatrix}p^r (1 -p)^k  \frac{\rho_{max}}{1 + a x_m}
+\end{align*}
+This model does not take into account the order in which the mutant enter the vector and the final host compare to the resident. There is also no ecological feedback of the host and vector dynamics on the selective force on the manipulation.
+
+\textbf{Some thoughts:} 
+- We can play around with parameter $r$ that change the skewness of the negative binomial distribution. So what will change if the majority of vectors are infected with only 1 parasites compared with if the majority of vectors are infected with 3 - 4 parasites.
+
+- It's still not clear to me what's the meaning if we take into account the order of entering the host and vector of the mutant. I think that it will require a very careful analysis of the SI model with two strains of parasites. 
+
+- And what if we analyse this model with $k = 2$ and compare with the other model with ecological feedback?
+
+- Here I did not take into account the relatedness between mutants and resident. 
+
+- We can also let the reproduction inside the host affected by the density of the parasites inside the host. But I'm not sure if it would be useful in this case when there is no ecological feedback. Still thinking about this.
 
 \end{document}
