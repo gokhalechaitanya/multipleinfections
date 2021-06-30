@@ -1,0 +1,9 @@
+\select@language {english}
+\contentsline {section}{\numberline {}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {}Model}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Parasite life cycles}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Host - Vector - Parasite dynamics ?}{2}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}The dynamics of the mutant}{3}{subsubsection.2.2.1}
+\contentsline {subsection}{\numberline {2.3}Mutant's fitness}{5}{subsection.2.3}
+\contentsline {section}{\numberline {}Discussion}{7}{section.3}
+\contentsline {subsection}{\numberline {0.1}Parasite dynamics only - infinite vectors/hosts}{8}{subsection.Alph0.1}
