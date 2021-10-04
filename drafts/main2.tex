@@ -1,0 +1,381 @@
+\documentclass{article}
+\usepackage{times}
+\usepackage[titletoc]{appendix}
+\usepackage{graphicx}
+\usepackage{lineno}
+\usepackage{multirow}
+\usepackage[english]{babel}
+\usepackage{typearea} 
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{lscape}
+\usepackage{rotating}
+\newcommand{\Fig}[1]{Figure~\ref{fig:#1}}
+
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\bbar}[1]{\overline{#1}}
+
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[font={small},labelfont={bf},justification=justified,margin=0.5cm]{caption}
+
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+
+\usepackage{color}
+	 \definecolor{darkred}{rgb}{0.75,0,0}
+%	 \definecolor{darkgreen}{rgb}{0,0.5,0}
+	 \definecolor{darkblue}{rgb}{0,0,0.75}
+%	 \definecolor{magenta}{rgb}{0,0,0.75}
+\newcommand{\cha}[1]{\textcolor{darkgreen}{(#1)}}
+\newcommand{\maria}[1]{\textcolor{darkred}{(#1)}}
+
+
+\usepackage{hyperref}
+\definecolor{darkgreen}{rgb}{0.1,0.6,0.3}
+\definecolor{darkred}{rgb}{0.6,0.3,0.1}
+\hypersetup{
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+    citecolor=darkgreen,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor= black           % color of external links
+}
+
+
+\title{\vspace*{-22mm}\bf Multiple infections and complex life cycles}
+%\author{Vaibhvi$^{1}$,
+%Chaitanya S. Gokhale$^{2*}$\\
+%\normalsize $^1$Molecular Physiology Group, \\
+%\normalsize University of Kiel, \\
+%\normalsize Am Botanisch Garten 3-9, D-24118 Kiel, Germany.\\
+%\normalsize $^2$Research Group for Theoretical Models of Eco-evolutionary Dynamics, \\
+%\normalsize Department of Evolutionary Theory, Max Planck Institute for Evolutionary Biology, \\
+%\normalsize August-Thienemann-Stra{\ss}e 2, 24306 Pl\"{o}n, Germany.\\
+%\normalsize $^{*}$gokhale@evolbio.mpg.de
+%}
+
+\date{}
+
+\begin{document}
+
+\linenumbers
+\maketitle
+
+
+\begin{abstract}
+Abstract
+\end{abstract}
+
+
+\noindent
+Keywords: a,b,c,d
+
+
+\tableofcontents
+
+\section{Introduction}
+
+Parasites are ubiquitous, many with complex life cycles.
+While a complex life cycle can be defined as abrupt ontogenic changes in morphology and/or ecology \cite{Benesh:2016dj}, a complex parasitic life cycle typically involves numerous hosts that a parasite needs to traverse in the process of completing its life cycle.
+Helminths are a prime example of how a successive transmission between multiple host species is necessary for developing the next generation.
+Thus the worms occupy different niches (hosts) in different stages of their lifecycle, moving through intermediate hosts until reaching a definitive host in which reproduction can finally occur.
+Numerous factors determine the transmissibility and infectivity of the parasites along the tropic level of hosts \cite{froelick:PRSB:2021}.
+Comparative growth rate, eventual body size, costs benefits of host-manipulation and the probability of eventually finding a mate all play a major role in the development and maintenance of the life-history strategies of such parasites \cha{More references needed}.
+An integral part of all the above factors is the comparative approach.
+Parasite often co-occur in the same host and this allows for complex within-host interactions since the evolutionary effect of the actions is not realised all the way till reproduction occurs in the definitive host \cite{Hafer:2015gl}.
+In this manuscript we focus on dissecting the fundamental trade-off between transmissibility and host-manipulation when multiple hosts are present in a host and its evolutionary outcome in the associated trait space.
+
+
+\section{Model}
+We study a trophically transmitted parasite with a complex lifecycle. Parasites reproduce inside their definitive hosts and are released into the environment. They infect intermediate hosts when the hosts encounter the parasite pool. When an infected intermediate host is consumed by a definitive host, the definitive host gets infected and the parasite complete its lifecycle.
+
+For simplicity, intermediate and definitive hosts can be infected by one (single infection) or at most two parasites (double infections). Therefore, $p$ is the probability that two parasites in the parasite pool cotransmit to an intermediate host, and $1-p$ is the probability that a single parasites enters an intermediate host. When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that both parasites cotransmit to the definitive host, and $1-q$ is the probability that only one parasite successfully transmits. The dynamics of a complex lifecycle parasite that requires two hosts is described by the following odes
+
+\begin{subequations}
+\begin{align}
+& \frac{dI_s}{dt} = R(I_s, I_w, I_{ww}) - d I_s - \Pi_s(D_s, D_w, D_{ww}) I_s  - \eta_w  I_s \\ 
+& \frac{dI_w}{dt} =  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \Pi_w(D_s, D_w, D_{ww}, \beta_w) I_w \\
+& \frac{dI_{ww}}{dt} = p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww} \\
+& \frac{dD_s}{dt} = B(D_s,  D_w,  D_{ww},  I_s, I_w, I_{ww})  - \mu D_s - (\lambda_{ww} + \lambda_w) D_s \\    
+& \frac{dD_w}{dt} = (\lambda_w + (1 - q) \lambda_{ww}) D_s - (\mu + \sigma_w) Dw - ((1 - q) \lambda_{ww} + \lambda_w) D_w \\         
+& \frac{dD_{ww}}{dt} = q \lambda_{ww} D_s + ((1 - q) \lambda_{ww} + \lambda_w) D_w - (\mu + \sigma_{ww}) D_{ww} \\         
+& \frac{dW}{dt} = f_w D_w + f_{ww} D_{ww} - \delta W - \eta_w I_s 
+\end{align}
+ \end{subequations}
+
+Here $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, which is a function of both infected and noninfected individuals. In other words, all parasites can reproduce. $\Pi_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on respectively, susceptible, singly infected and doubly infected intermediate hosts. The predation function depends on the density of the definitive hosts and the manipulative strategies of parasites in the intermediate hosts. In particular, if an intermediate host is infected by a single parasite, the manipulation strategy is $\beta_w$, and if it is infected by two parasites, the manipulation strategy is $\beta_{ww}$. There is a link between $\beta_w$ and $\beta_{ww}$, but we need not specify the link for now. $\eta_w = \gamma W$ is the force of infection by parasites in the environment. $\lambda_i = \beta_i I_i$, where $i = \{ w, ww\}$, is the force of infection that corresponds respectively to singly infected intermediate host ($I_w$), or doubly infected intermediate hosts ($I_{ww}$). $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts, which is a function of population density of both intermediate and definitive hosts, infected or noninfected alike. Definitions of different parameters can be found in Table \ref{table:varpardescription}.
+
+\begin{table}[!ht]
+\begin{tabular}{|p{2.5cm}|p{12cm}|} 
+\hline
+Parameters and Variables    &  Description  \\
+\hline
+$I_i$  & Density of intermediate hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ \\
+\hline
+$D_i$ & Density of definitive hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ \\
+\hline
+$W$ & Density of parasites released from definitive hosts into the environment \\
+\hline
+$d$ & Natural death rate of intermediate hosts \\
+\hline
+$\alpha_i$ & Additional death rate of intermediate hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) \\
+\hline
+$p$ & Probability that two parasites cotransmit from the environment to an intermediate host \\
+\hline
+$\gamma$ & Transmission rate of parasites in the environment to intermediate hosts \\
+\hline
+$\mu$ & Natural death rate of definitive hosts \\
+\hline
+$\sigma_i$ & Additional death rate of definitive hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) \\
+\hline
+$\sigma_i$ & Additional death rate of the hosts due to being infected by a singly parasite ($i = w$) or two parasites ($i = ww$) \\
+\hline
+$q$ & Probability that two parasites cotransmit from intermediate hosts to definitive hosts \\
+\hline
+$\beta_i$ & Transmission rate of parasites from intermediate hosts to definitive hosts \\
+\hline
+$f_i$ & Reproduction rate of parasites in singly infected definitive hosts ($i = w$) or doubly infected hosts ($i = ww$)\\
+\hline
+$\delta$ & Natural death rate of parasites in the environment \\
+\hline
+\end{tabular}
+\caption{Description of variables and parameters}
+\label{table:varpardescription}
+\end{table}
+
+For simplicity, we assume that there is no sequential infection when parasites transmit from the environment to intermediate host. Sequential infection can happen when parasites transmit from intermediate hosts to definitive hosts. Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts.
+
+\newpage 
+\subsection{Mutant dynamics}
+
+Considering a mutant that enter a resident population at equilibrium, its dynamics will be
+
+\begin{subequations}
+\begin{align}
+& \frac{dI_m}{dt} = (1 - p) \frac{M}{M + W^*} \eta I_s - (d + \alpha_m) I_m -\Pi_m(D_s^*, D_w^*,  D_{ww}^*,  \beta_m, D_m, D_{mm}, D_{mw}) I_m \\
+& \frac{dI_{mm}}{dt} = p \frac{M^2}{(M + W^*)^2} \eta I_s - (d + \alpha_{mm}) I_{mm} - \Pi_{mm}(D_s^*, D_w^*, D_{ww}^*, \beta_{mm}, D_m, D_{mm}, D_{mw}) I_{mm}\\
+& \frac{dI_{mw}}{dt} =  p \frac{2 M W^*}{(M + W^*)^2} \eta I_s - (d + \alpha_{mw}) I_{mw} -\Pi_{mw}(D_s^*, D_w^*, D_{ww}^*, \beta_{mw}, D_m, D_{mm}, D_{mw}) I_{mw} \\
+& \frac{dD_m}{dt} = ( \lambda_m + (1 - q) (\lambda_{mm} + \lambda_{mw})) D_s - (\mu + \sigma_m) D_m - (\lambda_w + \lambda_m + (1 - q) (\lambda_{ww} + \lambda_{mw} + \lambda_{mm}) ) D_m \\
+& \frac{dD_{mm}}{dt} = q \lambda_{mm} D_s + (\lambda_m + (1 - q)(\lambda_{mm} + \lambda_{mw})) D_m - (\mu + \sigma_{mm}) D_{mm} \\
+& \frac{dD_{mw}}{dt} = q \lambda_{mw} D_s + (\lambda_m + (1 - q)(\lambda_{mm} + \lambda_{mw})) D_w + (\lambda_w + (1 - q) (\lambda_{ww} + \lambda_{mw})) D_m - (\mu + \sigma_{mw}) D_{mw} \\
+& \frac{dM}{dt} = f_m D_m + f_{mm} D_{mm} +  f_{mw} D_{mw} - \delta M - \eta I_s;
+\end{align}
+\label{odes:mutdynamics}
+\end{subequations}
+
+where $\eta =\gamma (M + W^*)$ is the force of infection of parasites in the environment, which now includes both mutants and residents. $\lambda_m = \beta_m I_m$, $\lambda_{mm} = \beta_{mm} I_{mm}$, $\lambda_{mw} = \beta_{mw} I_{mw}$ are the force of infection of, respectively, intermediate hosts infected by a single mutant, two mutants, and a mix of mutant and resident. 
+
+\subsection{Invasion fitness}
+The invasion fitness of the mutant will be calculated using the next generation method (Hurford et al 2010).
+
+The matrix $\mathbf{A}$ that describes the dynamics (\ref{odes:mutdynamics}) of the mutant can be written as $\mathbf{A} = \mathbf{F} - \mathbf{V}$, where $\mathbf{F}$ is the matrix that describes the contribution of a compartment to the next generation. Because we consider a complex lifecycle parasite, a new generation begins with the reproduction and release of parasites into the environment, and matrix $\mathbf{F}$ can be written as
+
+\begin{align*}
+    \mathbf{F} = 
+    \begin{pmatrix}
+   	 0 & 0 & 0 & 0   & 0 	  & 0 	   & 0 \\
+	 0 & 0 & 0 & 0   & 0 	  & 0 	   & 0 \\
+	 0 & 0 & 0 & 0   & 0 	  & 0 	   & 0 \\
+	 0 & 0 & 0 & 0   & 0      & 0	   & 0 \\
+	 0 & 0 & 0 & 0   & 0      & 0      & 0 \\ 
+	 0 & 0 & 0 & 0   & 0      & 0      & 0 \\
+	 0 & 0 & 0 & f_m & f_{mm} & f_{mw} & 0
+    \end{pmatrix}
+\end{align*}
+
+The matrix $\mathbf{V}$ describes the transitions from one compartment to the others and death rates of all compartments
+\[
+    \mathbf{V} = 
+    \begin{pmatrix*}
+     v_{11}  & 0 & 0 & 0 & 0 & 0 & v_{17} \\
+     0  &  v_{22} & 0 & 0 & 0 & 0 & v_{27} \\ 
+     0  &  0  &  v_{33} &  0  &  0  &  0  & v_{37} \\
+    v_{41}  &  v_{42} & v_{43} &  v_{44} &  0 & 0 & 0 \\
+     0 & v_{52}  &  0  & v_{54} &  v_{55} & 0 & 0  \\
+     v_{61} & v_{62} & v_{63} & v_{64}  &  0  & v_{66} & 0 \\
+     0  &  0  &  0  &  0  &  0  &  0  &  v_{77}
+    \end{pmatrix*}
+\]
+where the entries of the $\mathbf{V}$ matrix can be found in Table \ref{table:Ventries}
+
+\begin{table}[!ht]
+\begin{tabular}{|c|c|}
+\hline
+Matrix entry & Expression \\
+\hline
+$v_{11}$ & $(d + \alpha_m) + \Pi_m(D_s^*, D_w^*, D_{ww}^*, \beta_m, D_m, D_{mm}, D_{mw}) $ \\
+\hline
+$v_{17}$ & $-(1 - p) \gamma I_s$ \\
+\hline
+$v_{22}$ &  $(d + \alpha_{mm}) + \Pi_{mm}(D_s^*, D_w^*, D_{ww}^*, \beta_{mm}, D_m, D_{mm}, D_{mw})$ \\
+\hline
+$v_{27}$ & $-p \gamma \frac{M}{M + W^*}  I_s$ \\
+\hline
+$v_{33}$ & $ (d + \alpha_{mw}) + \Pi_{mw}(D_s^*, D_w^*, D_{ww}^*, \beta_{mm}, D_m, D_{mm}, D_{mw})$ \\
+\hline
+$v_{37}$ & $- p \gamma 2 \frac{W}{M + W^*} I_s$ \\
+\hline
+$v_{41}$ & $-\beta_m D_s$ \\
+\hline
+$v_{42}$ & $-(1 - q) \beta_{mm} D_s$ \\
+\hline
+$v_{43}$ & $-(1 - q) \beta_{mw} D_s$ \\
+\hline
+$v_{44}$ & $(\mu + \sigma_m) + (\lambda_w + \lambda_m + (1 - q) (\lambda_{ww} + \lambda_{mw} + \lambda_{mm}) $ \\
+\hline
+$v_{52}$ & $- q \beta_{mm} D_s$ \\
+\hline
+$v_{54}$ & $-(\lambda_m + (1 - q) (\lambda_{mm} + \lambda_{mw}))$ \\
+\hline
+$v_{55}$ & $(\mu + \sigma_{mm})$ \\
+\hline
+$v_{61}$ & $-\beta_m D_w$ \\
+\hline
+$v_{62}$ & $ -(1 - q) \beta_{mm} D_w$ \\
+\hline
+$v_{63}$ & $- q \beta_{mw} D_s - (1 - q) \beta_{mw} D_w$ \\
+\hline
+$v_{64}$ &  $-(\lambda_w + (1 - q) (\lambda_{ww} +\lambda_{mw}))$ \\
+\hline
+$v_{66}$ & $(\mu + \sigma_{mw})$ \\
+\hline
+$v_{77}$ & $\delta + (1 + 2 \frac{W}{M + W^*} + \frac{M}{M + W^*}) \gamma I_s$ \\
+\hline
+\end{tabular}
+\caption{Expressions of $\mathbf{V}$ matrix entries}
+\label{table:Ventries}
+\end{table}
+
+According to the next generation method, the reproduction value $R_0$ of a mutant is the spectral radius of the next generation matrix $\mathbf{F.V^{-1}}$, evaluated when the mutant is extremely rare, i.e. $M = D_{m} = D_{mm} = D_{mw} = 0$. Here it is the unique nonzero eigenvalue of $\mathbf{F.V^{-1}}$. The expression of $R_0$ is complex but it can be compartmentalised into seven components that represent the compartment reproduction ratio when a mutant follow a specific route to complete its lifecycle. In particular, if a mutant is released from a definitive host infected by a mutant and a resident, it could then singly infect a susceptible intermediate host. Next, it could either infect a definitive host that is already occupied by a resident
+
+\begin{align}
+R_{mix1} = \frac{f_{mw}}{\delta +3 \gamma  I_s} \frac{ (1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m }{\mu +\sigma_{mw}} D_w
+\end{align}
+
+or it could infect a susceptible definitive host and the host is sequentially infected by a resident
+
+\begin{align}
+R_{mix2} = \frac{f_{mw}}{\delta +3 \gamma  I_s} \frac{(1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m (\beta_w I_w + (1-q) \beta_{ww} I_{ww})}{(\mu + \sigma_{mw}) (\beta_w I_w +  (1- q)\beta_{ww} I_{ww} + \mu + \sigma_m)} D_s
+\end{align}
+
+A mix-source born mutant could then cotransmit with a resident into an intermediate host. From this point, it could cotransmit with the resident into a susceptible definitive host
+
+\begin{align}
+R_{mix3} = \frac{f_{mw}}{\delta + 3 \gamma  I_s} \frac{2 p \gamma}{\alpha_{mw} + d + \Pi_{mw} I_s} \frac{q \beta_{mw}}{\mu + \sigma_{mw}} D_s
+\end{align}
+
+or it could infect a definitive host that is already occupied by a resident
+
+\begin{align}
+R_{mix4} = \frac{f_{mw}}{\delta +3 \gamma  I_s} \frac{2 p \gamma}{\alpha_{mw} + d + \Pi_{mw}} I_s \frac{\beta_{mw} (1-q)}{\mu + \sigma_{mw}} D_w
+\end{align}
+
+or it could infect a susceptible definitive host and the host is then sequentially infected by a resident
+
+\begin{align}
+R_{mix5} = \frac{f_{mw}}{\delta + 3 \gamma  I_s} \frac{2 p \gamma }{\alpha_{mw} + d + \Pi_{mw}} I_s \frac{(1-q) \beta_{mw}  (\beta_w I_w +(1-q) \beta_{ww} I_{ww} )}{(\mu +\sigma_{mw}) (\beta_w I_w +  (1-q)\beta_{ww} I_{ww} +\mu + \sigma_m)} D_s
+\end{align}
+
+If a mutant is released from a definitive host that is singly infected, it could singly infect a susceptible intermediate host and then singly infect a susceptible definitive host
+
+\begin{align}
+R_{s1} = \frac{f_m}{\delta +3 \gamma  I_s} \frac{(1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m}{\beta_w I_w +  (1 - q) \beta_{ww} I_{ww} +\mu + \sigma_m} D_s
+\end{align}
+
+Alternatively, the mutant could cotransmit with the resident to a susceptible intermediate host, and then singly infect a susceptible definitive host
+
+\begin{align}
+R_{s2} = \frac{f_m}{\delta +3 \gamma  I_s} \frac{2 p \gamma }{\alpha_{mw} + d + \Pi_{mw}} I_s \frac{ (1-q)\beta_{mw}}{\beta_w I_w +  (1- q) \beta_{ww} I_{ww} +\mu +\sigma_m} D_s
+\end{align}
+
+The expression of $R_0$ suggests that if a mutant is born from a mixed source, i.e. it is released from a definitive host that are coinfected by a mutant and a resident, it will always ended up coinfected with a wild type in a definitive host. In contrast, if a mutant is born from a singly infected source, it will always ended up singly infected in a definitive host. Thus, there are reproduction routes that never occur in the expression of $R_0$. A mutant born from a mixed source and eventually ended up in single infection in a definitive host will have compartment reproduction ratios as followed
+
+\begin{align}
+& R_{mix6} = \frac{f_{mw}}{\delta + 3 \gamma I_s} \frac{(1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m}{\beta_w I_w + (1-q) \beta_{ww} I_{ww} + \mu + \sigma_m} D_s \\
+& R_{mix7} = \frac{f_{mw}}{\delta + 3 \gamma I_s} \frac{2 p \gamma}{\alpha_{mw} + d + Pi_{mw}} I_s \frac{(1-q)\beta_{mw}}{\beta_w I_w + (1-q) \beta_{ww} I_{ww} + \mu + \sigma_m} D_s
+\end{align}
+
+Using the same argument, a mutant born from a singly infected definitive host may eventually ended up in coinfection with a resident. Their compartment reproduction ratios can be expressed as followed
+
+\begin{align}
+& R_{s3} = \frac{f_m}{\delta + 3 \gamma I_s}  \frac{(1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m }{\mu +\sigma_{mw}} D_w \\
+& R_{s4} = \frac{f_{m}}{\delta +3 \gamma  I_s} \frac{(1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m (\beta_w I_w + (1-q) \beta_{ww} I_{ww})}{(\mu + \sigma_{mw}) (\beta_w I_w +  (1- q)\beta_{ww} I_{ww} + \mu + \sigma_m)} D_s \\
+& R_{s5} = \frac{f_{m}}{\delta + 3 \gamma  I_s} \frac{2 p \gamma}{\alpha_{mw} + d + \Pi_{mw} I_s} \frac{q \beta_{mw}}{\mu + \sigma_{mw}} D_s \\
+& R_{s6} = \frac{f_{m}}{\delta +3 \gamma  I_s} \frac{2 p \gamma}{\alpha_{mw} + d + \Pi_{mw}} I_s \frac{\beta_{mw} (1-q)}{\mu + \sigma_{mw}} D_w \\
+& R_{s7} = \frac{f_{m}}{\delta + 3 \gamma  I_s} \frac{2 p \gamma }{\alpha_{mw} + d + \Pi_{mw}} I_s \frac{(1-q) \beta_{mw}  (\beta_w I_w +(1-q) \beta_{ww} I_{ww} )}{(\mu +\sigma_{mw}) (\beta_w I_w +  (1-q)\beta_{ww} I_{ww} +\mu + \sigma_m)} D_s
+\end{align}
+\section{Discussion}
+
+\textbf{Code availability}.
+Appropriate {\tt{xyz}} computer code describing the model is available at {\url{https://github.com/tecoevo/xyz}}.
+
+
+
+\bibliographystyle{naturemag}
+\bibliography{references.bib}
+
+
+\appendix
+
+\subsection{Parasite dynamics only - infinite vectors/hosts}
+
+We assume a large population for hosts and vectors to simplify the model and focus on the effect of multiple parasites on the trait evolution
+
+We look at the evolution of manipulation of a parasite with complex lifecycle, that is, the parasite requires two hosts to complete its lifecycle. Parasites with complex lifecycle enter the intermediate host (vector) from external environment (parasite pool), then the infected intermediate host got eaten by the final host (host), finally the parasite reproduce inside the final host and its offspring is released into the parasite pool.
+
+If we only take into account the dynamics of the parasites, and consider the populations of the vector and the host as infinite and do not have any feedback on the parasite population, then the fitness of a mutant parasite will be:
+
+\textbf{Parasite fitness = Transmission from parasite pool to the vector x Transmission from vector to host x Reproduction in host}
+
+For simplicity, we ignore the competition among parasites in the pool, and ignore that the success of the transmission from the pool to the vector depends on the number of parasite in the vector, then the transmission from the parasite pool to the vector can be consider a fix parameter (let's call it $\tau$).
+
+The transmission from vector to host depends on the strategy of the mutant and the strategy of the resident parasites that coexist with it inside the vector. Let's consider the case when co-infection augment the manipulative ability of all parasites, thus, it augment the transmission rate of all parasite (In reality, coinfection can sabotage the transmission). In this case, we assume that the transmission is a sigmoid function of the net manipulation strategy of all parasite inside the vector
+
+$$\beta(x_m, x_r) = \frac{\beta_0}{1 + e^{-(x_m + x_r k)}}$$
+
+where $k$ is the number of the resident parasites that cohabit with the mutant parasite. We assume that the parasite distribution inside vector follow a negative binomial distribution. Thus, for different number of parasites inside the vector, we will obtain a different value of transmission from vector to host, and so the final transmission value will be
+
+\begin{align*}
+    \beta_{total}(x_m) = \sum_{k = 0}^{k = kmax} \frac{\beta_0}{1 + e^{-(x_r + x_m  k)}} \mathcal{BN}(r, k, p)
+\end{align*}
+
+where 
+
+$$\mathcal{BN}(r, k, p)
+= \begin{pmatrix} k + r - 1 \\ k\end{pmatrix}p^r (1 -p)^k$$
+
+is the negative binomial distribution with $r$ the coefficient that describes the skew of the distribution ($r \rightarrow \inf$ means that the distribution of the parasites follow a normal distribution). $k$ is the number of resident parasites inside the vector, and $p$ is the prevalence of the parasites inside the vector. $kmax$ is the maximum number of neighbour parasites that can coexist with the focal parasite.
+
+The reproduction inside the final host is negatively correlated with the investment in manipulation. Thus the more the parasite invest in manipulation at the vector stage, the lesser investment it will spend on reproduction 
+
+\begin{align*}
+    \rho(x) = \frac{\rho_{max}}{1 + a x}
+\end{align*}
+
+where $a$ determine the concavity of the function. The more concave the function, the faster the parasite will lose the reproduction value as it invests more in manipulation. If the parasite does not have to invest in manipulation, it will have a maximum $\rho_{max}$. As it invest more in vector manipulation, its reproduction will diminish to 0.
+
+With all the reasoning above, the fitness of a mutant parasite becomes
+\begin{align*}
+    W(x_m) = \tau \beta_{total}(x_m) r(x_m) = \tau \sum_{k = 0}^{k = kmax} \frac{\beta_0}{1 + e^{-(x_m + x_r  k)}} \begin{pmatrix} k + r - 1 \\ k\end{pmatrix}p^r (1 -p)^k  \frac{\rho_{max}}{1 + a x_m}
+\end{align*}
+This model does not take into account the order in which the mutant enter the vector and the final host compare to the resident. There is also no ecological feedback of the host and vector dynamics on the selective force on the manipulation.
+
+\textbf{Some thoughts:} 
+- We can play around with parameter $r$ that change the skewness of the negative binomial distribution. So what will change if the majority of vectors are infected with only 1 parasites compared with if the majority of vectors are infected with 3 - 4 parasites.
+
+- It's still not clear to me what's the meaning if we take into account the order of entering the host and vector of the mutant. I think that it will require a very careful analysis of the SI model with two strains of parasites. 
+
+- And what if we analyse this model with $k = 2$ and compare with the other model with ecological feedback?
+
+- Here I did not take into account the relatedness between mutants and resident. 
+
+- We can also let the reproduction inside the host affected by the density of the parasites inside the host. But I'm not sure if it would be useful in this case when there is no ecological feedback. Still thinking about this.
+
+\end{document}
