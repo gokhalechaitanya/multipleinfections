@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{times}
+\usepackage{natbib}[round]
 \usepackage[titletoc]{appendix}
 \usepackage{graphicx}
 \usepackage{lineno}
@@ -82,35 +83,60 @@ Keywords: a,b,c,d
 
 \section{Introduction}
 
-Parasites are ubiquitous, many with complex life cycles.
-While a complex life cycle can be defined as abrupt ontogenic changes in morphology and/or ecology \cite{Benesh:2016dj}, a complex parasitic life cycle typically involves numerous hosts that a parasite needs to traverse in the process of completing its life cycle.
+Life on earth is ubiquitously infested with parasite, many with complex life cycles \citep{zimmer:book:2001}.
+While a complex life cycle can be defined as abrupt ontogenic changes in morphology and/or ecology \citep{Benesh:2016dj}, a complex parasitic life cycle typically involves numerous hosts that a parasite needs to traverse in the process of completing its life cycle.
 Helminths are a prime example of how a successive transmission between multiple host species is necessary for developing the next generation.
-Thus the worms occupy different niches (hosts) in different stages of their lifecycle, moving through intermediate hosts until reaching a definitive host in which reproduction can finally occur.
-Numerous factors determine the transmissibility and infectivity of the parasites along the tropic level of hosts \cite{froelick:PRSB:2021}.
-Comparative growth rate, eventual body size, costs benefits of host-manipulation and the probability of eventually finding a mate all play a major role in the development and maintenance of the life-history strategies of such parasites \cha{More references needed}.
+The worms occupy different niches (hosts) in different stages of their lifecycle, moving through intermediate hosts until reaching a definitive host in which reproduction can finally occur.
+Numerous factors determine the transmissibility and infectivity of the parasites along the tropic level of hosts \citep{froelick:PRSB:2021}.
+Comparative growth rate, eventual body size, cost-benefits of host-manipulation and the probability of eventually finding a mate all play a major role in the development and maintenance of the life-history strategies of such parasites \citep{parker:Nature:2003,hammerschmidt:Evolution:2009} \cha{more references?}.
 An integral part of all the above factors is the comparative approach.
-Parasite often co-occur in the same host and this allows for complex within-host interactions since the evolutionary effect of the actions is not realised all the way till reproduction occurs in the definitive host \cite{Hafer:2015gl}.
+Parasite often co-occur in the same host and this allows for complex within-host interactions since the evolutionary effect of the actions is not realised till reproduction occurs in the definitive host \citep{Hafer:2015gl}.
+
+\cha{Discuss the work by \citep{alizon:AmNat:2008,gandon:Evolution:2009} What is done in those studies and what is the gap that exists. How do we fill in exactly that gap!}
+
 In this manuscript we focus on dissecting the fundamental trade-off between transmissibility and host-manipulation when multiple hosts are present in a host and its evolutionary outcome in the associated trait space.
 
-
 \section{Model}
-We study a trophically transmitted parasite with a complex lifecycle. Parasites reproduce inside their definitive hosts and are released into the environment. They infect intermediate hosts when the hosts encounter the parasite pool. When an infected intermediate host is consumed by a definitive host, the definitive host gets infected and the parasite complete its lifecycle.
+We focus on the complex lifecycle of a trophically transmitted parasite. 
+Parasites reproduce inside their definitive hosts and are released into the environment. 
+They infect intermediate hosts when the hosts encounter the parasite pool. 
+When an infected intermediate host is consumed by a definitive host, the definitive host gets infected and the parasite complete its lifecycle.
 
-For simplicity, intermediate and definitive hosts can be infected by one (single infection) or at most two parasites (double infections). Therefore, $p$ is the probability that two parasites in the parasite pool cotransmit to an intermediate host, and $1-p$ is the probability that a single parasites enters an intermediate host. When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that both parasites cotransmit to the definitive host, and $1-q$ is the probability that only one parasite successfully transmits. The dynamics of a complex lifecycle parasite that requires two hosts is described by the following odes
+For simplicity, intermediate and definitive hosts can be infected by one (single infection) or at most two parasites (double infections). 
+Therefore, $p$ is the probability that two parasites in the parasite pool cotransmit to an intermediate host, and $1-p$ is the probability that a single parasites enters an intermediate host. 
+When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that both parasites co-transmit to the definitive host, and $1-q$ is the probability that only one parasite successfully transmits. 
+The dynamics of a complex lifecycle parasite that requires two hosts is described by the following ODEs, firstly for the intermediate host as,
 
-\begin{subequations}
 \begin{align}
-& \frac{dI_s}{dt} = R(I_s, I_w, I_{ww}) - d I_s - \Pi_s(D_s, D_w, D_{ww}) I_s  - \eta_w  I_s \\ 
-& \frac{dI_w}{dt} =  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \Pi_w(D_s, D_w, D_{ww}, \beta_w) I_w \\
-& \frac{dI_{ww}}{dt} = p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww} \\
-& \frac{dD_s}{dt} = B(D_s,  D_w,  D_{ww},  I_s, I_w, I_{ww})  - \mu D_s - (\lambda_{ww} + \lambda_w) D_s \\    
-& \frac{dD_w}{dt} = (\lambda_w + (1 - q) \lambda_{ww}) D_s - (\mu + \sigma_w) Dw - ((1 - q) \lambda_{ww} + \lambda_w) D_w \\         
-& \frac{dD_{ww}}{dt} = q \lambda_{ww} D_s + ((1 - q) \lambda_{ww} + \lambda_w) D_w - (\mu + \sigma_{ww}) D_{ww} \\         
-& \frac{dW}{dt} = f_w D_w + f_{ww} D_{ww} - \delta W - \eta_w I_s 
+\frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - \Pi_s(D_s, D_w, D_{ww}) I_s  - \eta_w  I_s \\ 
+\frac{dI_w}{dt} &=  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \Pi_w(D_s, D_w, D_{ww}, \beta_w) I_w \\
+\frac{dI_{ww}}{dt} &= p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww}
 \end{align}
- \end{subequations}
 
-Here $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, which is a function of both infected and noninfected individuals. In other words, all parasites can reproduce. $\Pi_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on respectively, susceptible, singly infected and doubly infected intermediate hosts. The predation function depends on the density of the definitive hosts and the manipulative strategies of parasites in the intermediate hosts. In particular, if an intermediate host is infected by a single parasite, the manipulation strategy is $\beta_w$, and if it is infected by two parasites, the manipulation strategy is $\beta_{ww}$. There is a link between $\beta_w$ and $\beta_{ww}$, but we need not specify the link for now. $\eta_w = \gamma W$ is the force of infection by parasites in the environment. $\lambda_i = \beta_i I_i$, where $i = \{ w, ww\}$, is the force of infection that corresponds respectively to singly infected intermediate host ($I_w$), or doubly infected intermediate hosts ($I_{ww}$). $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts, which is a function of population density of both intermediate and definitive hosts, infected or noninfected alike. Definitions of different parameters can be found in Table \ref{table:varpardescription}.
+where  $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, which is a function of both infected and noninfected individuals. 
+In other words, all parasites can reproduce. 
+$\Pi_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on respectively, susceptible, singly infected and doubly infected intermediate hosts. 
+The predation function depends on the density of the definitive hosts and the manipulative strategies of parasites in the intermediate hosts. 
+In particular, if an intermediate host is infected by a single parasite, the manipulation strategy is $\beta_w$, and if it is infected by two parasites, the manipulation strategy is $\beta_{ww}$. 
+There is a link between $\beta_w$ and $\beta_{ww}$, but we need not specify the link for now. 
+$\eta_w = \gamma W$ is the force of infection by parasites in the environment. 
+$\lambda_i = \beta_i I_i$, where $i = \{ w, ww\}$, is the force of infection that corresponds respectively to singly infected intermediate host ($I_w$), or doubly infected intermediate hosts ($I_{ww}$). 
+
+For the definitive hosts we have,
+\begin{align}
+\frac{dD_s}{dt} &= B(D_s,  D_w,  D_{ww},  I_s, I_w, I_{ww})  - \mu D_s - (\lambda_{ww} + \lambda_w) D_s \\    
+\frac{dD_w}{dt} &= (\lambda_w + (1 - q) \lambda_{ww}) D_s - (\mu + \sigma_w) Dw - ((1 - q) \lambda_{ww} + \lambda_w) D_w \\         
+\frac{dD_{ww}}{dt} &= q \lambda_{ww} D_s + ((1 - q) \lambda_{ww} + \lambda_w) D_w - (\mu + \sigma_{ww}) D_{ww}
+\end{align}
+%
+where $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts, which is a function of population density of both intermediate and definitive hosts, infected or non-infected alike. 
+The dynamics of the parasites are then given solely by,
+\begin{align}
+	\frac{dW}{dt} &= f_w D_w + f_{ww} D_{ww} - \delta W - \eta_w I_s
+\end{align}
+
+
+Definitions of different parameters can be found in Table \ref{table:varpardescription}.
 
 \begin{table}[!ht]
 \begin{tabular}{|p{2.5cm}|p{12cm}|} 
@@ -150,7 +176,11 @@ $\delta$ & Natural death rate of parasites in the environment \\
 \label{table:varpardescription}
 \end{table}
 
-For simplicity, we assume that there is no sequential infection when parasites transmit from the environment to intermediate host. Sequential infection can happen when parasites transmit from intermediate hosts to definitive hosts. Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts.
+For simplicity, we assume that there is no sequential infection when parasites transmit from the environment to intermediate host. 
+Sequential infection can happen when parasites transmit from intermediate hosts to definitive hosts. 
+Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts.
+
+\cha{The dynamics are as illustrated in figure...}
 
 \newpage 
 \subsection{Mutant dynamics}
@@ -318,7 +348,7 @@ Appropriate {\tt{xyz}} computer code describing the model is available at {\url{
 
 
 
-\bibliographystyle{naturemag}
+\bibliographystyle{plainnat}
 \bibliography{references.bib}
 
 
