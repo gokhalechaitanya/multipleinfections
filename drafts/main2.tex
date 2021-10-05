@@ -34,7 +34,7 @@
 %	 \definecolor{darkgreen}{rgb}{0,0.5,0}
 	 \definecolor{darkblue}{rgb}{0,0,0.75}
 %	 \definecolor{magenta}{rgb}{0,0,0.75}
-\newcommand{\cha}[1]{\textcolor{darkgreen}{(#1)}}
+\newcommand{\cha}[1]{\textcolor{darkblue}{(#1)}}
 \newcommand{\maria}[1]{\textcolor{darkred}{(#1)}}
 
 
@@ -92,7 +92,9 @@ Comparative growth rate, eventual body size, cost-benefits of host-manipulation 
 An integral part of all the above factors is the comparative approach.
 Parasite often co-occur in the same host and this allows for complex within-host interactions since the evolutionary effect of the actions is not realised till reproduction occurs in the definitive host \citep{Hafer:2015gl}.
 
-\cha{Discuss the work by \citep{alizon:AmNat:2008,gandon:Evolution:2009} What is done in those studies and what is the gap that exists. How do we fill in exactly that gap!}
+\cha{Discuss the work by \citep{alizon:AmNat:2008,gandon:Evolution:2009} 
+What is done in those studies and what is the gap that exists. How do we fill in exactly that gap!}
+
 
 In this manuscript we focus on dissecting the fundamental trade-off between transmissibility and host-manipulation when multiple hosts are present in a host and its evolutionary outcome in the associated trait space.
 
@@ -108,9 +110,9 @@ When a definitive host consumes an intermediate host infected by two parasites, 
 The dynamics of a complex lifecycle parasite that requires two hosts is described by the following ODEs, firstly for the intermediate host as,
 
 \begin{align}
-\frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - \Pi_s(D_s, D_w, D_{ww}) I_s  - \eta_w  I_s \\ 
+\frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - \Pi_s(D_s, D_w, D_{ww}) I_s  - \eta_w  I_s \nonumber \\ 
 \frac{dI_w}{dt} &=  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \Pi_w(D_s, D_w, D_{ww}, \beta_w) I_w \\
-\frac{dI_{ww}}{dt} &= p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww}
+\frac{dI_{ww}}{dt} &= p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww} \nonumber
 \end{align}
 
 where  $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, which is a function of both infected and noninfected individuals. 
@@ -124,9 +126,9 @@ $\lambda_i = \beta_i I_i$, where $i = \{ w, ww\}$, is the force of infection tha
 
 For the definitive hosts we have,
 \begin{align}
-\frac{dD_s}{dt} &= B(D_s,  D_w,  D_{ww},  I_s, I_w, I_{ww})  - \mu D_s - (\lambda_{ww} + \lambda_w) D_s \\    
+\frac{dD_s}{dt} &= B(D_s,  D_w,  D_{ww},  I_s, I_w, I_{ww})  - \mu D_s - (\lambda_{ww} + \lambda_w) D_s \nonumber \\    
 \frac{dD_w}{dt} &= (\lambda_w + (1 - q) \lambda_{ww}) D_s - (\mu + \sigma_w) Dw - ((1 - q) \lambda_{ww} + \lambda_w) D_w \\         
-\frac{dD_{ww}}{dt} &= q \lambda_{ww} D_s + ((1 - q) \lambda_{ww} + \lambda_w) D_w - (\mu + \sigma_{ww}) D_{ww}
+\frac{dD_{ww}}{dt} &= q \lambda_{ww} D_s + ((1 - q) \lambda_{ww} + \lambda_w) D_w - (\mu + \sigma_{ww}) D_{ww} \nonumber
 \end{align}
 %
 where $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts, which is a function of population density of both intermediate and definitive hosts, infected or non-infected alike. 
@@ -180,11 +182,14 @@ For simplicity, we assume that there is no sequential infection when parasites t
 Sequential infection can happen when parasites transmit from intermediate hosts to definitive hosts. 
 Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts.
 
-\cha{The dynamics are as illustrated in figure...}
+\cha{The dynamics are as illustrated in figure...
+Mention the equilibrium $W^{*}$ and the dynamics that reaches it.}
 
-\newpage 
+\cha{What is the trait that we are interested in from an evolutionary point of view .. this leads us to think of a mutant which can have a slightly different value of the trait and leads us to the next section}
+
 \subsection{Mutant dynamics}
 
+\cha{Describe the trait again and mention the equilibrium above as this is the starting point for the mutant.}
 Considering a mutant that enter a resident population at equilibrium, its dynamics will be
 
 \begin{subequations}
@@ -203,7 +208,7 @@ Considering a mutant that enter a resident population at equilibrium, its dynami
 where $\eta =\gamma (M + W^*)$ is the force of infection of parasites in the environment, which now includes both mutants and residents. $\lambda_m = \beta_m I_m$, $\lambda_{mm} = \beta_{mm} I_{mm}$, $\lambda_{mw} = \beta_{mw} I_{mw}$ are the force of infection of, respectively, intermediate hosts infected by a single mutant, two mutants, and a mix of mutant and resident. 
 
 \subsection{Invasion fitness}
-The invasion fitness of the mutant will be calculated using the next generation method (Hurford et al 2010).
+The invasion fitness of the mutant will be calculated using the next generation method \citep{hurford:JRSI:2010}.
 
 The matrix $\mathbf{A}$ that describes the dynamics (\ref{odes:mutdynamics}) of the mutant can be written as $\mathbf{A} = \mathbf{F} - \mathbf{V}$, where $\mathbf{F}$ is the matrix that describes the contribution of a compartment to the next generation. Because we consider a complex lifecycle parasite, a new generation begins with the reproduction and release of parasites into the environment, and matrix $\mathbf{F}$ can be written as
 
