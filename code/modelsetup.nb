@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     28180,        678]
-NotebookOptionsPosition[     27201,        652]
-NotebookOutlinePosition[     27643,        669]
-CellTagsIndexPosition[     27600,        666]
+NotebookDataLength[     43510,       1031]
+NotebookOptionsPosition[     42301,       1001]
+NotebookOutlinePosition[     42743,       1018]
+CellTagsIndexPosition[     42700,       1015]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -550,6 +550,350 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
+Cell[BoxData[
+ RowBox[{"makeEpiModelGraph", "[", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(S\)]\)\>\"", 
+      "\[DirectedEdge]", 
+      "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(W\)]\)\>\""}], " ", 
+     "\[Rule]", " ", 
+     "\"\<(1 - p)\!\(\*SubscriptBox[\(\[Eta]\), \(W\)]\)\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+     "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(S\)]\)\>\"", 
+      "\[DirectedEdge]", 
+      "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(WW\)]\)\>\""}], " ", 
+     "\[Rule]", " ", "\"\<p \!\(\*SubscriptBox[\(\[Eta]\), \(W\)]\)\>\""}], 
+    ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+     "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(S\)]\)\>\"", " ", 
+      "\[DirectedEdge]", " ", 
+      "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(W\)]\)\>\""}], " ", 
+     "\[Rule]", " ", 
+     "\"\<\!\(\*SubscriptBox[\(\[Lambda]\), \(W\)]\)+ \
+(1-q)\!\(\*SubscriptBox[\(\[Lambda]\), \(WW\)]\)\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+     "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(S\)]\)\>\"", " ", 
+      "\[DirectedEdge]", " ", 
+      "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(WW\)]\)\>\""}], " ", 
+     "\[Rule]", " ", 
+     "\"\<q \!\(\*SubscriptBox[\(\[Lambda]\), \(WW\)]\)\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+     "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(W\)]\)\>\"", " ", 
+      "\[DirectedEdge]", " ", 
+      "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(WW\)]\)\>\""}], " ", 
+     "\[Rule]", " ", 
+     "\"\<\!\(\*SubscriptBox[\(\[Lambda]\), \(W\)]\) + \
+(1-q)\!\(\*SubscriptBox[\(\[Lambda]\), \(WW\)]\)\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+     "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(W\)]\)\>\"", " ", 
+      "\[DirectedEdge]", " ", "\"\<W\>\""}], " ", "\[Rule]", " ", 
+     "\"\<\!\(\*SubscriptBox[\(f\), \(W\)]\)\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+     "\"\<\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(WW\)]\)\>\"", " ", 
+      "\[DirectedEdge]", " ", "\"\<W\>\""}], " ", "\[Rule]", " ", 
+     "\"\<\!\(\*SubscriptBox[\(f\), \(WW\)]\)\>\""}]}], "}"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.8425030331323557`*^9, 3.8425030855815487`*^9}, {
+  3.842503158381469*^9, 3.842503230350486*^9}, {3.84250338896522*^9, 
+  3.8425034462125187`*^9}, {3.8425035707219467`*^9, 3.842503639040506*^9}, {
+  3.842504437759941*^9, 3.842504698583741*^9}, {3.842504959051269*^9, 
+  3.842504973852881*^9}, {3.842505058024083*^9, 3.842505090667911*^9}, {
+  3.8425051811691847`*^9, 3.8425052065191307`*^9}, {3.842505850813733*^9, 
+  3.842505895372611*^9}, {3.842507242311509*^9, 3.842507341095758*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"ffc40bd8-6ec4-47a8-b15d-0cb56d99aae6"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{
+      "\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(S\)]\)", 
+       "\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(W\)]\)", 
+       "\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(WW\)]\)", 
+       "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(S\)]\)", 
+       "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(W\)]\)", 
+       "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(WW\)]\)", "W"}, {{{1, 
+       2}, {1, 3}, {4, 5}, {4, 6}, {5, 6}, {5, 7}, {6, 7}}, Null}, {
+      EdgeLabels -> {
+        DirectedEdge[
+          "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(W\)]\)", "W"] -> Placed[
+           Style["\!\(\*SubscriptBox[\(f\), \(W\)]\)", 
+            GrayLevel[0], 18], 0.5], 
+         DirectedEdge[
+          "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(W\)]\)", 
+           "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(WW\)]\)"] -> Placed[
+           Style[
+           "\!\(\*SubscriptBox[\(\[Lambda]\), \(W\)]\) + \
+(1-q)\!\(\*SubscriptBox[\(\[Lambda]\), \(WW\)]\)", 
+            GrayLevel[0], 18], 0.5], 
+         DirectedEdge[
+          "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(S\)]\)", 
+           "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(W\)]\)"] -> Placed[
+           Style[
+           "\!\(\*SubscriptBox[\(\[Lambda]\), \(W\)]\)+ \
+(1-q)\!\(\*SubscriptBox[\(\[Lambda]\), \(WW\)]\)", 
+            GrayLevel[0], 18], 0.5], 
+         DirectedEdge[
+          "\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(S\)]\)", 
+           "\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(W\)]\)"] -> Placed[
+           Style["(1 - p)\!\(\*SubscriptBox[\(\[Eta]\), \(W\)]\)", 
+            GrayLevel[0], 18], 0.5], 
+         DirectedEdge[
+          "\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(S\)]\)", 
+           "\!\(\*SubscriptBox[\(\[ScriptCapitalI]\), \(WW\)]\)"] -> Placed[
+           Style["p \!\(\*SubscriptBox[\(\[Eta]\), \(W\)]\)", 
+            GrayLevel[0], 18], 0.5], 
+         DirectedEdge[
+          "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(WW\)]\)", "W"] -> 
+         Placed[
+           Style["\!\(\*SubscriptBox[\(f\), \(WW\)]\)", 
+            GrayLevel[0], 18], 0.5], 
+         DirectedEdge[
+          "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(S\)]\)", 
+           "\!\(\*SubscriptBox[\(\[ScriptCapitalD]\), \(WW\)]\)"] -> Placed[
+           Style["q \!\(\*SubscriptBox[\(\[Lambda]\), \(WW\)]\)", 
+            GrayLevel[0], 18], 0.5]}, 
+       GraphLayout -> {
+        "LayeredEmbedding", "RootVertex" -> "W", "Orientation" -> Top, 
+         "LeafDistance" -> 4}, ImageSize -> 450, PerformanceGoal -> "Quality",
+        VertexShapeFunction -> {
+         Function[{$CellContext`xy, $CellContext`v, $CellContext`wh}, 
+          Inset[
+           Framed[
+            $CellContext`gstyle[$CellContext`v], Background -> 
+            LightBlue], $CellContext`xy]]}}]], Typeset`boxes, 
+    Typeset`boxes$s2d = GraphicsGroupBox[{{
+       Arrowheads[Medium], 
+       Directive[
+        Opacity[0.7], 
+        Hue[0.6, 0.7, 0.5]], {
+        TagBox[
+         ArrowBox[{
+           DynamicLocation["VertexID$1", Automatic, Center], 
+           DynamicLocation["VertexID$2", Automatic, Center]}], "DynamicName", 
+         BoxID -> "EdgeLabelID$1"], 
+        InsetBox[
+         FormBox[
+          StyleBox[
+          "\"(1 - p)\\!\\(\\*SubscriptBox[\\(\[Eta]\\), \\(W\\)]\\)\"", 
+           GrayLevel[0], 18, StripOnInput -> False], TraditionalForm], 
+         Offset[{0, 2}, 
+          DynamicLocation["EdgeLabelID$1", Automatic, 
+           Scaled[0.5]]], 
+         ImageScaled[{0.5, 0}], BaseStyle -> "Graphics"]}, {
+        TagBox[
+         ArrowBox[{
+           DynamicLocation["VertexID$1", Automatic, Center], 
+           DynamicLocation["VertexID$3", Automatic, Center]}], "DynamicName", 
+         BoxID -> "EdgeLabelID$2"], 
+        InsetBox[
+         FormBox[
+          StyleBox["\"p \\!\\(\\*SubscriptBox[\\(\[Eta]\\), \\(W\\)]\\)\"", 
+           GrayLevel[0], 18, StripOnInput -> False], TraditionalForm], 
+         Offset[{0, 2}, 
+          DynamicLocation["EdgeLabelID$2", Automatic, 
+           Scaled[0.5]]], 
+         ImageScaled[{0.5, 0}], BaseStyle -> "Graphics"]}, {
+        TagBox[
+         ArrowBox[{
+           DynamicLocation["VertexID$4", Automatic, Center], 
+           DynamicLocation["VertexID$5", Automatic, Center]}], "DynamicName", 
+         BoxID -> "EdgeLabelID$3"], 
+        InsetBox[
+         FormBox[
+          StyleBox[
+          "\"\\!\\(\\*SubscriptBox[\\(\[Lambda]\\), \\(W\\)]\\)+ \
+(1-q)\\!\\(\\*SubscriptBox[\\(\[Lambda]\\), \\(WW\\)]\\)\"", 
+           GrayLevel[0], 18, StripOnInput -> False], TraditionalForm], 
+         Offset[{0, 2}, 
+          DynamicLocation["EdgeLabelID$3", Automatic, 
+           Scaled[0.5]]], 
+         ImageScaled[{0.5, 0}], BaseStyle -> "Graphics"]}, {
+        TagBox[
+         ArrowBox[{
+           DynamicLocation["VertexID$4", Automatic, Center], 
+           DynamicLocation["VertexID$6", Automatic, Center]}], "DynamicName", 
+         BoxID -> "EdgeLabelID$4"], 
+        InsetBox[
+         FormBox[
+          StyleBox[
+          "\"q \\!\\(\\*SubscriptBox[\\(\[Lambda]\\), \\(WW\\)]\\)\"", 
+           GrayLevel[0], 18, StripOnInput -> False], TraditionalForm], 
+         Offset[{0, 2}, 
+          DynamicLocation["EdgeLabelID$4", Automatic, 
+           Scaled[0.5]]], 
+         ImageScaled[{0.5, 0}], BaseStyle -> "Graphics"]}, {
+        TagBox[
+         ArrowBox[{
+           DynamicLocation["VertexID$5", Automatic, Center], 
+           DynamicLocation["VertexID$6", Automatic, Center]}], "DynamicName", 
+         BoxID -> "EdgeLabelID$5"], 
+        InsetBox[
+         FormBox[
+          StyleBox[
+          "\"\\!\\(\\*SubscriptBox[\\(\[Lambda]\\), \\(W\\)]\\) + (1-q)\\!\\(\
+\\*SubscriptBox[\\(\[Lambda]\\), \\(WW\\)]\\)\"", 
+           GrayLevel[0], 18, StripOnInput -> False], TraditionalForm], 
+         Offset[{0, 2}, 
+          DynamicLocation["EdgeLabelID$5", Automatic, 
+           Scaled[0.5]]], 
+         ImageScaled[{0.5, 0}], BaseStyle -> "Graphics"]}, {
+        TagBox[
+         ArrowBox[{
+           DynamicLocation["VertexID$5", Automatic, Center], 
+           DynamicLocation["VertexID$7", Automatic, Center]}], "DynamicName", 
+         BoxID -> "EdgeLabelID$6"], 
+        InsetBox[
+         FormBox[
+          StyleBox["\"\\!\\(\\*SubscriptBox[\\(f\\), \\(W\\)]\\)\"", 
+           GrayLevel[0], 18, StripOnInput -> False], TraditionalForm], 
+         Offset[{0, 2}, 
+          DynamicLocation["EdgeLabelID$6", Automatic, 
+           Scaled[0.5]]], 
+         ImageScaled[{0.5, 0}], BaseStyle -> "Graphics"]}, {
+        TagBox[
+         ArrowBox[{
+           DynamicLocation["VertexID$6", Automatic, Center], 
+           DynamicLocation["VertexID$7", Automatic, Center]}], "DynamicName", 
+         BoxID -> "EdgeLabelID$7"], 
+        InsetBox[
+         FormBox[
+          StyleBox["\"\\!\\(\\*SubscriptBox[\\(f\\), \\(WW\\)]\\)\"", 
+           GrayLevel[0], 18, StripOnInput -> False], TraditionalForm], 
+         Offset[{0, 2}, 
+          DynamicLocation["EdgeLabelID$7", Automatic, 
+           Scaled[0.5]]], 
+         ImageScaled[{0.5, 0}], BaseStyle -> "Graphics"]}}, {
+       Directive[
+        Hue[0.6, 0.2, 0.8], 
+        EdgeForm[
+         Directive[
+          GrayLevel[0], 
+          Opacity[0.7]]]], 
+       TagBox[
+        InsetBox[
+         BoxData[
+          FormBox[
+           FrameBox[
+            StyleBox[
+            "\"\\!\\(\\*SubscriptBox[\\(\[ScriptCapitalI]\\), \\(S\\)]\\)\"", 
+             
+             GrayLevel[0], 18, StripOnInput -> False], Background -> 
+            RGBColor[0.87, 0.94, 1], StripOnInput -> False], 
+           TraditionalForm]], {1.1606039138055106`, -1.4727300308800262`}], 
+        "DynamicName", BoxID -> "VertexID$1"], 
+       TagBox[
+        InsetBox[
+         BoxData[
+          FormBox[
+           FrameBox[
+            StyleBox[
+            "\"\\!\\(\\*SubscriptBox[\\(\[ScriptCapitalI]\\), \\(W\\)]\\)\"", 
+             
+             GrayLevel[0], 18, StripOnInput -> False], Background -> 
+            RGBColor[0.87, 0.94, 1], StripOnInput -> False], 
+           TraditionalForm]], {0.2661767228055948, -1.919943626379984}], 
+        "DynamicName", BoxID -> "VertexID$2"], 
+       TagBox[
+        InsetBox[
+         BoxData[
+          FormBox[
+           FrameBox[
+            StyleBox[
+            "\"\\!\\(\\*SubscriptBox[\\(\[ScriptCapitalI]\\), \\(WW\\)]\\)\"", 
+             GrayLevel[0], 18, StripOnInput -> False], Background -> 
+            RGBColor[0.87, 0.94, 1], StripOnInput -> False], 
+           TraditionalForm]], {2.0550311048054266`, -1.919943626379984}], 
+        "DynamicName", BoxID -> "VertexID$3"], 
+       TagBox[
+        InsetBox[
+         BoxData[
+          FormBox[
+           FrameBox[
+            StyleBox[
+            "\"\\!\\(\\*SubscriptBox[\\(\[ScriptCapitalD]\\), \\(S\\)]\\)\"", 
+             
+             GrayLevel[0], 18, StripOnInput -> False], Background -> 
+            RGBColor[0.87, 0.94, 1], StripOnInput -> False], 
+           TraditionalForm]], {0.9403765852688367, -0.2661767228055948}], 
+        "DynamicName", BoxID -> "VertexID$4"], 
+       TagBox[
+        InsetBox[
+         BoxData[
+          FormBox[
+           FrameBox[
+            StyleBox[
+            "\"\\!\\(\\*SubscriptBox[\\(\[ScriptCapitalD]\\), \\(W\\)]\\)\"", 
+             
+             GrayLevel[0], 18, StripOnInput -> False], Background -> 
+            RGBColor[0.87, 0.94, 1], StripOnInput -> False], 
+           TraditionalForm]], {0.2661767228055947, -0.6032766540372159}], 
+        "DynamicName", BoxID -> "VertexID$5"], 
+       TagBox[
+        InsetBox[
+         BoxData[
+          FormBox[
+           FrameBox[
+            StyleBox[
+            "\"\\!\\(\\*SubscriptBox[\\(\[ScriptCapitalD]\\), \\(WW\\)]\\)\"", 
+             GrayLevel[0], 18, StripOnInput -> False], Background -> 
+            RGBColor[0.87, 0.94, 1], StripOnInput -> False], 
+           TraditionalForm]], {1.6145764477320788`, -0.6032766540372159}], 
+        "DynamicName", BoxID -> "VertexID$6"], 
+       TagBox[
+        InsetBox[
+         BoxData[
+          FormBox[
+           FrameBox[
+            StyleBox["\"W\"", 
+             GrayLevel[0], 18, StripOnInput -> False], Background -> 
+            RGBColor[0.87, 0.94, 1], StripOnInput -> False], 
+           TraditionalForm]], {0.2661767228055947, -0.9403765852688368}], 
+        "DynamicName", BoxID -> "VertexID$7"]}}], $CellContext`flag}, 
+    TagBox[
+     DynamicBox[GraphComputation`NetworkGraphicsBox[
+      3, Typeset`graph, Typeset`boxes, $CellContext`flag], {
+      CachedValue :> Typeset`boxes, SingleEvaluation -> True, 
+       SynchronousUpdating -> False, TrackedSymbols :> {$CellContext`flag}},
+      ImageSizeCache->{{7.105427357601002*^-15, 449.}, {-206., 
+       201.45369865041562`}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False,
+    UnsavedVariables:>{$CellContext`flag}]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  ImageSize->450]], "Output",
+ CellChangeTimes->{
+  3.8425031626108522`*^9, 3.842503231297649*^9, 3.842503449907791*^9, 
+   3.842503639769169*^9, 3.8425045241540613`*^9, 3.842504579159552*^9, 
+   3.84250469980846*^9, 3.842504986618215*^9, 3.842505175116218*^9, {
+   3.842505852185038*^9, 3.8425058960277863`*^9}, {3.842506438470245*^9, 
+   3.842506449986897*^9}, {3.8425067773781843`*^9, 3.8425068267516403`*^9}, 
+   3.84250692846872*^9, {3.842506985427507*^9, 3.842507009860952*^9}, {
+   3.842507045697414*^9, 3.842507053069449*^9}, {3.842507092283306*^9, 
+   3.8425071116628532`*^9}, {3.842507172175378*^9, 3.842507199828273*^9}, {
+   3.842507314637372*^9, 3.842507345530375*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"19d88852-fad7-4169-a73b-fdfac347fec4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["Formatting setup", "Section",
  CellChangeTimes->{{3.8423525559883757`*^9, 
   3.842352558202939*^9}},ExpressionUUID->"7c5bf8c7-c385-4ce6-864c-\
@@ -583,7 +927,7 @@ Cell[BoxData[{
         RowBox[{"All", ",", "1"}], "]"}], "]"}]}], ";", "\n", "\t", 
      RowBox[{"g", " ", "=", " ", 
       RowBox[{"imakeEpiModelGraph", "[", 
-       RowBox[{"info", ",", " ", "edges", ",", " ", "Left"}], "]"}]}], ";", 
+       RowBox[{"info", ",", " ", "edges", ",", " ", "Top"}], "]"}]}], ";", 
      "\n", "\t", 
      RowBox[{"If", "[", 
       RowBox[{
@@ -599,7 +943,7 @@ Cell[BoxData[{
                 RowBox[{"g", ",", " ", "VertexCoordinates"}], "]"}]}], 
               ")"}]}]}], ")"}]}]}]}], ",", "\n", "\t\t", 
        RowBox[{"imakeEpiModelGraph", "[", 
-        RowBox[{"info", ",", " ", "edges", ",", " ", "Top"}], "]"}], ",", 
+        RowBox[{"info", ",", " ", "edges", ",", " ", "Left"}], "]"}], ",", 
        "\n", "\t\t", "g"}], "\n", "\t", "]"}]}]}], "\n", "]"}]}], "\n", 
  RowBox[{
   RowBox[{"imakeEpiModelGraph", "[", 
@@ -635,22 +979,27 @@ Cell[BoxData[{
          RowBox[{"edg", ",", " ", 
           RowBox[{"Placed", "[", 
            RowBox[{
-            RowBox[{"gstyle", "@", "str"}], ",", " ", ".5"}], "]"}]}], 
+            RowBox[{"gstyle", "@", "str"}], ",", " ", "0.5"}], "]"}]}], 
          "]"}]}]}], ")"}]}], ",", "\n", "\t\t", 
     RowBox[{"PerformanceGoal", "\[Rule]", "\"\<Quality\>\""}], ",", "\n", 
     "\t\t", 
     RowBox[{"ImageSize", "\[Rule]", "450"}], ",", "\n", "\t\t", 
     RowBox[{"GraphLayout", "\[Rule]", 
      RowBox[{"{", 
-      RowBox[{"\"\<LayeredDigraphEmbedding\>\"", ",", 
+      RowBox[{"\"\<LayeredEmbedding\>\"", ",", 
        RowBox[{"\"\<RootVertex\>\"", "\[Rule]", "\"\<W\>\""}], ",", 
-       RowBox[{"\"\<Orientation\>\"", "\[Rule]", "orientation"}]}], "}"}]}]}],
-    "\n", "\t", "]"}]}]}], "Input",
- CellChangeTimes->{3.842353398085217*^9},
- CellLabel->"In[71]:=",ExpressionUUID->"7291827d-cbce-40b3-9277-ba3c6178e13f"]
+       RowBox[{"\"\<Orientation\>\"", "\[Rule]", "orientation"}], ",", " ", 
+       RowBox[{"\"\<LeafDistance\>\"", " ", "->", " ", "4"}]}], "}"}]}]}], 
+   "\n", "\t", "]"}]}]}], "Input",
+ CellChangeTimes->{
+  3.842353398085217*^9, {3.842506434691255*^9, 3.842506445873101*^9}, {
+   3.842506724553074*^9, 3.842506824097136*^9}, 3.842506924422892*^9, {
+   3.842506979428041*^9, 3.842507050620466*^9}, {3.842507083309786*^9, 
+   3.842507195649665*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"7291827d-cbce-40b3-9277-ba3c6178e13f"]
 }, Open  ]]
 },
-WindowSize->{962, 762},
+WindowSize->{777, 762},
 WindowMargins->{{12, Automatic}, {Automatic, 0}},
 TaggingRules->Association["TryRealOnly" -> False],
 FrontEndVersion->"12.3 for Mac OS X ARM (64-bit) (July 9, 2021)",
@@ -669,16 +1018,20 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 2009, 43, 78, "Input",ExpressionUUID->"380efcab-9472-41c1-887d-de8fda890912"],
-Cell[2592, 67, 11652, 268, 538, "Output",ExpressionUUID->"c2bd65b8-325b-473a-a424-ba871316258b"]
+Cell[580, 22, 2009, 43, 99, "Input",ExpressionUUID->"380efcab-9472-41c1-887d-de8fda890912"],
+Cell[2592, 67, 11652, 268, 515, "Output",ExpressionUUID->"c2bd65b8-325b-473a-a424-ba871316258b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14281, 340, 1201, 28, 49, "Input",ExpressionUUID->"e8ebf195-1dbd-4ea9-aa06-86ec9f105310"],
+Cell[14281, 340, 1201, 28, 78, "Input",ExpressionUUID->"e8ebf195-1dbd-4ea9-aa06-86ec9f105310"],
 Cell[15485, 370, 7848, 177, 264, "Output",ExpressionUUID->"60e8eaa8-cbf1-40aa-9842-b101b0fe0129"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23370, 552, 163, 3, 67, "Section",ExpressionUUID->"7c5bf8c7-c385-4ce6-864c-3bf45548f3ac"],
-Cell[23536, 557, 3649, 92, 451, "Input",ExpressionUUID->"7291827d-cbce-40b3-9277-ba3c6178e13f"]
+Cell[23370, 552, 2899, 64, 178, "Input",ExpressionUUID->"ffc40bd8-6ec4-47a8-b15d-0cb56d99aae6"],
+Cell[26272, 618, 11874, 273, 448, "Output",ExpressionUUID->"19d88852-fad7-4169-a73b-fdfac347fec4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38183, 896, 163, 3, 67, "Section",ExpressionUUID->"7c5bf8c7-c385-4ce6-864c-3bf45548f3ac"],
+Cell[38349, 901, 3936, 97, 619, "Input",ExpressionUUID->"7291827d-cbce-40b3-9277-ba3c6178e13f"]
 }, Open  ]]
 }
 ]

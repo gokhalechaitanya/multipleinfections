@@ -35,7 +35,7 @@
 	 \definecolor{darkblue}{rgb}{0,0,0.75}
 %	 \definecolor{magenta}{rgb}{0,0,0.75}
 \newcommand{\cha}[1]{\textcolor{darkblue}{(#1)}}
-\newcommand{\maria}[1]{\textcolor{darkred}{(#1)}}
+\newcommand{\phg}[1]{\textcolor{darkred}{(#1)}}
 
 
 \usepackage{hyperref}
@@ -105,18 +105,18 @@ They infect intermediate hosts when the hosts encounter the parasite pool.
 When an infected intermediate host is consumed by a definitive host, the definitive host gets infected and the parasite complete its lifecycle.
 
 For simplicity, intermediate and definitive hosts can be infected by one (single infection) or at most two parasites (double infections). 
-Therefore, $p$ is the probability that two parasites in the parasite pool cotransmit to an intermediate host, and $1-p$ is the probability that a single parasites enters an intermediate host. 
+Therefore, $p$ is the probability that two parasites in the parasite pool co-transmit to an intermediate host, and $1-p$ is the probability that a single parasites enters an intermediate host. 
 When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that both parasites co-transmit to the definitive host, and $1-q$ is the probability that only one parasite successfully transmits. 
 The dynamics of a complex lifecycle parasite that requires two hosts is described by the following ODEs, firstly for the intermediate host as,
 
 \begin{align}
 \frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - \Pi_s(D_s, D_w, D_{ww}) I_s  - \eta_w  I_s \nonumber \\ 
-\frac{dI_w}{dt} &=  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \Pi_w(D_s, D_w, D_{ww}, \beta_w) I_w \\
+\frac{dI_w}{dt} &=  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \Pi_w(D_s, D_w, D_{ww}, \beta_w) I_w \label{odes:ihosts} \\
 \frac{dI_{ww}}{dt} &= p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww} \nonumber
 \end{align}
 
 where  $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, which is a function of both infected and noninfected individuals. 
-In other words, all parasites can reproduce. 
+In other words, all types of intermediate hosts can reproduce. 
 $\Pi_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on respectively, susceptible, singly infected and doubly infected intermediate hosts. 
 The predation function depends on the density of the definitive hosts and the manipulative strategies of parasites in the intermediate hosts. 
 In particular, if an intermediate host is infected by a single parasite, the manipulation strategy is $\beta_w$, and if it is infected by two parasites, the manipulation strategy is $\beta_{ww}$. 
@@ -127,14 +127,14 @@ $\lambda_i = \beta_i I_i$, where $i = \{ w, ww\}$, is the force of infection tha
 For the definitive hosts we have,
 \begin{align}
 \frac{dD_s}{dt} &= B(D_s,  D_w,  D_{ww},  I_s, I_w, I_{ww})  - \mu D_s - (\lambda_{ww} + \lambda_w) D_s \nonumber \\    
-\frac{dD_w}{dt} &= (\lambda_w + (1 - q) \lambda_{ww}) D_s - (\mu + \sigma_w) Dw - ((1 - q) \lambda_{ww} + \lambda_w) D_w \\         
+\frac{dD_w}{dt} &= (\lambda_w + (1 - q) \lambda_{ww}) D_s - (\mu + \sigma_w) Dw - ((1 - q) \lambda_{ww} + \lambda_w) D_w  \label{odes:dhosts} \\         
 \frac{dD_{ww}}{dt} &= q \lambda_{ww} D_s + ((1 - q) \lambda_{ww} + \lambda_w) D_w - (\mu + \sigma_{ww}) D_{ww} \nonumber
 \end{align}
 %
 where $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts, which is a function of population density of both intermediate and definitive hosts, infected or non-infected alike. 
 The dynamics of the parasites are then given solely by,
 \begin{align}
-	\frac{dW}{dt} &= f_w D_w + f_{ww} D_{ww} - \delta W - \eta_w I_s
+	\frac{dW}{dt} &= f_w D_w + f_{ww} D_{ww} - \delta W - \eta_w I_s \label{odes:eparasite}
 \end{align}
 
 
@@ -178,19 +178,43 @@ $\delta$ & Natural death rate of parasites in the environment \\
 \label{table:varpardescription}
 \end{table}
 
-For simplicity, we assume that there is no sequential infection when parasites transmit from the environment to intermediate host. 
+For simplicity, we assume that there is no sequential infection when parasites transmit from the environment to intermediate hosts. 
 Sequential infection can happen when parasites transmit from intermediate hosts to definitive hosts. 
-Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts.
+Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts. The dynamics of the system are illustrated in figure (\ref{fig:schematic}).
 
-\cha{The dynamics are as illustrated in figure...
-Mention the equilibrium $W^{*}$ and the dynamics that reaches it.}
+\begin{figure}
+\includegraphics[width=\textwidth]{schematic}
+\caption{Schematic of the model}
+\label{fig:schematic}
+\end{figure}
 
-\cha{What is the trait that we are interested in from an evolutionary point of view .. this leads us to think of a mutant which can have a slightly different value of the trait and leads us to the next section}
+System (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) has a parasite free state where the equilibrium of susceptible intermediate hosts and definitive hosts is
+
+\begin{align}
+& I_{s0}^* = \frac{\mu }{c \rho } \\
+& D_{s0}^* = \frac{r-d}{\rho}
+\end{align}
+
+A parasite can persist if, introduced in the parasite free stage, its reproduction ratio $R_0$ is greater than one. The expression of the $R_0$ of the parasite
+
+\begin{align}
+R_{0res} = & \frac{f_{ww}}{\gamma  I_s + \delta } \frac{(1-p) \gamma}{\alpha_w + d + \Pi_w} I_s \frac{\beta_w (\lambda_w +  (1-q)\lambda_{ww})}{(\mu + \sigma_{ww}) (\lambda_w + \mu + (1-q) \lambda_{ww} + \sigma_w)} D_s + \nonumber \\ 
+           & \frac{f_{ww}}{\gamma  I_s + \delta }  \frac{p \gamma}{\alpha_{ww} + d + \Pi_{ww}} I_s  \frac{(1-q) \beta_{ww} (\lambda_w +(1-q) \lambda_{ww})}{(\mu +\sigma_{ww}) (\lambda_w + (1-q) \lambda_{ww} + \mu + \sigma_w)} D_s + \nonumber \\
+           & \frac{f_{ww}}{\gamma  I_s + \delta }  \frac{p \gamma}{\alpha_{ww} + d + \Pi_{ww}} I_s  \frac{q \beta_{ww}}{\mu +\sigma_{ww}} D_s  \\
+           & \frac{f_w}{\gamma  I_s + \delta }  \frac{(1-p) \gamma}{\alpha_w + d + \Pi_w} I_s  \frac{\beta_w}{\lambda_w + (1-q)\lambda_{ww} +\mu + \sigma_w} D_s + \nonumber \\
+           & \frac{f_w}{\gamma  I_s + \delta } (p \gamma)/(d + \alpha_{ww} + \Pi_{ww}) I_s \frac{(1-q) \beta_{ww}}{\lambda_w + (1-q) \lambda_{ww} + \mu +\ sigma_w} D_s \nonumber
+\end{align}
+
+is composed of different compartment reproduction ratios that correspond to different routes of infection that the parasite can follow. It should be noted that if a parasite is released from a doubly infected definitive host, it will always end up co-infected with another parasite. In contrast, if the parasite is released from a singly infected definitive host, it ends up in a singly infected host (\phg{we will need to understand why}).
+
+\phg{I'm working on the condition that the parasite can exist. It will depends on specific predation functions.}
+
+Once introduced into the population, the parasite can exist at a stable stage if ....
+
+We then consider the evolution of the host manipulation strategy $\beta_w$. Assuming that mutation is so rare, a mutant with a manipulation strategy $\beta_m$ that is slightly different from the resident arises when the resident parasite reaches its ecological equilibrium.
 
 \subsection{Mutant dynamics}
-
-\cha{Describe the trait again and mention the equilibrium above as this is the starting point for the mutant.}
-Considering a mutant that enter a resident population at equilibrium, its dynamics will be
+Considering that a resident parasite with dynamics (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) is at its non-zero equilibrium ($W^*, I_s^*, I_w^*, I_{ww}^*, D_s^*, D_w^*, D_{ww}^*$), the dynamics of a rare mutant parasite that enter the resident population will be
 
 \begin{subequations}
 \begin{align}
