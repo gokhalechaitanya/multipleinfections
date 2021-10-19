@@ -188,14 +188,11 @@ Therefore, a singly infected definitive host can be further infected by another 
 \label{fig:schematic}
 \end{figure}
 
-System (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) has a parasite free state where the equilibrium of susceptible intermediate hosts and definitive hosts is
+\subsection{Resident dynamics}
 
-\begin{align}
-& I_{s0}^* = \frac{\mu }{c \rho } \\
-& D_{s0}^* = \frac{r-d}{\rho}
-\end{align}
+\phg{In this part, I just want to list what I understand about the dynamics, so not all of them will be in the ms}
 
-A parasite can persist if, introduced in the parasite free stage, its reproduction ratio $R_0$ is greater than one. The expression of the $R_0$ of the parasite
+System (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has a parasite free state, that is the parasite population is zero or $W = I_w = I_ww = D_w = D_ww = 0$. In this disease-free state, if a parasite arises, the population can spread when its reproduction ratio $R_0$ in this disease-free state is greater than one. The expression of the $R_0$ is as followed
 
 \begin{align}
 R_{0res} = & \frac{f_{ww}}{\gamma  I_s + \delta } \frac{(1-p) \gamma}{\alpha_w + d + \Pi_w} I_s \frac{\beta_w (\lambda_w +  (1-q)\lambda_{ww})}{(\mu + \sigma_{ww}) (\lambda_w + \mu + (1-q) \lambda_{ww} + \sigma_w)} D_s + \nonumber \\ 
@@ -205,11 +202,32 @@ R_{0res} = & \frac{f_{ww}}{\gamma  I_s + \delta } \frac{(1-p) \gamma}{\alpha_w +
            & \frac{f_w}{\gamma  I_s + \delta } (p \gamma)/(d + \alpha_{ww} + \Pi_{ww}) I_s \frac{(1-q) \beta_{ww}}{\lambda_w + (1-q) \lambda_{ww} + \mu +\ sigma_w} D_s \nonumber
 \end{align}
 
-is composed of different compartment reproduction ratios that correspond to different routes of infection that the parasite can follow. It should be noted that if a parasite is released from a doubly infected definitive host, it will always end up co-infected with another parasite. In contrast, if the parasite is released from a singly infected definitive host, it ends up in a singly infected host (\phg{we will need to understand why}).
+$R_0$ of a parasite in the disease-free state is composed of different compartment reproduction ratios that correspond to different routes of infection that the parasite can follow. It should be noted that if a parasite is released from a doubly infected definitive host, it will always end up co-infected with another parasite. In contrast, if the parasite is released from a singly infected definitive host, it ends up in a singly infected host (\phg{we will need to understand why}).
 
-\phg{I'm working on the condition that the parasite can exist. It will depends on specific predation functions.}
+When we introduce a parasite in the disease-free state, the parasite population can persist if its reproduction ratio $R_0|_{W = I_w = I_ww = D_w = D_ww = 0} > 1$. However, to solve this inequality, we need to specify the predation functions and the equilibrium value of $I_s$ and $D_s$. The explicit forms of the equilibrium of intermediate and definitive hosts depend largely on the birth functions $R$ and $B$ of respectively the intermediate and definitive host, and predation functions $\Pi_s, \Pi_w, \Pi_ww$. For simplicity, we consider linear functions for predation 
+\begin{align*}
+& \Pi_s = \rho (D_s + D_w + D_{ww}) \\
+& \Pi_w(D_s, D_w, D_{ww}, \beta_w) = (\rho + \beta_w) (Ds + Dw + Dww) \\
+& \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) = (\rho + \beta_{ww}) (Ds + Dw + Dww)
+\end{align*}
+Here $\rho$ is the baseline capture rate when the uninfected intermediate hosts are caught by definitive hosts. Manipulation strategy of the parasite is incorporated as an addition to the baseline capture rate $\rho$. The birth function of definitive hosts is also linear
+\begin{align*}
+B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c (D_s + D_w + D_{ww}) (I_s + I_w + I_{ww})
+\end{align*}
+where c is the efficiency of converting preys into offspring.
 
-Once introduced into the population, the parasite can exist at a stable stage if ....
+\subsection{Linear birth function of intermediate hosts}
+We consider the system when the birth function $R$ is linear, that is, $R(I_s, I_w, I_ww) = r(I_s + I_w + I_ww)$. The equilibrium of intermediate and definitive hosts in the disease-free state are
+
+\begin{align*}
+& I_{s0}^* = \frac{\mu}{c \rho} \\
+& D_{s0}^* = \frac{r - d}{\rho}
+\end{align*}
+
+This equilibrium is always unstable. In fact, we always observe cyclic behaviour of the equilibrium because at this equilibrium the jacobian matrix of system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has one imaginary eigen value with positive real part. This is in accordance with the Lotka-Voltera system using linear functions for prey birth and predation. Because the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite (which is often evaluate when the disease-free state is stable). Here, even if we solve the inequality $R_0 > 1$, which happens when the transmission rate from the environment to intermediate hosts $\gamma$ is greater than a threshold (the expression of the threshold is too complicated, hence it is not useful to write it here). In addition, the reproduction of the parasites has to be sufficiently large (again, the expression of the thresholds are too complicated such that it is useless to write it here).
+
+In fact, our simulations show that the parasite cannot persist when we vary $\gamma$, and $\beta_w$.
+
 
 We then consider the evolution of the host manipulation strategy $\beta_w$. Assuming that mutation is so rare, a mutant with a manipulation strategy $\beta_m$ that is slightly different from the resident arises when the resident parasite reaches its ecological equilibrium.
 
@@ -383,58 +401,5 @@ Appropriate {\tt{xyz}} computer code describing the model is available at {\url{
 
 \appendix
 
-\subsection{Parasite dynamics only - infinite vectors/hosts}
-
-We assume a large population for hosts and vectors to simplify the model and focus on the effect of multiple parasites on the trait evolution
-
-We look at the evolution of manipulation of a parasite with complex lifecycle, that is, the parasite requires two hosts to complete its lifecycle. Parasites with complex lifecycle enter the intermediate host (vector) from external environment (parasite pool), then the infected intermediate host got eaten by the final host (host), finally the parasite reproduce inside the final host and its offspring is released into the parasite pool.
-
-If we only take into account the dynamics of the parasites, and consider the populations of the vector and the host as infinite and do not have any feedback on the parasite population, then the fitness of a mutant parasite will be:
-
-\textbf{Parasite fitness = Transmission from parasite pool to the vector x Transmission from vector to host x Reproduction in host}
-
-For simplicity, we ignore the competition among parasites in the pool, and ignore that the success of the transmission from the pool to the vector depends on the number of parasite in the vector, then the transmission from the parasite pool to the vector can be consider a fix parameter (let's call it $\tau$).
-
-The transmission from vector to host depends on the strategy of the mutant and the strategy of the resident parasites that coexist with it inside the vector. Let's consider the case when co-infection augment the manipulative ability of all parasites, thus, it augment the transmission rate of all parasite (In reality, coinfection can sabotage the transmission). In this case, we assume that the transmission is a sigmoid function of the net manipulation strategy of all parasite inside the vector
-
-$$\beta(x_m, x_r) = \frac{\beta_0}{1 + e^{-(x_m + x_r k)}}$$
-
-where $k$ is the number of the resident parasites that cohabit with the mutant parasite. We assume that the parasite distribution inside vector follow a negative binomial distribution. Thus, for different number of parasites inside the vector, we will obtain a different value of transmission from vector to host, and so the final transmission value will be
-
-\begin{align*}
-    \beta_{total}(x_m) = \sum_{k = 0}^{k = kmax} \frac{\beta_0}{1 + e^{-(x_r + x_m  k)}} \mathcal{BN}(r, k, p)
-\end{align*}
-
-where 
-
-$$\mathcal{BN}(r, k, p)
-= \begin{pmatrix} k + r - 1 \\ k\end{pmatrix}p^r (1 -p)^k$$
-
-is the negative binomial distribution with $r$ the coefficient that describes the skew of the distribution ($r \rightarrow \inf$ means that the distribution of the parasites follow a normal distribution). $k$ is the number of resident parasites inside the vector, and $p$ is the prevalence of the parasites inside the vector. $kmax$ is the maximum number of neighbour parasites that can coexist with the focal parasite.
-
-The reproduction inside the final host is negatively correlated with the investment in manipulation. Thus the more the parasite invest in manipulation at the vector stage, the lesser investment it will spend on reproduction 
-
-\begin{align*}
-    \rho(x) = \frac{\rho_{max}}{1 + a x}
-\end{align*}
-
-where $a$ determine the concavity of the function. The more concave the function, the faster the parasite will lose the reproduction value as it invests more in manipulation. If the parasite does not have to invest in manipulation, it will have a maximum $\rho_{max}$. As it invest more in vector manipulation, its reproduction will diminish to 0.
-
-With all the reasoning above, the fitness of a mutant parasite becomes
-\begin{align*}
-    W(x_m) = \tau \beta_{total}(x_m) r(x_m) = \tau \sum_{k = 0}^{k = kmax} \frac{\beta_0}{1 + e^{-(x_m + x_r  k)}} \begin{pmatrix} k + r - 1 \\ k\end{pmatrix}p^r (1 -p)^k  \frac{\rho_{max}}{1 + a x_m}
-\end{align*}
-This model does not take into account the order in which the mutant enter the vector and the final host compare to the resident. There is also no ecological feedback of the host and vector dynamics on the selective force on the manipulation.
-
-\textbf{Some thoughts:} 
-- We can play around with parameter $r$ that change the skewness of the negative binomial distribution. So what will change if the majority of vectors are infected with only 1 parasites compared with if the majority of vectors are infected with 3 - 4 parasites.
-
-- It's still not clear to me what's the meaning if we take into account the order of entering the host and vector of the mutant. I think that it will require a very careful analysis of the SI model with two strains of parasites. 
-
-- And what if we analyse this model with $k = 2$ and compare with the other model with ecological feedback?
-
-- Here I did not take into account the relatedness between mutants and resident. 
-
-- We can also let the reproduction inside the host affected by the density of the parasites inside the host. But I'm not sure if it would be useful in this case when there is no ecological feedback. Still thinking about this.
 
 \end{document}
