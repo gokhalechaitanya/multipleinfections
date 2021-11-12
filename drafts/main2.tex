@@ -187,9 +187,9 @@ Therefore, a singly infected definitive host can be further infected by another 
 \label{fig:schematic}
 \end{figure}
 
-\subsection{Resident dynamics}
+\subsection{Ecological dynamics of the parasite}
 
-System (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has a parasite-free state, that is the parasite population is zero or $W = I_w = I_ww = D_w = D_{ww} = 0$. In this disease-free state, if a parasite is introduced, its population can spread when its reproduction ratio $R^{res}_0$ in this disease-free state is greater than one. The expression of the $R^{res}_0$ is as followed
+System (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has a parasite-free state, or disease-free state as often used in epidemiological models, that is the parasite population is zero or $W = I_w = I_ww = D_w = D_{ww} = 0$. In this disease-free state, if a parasite is introduced, its population can spread when its reproduction ratio $R^{res}_0$ in this disease-free state is greater than one. The expression of the $R^{res}_0$ is as followed
 
 \begin{align}
 R^{res}_0 =  &f_{ww} \frac{q \beta_{ww}  }{(\mu +\sigma_{ww})(\gamma  I_s + \delta)}  D_s \frac{p \gamma}{\alpha_{ww} + d + \Pi_{ww}} I_s   + \nonumber\\
@@ -197,9 +197,9 @@ R^{res}_0 =  &f_{ww} \frac{q \beta_{ww}  }{(\mu +\sigma_{ww})(\gamma  I_s + \del
            & f_w \frac{(1-q) \beta_{ww}}{(\lambda_w + (1-q) \lambda_{ww} + \mu + \sigma_w)(\gamma  I_s + \delta)} D_s  \frac{p \gamma}{d + \alpha_{ww} + \Pi_{ww}} I_s  \nonumber
 \end{align}
 
-$R^{res}_0$ of a parasite in the disease-free state is composed of three compartmental reproduction ratios that correspond to different routes of infection that the parasite can follow. The first compartment is when a parasite is born from a doubly infected definitive host, and then co-transmit to an intermediate host with another parasite. The second and third compartments are when a parasite is born from a singly infected definitive host. Then they either transmit alone or co-transmit with another parasite to an intermediate host. It should be noted that, in a disease-free environment, parasite is so rare that the reproduction ratio compartments with sequential double infection disappear. 
+$R^{res}_0$ of a parasite in the disease-free state is composed of three compartmental reproduction ratios that correspond to different routes of infection of a. The first compartment is when a parasite is born from a doubly infected definitive host, and then co-transmit to an intermediate host with another parasite. The second and third compartments are when a parasite is born from a singly infected definitive host. Then they either transmit alone or co-transmit with another parasite to an intermediate host. It should be noted that, in a disease-free environment, parasites are so rare that the reproduction ratio compartments with sequential infection do not appear. 
 
-When we introduce a parasite in the disease-free state, the parasite population can persist if its reproduction ratio $R_0|_{W = I_w = I_ww = D_w = D_ww = 0} > 1$. To solve this inequality, we need to specify the predation functions and the equilibrium value of $I_s$ and $D_s$. The explicit forms of the equilibrium of intermediate and definitive hosts depend largely on the birth functions $R$ and $B$ of respectively the intermediate and definitive host, and predation functions $\Pi_s, \Pi_w, \Pi_ww$. For simplicity, we consider linear functions for predation 
+When we introduce a parasite in the disease-free state, the parasite population can persist if its reproduction ratio $R_0|_{W = I_w = I_ww = D_w = D_ww = 0} > 1$. To solve this inequality, we need to specify the predation functions and the equilibrium value of $I_s$ and $D_s$. The explicit forms of the equilibrium of intermediate and definitive hosts depend largely on the birth functions $R$ and $B$ of respectively the intermediate and definitive host, as well as predation functions $\Pi_s, \Pi_w, \Pi_ww$. For simplicity, we consider linear functions for predation 
 \begin{align*}
 & \Pi_s(D_s + D_w + D_{ww}) = \rho (D_s + D_w + D_{ww}) \\
 & \Pi_w(D_s, D_w, D_{ww}, \beta_w) = (\rho + \beta_w) (Ds + Dw + Dww) \\
@@ -211,7 +211,7 @@ B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c (D_s + D_w + D_{ww}) (I_s + I_w +
 \end{align*}
 where c is the efficiency of converting preys into offspring.
 
-\subsection{Linear birth function of intermediate hosts}
+\subsubsection{Linear birth function of intermediate hosts}
 We consider the system when the birth function $R$ is linear, that is, $R(I_s, I_w, I_ww) = r(I_s + I_w + I_ww)$. The equilibrium of intermediate and definitive hosts in the disease-free state are
 
 \begin{align*}
@@ -221,14 +221,15 @@ We consider the system when the birth function $R$ is linear, that is, $R(I_s, I
 
 This equilibrium is always unstable. In fact, we always observe cyclic behaviour of the equilibrium because at this equilibrium the jacobian matrix of system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has one imaginary eigen value with positive real part. This is in accordance with the Lotka-Voltera system using linear functions for prey birth and predation. Because the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite (which is often evaluate when the disease-free state is stable). Here, even if we solve the inequality $R_0 > 1$, which happens when the transmission rate from the environment to intermediate hosts $\gamma$ is greater than a threshold (the expression of the threshold is too complicated, hence it is not useful to write it here). In addition, the reproduction of the parasites has to be sufficiently large (again, the expression of the thresholds are too complicated such that it is useless to write it here).
 
-In fact, our simulations show that the parasite cannot persist even when its reproduction ratio is greater than one (Figure \ref{fig:diseasefree:linear}). This result is, however, in agreement with the conclusion in \citet{Ripa:Evol:2013}, which suggests that it is harder for a mutant to invade a cyclic population. In our case, it is the invasion of a parasite in a cyclic disease-free host population.
+In fact, our simulations show that the parasite cannot persist even when its reproduction ratio is greater than one (Figure \ref{fig:diseasefree:linear}). This result is, however, in agreement with the conclusion in \citet{Ripa:Evol:2013}, which suggests that it is harder for a mutant to invade a cyclic population. In our case, it is not the invasion of a mutant but a certain parasite in a cyclic disease-free host population. This issue deserves a more thorough investigation. However, as we focus on the evolutionary aspect of parasite manipulation, we use a non-linear birth function of intermediate hosts to obtain stable equilibrium for the invasion analysis.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/diseasefree_linear}
 \caption{Disease-free equilibrium using linear birth function}
 \label{fig:diseasefree:linear}
 \end{figure}
-\subsection{Non-linear birth function of intermediate hosts}
+
+\subsubsection{Non-linear birth function of intermediate hosts}
 The non-linear birth function of intermediate hosts is as followed
 
 \begin{align*}
@@ -258,16 +259,29 @@ The above conditions suggest that the intrinsic reproduction of intermediate hos
 \label{fig:diseasefree:nonlinear}
 \end{figure}
 
-When a parasite is introduced in the disease-free equilibrium, it can spread if its reproduction ratio $R_0^{res} > 1$. Since the expression is complicated, we could not obtain solutions for this inequality without some assumptions. Assuming that double infections and single infection result in the same parasite virulence and parasite reproduciton, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$,and $f_w = f_{ww}$, we found the the parasite can establish and spread in the population of intermediate and definitive hosts if its reproduction value $f_w = f_{ww} = f$ is greater than a threshold (the expression of the threshold is rather complicated, therefore it is not useful to write down its expression) (Figure \ref{fig:diseasestable:nonlinear}).
+When a parasite is introduced in the disease-free equilibrium, it can spread if its reproduction ratio $R_0^{res} > 1$. Since the expression is complicated, we could not obtain solutions for this inequality without some assumptions. Assuming that double infections and single infection result in the same parasite virulence and parasite reproduciton, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$,and $f_w = \epsilon f_{ww}$, we found the the parasite can establish and spread in the population of intermediate and definitive hosts if its reproduction value in single infection $f_w$ is greater than a threshold (the expression of the threshold is rather complicated, therefore it is not useful to write down its expression) (Figure \ref{fig:diseasestable:nonlinear}).
 
 \begin{figure}
-\includegraphics[width=\textwidth]{Figures/diseasestable_nonlinear}
-\caption{Disease-stable equilibrium}
-\label{fig:diseasestable:nonlinear}
+\includegraphics[width=\textwidth]{Figures/bifurcation_fw_NL.jpg}
+\caption{Bifurcation graph of reproduction value in singly infection. $f_ww = \epsilon f_w$, where $\epsilon \leq 1$ means reproduction in double infection is smaller than or equal to reproduction in single infection. $\epsilon > 1$ means reproduction in double infection is greater than reproduction in single infection. Dots indicate stable equilibrium whereas stars indicate unstable equilibrium.}
+\label{fig:bifurfw:nonlinear}
 \end{figure}
 
+In addition, if reproduction in single infection is small but reproduction in double infection is sufficiently large then the parasite population can settle in the population of intermediate and definitive hosts.
 
-We then consider the evolution of the host manipulation strategy $\beta_w$. Assuming that mutation is so rare, a mutant with a manipulation strategy $\beta_m$ that is slightly different from the resident arises when the resident parasite reaches its ecological equilibrium.
+\begin{figure}
+\includegraphics[width = \textwidth]{Figures/bifurcation_epsilonfw_NL.jpg}
+\caption{Bifurcation graph of $\epsilon$ and $f_w$. The white area is where the parasite goes extinct. The vertical line indicates where $\epsilon = 1$, i.e. reproduction in singly infection is equal to reproduction in double infection. Dots indicate stable equilibrium whereas stars indicate unstable equilibrium.}
+\end{figure}
+
+The transmission rate from intermediate hosts to definitive hosts, which is determined by parasite manipulation strategy, also play an important role in the existence of the parasite population. If this transmission rate is too small, then the parasite goes extinct regardless of its reproduction value.
+
+\begin{figure}
+\includegraphics[width=\textwidth]{Figures/bifurcation_betawfw_NL.jpg}
+\caption{Bifurcation graph of $\beta_w$ and $f_w$. The white area is where the parasite goes extinct. The vertical line indicates where $\beta_w = \beta_ww$, i.e. manipulation in single infection is the same as manipulation in double infection. Dots indicate stable equilibrium whereas stars indicate unstable equilibrium.}
+\end{figure}
+
+We then consider the evolution of the host manipulation strategy $\beta_w$. Assuming that mutation is so rare, a mutant with a manipulation strategy $\beta_m$ that is slightly different from the resident arises when the resident parasite is at its stable ecological equilibrium.
 
 \subsection{Mutant dynamics}
 Considering that a resident parasite with dynamics (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) is at its non-zero equilibrium ($W^*, I_s^*, I_w^*, I_{ww}^*, D_s^*, D_w^*, D_{ww}^*$), the dynamics of a rare mutant parasite that enter the resident population will be
