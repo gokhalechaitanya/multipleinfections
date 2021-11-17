@@ -293,9 +293,9 @@ Considering that a resident parasite with dynamics (\ref{odes:ihosts}, \ref{odes
 & \frac{dI_m}{dt} = (1 - p) \frac{M}{M + W^*} \eta I_s - (d + \alpha_m) I_m -\Pi_m(D_s^*, D_w^*,  D_{ww}^*,  \beta_m, D_m, D_{mm}, D_{mw}) I_m \\
 & \frac{dI_{mm}}{dt} = p \frac{M^2}{(M + W^*)^2} \eta I_s - (d + \alpha_{mm}) I_{mm} - \Pi_{mm}(D_s^*, D_w^*, D_{ww}^*, \beta_{mm}, D_m, D_{mm}, D_{mw}) I_{mm}\\
 & \frac{dI_{mw}}{dt} =  p \frac{2 M W^*}{(M + W^*)^2} \eta I_s - (d + \alpha_{mw}) I_{mw} -\Pi_{mw}(D_s^*, D_w^*, D_{ww}^*, \beta_{mw}, D_m, D_{mm}, D_{mw}) I_{mw} \\
-& \frac{dD_m}{dt} = ( \lambda_m + (1 - q) (\lambda_{mm} + \lambda_{mw})) D_s - (\mu + \sigma_m) D_m - (\lambda_w + \lambda_m + (1 - q) (\lambda_{ww} + \lambda_{mw} + \lambda_{mm}) ) D_m \\
-& \frac{dD_{mm}}{dt} = q \lambda_{mm} D_s + (\lambda_m + (1 - q)(\lambda_{mm} + \lambda_{mw})) D_m - (\mu + \sigma_{mm}) D_{mm} \\
-& \frac{dD_{mw}}{dt} = q \lambda_{mw} D_s + (\lambda_m + (1 - q)(\lambda_{mm} + \lambda_{mw})) D_w + (\lambda_w + (1 - q) (\lambda_{ww} + \lambda_{mw})) D_m - (\mu + \sigma_{mw}) D_{mw} \\
+& \frac{dD_m}{dt} = ( \lambda_m + (1 - q) (2 \lambda_{mm} + \lambda_{mw})) D_s - (\mu + \sigma_m) D_m - (\lambda_w + \lambda_m + (1 - q) (2 \lambda_{ww} + \lambda_{mw} + \lambda_{mm}) ) D_m \\
+& \frac{dD_{mm}}{dt} = q \lambda_{mm} D_s + (\lambda_m + (1 - q)(2 \lambda_{mm} + \lambda_{mw})) D_m - (\mu + \sigma_{mm}) D_{mm} \\
+& \frac{dD_{mw}}{dt} = q \lambda_{mw} D_s + (\lambda_m + (1 - q)(2 \lambda_{mm} + \lambda_{mw})) D_w + (\lambda_w + (1 - q) (2 \lambda_{ww} + \lambda_{mw})) D_m - (\mu + \sigma_{mw}) D_{mw} \\
 & \frac{dM}{dt} = f_m D_m + f_{mm} D_{mm} +  f_{mw} D_{mw} - \delta M - \eta I_s;
 \end{align}
 \label{odes:mutdynamics}
@@ -384,64 +384,32 @@ $v_{77}$ & $\delta + (1 + 2 \frac{W}{M + W^*} + \frac{M}{M + W^*}) \gamma I_s$ \
 \label{table:Ventries}
 \end{table}
 
-According to the next generation method, the reproduction value $R_0$ of a mutant is the spectral radius of the next generation matrix $\mathbf{F.V^{-1}}$, evaluated when the mutant is extremely rare, i.e. $M = D_{m} = D_{mm} = D_{mw} = 0$. Here it is the unique nonzero eigenvalue of $\mathbf{F.V^{-1}}$. The expression of $R_0$ is complex but it can be compartmentalised into seven components that represent the compartment reproduction ratio when a mutant follow a specific route to complete its lifecycle. In particular, if a mutant is released from a definitive host infected by a mutant and a resident, it could then singly infect a susceptible intermediate host. Next, it could either infect a definitive host that is already occupied by a resident
+According to the next generation method, the reproduction value $R_0$ of a mutant is the spectral radius of the next generation matrix $\mathbf{F.V^{-1}}$, evaluated when the mutant is extremely rare, i.e. $M = D_{m} = D_{mm} = D_{mw} = 0$. Here it is the unique nonzero eigenvalue of $\mathbf{F.V^{-1}}$. Similar to the expression of $R^{res}_0$ of a resident, the expression of $R_0$ of a mutant also shows two routes of reproduction: via single infection or via double infections. As double infections in the definitive host can be a result of co-transmission and sequential transmission with a resident, the reproduction ratio of a mutant is more complex than that of a resident. In particular, it contains four compartments $R_0 = R_{d1} + R_{d2} + R_{d3} + R_s$, where $R_{d1}$, $R_{d2}$, and $R_{d3}$ are compartments of double infections route, and $R_s$ is the compartment of single infection route. In particular,
 
-\begin{align}
-R_{mix1} = \frac{f_{mw}}{\delta +3 \gamma  I_s} \frac{ (1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m }{\mu +\sigma_{mw}} D_w
-\end{align}
+\begin{align*}
+R_{d1} = \gamma  I_s \left( \frac{(1-p) \beta_m}{\alpha_m + d + \Pi_m} + \frac{2 p (1-q) \beta_{mw}}{\alpha_{mw} + d + \Pi_{mw}} \right)\frac{D_w}{\mu + \sigma_{mw}} \frac{f_{mw}}{\delta +3 \gamma  I_s}
+\end{align*}
+ 
+corresponds to the compartment where the mutant from the pool infects a susceptible intermediate host via either single infection or co-transmission with a resident. It then infects a definitive host that is already occupied by a resident, i.e. the mutant arrives after the resident, and it eventually reproduces.
 
-or it could infect a susceptible definitive host and the host is sequentially infected by a resident
+\begin{align*}
+R_{d2} = \gamma  I_s \left(\frac{\beta_m (1-p)}{\alpha_m + d + \Pi_m} + \frac{2 p (1-q) \beta_{mw}}{\alpha_{mw} + d + \Pi_{mw}}\right) \frac{D_s (\lambda_w + 2  (1-q) \lambda_{ww})}{(\mu + \sigma_{mw}) (\lambda_w  + 2 (1-q) \lambda_{ww} + \mu + \sigma_m)} \frac{f_{mw}}{\delta +3 \gamma  I_s}
+\end{align*}
 
-\begin{align}
-R_{mix2} = \frac{f_{mw}}{\delta +3 \gamma  I_s} \frac{(1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m (\beta_w I_w + (1-q) \beta_{ww} I_{ww})}{(\mu + \sigma_{mw}) (\beta_w I_w +  (1- q)\beta_{ww} I_{ww} + \mu + \sigma_m)} D_s
-\end{align}
+corresponds to the compartment where similar to $R_{d1}$ the mutant from the pool infects a susceptible intermediate host via either single infection or co-transmission with a resident. It then infects a susceptible definitive host which is then infected by a resident, i.e. the mutant arrives before the resident. Finally, the mutant releases offspring via the double infected definitive host.
 
-A mix-source born mutant could then cotransmit with a resident into an intermediate host. From this point, it could cotransmit with the resident into a susceptible definitive host
+\begin{align*}
+R_{d3} = \gamma  I_s \frac{2 p q \beta_{mw}}{\alpha_{mw} + d + \Pi_{mw}} \frac{D_s}{\mu + \sigma_{mw}} \frac{f_{mw}}{\delta +3 \gamma  I_s}
+\end{align*}
 
-\begin{align}
-R_{mix3} = \frac{f_{mw}}{\delta + 3 \gamma  I_s} \frac{2 p \gamma}{\alpha_{mw} + d + \Pi_{mw} I_s} \frac{q \beta_{mw}}{\mu + \sigma_{mw}} D_s
-\end{align}
+corresponds to the co-transmission compartment where the mutant co-transmit with a resident from the parasite pool into a susceptible intermediate host, and then into a susceptible definitive host, where it finally reproduces.
 
-or it could infect a definitive host that is already occupied by a resident
+\begin{align*}
+R_s = \gamma  I_s \left(\frac{(1-p) \beta_m}{\alpha_m + d + \Pi_m} + \frac{2 p (1-q) \beta_{mw}}{\alpha_{mw} + d + \Pi_{mw}}\right) \frac{D_s}{\lambda_w  + 2 (1-q) \lambda_{ww} + \mu + \sigma_m}\frac{f_m}{\delta +3 \gamma  I_s}
+\end{align*}
 
-\begin{align}
-R_{mix4} = \frac{f_{mw}}{\delta +3 \gamma  I_s} \frac{2 p \gamma}{\alpha_{mw} + d + \Pi_{mw}} I_s \frac{\beta_{mw} (1-q)}{\mu + \sigma_{mw}} D_w
-\end{align}
+corresponds to the compartment where the mutant the mutant from the pool again infects a susceptible intermediate host via either single infection or co-transmission with a resident. It then singly infects a susceptible host and releases offspring into the parasite pool. It should be noted that there is no double infections with two mutants in the expression of $R_0$ because we assume that mutation is so rare that the populations of hosts doubly infected with two mutants vanish and do not have any significant effect on $R_0$.
 
-or it could infect a susceptible definitive host and the host is then sequentially infected by a resident
-
-\begin{align}
-R_{mix5} = \frac{f_{mw}}{\delta + 3 \gamma  I_s} \frac{2 p \gamma }{\alpha_{mw} + d + \Pi_{mw}} I_s \frac{(1-q) \beta_{mw}  (\beta_w I_w +(1-q) \beta_{ww} I_{ww} )}{(\mu +\sigma_{mw}) (\beta_w I_w +  (1-q)\beta_{ww} I_{ww} +\mu + \sigma_m)} D_s
-\end{align}
-
-If a mutant is released from a definitive host that is singly infected, it could singly infect a susceptible intermediate host and then singly infect a susceptible definitive host
-
-\begin{align}
-R_{s1} = \frac{f_m}{\delta +3 \gamma  I_s} \frac{(1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m}{\beta_w I_w +  (1 - q) \beta_{ww} I_{ww} +\mu + \sigma_m} D_s
-\end{align}
-
-Alternatively, the mutant could co-transmit with the resident to a susceptible intermediate host, and then singly infect a susceptible definitive host
-
-\begin{align}
-R_{s2} = \frac{f_m}{\delta +3 \gamma  I_s} \frac{2 p \gamma }{\alpha_{mw} + d + \Pi_{mw}} I_s \frac{ (1-q)\beta_{mw}}{\beta_w I_w +  (1- q) \beta_{ww} I_{ww} +\mu +\sigma_m} D_s
-\end{align}
-
-The expression of $R_0$ suggests that if a mutant is born from a mixed source, i.e. it is released from a definitive host that are co-infected by a mutant and a resident, it will always ended up co-infected with a wild type in a definitive host. In contrast, if a mutant is born from a singly infected source, it will always ended up singly infected in a definitive host. Thus, there are reproduction routes that never occur in the expression of $R_0$. A mutant born from a mixed source and eventually ended up in single infection in a definitive host will have compartment reproduction ratios as followed
-
-\begin{align}
-& R_{mix6} = \frac{f_{mw}}{\delta + 3 \gamma I_s} \frac{(1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m}{\beta_w I_w + (1-q) \beta_{ww} I_{ww} + \mu + \sigma_m} D_s \\
-& R_{mix7} = \frac{f_{mw}}{\delta + 3 \gamma I_s} \frac{2 p \gamma}{\alpha_{mw} + d + Pi_{mw}} I_s \frac{(1-q)\beta_{mw}}{\beta_w I_w + (1-q) \beta_{ww} I_{ww} + \mu + \sigma_m} D_s
-\end{align}
-
-Using the same argument, a mutant born from a singly infected definitive host may eventually ended up in coinfection with a resident. Their compartment reproduction ratios can be expressed as followed
-
-\begin{align}
-& R_{s3} = \frac{f_m}{\delta + 3 \gamma I_s}  \frac{(1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m }{\mu +\sigma_{mw}} D_w \\
-& R_{s4} = \frac{f_{m}}{\delta +3 \gamma  I_s} \frac{(1-p) \gamma}{\alpha_m + d + \Pi_m} I_s \frac{\beta_m (\beta_w I_w + (1-q) \beta_{ww} I_{ww})}{(\mu + \sigma_{mw}) (\beta_w I_w +  (1- q)\beta_{ww} I_{ww} + \mu + \sigma_m)} D_s \\
-& R_{s5} = \frac{f_{m}}{\delta + 3 \gamma  I_s} \frac{2 p \gamma}{\alpha_{mw} + d + \Pi_{mw} I_s} \frac{q \beta_{mw}}{\mu + \sigma_{mw}} D_s \\
-& R_{s6} = \frac{f_{m}}{\delta +3 \gamma  I_s} \frac{2 p \gamma}{\alpha_{mw} + d + \Pi_{mw}} I_s \frac{\beta_{mw} (1-q)}{\mu + \sigma_{mw}} D_w \\
-& R_{s7} = \frac{f_{m}}{\delta + 3 \gamma  I_s} \frac{2 p \gamma }{\alpha_{mw} + d + \Pi_{mw}} I_s \frac{(1-q) \beta_{mw}  (\beta_w I_w +(1-q) \beta_{ww} I_{ww} )}{(\mu +\sigma_{mw}) (\beta_w I_w +  (1-q)\beta_{ww} I_{ww} +\mu + \sigma_m)} D_s
-\end{align}
 \section{Discussion}
 
 \textbf{Code availability}.
