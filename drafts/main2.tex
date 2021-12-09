@@ -219,9 +219,17 @@ We consider the system when the birth function $R$ is linear, that is, $R(I_s, I
 & D_{s0}^* = \frac{r - d}{\rho}
 \end{align*}
 
-This equilibrium is always unstable. In fact, we always observe cyclic behaviour of the equilibrium because at this equilibrium the jacobian matrix of system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has one imaginary eigen value with positive real part. This is in accordance with the Lotka-Voltera system using linear functions for prey birth and predation. Because the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite (which is often evaluate when the disease-free state is stable). Here, even if we solve the inequality $R_0 > 1$, which happens when the transmission rate from the environment to intermediate hosts $\gamma$ is greater than a threshold (the expression of the threshold is too complicated, hence it is not useful to write it here). In addition, the reproduction of the parasites has to be sufficiently large (again, the expression of the thresholds are too complicated such that it is useless to write it here).
+This equilibrium is always unstable. 
+We always observe cyclic behaviour of the equilibrium because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has one imaginary eigenvalue with a positive real part. 
+This follows from the Lotka-Voltera system using linear functions for prey birth and predation. 
+Because the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite (often evaluated when the disease-free state is stable). 
+Here, even if we solve the inequality $R_0 > 1$, which happens when the transmission rate from the environment to intermediate hosts $\gamma$ is greater than a threshold (the expression of the threshold is too complicated, hence it is not useful to write it here). 
+In addition, the reproduction of the parasites has to be sufficiently large (again, the expression of the thresholds are too complicated such that it is useless to write it here).
 
-In fact, our simulations show that the parasite cannot persist even when its reproduction ratio is greater than one (Figure \ref{fig:diseasefree:linear}). This result is, however, in agreement with the conclusion in \citet{Ripa:Evol:2013}, which suggests that it is harder for a mutant to invade a cyclic population. In our case, it is not the invasion of a mutant but a certain parasite in a cyclic disease-free host population. This issue deserves a more thorough investigation. However, as we focus on the evolutionary aspect of parasite manipulation, we use a non-linear birth function of intermediate hosts to obtain stable equilibrium for the invasion analysis.
+Our simulations show that the parasite cannot persist even when its reproduction ratio is greater than one (Figure \ref{fig:diseasefree:linear}). This result is, however, in agreement with the conclusion in \citet{Ripa:Evol:2013}, which suggests that it is harder for a mutant to invade a cyclic population. 
+In our case, it is not the invasion of a mutant but a specific parasite in a cyclic disease-free host population. 
+This issue deserves a more thorough investigation. 
+However, as we focus on the evolutionary aspect of parasite manipulation, we use a non-linear birth function of intermediate hosts to obtain stable equilibrium for the invasion analysis.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/diseasefree_linear}
@@ -236,14 +244,14 @@ The non-linear birth function of intermediate hosts is as followed
 R(I_w, I_s,I_{ww}) = r (I_s + I_w + I_{ww}) (1 - k (I_s + I_w + I_{ww}))
 \end{align*}
 
-where $k$ is the instraspecific competition coefficient. The disease-free equilibrium is as followed
+where $k$ is the intraspecific competition coefficient. The disease-free equilibrium is as follows
 
 \begin{align*}
 & I_s = \frac{\mu}{c \rho } \\
 & D_s = \frac{c \rho  (r-d) - k \mu  r}{c \rho ^2}
 \end{align*}
 
-This equilibrium is stable if
+This equilibrium is stable if,
 
 \begin{align*}
 & r > d \\
@@ -251,7 +259,10 @@ This equilibrium is stable if
 & \mu >\frac{4 c^2 \rho ^2 r - 4 c^2 d \rho ^2}{4 c k \rho r + k^2 r^2}
 \end{align*}
 
-The above conditions suggest that the intrinsic reproduction of intermediate hosts $r$ needs to be greater than their natural mortality rate $d$. More importantly, the intraspecific competition coefficient has to be within a range, that is, it is neither too small such that the population cannot grow to infinity nor too large such that the population cannot survive. Finally, the natural mortality rate of the definitive host has to be sufficiently large. Satisfying such conditions, we obtain a stable disease free equilibrium (Figure \ref{fig:diseasefree:nonlinear}).
+The above conditions suggest that the intrinsic reproduction of intermediate hosts $r$ needs to be greater than their natural mortality rate $d$. 
+More importantly, the intraspecific competition coefficient has to be within a range. 
+It is neither too small such that the population cannot grow to infinity nor too large such that the population cannot survive. 
+Finally, the natural mortality rate of the definitive host has to be sufficiently large. Satisfying such conditions, we obtain a stable disease-free equilibrium (Figure \ref{fig:diseasefree:nonlinear}).
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/diseasefree_nonlinear}
@@ -259,7 +270,9 @@ The above conditions suggest that the intrinsic reproduction of intermediate hos
 \label{fig:diseasefree:nonlinear}
 \end{figure}
 
-When a parasite is introduced in the disease-free equilibrium, it can spread if its reproduction ratio $R_0^{res} > 1$. Since the expression is complicated, we could not obtain solutions for this inequality without some assumptions. Assuming that double infections and single infection result in the same parasite virulence and parasite reproduciton, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$,and $f_w = \epsilon f_{ww}$, we found the the parasite can establish and spread in the population of intermediate and definitive hosts if its reproduction value in single infection $f_w$ is greater than a threshold (the expression of the threshold is rather complicated, therefore it is not useful to write down its expression) (Figure \ref{fig:bifurfw:nonlinear}).
+When a parasite is introduced in the disease-free equilibrium, it can spread if its reproduction ratio $R_0^{res} > 1$. 
+Since the expression is complicated, we could not obtain solutions for this inequality without assumptions. 
+Assuming that double infections and single infection result in the same parasite virulence and parasite reproduction, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$,and $f_w = \epsilon f_{ww}$, we found the the parasite can establish and spread in the population of intermediate and definitive hosts if its reproduction value in single infection $f_w$ is greater than a threshold (the expression of the threshold is rather complicated, therefore it is not useful to write down its expression) (Figure \ref{fig:bifurfw:nonlinear}).
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/bifurcation_fw_NL.jpg}
@@ -267,7 +280,8 @@ When a parasite is introduced in the disease-free equilibrium, it can spread if 
 \label{fig:bifurfw:nonlinear}
 \end{figure}
 
-In addition, if reproduction in single infection is small but reproduction in double infection is sufficiently large then the parasite population can settle in the population of intermediate and definitive hosts (Figure \ref{fig:bifurepsilonfw:nonlinear}).
+Suppose reproduction in single-infection is small, but in double-infection is sufficiently large. 
+In that case, the parasite population settles in the intermediate and definitive hosts (Figure \ref{fig:bifurepsilonfw:nonlinear}).
 
 \begin{figure}
 \includegraphics[width = \textwidth]{Figures/bifurcation_epsilonfw_NL.jpg}
@@ -275,7 +289,8 @@ In addition, if reproduction in single infection is small but reproduction in do
 \label{fig:bifurepsilonfw:nonlinear}
 \end{figure}
 
-The transmission rate from intermediate hosts to definitive hosts, which is determined by parasite manipulation strategy, also play an important role in the existence of the parasite population. If this transmission rate is too small, then the parasite goes extinct regardless of its reproduction value (Figure \ref{fig:bifurbetawfw:nonlinear}).
+The transmission rate from intermediate hosts to definitive hosts, which is determined by parasite manipulation strategy, also play an essential role in the existence of the parasite population. 
+If this transmission rate is too low, then the parasite goes extinct regardless of its reproduction value (Figure \ref{fig:bifurbetawfw:nonlinear}).
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/bifurcation_betawfw_NL.jpg}
@@ -283,7 +298,8 @@ The transmission rate from intermediate hosts to definitive hosts, which is dete
 \label{fig:bifurbetawfw:nonlinear}
 \end{figure}
 
-We then consider the evolution of the host manipulation strategy $\beta_w$. Assuming that mutation is so rare, a mutant with a manipulation strategy $\beta_m$ that is slightly different from the resident arises when the resident parasite is at its stable ecological equilibrium.
+We then consider the evolution of the host manipulation strategy $\beta_w$. 
+Assuming that mutation is so rare, a mutant with a manipulation strategy $\beta_m$ that is slightly different from the resident arises when the resident parasite is at its stable ecological equilibrium.
 
 \subsection{Mutant dynamics}
 Considering that a resident parasite with dynamics (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) is at its non-zero equilibrium ($W^*, I_s^*, I_w^*, I_{ww}^*, D_s^*, D_w^*, D_{ww}^*$), the dynamics of a rare mutant parasite that enter the resident population will be
@@ -306,7 +322,8 @@ where $\eta =\gamma (M + W^*)$ is the force of infection of parasites in the env
 \subsection{Invasion fitness}
 The invasion fitness of the mutant will be calculated using the next generation method \citep{hurford:JRSI:2010}.
 
-The matrix $\mathbf{A}$ that describes the dynamics (\ref{odes:mutdynamics}) of the mutant can be written as $\mathbf{A} = \mathbf{F} - \mathbf{V}$, where $\mathbf{F}$ is the matrix that describes the contribution of a compartment to the next generation. Because we consider a complex lifecycle parasite, a new generation begins with the reproduction and release of parasites into the environment, and matrix $\mathbf{F}$ can be written as
+The matrix $\mathbf{A}$ that describes the dynamics (\ref{odes:mutdynamics}) of the mutant can be written as $\mathbf{A} = \mathbf{F} - \mathbf{V}$, where $\mathbf{F}$ is the matrix that describes the contribution of a compartment to the next generation. 
+Because we consider a complex lifecycle parasite, a new generation begins with the reproduction and release of parasites into the environment, and matrix $\mathbf{F}$ can be written as,
 
 \begin{align*}
     \mathbf{F} = 
