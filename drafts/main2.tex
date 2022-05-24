@@ -100,28 +100,32 @@ In this manuscript we focus on dissecting the fundamental trade-off between tran
 
 \section{Model}
 We focus on the complex lifecycle of a trophically transmitted parasite. 
-Parasites reproduce inside their definitive hosts and are released into the environment. 
-They infect intermediate hosts when the hosts encounter the parasite pool. 
-When an infected intermediate host is consumed by a definitive host, the definitive host gets infected and the parasite complete its lifecycle.
+Thus the parasites can move through multiple hosts and reproduce inside their definitive hosts before being released into the environment. 
+The parasites pass through the intermediate hosts between the environment and the definitive host.
+When a definitive host consumes an infected intermediate host, the definitive host gets infected, and the parasite completes its lifecycle.
 
-For simplicity, intermediate and definitive hosts can be infected by one (single infection) or at most two parasites (double infections). Assuming that infection always happens whenever there are encounters between parasites and uninfected hosts, $p$ is the probability that two parasites in the parasite pool co-transmit to an intermediate host, and $1-p$ is the probability that a single parasites enters an intermediate host. 
-When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that both parasites co-transmit to the definitive host, and $1-q$ is the probability that only one parasite successfully transmits. 
+For simplicity, intermediate and definitive hosts can be infected by one (single infection) or at most two parasites (double infections). 
+The probability that two parasites in the parasite pool co-transmit to an intermediate host is denoted by  $p$, and thus $1-p$ is the probability that a single parasite enters an intermediate host. 
+This formulation assumes that infection always happens whenever there are encounters between parasites and uninfected hosts.
+When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that both parasites co-transmit to the definitive host.
+With probability $1-q$, only one parasite successfully transmits. 
 The dynamics of a complex lifecycle parasite that requires two hosts is described by the following ODEs, firstly for the intermediate host as,
-
+%
 \begin{align}
 \frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - \Pi_s(D_s, D_w, D_{ww}) I_s  - \eta_w  I_s \nonumber \\ 
 \frac{dI_w}{dt} &=  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \Pi_w(D_s, D_w, D_{ww}, \beta_w) I_w \label{odes:ihosts} \\
 \frac{dI_{ww}}{dt} &= p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww} \nonumber
 \end{align}
-
-where  $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, which is a function of both infected and noninfected individuals. 
-In other words, all types of intermediate hosts can reproduce. 
-$\Pi_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on respectively, susceptible, singly infected and doubly infected intermediate hosts. 
+%
+where $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, which is a function of both infected and uninfected individuals. 
+%In other words, all types of intermediate hosts can reproduce. 
+$\Pi_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on susceptible, singly infected and doubly infected intermediate hosts respectively. 
 The predation function depends on the density of the definitive hosts and the manipulative strategies of parasites in the intermediate hosts. 
-In particular, if an intermediate host is infected by a single parasite, the manipulation strategy is $\beta_w$, and if it is infected by two parasites, the manipulation strategy is $\beta_{ww}$. 
-There is a link between $\beta_w$ and $\beta_{ww}$, but we need not specify the link for now. 
-$\eta_w = \gamma W$ is the force of infection by parasites in the environment. 
-$\lambda_i = \beta_i I_i$, where $i = \{ w, ww\}$, is the force of infection that corresponds respectively to singly infected intermediate host ($I_w$), or doubly infected intermediate hosts ($I_{ww}$). 
+In particular, if a single parasite infects an intermediate host, the manipulation strategy is $\beta_w$. 
+If two parasites infect it, the manipulation strategy is $\beta_{ww}$. 
+The link between $\beta_w$ and $\beta_{ww}$, is explored further. 
+The force of infection by parasites in the environment is denoted by $\eta_w = \gamma W$. 
+The force of infection that corresponds respectively to singly infected intermediate host ($I_w$), or doubly infected intermediate hosts ($I_{ww}$) is denoted by $\lambda_i = \beta_i I_i$, where $i = \{ w, ww\}$. 
 
 For the definitive hosts we have,
 \begin{align}
@@ -130,7 +134,7 @@ For the definitive hosts we have,
 \frac{dD_{ww}}{dt} &= q \lambda_{ww} D_s + (2 (1 - q) \lambda_{ww} + \lambda_w) D_w - (\mu + \sigma_{ww}) D_{ww} \nonumber
 \end{align}
 %
-where $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts, which is a function of population density of both intermediate and definitive hosts, infected or non-infected alike. 
+where $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts, which is a function of population density of both intermediate and definitive hosts, infected or uninfected alike. 
 The dynamics of the parasites in the environment are then given solely by,
 \begin{align}
 	\frac{dW}{dt} &= f_w D_w + f_{ww} D_{ww} - \delta W - \eta_w I_s \label{odes:eparasite}
@@ -138,7 +142,7 @@ The dynamics of the parasites in the environment are then given solely by,
 
 
 Definitions of different parameters can be found in Table \ref{table:varpardescription}.
-
+%
 \begin{table}[!ht]
 \begin{tabular}{|p{2.5cm}|p{12cm}|} 
 \hline
@@ -179,7 +183,8 @@ $\delta$ & Natural death rate of parasites in the environment \\
 
 For simplicity, we assume that there is no sequential infection when parasites transmit from the environment to intermediate hosts. 
 Sequential infection can happen when parasites transmit from intermediate hosts to definitive hosts. 
-Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts. The dynamics of the system are illustrated in figure (\ref{fig:schematic}).
+Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts. 
+The dynamics of the system are illustrated in figure (\ref{fig:schematic}).
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/schematic}
