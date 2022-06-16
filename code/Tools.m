@@ -34,14 +34,11 @@ system: the odes to be solved (form: dXdt = A * X, where X is the vector of vari
 Begin["`Private`"]
 
 
-MakeSystem[var_, vart_, derivative_, sys_]:=
-Module[{v, vt, S, St, dvdt, Sf},
-v = var;
-vt = vart;
-dvdt = derivative;
-S = sys;
-St = S/.Thread[v-> vt]; 
-Thread[dvdt == St]]
+MakeSystem[var_, t_, sys_]:=
+Module[{varOft, sysOft},
+varOft = Through[var[t]];
+sysOft = sys/.Thread[var-> varOft]; 
+Thread[D[varOft, t] == sysOft]]
 
 
 FollowRoot[system_,commonpars_,followPar_,range_,variables_, initialEq_]:=
