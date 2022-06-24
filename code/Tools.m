@@ -31,7 +31,19 @@ system: the odes to be solved (form: dXdt = A * X, where X is the vector of vari
 "
 
 
-ListStableMarkTwoParameters::usage = "ListStableMarkTwoParameters[jacobmatrix, parcommon, bifurParNames, listbifurParsValues, equiList, useColor]"
+ListStableMarkTwoParameters::usage = "ListStableMarkTwoParameters[jacobmatrix, parcommon, bifurParNames, listbifurParsValues, equiList, useColor]
+Mark a list of equilibrium corresponding to two bifurcation values, depending on its stability
+jacobmatrix: jacobian matrix of the system (form: {{a, b}, {c, d}});
+parcommon: values of fixed parameters (form: {p1 -> 2, p2-> 3};
+bifurParNames: name of the two bifurcation parameters (form: {bifurpar1 , bifurpar2});
+listbifurParsValues: list of corresponding pair of bifurcation parameters with the list of equilibrium (form: {{3.4, 3}, {2.4, 4}})
+equiList: list of values of equilibrium corresponds with different values of bifurcation parameters (form: {{var1 -> 4.5, var2 -> 44}, {var1 -> 4.6, var2-> 45}};
+useColor: True if the stability is marked as different color, False if the stability is marked as different markers
+Output: 
+a list of symbols that correspond to the stability of the equilibrium, symbol '*' if the equilibrium is unstable, symbol '.' if the equilibrium is stable
+(form: {*,*,.,.})
+If colorUse == True, the stable equilibrium will have different color than the unstable equilibrium
+"
 
 
 Begin["`Private`"]
@@ -86,50 +98,36 @@ allNeg = AllTrue[Thread[Re[eiv]<-10^-10], TrueQ];
 Which[anyZero, "*",anyPos, "*", allNeg, "."]]
 
 
-ListStableMark[jacobmatrix_, parcommon_, parfollow_, range_,equiList_]:=
-Module[{jmat, pc, pf, r,eql, eiv, ps},
-On[Assert];
-Assert[Head[jacobmatrix] == List, "the jacobian matrix has not been defined"];
+SingleStableColor[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, colorlist_]:=
+Module[{anyZero, anyPos, allNeg},
 jmat = jacobmatrix;
 pc = parcommon;
-pf = parfollow;
-r=range;
-eql = equiList;
-MapThread[SingleStableMark,{ConstantArray[jmat, Length[eql]], ConstantArray[pc, Length[eql]],Thread[pf->r], eql}]]
+pf = parsfollow;
+eq = equilibrium;
+eiv = Eigenvalues[jacobmatrix/.parcommon/.parsfollow/.equilibrium];
+anyZero = AnyTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
+anyPos = AnyTrue[Thread[Re[eiv]>10^-10], TrueQ];
+allNeg = AllTrue[Thread[Re[eiv]<-10^-10], TrueQ];
+Which[anyZero, colorlist[[2]],anyPos, colorlist[[1]], allNeg, colorlist[[1]]]]
+
+
+ListStableMark[jacobmatrix_, parcommon_, parfollow_, range_,equiList_]:=
+ MapThread[SingleStableMark,
+		{ConstantArray[jacobmatrix, Length[equiList]], 
+		 ConstantArray[parcommon, Length[equiList]], Thread[parfollow -> range], equiList}];
 
 
 NSolveCodim2Positive[system_, commonpars_, bifurpar1_, bifurpar2_,bfparsName_, equisymbol_,variables_]:=
 Module[
-{sys, cpar,bfpar1, bfpar2,  vars, bfpName,eqsym,parspairVal, eqAll, eqpos},
-sys = system;
-cpar = commonpars;
-bfpar1 = bifurpar1;
-bfpar2 = bifurpar2;
-bfpName = bfparsName;
-eqsym = equisymbol;
-vars = variables;
-eqAll = NSolve[Thread[(sys/.cpar/.bfpar1/. bfpar2)==0], vars, Reals];
-eqpos = Select[eqAll,And@@Thread[(vars/.# )> 0]&];
-parspairVal = {bfpar1[[1]][[2]], bfpar2[[1]][[2]]};
-If[eqpos != {}, Join[{bfpName -> parspairVal}, {eqsym -> eqpos[[1]]}] , {}]
+{eqAll, parspairVal, eqpos},
+eqAll = NSolve[Thread[(system/.commonpars/.bifurpar1/.bifurpar2)==0], variables, Reals];
+eqpos = Select[eqAll,And@@Thread[(variables/.# )> 0]&];
+parspairVal = {bifurpar1[[1]][[2]], bifurpar2[[1]][[2]]};
+If[eqpos != {}, Join[{bfparsName -> parspairVal}, {equisymbol -> eqpos[[1]]}], Unevaluated@Sequence[]]
 ]
 
 
 ListStableMarkTwoParameters[jacobmatrix_, parcommon_, bifurParNames_,listbifurParsValues_, equiList_, useColor_]:=
-(* Mark a list of equilibrium corresponding to two bifurcation values, depending on its stability
-Input:
-jacobmatrix: jacobian matrix of the system (form: {{a, b}, {c, d}});
-parcommon: values of fixed parameters (form: {p1 -> 2, p2-> 3};
-bifurParNames: name of the two bifurcation parameters (form: {bifurpar1 , bifurpar2});
-listbifurParsValues: list of corresponding pair of bifurcation parameters with the list of equilibrium (form: {{3.4, 3}, {2.4, 4}})
-equiList: list of values of equilibrium corresponds with different values of bifurcation parameters (form: {{var1 -> 4.5, var2 -> 44}, {var1 -> 4.6, var2-> 45}};
-useColor: True if the stability is marked as different color, False if the stability is marked as different markers
-Output: 
-a list of symbols that correspond to the stability of the equilibrium, symbol "*" if the equilibrium is unstable, symbol "." if the equilibrium is stable
-(form: {*,*,.,.})
-If colorUse == True, the stable equilibrium will have different color than the unstable equilibrium
-*)
-
 Module[{marklist, listval},
 listval = Thread[bifurParNames->#]&/@ listbifurParsValues;
 If[useColor,
