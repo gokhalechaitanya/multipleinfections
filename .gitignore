@@ -7,3 +7,5 @@ drafts/*.toc
 drafts/*.bbl
 drafts/*.blg
 drafts/*.pdf
+code/Tools.m.orig
+code/trophicaltransmission_numerical.nb.orig
