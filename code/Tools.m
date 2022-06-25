@@ -1,5 +1,8 @@
 (* ::Package:: *)
 
+n 
+
+
 BeginPackage["Tools`"];
 
 
@@ -10,10 +13,20 @@ sys: the ode system (form: {a var1 + b var2,  x var2 - y var2 var3});
 "
 
 
-FollowRoot::usage = "FollowRoot[system, commonpars, followPar, range, variables, initialEq] return a list of equilibrium with respect to values of a parameter (using function FindRoot)"
+FollowRoot::usage = "FollowRoot[system, commonpars, followPar, range, variables, initialEq] 
+return a list of equilibrium with respect to values of a parameter (using function FindRoot)"
 
 
-FollowRootTwoParameters::usage = "FollowRootTwoParameters[system, commonpars, followPar1, range1, followPar2, range2, variables, initialEq, minEqlimit, maxiteration:1000, precisionGoal:MachinePrecision] return a list of equilibrium with respect to values of two parameters"
+NSolvePositive::usage = "NSolvePositive[system_, commonpars_, followPar_, variables_, equisymbol_]
+Find all positive solutions using NSolve (can be use in parallel computation)
+system: the dynamical system
+commonpars: common parameters
+followPar: bifurcation parameter and its value (form: {a -> 0.1}
+variables: names of the variables of the dynamical system (form: {N1, N2})
+equisymbol: the name of the solution to make rule (used for latter extraction of the solutions)
+
+return a list of bifurcation parameter values and their corresponding solutions
+"
 
 
 ListStableMark::usage = "ListStableMark[jacobmatrix, parcommon, parfollow, range, equiList] return a list of symbols that correspond to the stability of the equilibrium, symbol '*' if the equilibrium is unstable, symbol '.' if the equilibrium is stable(form: {*,*,.,.}) 
@@ -57,23 +70,49 @@ Thread[D[varOft, t] == sysOft]]
 
 
 FollowRoot[system_,commonpars_,followPar_,range_,variables_, initialEq_]:=
-Module[{sys,cpar,fp, r,v,en, ieq, eq, pars, results, initValues, valuesIfFalse},
-sys=system;
-cpar=commonpars;
-fp=followPar; 
-r = range;
-v=variables;
-ieq = initialEq;
+Module[{iEq, eq, pars, results, initValues, isResultsWithinRange, checkresults},
+iEq = initialEq; 
 results={};
 
-Do[eq=ieq;
-pars = Join[cpar, {fp-> i}];
-initValues = Thread[{v, v/.ieq, 0, Infinity}];
-valuesIfFalse = Thread[v->-1];
-ieq = Check[FindRoot[Thread[sys == 0]/.pars, initValues, MaxIterations->1000], valuesIfFalse, FindRoot::reged];
-If[AllTrue[v/.ieq, #==-1&], Break[]];
-results = AppendTo[results, ieq], {i, range}];
-results]
+Do[
+	eq=iEq;
+	pars = Join[commonpars, {followPar -> i}];
+	initValues = Thread[{variables, variables/.iEq, 0, Infinity}];
+	isResultsWithinRange = Thread[variables->-1];
+	iEq = Check[
+				FindRoot[Thread[system == 0]/.pars, initValues, MaxIterations->2000, PrecisionGoal->Infinity], 
+				isResultsWithinRange, 
+				FindRoot::reged
+				];
+	checkresults = system/.pars/.iEq;
+	If[
+		AllTrue[variables/.iEq, #==-1&] || AnyTrue[checkresults, # > 10^-10&], 
+		Break[]
+		];
+	results = AppendTo[results, iEq], {i, range}];
+	results
+	]
+
+
+NSolvePositive[system_, commonpars_, followPar_, variables_, equisymbol_]:=
+Module[
+{eqAll, eqpos, nbpos, fparlist},
+On[Assert];
+Assert[Head[followPar]=== Rule];
+eqAll = NSolve[Thread[(system/.commonpars/.followPar) == 0], variables, Reals];
+eqpos = Select[eqAll, AllTrue[variables/.# , Positive]&];
+nbpos = Length[eqpos];
+If[
+	eqpos == {}, 
+	Unevaluated@Sequence[],
+	If[
+		nbpos == 1,
+		{Join[{followPar}, {equisymbol -> eqpos[[1]]}]},
+		fparlist = ConstantArray[followPar, nbpos];
+		Thread[{fparlist, Thread[equisymbol -> eqpos]}]
+		]
+	]
+]
 
 
 SingleStableMark[jacobmatrix_, parcommon_, parsfollow_, equilibrium_]:=
@@ -123,7 +162,8 @@ Module[
 eqAll = NSolve[Thread[(system/.commonpars/.bifurpar1/.bifurpar2)==0], variables, Reals];
 eqpos = Select[eqAll,And@@Thread[(variables/.# )> 0]&];
 parspairVal = {bifurpar1[[1]][[2]], bifurpar2[[1]][[2]]};
-If[eqpos != {}, Join[{bfparsName -> parspairVal}, {equisymbol -> eqpos[[1]]}], Unevaluated@Sequence[]]
+If[
+	eqpos == {}, Join[{bfparsName -> parspairVal}, {equisymbol -> eqpos[[1]]}], Unevaluated@Sequence[]]
 ]
 
 
