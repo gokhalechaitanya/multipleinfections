@@ -1,62 +1,71 @@
 (* ::Package:: *)
 
-n 
-
-
 BeginPackage["Tools`"];
 
 
 MakeSystem::usage = "MakeSystem[var, t, sys] return a dynamical system to be used for NDSolve 
-var: variables in an ode system (form: {var1, var2});
-t: time;
-sys: the ode system (form: {a var1 + b var2,  x var2 - y var2 var3});
+var (List): variables in an ode system (form: {var1, var2});
+t (Symbol): time;
+sys (List): the ode system (form: {a var1 + b var2,  x var2 - y var2 var3});
 "
 
 
-FollowRoot::usage = "FollowRoot[system, commonpars, followPar, range, variables, initialEq] 
+FollowRoot::usage = "FollowRoot[system,commonpars,followPar,range,variables, initialEq] 
+system (List): the dynamical system
+commonpars (List): fixed parameters
+followPar (Symbol): name of the bifurcation parameter
+range (List): values of the bifurcation parameter
+variables (List): list of Symbol of the variables
+initialEq (List): initial values of the equilibrium (from: {x1 -> value1, x2 -> value2})
 return a list of equilibrium with respect to values of a parameter (using function FindRoot)"
 
 
-NSolvePositive::usage = "NSolvePositive[system_, commonpars_, followPar_, variables_, equisymbol_]
+NSolvePositive::usage = "NSolvePositive[system, commonpars, followPar, variables, equisymbol]
 Find all positive solutions using NSolve (can be use in parallel computation)
-system: the dynamical system
-commonpars: common parameters
-followPar: bifurcation parameter and its value (form: {a -> 0.1}
-variables: names of the variables of the dynamical system (form: {N1, N2})
-equisymbol: the name of the solution to make rule (used for latter extraction of the solutions)
+
+system (List): the dynamical system
+commonpars (List of Rule): common parameters
+followPar (Rule): bifurcation parameter value (form: a -> 0.1)
+variables (List of Symbol): names of the variables of the dynamical system (form: {N1, N2})
+equisymbol (Symbol): the name of the solution to make rule (used for latter extraction of the solutions)
 
 return a list of bifurcation parameter values and their corresponding solutions
 "
 
 
-ListStableMark::usage = "ListStableMark[jacobmatrix, parcommon, parfollow, range, equiList] return a list of symbols that correspond to the stability of the equilibrium, symbol '*' if the equilibrium is unstable, symbol '.' if the equilibrium is stable(form: {*,*,.,.}) 
-jacobmatrix: jacobian matrix of the system (form: {{a, b}, {c, d}});
-parcommon: values of fixed parameters (form: {p1 -> 2, p2-> 3};
-parfollow: bifurcation parameter (form: symbol of the bifurcation parameter);
-range: values of the bifurcation parameter (form: {0.1, 0.2});
-equiList: list of values of equilibrium corresponds with different values of bifurcation parameter (form: {{var1 -> 4.5, var2 -> 44}, {var1 -> 4.6, var2-> 45}};
+ListStableMark::usage = "ListStableMark[jacobmatrix, parcommon, parfollow, range, equiList, markerCode:{'@', '*', '.'}
+return a list of symbols that correspond to the stability of the equilibrium 
+
+jacobmatrix (Nested List): jacobian matrix of the system (form: {{a, b}, {c, d}});
+parcommon (List of Rule): values of fixed parameters (form: {p1 -> 2, p2-> 3};
+parfollow (Symbol): bifurcation parameter (form: symbol of the bifurcation parameter);
+range (List): values of the bifurcation parameter (form: {0.1, 0.2});
+equiList (Nested List of Rule): list of values of equilibrium corresponds with different values of bifurcation parameter (form: {{var1 -> 4.5, var2 -> 44}, {var1 -> 4.6, var2-> 45}};
+markerCode (List): by default cycle: '@', unstable equilibrium '*', stable equilibrium: '.'
 "
 
 
 NSolveCodim2Positive::usage = "NSolveCodim2Positive[system, commonpars, bifurpar1, bifurpar2, bfparsName, equisymbol, variables]
  Find only positive solution varying two parameters, using NSolve (To be used in Parallele Table to follow the positive equilibrium)
-system: the odes to be solved (form: dXdt = A * X, where X is the vector of variables and A is the characteristic matrix);\[IndentingNewLine]commonpars: list of the value of fixed parameters (form: {p1 -> 4, p2 -> 2, ..., pn -> 43});\[IndentingNewLine]bifurpar1: the value of the bifurcation parameter 1 (form: {pb1 -> 3.4});\[IndentingNewLine]bifurpar2: the value of the bifurcation parameter 2 (form: {pb2 -> 1.2});\[IndentingNewLine]bfparsName: symbol of the two bifurcation parameter (form: pb1pb2);\[IndentingNewLine]variables: list of the variables to be solved (form: {v1, v2, v3});\[IndentingNewLine]return a list of the values of the two bifurcation parameters and its corresponding positive equilibrium\[IndentingNewLine](form: {pb1pb2 -> {2, 2}, v1-> 4, v2-> 3, v3-> 4.5}}
+
+system (List): the odes to be solved (form: dXdt = A * X, where X is the vector of variables and A is the characteristic matrix);\[IndentingNewLine]commonpars (List of Rule): list of the value of fixed parameters (form: {p1 -> 4, p2 -> 2, ..., pn -> 43});\[IndentingNewLine]bifurpar1 (Rule): the value of the bifurcation parameter 1 (form: {pb1 -> 3.4});\[IndentingNewLine]bifurpar2 (Rule): the value of the bifurcation parameter 2 (form: {pb2 -> 1.2});\[IndentingNewLine]bfparsName: symbol of the two bifurcation parameter (form: pb1pb2);\[IndentingNewLine]variables (List of Symbol): list of the variables to be solved (form: {v1, v2, v3});\[IndentingNewLine]return a list of the values of the two bifurcation parameters and its corresponding positive equilibrium\[IndentingNewLine](form: {pb1pb2 -> {2, 2}, v1-> 4, v2-> 3, v3-> 4.5}}
 "
 
 
-ListStableMarkTwoParameters::usage = "ListStableMarkTwoParameters[jacobmatrix, parcommon, bifurParNames, listbifurParsValues, equiList, useColor]
+ListStableMarkTwoParameters::usage = "ListStableMarkTwoParameters[jacobmatrix, parcommon, bifurParNames, listbifurParsValues, equiList, markerCode:{'@', '*', '.'}, useColor:False]
 Mark a list of equilibrium corresponding to two bifurcation values, depending on its stability
-jacobmatrix: jacobian matrix of the system (form: {{a, b}, {c, d}});
-parcommon: values of fixed parameters (form: {p1 -> 2, p2-> 3};
-bifurParNames: name of the two bifurcation parameters (form: {bifurpar1 , bifurpar2});
-listbifurParsValues: list of corresponding pair of bifurcation parameters with the list of equilibrium (form: {{3.4, 3}, {2.4, 4}})
-equiList: list of values of equilibrium corresponds with different values of bifurcation parameters (form: {{var1 -> 4.5, var2 -> 44}, {var1 -> 4.6, var2-> 45}};
-useColor: True if the stability is marked as different color, False if the stability is marked as different markers
-Output: 
-a list of symbols that correspond to the stability of the equilibrium, symbol '*' if the equilibrium is unstable, symbol '.' if the equilibrium is stable
-(form: {*,*,.,.})
-If colorUse == True, the stable equilibrium will have different color than the unstable equilibrium
+
+jacobmatrix (Nested List): jacobian matrix of the system (form: {{a, b}, {c, d}});
+parcommon (List of Rule): values of fixed parameters (form: {p1 -> 2, p2-> 3};
+bifurParNames (List of Symbol): name of the two bifurcation parameters (form: {bifurpar1 , bifurpar2});
+listbifurParsValues (Nested List): list of corresponding pair of bifurcation parameters with the list of equilibrium (form: {{3.4, 3}, {2.4, 4}})
+equiList (Nested List of Rule): list of values of equilibrium corresponds with different values of bifurcation parameters (form: {{var1 -> 4.5, var2 -> 44}, {var1 -> 4.6, var2-> 45}};
+useColor (Boolean) (default = False): True if colors are used to mark stability, False if the markers are used to mark the stability
 "
+
+
+MakeListPlotData::usage = "MakeListPlotData[xcoord, ycoord]
+Create data for list plot where each point can be a different color using PlotStyle option"
 
 
 Begin["`Private`"]
@@ -64,13 +73,24 @@ Begin["`Private`"]
 
 MakeSystem[var_, t_, sys_]:=
 Module[{varOft, sysOft},
+
+On[Assert];
+Assert[Head@t===Symbol];
+Thread[(Head/@var)===ConstantArray[Symbol, Length@var]];
+
 varOft = Through[var[t]];
 sysOft = sys/.Thread[var-> varOft]; 
 Thread[D[varOft, t] == sysOft]]
 
 
 FollowRoot[system_,commonpars_,followPar_,range_,variables_, initialEq_]:=
-Module[{iEq, eq, pars, results, initValues, isResultsWithinRange, checkresults},
+Module[{nbvar, iEq, eq, pars, results, initValues, isResultsWithinRange, checkresults},
+
+nbvar = Length@initialEq;
+On[Assert];
+Thread[(Head/@variables) === ConstantArray[Rule, nbvar]];
+Thread[(Head/@initialEq)=== ConstantArray[Rule, nbvar]];
+
 iEq = initialEq; 
 results={};
 
@@ -94,12 +114,14 @@ Do[
 	]
 
 
-NSolvePositive[system_, commonpars_, followPar_, variables_, equisymbol_]:=
+NSolvePositive[system_, commonpars_, followPar_, variables_, equisymbol_, precision_:MachinePrecision]:=
 Module[
 {eqAll, eqpos, nbpos, fparlist},
+
 On[Assert];
 Assert[Head[followPar]=== Rule];
-eqAll = NSolve[Thread[(system/.commonpars/.followPar) == 0], variables, Reals];
+
+eqAll = NSolve[Thread[(system/.commonpars/.followPar) == 0], variables, Reals, WorkingPrecision->precision];
 eqpos = Select[eqAll, AllTrue[variables/.# , Positive]&];
 nbpos = Length[eqpos];
 If[
@@ -122,8 +144,7 @@ jacobmatrix: jacobian matrix of the system (form: {{a, b}, {c, d}});
 parcommon: values of fixed parameters (form: {p1 -> 2, p2-> 3};
 parsfollow: bifurcation parameter which could be one or two parameters(form: {p4 -> 3.4} for one parameter, {p2 -> 1, p4 -> 4} for two parameters);
 equilibrium: values of equilibrium (form: {var1 -> 4.5, var2 -> 44};
-Output:
- symbol "*" if the equilibrium is unstable, symbol "." if the equilibrium is stable
+markerlist: list of marker that one wish to set, markerlist[[1]]: cycle, markerlist[[2]]: unstable, markerlist[[3]]: stable
 *)
 Module[
 {eiv, anyZero, anyPos, allNeg, ps},
@@ -135,7 +156,8 @@ Which[anyZero, markerlist[[1]], anyPos, markerlist[[2]], allNeg, markerlist[[3]]
 ]
 
 
-SingleStableColor[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, colorlist_, opacity_:0.3, pointsize_:0.03]:=
+SingleStableColor[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, colorlist_, opacity_:0.5, pointsize_:0.02]:=
+(*Similar to the SingleStableMark function, but instead of returning the mark, this function returns the colors*)
 Module[{eiv, anyZero, anyPos, allNeg},
 eiv = Eigenvalues[jacobmatrix/.parcommon/.parsfollow/.equilibrium];
 anyZero = AnyTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
@@ -161,10 +183,10 @@ ListStableMark[jacobmatrix_, parcommon_, parfollow_, range_,equiList_, markerCod
 ]
 
 
-NSolveCodim2Positive[system_, commonpars_, bifurpar1_, bifurpar2_,bfparsName_, equisymbol_,variables_]:=
+NSolveCodim2Positive[system_, commonpars_, bifurpar1_, bifurpar2_,bfparsName_, equisymbol_,variables_, precision_:MachinePrecision]:=
 Module[
 {eqAll, parspairVal, eqpos, nbpos, fparlist},
-eqAll = NSolve[Thread[(system/.commonpars/.bifurpar1/.bifurpar2)==0], variables, Reals];
+eqAll = NSolve[Thread[(system/.commonpars/.bifurpar1/.bifurpar2)==0], variables, Reals, WorkingPrecision->precision];
 eqpos = Select[eqAll,And@@Thread[(variables/.# )> 0]&];
 nbpos = Length[eqpos];
 parspairVal = {bifurpar1[[1]][[2]], bifurpar2[[1]][[2]]};
@@ -188,7 +210,8 @@ listval = Thread[bifurParNames->#]&/@ listbifurParsValues;
 lenEqList = Length[equiList];
 markers = ConstantArray[markerCode, lenEqList];
 If[useColor,
-	Head[markerCode[[1]]] === RGBColor;
+	On[Assert];
+	Head[markerCode[[1]]] === RGBColor//Assert;
 	marklist = MapThread[
 						SingleStableColor,
 						{ConstantArray[jacobmatrix, lenEqList], 
@@ -203,6 +226,9 @@ If[useColor,
 						 equiList,
 						 markers}]]
 ]
+
+
+MakeListPlotData[xcoord_, ycoord_]:={#}& /@Transpose[{xcoord, ycoord}]
 
 
 End[]
