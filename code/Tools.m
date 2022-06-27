@@ -115,7 +115,7 @@ If[
 ]
 
 
-SingleStableMark[jacobmatrix_, parcommon_, parsfollow_, equilibrium_]:=
+SingleStableMark[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, markerlist_:{"@", "*", "."}]:=
 (* Mark an equilibrium depending on its stability 
 Input:
 jacobmatrix: jacobian matrix of the system (form: {{a, b}, {c, d}});
@@ -125,54 +125,83 @@ equilibrium: values of equilibrium (form: {var1 -> 4.5, var2 -> 44};
 Output:
  symbol "*" if the equilibrium is unstable, symbol "." if the equilibrium is stable
 *)
-Module[{jmat, pc, pf, r,eq, eiv, anyZero, anyPos, allNeg, ps},
-jmat = jacobmatrix;
-pc = parcommon;
-pf = parsfollow;
-eq = equilibrium;
-eiv = Eigenvalues[jmat/.pc/.pf/.eq];
-anyZero = AnyTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
-anyPos = AnyTrue[Thread[Re[eiv]>10^-10], TrueQ];
-allNeg = AllTrue[Thread[Re[eiv]<-10^-10], TrueQ];
-Which[anyZero, "*",anyPos, "*", allNeg, "."]]
-
-
-SingleStableColor[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, colorlist_]:=
-Module[{anyZero, anyPos, allNeg},
-jmat = jacobmatrix;
-pc = parcommon;
-pf = parsfollow;
-eq = equilibrium;
+Module[
+{eiv, anyZero, anyPos, allNeg, ps},
 eiv = Eigenvalues[jacobmatrix/.parcommon/.parsfollow/.equilibrium];
 anyZero = AnyTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
 anyPos = AnyTrue[Thread[Re[eiv]>10^-10], TrueQ];
 allNeg = AllTrue[Thread[Re[eiv]<-10^-10], TrueQ];
-Which[anyZero, colorlist[[2]],anyPos, colorlist[[1]], allNeg, colorlist[[1]]]]
+Which[anyZero, markerlist[[1]], anyPos, markerlist[[2]], allNeg, markerlist[[3]]]
+]
 
 
-ListStableMark[jacobmatrix_, parcommon_, parfollow_, range_,equiList_]:=
+SingleStableColor[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, colorlist_, opacity_:0.3, pointsize_:0.03]:=
+Module[{eiv, anyZero, anyPos, allNeg},
+eiv = Eigenvalues[jacobmatrix/.parcommon/.parsfollow/.equilibrium];
+anyZero = AnyTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
+anyPos = AnyTrue[Thread[Re[eiv]>10^-10], TrueQ];
+allNeg = AllTrue[Thread[Re[eiv]<-10^-10], TrueQ];
+Which[
+	anyZero, 
+	Directive[colorlist[[3]], Opacity[opacity], PointSize[pointsize]],
+	anyPos, 
+	Directive[colorlist[[2]], Opacity[opacity], PointSize[pointsize]], 
+	allNeg, 
+	Directive[colorlist[[1]], Opacity[opacity], PointSize[pointsize]]
+	]
+]
+
+
+ListStableMark[jacobmatrix_, parcommon_, parfollow_, range_,equiList_, markerCode_:{"@", "*", "."}]:=
  MapThread[SingleStableMark,
-		{ConstantArray[jacobmatrix, Length[equiList]], 
-		 ConstantArray[parcommon, Length[equiList]], Thread[parfollow -> range], equiList}];
+			{ConstantArray[jacobmatrix, Length[equiList]], 
+			 ConstantArray[parcommon, Length[equiList]], 
+			 Thread[parfollow -> range], 
+			 equiList}
+]
 
 
 NSolveCodim2Positive[system_, commonpars_, bifurpar1_, bifurpar2_,bfparsName_, equisymbol_,variables_]:=
 Module[
-{eqAll, parspairVal, eqpos},
+{eqAll, parspairVal, eqpos, nbpos, fparlist},
 eqAll = NSolve[Thread[(system/.commonpars/.bifurpar1/.bifurpar2)==0], variables, Reals];
 eqpos = Select[eqAll,And@@Thread[(variables/.# )> 0]&];
+nbpos = Length[eqpos];
 parspairVal = {bifurpar1[[1]][[2]], bifurpar2[[1]][[2]]};
 If[
-	eqpos == {}, Join[{bfparsName -> parspairVal}, {equisymbol -> eqpos[[1]]}], Unevaluated@Sequence[]]
+	nbpos == 0, 
+	Unevaluated@Sequence[],
+	If[
+		nbpos == 1,
+		{Join[{bfparsName -> parspairVal}, {equisymbol -> eqpos[[1]]}]},
+		fparlist = ConstantArray[bfparsName -> parspairVal, nbpos];
+		Thread[{fparlist, Thread[equisymbol -> eqpos]}]
+		]		
+	]
 ]
 
 
-ListStableMarkTwoParameters[jacobmatrix_, parcommon_, bifurParNames_,listbifurParsValues_, equiList_, useColor_]:=
-Module[{marklist, listval},
+ListStableMarkTwoParameters[jacobmatrix_, parcommon_, bifurParNames_,listbifurParsValues_, 
+							equiList_, markerCode_:{"@", "*", "."}, useColor_:False]:=
+Module[{marklist, listval, markers, lenEqList},
 listval = Thread[bifurParNames->#]&/@ listbifurParsValues;
+lenEqList = Length[equiList];
+markers = ConstantArray[markerCode, lenEqList];
 If[useColor,
-	marklist = MapThread[SingleStableColor,{ConstantArray[jacobmatrix, Length[equiList]], ConstantArray[parcommon, Length[equiList]],listval, equiList}],
-	marklist = MapThread[SingleStableMark,{ConstantArray[jacobmatrix, Length[equiList]], ConstantArray[parcommon, Length[equiList]],listval, equiList}]]
+	Head[markerCode[[1]]] === RGBColor;
+	marklist = MapThread[
+						SingleStableColor,
+						{ConstantArray[jacobmatrix, lenEqList], 
+						 ConstantArray[parcommon, lenEqList],
+						 listval, 
+						 equiList,
+						 markers}],
+	marklist = MapThread[SingleStableMark,
+						{ConstantArray[jacobmatrix, lenEqList], 
+						 ConstantArray[parcommon, lenEqList],
+						 listval, 
+						 equiList,
+						 markers}]]
 ]
 
 
