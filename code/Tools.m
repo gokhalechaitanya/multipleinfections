@@ -122,7 +122,7 @@ On[Assert];
 Assert[Head[followPar]=== Rule];
 
 eqAll = NSolve[Thread[(system/.commonpars/.followPar) == 0], variables, Reals, WorkingPrecision->precision];
-eqpos = Select[eqAll, AllTrue[variables/.# , Positive]&];
+eqpos = Select[eqAll, AllTrue[variables/.# , Positive]&]//Sort;
 nbpos = Length[eqpos];
 If[
 	eqpos == {}, 
@@ -156,7 +156,7 @@ Which[anyZero, markerlist[[1]], anyPos, markerlist[[2]], allNeg, markerlist[[3]]
 ]
 
 
-SingleStableColor[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, colorlist_, opacity_:0.5, pointsize_:0.02]:=
+SingleStableColor[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, colorlist_, opacity_:0.3, pointsize_:0.02]:=
 (*Similar to the SingleStableMark function, but instead of returning the mark, this function returns the colors*)
 Module[{eiv, anyZero, anyPos, allNeg},
 eiv = Eigenvalues[jacobmatrix/.parcommon/.parsfollow/.equilibrium];
