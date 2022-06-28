@@ -174,12 +174,32 @@ Which[
 ]
 
 
-ListStableMark[jacobmatrix_, parcommon_, parfollow_, range_,equiList_, markerCode_:{"@", "*", "."}]:=
- MapThread[SingleStableMark,
+ListStableMark[jacobmatrix_, parcommon_, parfollow_, range_,equiList_, markerCode_:{"@", "*", "."}, useColor_:False]:=
+(* MapThread[SingleStableMark,
 			{ConstantArray[jacobmatrix, Length[equiList]], 
 			 ConstantArray[parcommon, Length[equiList]], 
 			 Thread[parfollow -> range], 
 			 equiList}
+]*)
+Module[{lenEqList, markers},
+lenEqList = Length[equiList];
+markers = ConstantArray[markerCode, lenEqList];
+If[useColor,
+	On[Assert];
+	Head[markerCode[[1]]] === RGBColor//Assert;
+	marklist = MapThread[SingleStableColor,
+						{ConstantArray[jacobmatrix, lenEqList], 
+						 ConstantArray[parcommon, lenEqList],
+						 Thread[parfollow -> range], 
+						 equiList,
+						 markers}],
+	marklist = MapThread[SingleStableMark,
+						{ConstantArray[jacobmatrix, lenEqList], 
+						 ConstantArray[parcommon, lenEqList],
+						 Thread[parfollow -> range], 
+						 equiList,
+						 markers}]
+	]
 ]
 
 
@@ -187,7 +207,7 @@ NSolveCodim2Positive[system_, commonpars_, bifurpar1_, bifurpar2_,bfparsName_, e
 Module[
 {eqAll, parspairVal, eqpos, nbpos, fparlist},
 eqAll = NSolve[Thread[(system/.commonpars/.bifurpar1/.bifurpar2)==0], variables, Reals, WorkingPrecision->precision];
-eqpos = Select[eqAll,And@@Thread[(variables/.# )> 0]&];
+eqpos = Select[eqAll,And@@Thread[(variables/.# )> 0]&]//Sort;
 nbpos = Length[eqpos];
 parspairVal = {bifurpar1[[1]][[2]], bifurpar2[[1]][[2]]};
 If[
