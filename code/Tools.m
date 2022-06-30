@@ -68,6 +68,18 @@ MakeListPlotData::usage = "MakeListPlotData[xcoord, ycoord]
 Create data for list plot where each point can be a different color using PlotStyle option"
 
 
+GetBoundaryLine::usage = "GetBoundaryLine[rawdat]
+Get the boundary line for area with bistability
+rawdat: (Nested List) List of bifurcation parameters (form: {{0, 1}, {1, 3}}
+each element of the List is a List of the value of first parameter and second parameter
+
+return a Nested List, first List is the upper boundary and second List is the lower boundary
+"
+
+
+PlotBoundary::usage = "PlotBoundary[boundarydat, range, frame, frameStyle, frameLabel, aspectRatio, gridLines, gridLinesStyle]"
+
+
 Begin["`Private`"]
 
 
@@ -249,6 +261,26 @@ If[useColor,
 
 
 MakeListPlotData[xcoord_, ycoord_]:={#}& /@Transpose[{xcoord, ycoord}]
+
+
+GetBoundaryLine[rawdat_ ]:=Module[
+{tallyDat, duplicateDat,upperBound, lowerBound},
+tallyDat = Tally[rawdat];
+duplicateDat = Select[tallyDat, #[[2]]==2&][[All, 1]];
+upperBound = Sequence@@{#[[1]]} &/@GatherBy[duplicateDat, First];
+lowerBound = Sequence@@{#[[-1]]} &/@GatherBy[duplicateDat, First];
+{upperBound, lowerBound}
+]
+
+
+PlotBoundary[boundarydat_, range_, frame_, frameStyle_, frameLabel_:{}, labelStyle:None, gridLines_:None, gridLinesStyle_: None, aspectRatio_:1]:=
+Show[
+	ListLinePlot[boundarydat[[1]], AspectRatio->aspectRatio, PlotRange->range, 
+				Frame->frame, FrameStyle->frameStyle, FrameLabel-> frameLabel, LabelStyle->labelStyle, 
+				GridLines->gridLines, GridLinesStyle-> gridLinesStyle], 
+	ListLinePlot[boundarydat[[2]], AspectRatio->aspectRatio, PlotRange-> range, 
+				Frame-> frame, FrameStyle->frameStyle]
+	]
 
 
 End[]
