@@ -68,7 +68,7 @@ MakeListPlotData::usage = "MakeListPlotData[xcoord, ycoord]
 Create data for list plot where each point can be a different color using PlotStyle option"
 
 
-GetBoundaryLine::usage = "GetBoundaryLine[rawdat]
+GetBoundaryLineBiStable::usage = "GetBoundaryLineBiStable[rawdat]
 Get the boundary line for area with bistability
 rawdat: (Nested List) List of bifurcation parameters (form: {{0, 1}, {1, 3}}
 each element of the List is a List of the value of first parameter and second parameter
@@ -77,7 +77,13 @@ return a Nested List, first List is the upper boundary and second List is the lo
 "
 
 
-PlotBoundary::usage = "PlotBoundary[boundarydat, range, frame, frameStyle, frameLabel, aspectRatio, gridLines, gridLinesStyle]"
+GetBoundaryLineSingle::usage = "GetBoundaryLineSingle[rawdat]
+Get the boundary line for area with bistability
+rawdat: (Nested List) List of bifurcation parameters (form: {{0, 1}, {1, 3}}
+each element of the List is a List of the value of first parameter and second parameter
+
+return a Nested List, first List is the upper boundary and second List is the lower boundary
+"
 
 
 Begin["`Private`"]
@@ -263,24 +269,27 @@ If[useColor,
 MakeListPlotData[xcoord_, ycoord_]:={#}& /@Transpose[{xcoord, ycoord}]
 
 
-GetBoundaryLine[rawdat_ ]:=Module[
+GetBoundaryLineBiStable[rawdat_ ]:=Module[
 {tallyDat, duplicateDat,upperBound, lowerBound},
 tallyDat = Tally[rawdat];
 duplicateDat = Select[tallyDat, #[[2]]==2&][[All, 1]];
-upperBound = Sequence@@{#[[1]]} &/@GatherBy[duplicateDat, First];
-lowerBound = Sequence@@{#[[-1]]} &/@GatherBy[duplicateDat, First];
-{upperBound, lowerBound}
+lowerBound = Sequence@@{#[[1]]} &/@GatherBy[duplicateDat, First];
+upperBound = Sequence@@{#[[-1]]} &/@GatherBy[duplicateDat, First];
+{lowerBound, upperBound}
 ]
 
 
-PlotBoundary[boundarydat_, range_, frame_, frameStyle_, frameLabel_:{}, labelStyle:None, gridLines_:None, gridLinesStyle_: None, aspectRatio_:1]:=
-Show[
-	ListLinePlot[boundarydat[[1]], AspectRatio->aspectRatio, PlotRange->range, 
-				Frame->frame, FrameStyle->frameStyle, FrameLabel-> frameLabel, LabelStyle->labelStyle, 
-				GridLines->gridLines, GridLinesStyle-> gridLinesStyle], 
-	ListLinePlot[boundarydat[[2]], AspectRatio->aspectRatio, PlotRange-> range, 
-				Frame-> frame, FrameStyle->frameStyle]
-	]
+GetBoundaryLineSingle[rawdat_ ]:=Module[
+{tallyDat, singleDat, duplicateDat,lowerBoundSingleDat, lowerBoundDuplicateDat, joinDat, tallyByXaxisParam},
+tallyDat = Tally[rawdat];
+singleDat = Select[tallyDat, #[[2]]==1&][[All, 1]];
+duplicateDat = Select[tallyDat, #[[2]]==2&][[All, 1]];
+lowerBoundSingleDat = Sequence@@{#[[1]]} &/@GatherBy[singleDat, First];
+lowerBoundDuplicateDat = Sequence@@{#[[1]]} &/@GatherBy[duplicateDat, First];
+joinDat = Join[lowerBoundSingleDat, lowerBoundDuplicateDat]//Sort;
+tallyByXaxisParam = Tally[joinDat, #1[[1]]==#2[[1]]&];
+Sort[tallyByXaxisParam][[All, 1]]
+]
 
 
 End[]
