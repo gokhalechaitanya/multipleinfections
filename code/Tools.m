@@ -86,6 +86,20 @@ return a Nested List, first List is the upper boundary and second List is the lo
 "
 
 
+DirectionParametricPlot::usage="DirectionParametricPlot[{\!\(\*SubscriptBox[
+StyleBox[\"f\", \"TI\"], 
+StyleBox[\"x\", \"TI\"]]\),\!\(\*SubscriptBox[
+StyleBox[\"f\", \"TI\"], 
+StyleBox[\"y\", \"TI\"]]\)},{\!\(\*
+StyleBox[\"t\", \"TI\"]\),\!\(\*SubscriptBox[
+StyleBox[\"t\", \"TI\"], 
+StyleBox[\"min\", \"TI\"]]\),\!\(\*SubscriptBox[
+StyleBox[\"t\", \"TI\"], 
+StyleBox[\"max\", \"TI\"]]\)}]
+develop by Dennis M Schneider https://resources.wolframcloud.com/FunctionRepository/resources/DirectionParametricPlot/
+"
+
+
 Begin["`Private`"]
 
 
@@ -290,6 +304,75 @@ joinDat = Join[lowerBoundSingleDat, lowerBoundDuplicateDat]//Sort;
 tallyByXaxisParam = Tally[joinDat, #1[[1]]==#2[[1]]&];
 Sort[tallyByXaxisParam][[All, 1]]
 ]
+
+
+(* ::Input::Initialization:: *)
+DirectionParametricPlot[fun_, {t_, t0_, t1_}, opts___?OptionQ] := 
+	Module[{x,y,z,funl, fp, aheads, asize, anumber, color, pp, gr, vars, arrow, data, dt = N[t1 - t0], ps, psdata, dpts, plotfun, plotrange}, 
+	funl = ReleaseHold[Hold[fun] /. {Integrate -> NIntegrate, Tooltip[a_]->a}]//Quiet;
+	If[VectorQ[funl],funl = ReleaseHold[{Hold[funl]}]];
+	If[Head[funl] === Piecewise, funl = {funl}];
+	If[MatrixQ[First[funl]], funl = Flatten[funl,1]];
+	If[Not[MatrixQ[funl/.t->t0]] & , Return[Message[dpp::improperinput]]];
+        {aheads, anumber, color} = 
+	    {"DrawArrowheads", "ArrowNumber", ColorFunction} /. {opts} /.  
+               Options[DirectionParametricPlot];		
+     If[anumber <= 0, aheads = False];
+     {ps,asize}=AppendOptions[DirectionParametricPlot,{PlotStyle,"ArrowSize"}, Length[funl],opts]; 
+asize = If[Head[#] === Symbol,{#},{.05#}] & /@ (Last/@asize);
+     vars = {x,y};
+     arrow = (Arrow[#]&); 
+
+     If[Not[FreeQ[ps, RGBColor[_,_,_] | Hue[_] | GrayLevel[_]]], color =None];
+     If[MatchQ[color, Automatic],  
+                 color = Function[Flatten[{vars,t}]//Evaluate, Hue[.9 t]]];		
+     aheads = 
+	If[aheads,fp = D[funl, t];
+          If[FreeQ[fp, Derivative, Infinity], 			
+	If[color === None, psdata = 
+ {RGBColor[0.368417, 0.506779, 0.709798], RGBColor[0.880722, 0.611041, 0.142051],
+RGBColor[0.560181, 0.691569, 0.194885], RGBColor[0.922526, 0.385626, 0.209179], RGBColor[0.528488, 0.470624, 0.701351], RGBColor[0.772079, 0.431554, 0.102387], 
+		RGBColor[0.363898, 0.618501, 0.782349], RGBColor[1, 0.75, 0], RGBColor[0.647624, 0.37816, 0.614037], RGBColor[0.571589, 0.586483, 0.], 
+		RGBColor[0.915, 0.3325, 0.2125], RGBColor[0.40082222609, 0.52200666434, 0.85], 
+		RGBColor[0.9728288904374106, 0.621644452187053, 0.07336199581899142], RGBColor[0.736782672705901, 0.358, 0.5030266573755369], 
+		RGBColor[0.28026441037696703`, 0.715, 0.4292089322474965]
+		};
+	     ps = MapThread[Flatten[{#1,#2}]&,{psdata[[1;;Length[funl]]],ps}];
+	     ps1 = DeleteCases[ ps, Thickness[_]|Tube[_], Infinity]; 
+data = Table[arrow /@ Transpose[{funl, funl + .001 Map[Normalize[#] &, fp]}//Chop], {t, t0 + dt/anumber, t1, dt/(anumber+.0001)}];
+data = Map[MapThread[Flatten[{Arrowheads[Last[Flatten[{#2}]]],#1,#3}]&,{ps1,asize,#}]&,data],
+			
+acolor= Table[color[Sequence@@Flatten[{vars,(t - t0)/dt}]],{t, t0 + dt/anumber, t1, dt/(anumber + .0001)}];
+asizes=Map[Arrowheads,asize,{2}]; 
+arrows=Table[arrow /@ Transpose[{funl, funl + .001 Map[Normalize[#] &, fp]}//Chop], 
+										{t, t0 + dt/anumber, t1, dt/(anumber + .0001)}];
+data=MapThread[{#1,#2}&,{acolor,(Transpose[Flatten/@{asizes,#}]&/@arrows)}]];
+              Select[data, FreeQ[#, Indeterminate, Infinity] &, Infinity],
+              Message[dpp::noderiv];{}],{}];
+
+Show[	
+	ParametricPlot[funl//Evaluate, {t, t0, t1}, ColorFunction -> color, PlotStyle -> ps,
+				Sequence @@ FilterRules[{opts}, Options[ParametricPlot]] // Evaluate], 
+	Graphics[aheads],  Sequence@@FilterRules[{opts},Options[Graphics]]//Evaluate,
+   PlotRangePadding->Scaled[.04]]
+	]
+
+Options[DirectionParametricPlot]=
+{"ArrowNumber"->15,"ArrowSize"->Large,ColorFunction->Automatic,"DrawArrowheads"->True,PlotStyle->Automatic};
+
+dpp::noderiv="Mathematica was unable to find the derivative which is used to produce the arrowheads. Plotting will proceed without arrowheads. ";
+
+dpp::improperinput="The input function is not a vector or a list of vectors. ";
+AppendOptions[command_Symbol,options_,rest__]:=AppendOptions[command,{options},rest]
+AppendOptions[command_Symbol,{options__},number_?(IntegerQ[#]&&NonNegative[#]&),opts___Rule]:=AppendOptions[command,{options},Table[number,{Length[{options}]}],opts]
+AppendOptions[command_Symbol,{options__},numbers_?(VectorQ[#,(IntegerQ[#]&&NonNegative[#])&]&),opts___Rule]:=Module[{defaultstyles,userstyles,lengths,newstyles},defaultstyles={options}/.Options[command];
+userstyles={options}/.{opts}/.Options[command];
+userstyles=(If[ListQ[#],#,{#}]&/@userstyles)/.{}->{{}};
+lengths=Length/@userstyles;
+newstyles=MapThread[MapThread[Flatten[{#1,#2}]&,{Table[#1,{#2}],#3}]&,{defaultstyles,lengths,userstyles}];
+newstyles=MapThread[Join[Flatten[Table[#1,{Floor[#2/#3]}],1],Take[#1,Mod[#2,#3]]]&,{newstyles,numbers,lengths}];
+With[{temp=DeleteCases[newstyles,Automatic,Infinity]},If[Length[{options}]===1,First[temp],temp]]]
+
 
 
 End[]
