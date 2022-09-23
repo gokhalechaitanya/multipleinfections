@@ -1,42 +1,20 @@
-\documentclass{article}
-\usepackage{times}
-\usepackage{natbib}[round]
-\usepackage[titletoc]{appendix}
-\usepackage{graphicx}
+\documentclass[11pt]{article}
+\usepackage[sc]{mathpazo} %Like Palatino with extensive math support
+\usepackage{fullpage}
+\usepackage[authoryear,sectionbib,sort]{natbib}
+\linespread{1.7}
+\usepackage[utf8]{inputenc}
 \usepackage{lineno}
-\usepackage{multirow}
-\usepackage[english]{babel}
-\usepackage{typearea} 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumerate}
-\usepackage{mathtools}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{lscape}
-\usepackage{rotating}
-\newcommand{\Fig}[1]{Figure~\ref{fig:#1}}
-
-\renewcommand{\baselinestretch}{1.5}
-\newcommand{\bbar}[1]{\overline{#1}}
-
-\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
-\renewcommand{\familydefault}{\sfdefault}
-
-\usepackage[font={small},labelfont={bf},justification=justified,margin=0.5cm]{caption}
-
-\renewcommand{\thesection}{}
-\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\usepackage{titlesec}
+% Added later
+\usepackage{amsmath}  % for equations
+\usepackage{graphicx} % for figures
+\titleformat{\section}[block]{\Large\bfseries\filcenter}{\thesection}{1em}{}
+\titleformat{\subsection}[block]{\Large\itshape\filcenter}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[block]{\large\itshape}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]{\itshape}{\theparagraph}{1em}{}[. ]\renewcommand{\refname}{Literature Cited}
 
 \usepackage{color}
-	 \definecolor{darkred}{rgb}{0.75,0,0}
-%	 \definecolor{darkgreen}{rgb}{0,0.5,0}
-	 \definecolor{darkblue}{rgb}{0,0,0.75}
-%	 \definecolor{magenta}{rgb}{0,0,0.75}
-\newcommand{\cha}[1]{\textcolor{darkblue}{(#1)}}
-\newcommand{\phg}[1]{\textcolor{darkred}{(#1)}}
-
 
 \usepackage{hyperref}
 \definecolor{darkgreen}{rgb}{0.1,0.6,0.3}
@@ -48,40 +26,80 @@
     filecolor=magenta,      % color of file links
     urlcolor= black           % color of external links
 }
+%%%%%%%%%%%%%%%%%%%%%
+% Line numbering
+%%%%%%%%%%%%%%%%%%%%%
+%
+% Please use line numbering with your initial submission and
+% subsequent revisions. After acceptance, please turn line numbering
+% off by adding percent signs to the lines %\usepackage{lineno} and
+% to %\linenumbers{} and %\modulolinenumbers[3] below.
+%
+% To avoid line numbering being thrown off around math environments,
+% the math environments have to be wrapped using
+% \begin{linenomath*} and \end{linenomath*}
+%
+% (Thanks to Vlastimil Krivan for pointing this out to us!)
 
+\title{Multiple infections and complex life cycles}
 
-\title{\vspace*{-22mm}\bf Multiple infections and complex life cycles}
-%\author{Vaibhvi$^{1}$,
-%Chaitanya S. Gokhale$^{2*}$\\
-%\normalsize $^1$Molecular Physiology Group, \\
-%\normalsize University of Kiel, \\
-%\normalsize Am Botanisch Garten 3-9, D-24118 Kiel, Germany.\\
-%\normalsize $^2$Research Group for Theoretical Models of Eco-evolutionary Dynamics, \\
-%\normalsize Department of Evolutionary Theory, Max Planck Institute for Evolutionary Biology, \\
-%\normalsize August-Thienemann-Stra{\ss}e 2, 24306 Pl\"{o}n, Germany.\\
-%\normalsize $^{*}$gokhale@evolbio.mpg.de
-%}
+% This version of the LaTeX template was last updated on
+% November 8, 2019.
 
+%%%%%%%%%%%%%%%%%%%%%
+% Authorship
+%%%%%%%%%%%%%%%%%%%%%
+% Please remove authorship information while your paper is under review,
+% unless you wish to waive your anonymity under double-blind review. You
+% will need to add this information back in to your final files after
+% acceptance.
+
+\author{}
 \date{}
 
 \begin{document}
-
-\linenumbers
+%\linenumbers
 \maketitle
 
+\noindent{} 1. Research Group for Theoretical Models of Eco-evolutionary Dynamics, Department of Evolutionary Theory, Max Planck Institute for Evolutionary Biology, Pl\"{o}n 24306, Germany;
+%
+\noindent{} 2. Theoretical Ecology and Evolution Group, Department of Biology, University of Fribourg, Switzerland
+%
+\noindent{} $\ast$ Corresponding author; e-mail: linh.phuong.nguyen@evobio.eu
 
-\begin{abstract}
-Abstract
-\end{abstract}
+\bigskip
+
+\textit{Manuscript elements}: % Figure~1, figure~2, figure~3, figure~4, figure~5, figure~6, appendices~A and B (including figure~A1, figure~B1 and figure~B2). All figures except figure~3 are in color.
+
+\bigskip
+
+\textit{Keywords}: 
+
+\bigskip
+
+\textit{Manuscript type}: e-article. %Or e-article, note, e-note, natural history miscellany, e-natural history miscellany, comment, reply, invited symposium, or historical perspective.
+
+\bigskip
+
+% \noindent{\footnotesize Prepared using the suggested \LaTeX{} template for \textit{Am.\ Nat.}}
+
+%\linenumbers{}
+%\modulolinenumbers[3]
+
+\newpage{}
+
+\section*{Abstract}
 
 
-\noindent
-Keywords: a,b,c,d
 
+\newpage{}
 
-\tableofcontents
+\section*{Introduction}
 
-\section{Introduction}
+% The journal does not have numbered sections in the main portion of
+% articles. Please refrain from using section references (à la
+% section~\ref{section:CountingOwlEggs}), and refer to sections by name
+% (e.g. section ``Counting Owl Eggs'').
 
 Life on earth is ubiquitously infectes with parasites, many with complex life cycles \citep{zimmer:book:2001}. While a complex life cycle can be defined as abrupt ontogenic changes in morphology and/or ecology \citep{Benesh:2016dj}, a complex parasitic life cycle typically involves numerous hosts that a parasite needs to traverse in the process of completing its life cycle. This results in the evolution of various strategies that enable the success of parasite transmission from one host to another. One famous strategy that inspires many scifi movies and novels is host manipulation, where a parasite is able to alter the morphology and/or behaviour of its intermediate host in order to enhance its transmission to its definitive host \citep{Hughes2012}. Host manipulation has been shown in many host-parasite systems \citep{Hughes2012, molyneux_jefferies1986}. Sand flies infected by \textit{Leishmania} parasites bite more and take more time for a blood meal from mammals (the definitive host of \textit{Leishmania}) compared to their uninfected counterparts \citep{ Rogers2007}. Copepods infected by cestode parasites are more active and easier to caught by sticklebacks (the definitive hosts of the cestodes) compared to uninfected copepods \citep{Wedekind1996}. 
 
@@ -94,7 +112,8 @@ Theoretical work that takes into account multiple infections often focus on the 
 
 Here, we attempt to fill the gap in the theoretical work on host manipulation in trophically transmitted parasites, that is, we include multiple infections and consider the dynamics of the free-living parasite pool. We use a compartmental model that illustrate a complex life-cycle parasite that has two hosts: an intermediate host that is preyed upon by a definitive host. Transmission from the intermediate host to the definitive host takes place when predation on infected intermediate hosts happens. Reproduction only happens in the definitive hosts, and new parasites are released into the environment where they again have contact with the intermediate hosts to complete its life-cycle. We focus on the manipulation of the intermediate hosts, such that the parasite increases the predation rate on the intermediate host by the definitive host to increase its transmission rate. We analyse the effect of host manipulation on the ecological dynamics of the prey-predator-parasite system, considering manipulation when multiple infections occur. We found that ....
 
-\section{Model}
+\section*{Model and Results}
+
 We focus on the complex lifecycle of a trophically transmitted parasite. 
 Thus the parasites can move through multiple hosts and reproduce inside their definitive hosts before being released into the environment. 
 The parasites pass through the intermediate hosts between the environment and the definitive host.
@@ -187,7 +206,7 @@ The dynamics of the system are illustrated in figure (\ref{fig:schematic}).
 \label{fig:schematic}
 \end{figure}
 
-\subsection{Basic reproduction ratio $R_0$}
+\subsection*{Basic reproduction ratio $R_0$}
 
 We calculate the basic reproduction ratio $R_0$ of the parasite using the next generation method (ref) (details are in supplementary).
 \begin{align}
@@ -214,7 +233,7 @@ B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c (D_s + D_w + D_{ww}) (I_s + I_w +
 
 where c is the efficiency of converting preys into offspring. It is noted that the birth rate of the predators depend on the capture rate but we do not allow host manipulation to affect the birth rate of the predators.
 
-\subsubsection{Linear birth function of intermediate hosts}
+\subsubsection*{Linear birth function of intermediate hosts}
 We consider the system when the birth function $R$ of the intermediate host is linear, specifically, $R(I_s, I_w, I_ww) = r(I_s + I_w + I_ww)$. The equilibrium of intermediate and definitive hosts in the disease-free state are
 
 \begin{align*}
@@ -240,7 +259,7 @@ To obtain a stable disease circulation state, we use a non-linear birth function
 \label{fig:diseasefree:linear}
 \end{figure}
 
-\subsubsection{Non-linear birth function of intermediate hosts}
+\subsubsection*{Non-linear birth function of intermediate hosts}
 The non-linear birth function of intermediate hosts is as followed
 
 \begin{align*}
@@ -292,18 +311,257 @@ Cooperation in parasite manipulation in fact widen the bistable state of the sys
 \end{figure}
 
 
-\section{Discussion}
-
-\textbf{Code availability}.
-Appropriate {\tt{xyz}} computer code describing the model is available at {\url{https://github.com/tecoevo/xyz}}.
+\section*{Discussion}
 
 
-
-\bibliographystyle{plain}
-\bibliography{references.bib}
+\section*{Conclusion}
 
 
-\appendix
+%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgments
+%%%%%%%%%%%%%%%%%%%%%
+% You may wish to remove the Acknowledgments section while your paper 
+% is under review (unless you wish to waive your anonymity under
+% double-blind review) if the Acknowledgments reveal your identity.
+% If you remove this section, you will need to add it back in to your
+% final files after acceptance.
+
+ \section*{Acknowledgments}
+
+
+ \section*{Statement of Authorship}
+ 
+\section*{Data and Code Availability}
+All data and simulation codes for generating figures are available on 
+
+%All data and simulation codes for generating figures are available on \href{https://anonymous.4open.science/r/genedrives_mating-6841/}{Github}   
+%(\url{https://anonymous.4open.science/r/genedrives_mating-6841/}).
+
+
+\newpage{}
+
+%% Reseting the counters for equations, figures, tables
+\renewcommand{\theequation}{A\arabic{equation}}
+% redefine the command that creates the equation number.
+\renewcommand{\thetable}{A\arabic{table}}
+\renewcommand{\thefigure}{A\arabic{figure}}
+
+\setcounter{figure}{0}
+\setcounter{equation}{0}  % reset counter 
+\setcounter{table}{0}
+
+\section*{Appendix A}
+
+
+\section*{Appendix B}
+
+
+\newpage{}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%
+% You can either type your references following the examples below, or
+% compile your BiBTeX database and paste the contents of your .bbl file
+% here. The amnatnat.bst style file should work for this---but please
+% let us know if you run into any hitches with it!
+%
+% If you upload a .bib file with your submission, please upload the .bbl
+% file as well; this will be required for typesetting.
+%
+% The list below includes sample journal articles, book chapters, and
+% Dryad references.
+
+\bibliographystyle{amnatnat}
+%\bibliography{\string~/Bibtex/et.bib}
+
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+
+
+\bibitem{Alizon2012}
+Samuel Alizon.
+\newblock Parasite co-transmission and the evolutionary epidemiology of
+  virulence.
+\newblock {\em Evolution}, 67(4):921--933, November 2012.
+
+\bibitem{Alizon2013}
+Samuel Alizon, Jacobus~C. de~Roode, and Yannis Michalakis.
+\newblock Multiple infections and the evolution of virulence.
+\newblock {\em Ecology Letters}, 16(4):556--567, January 2013.
+
+\bibitem{Alizon2008}
+Samuel Alizon and Minus van Baalen.
+\newblock Multiple infections, immune dynamics, and the evolution of virulence.
+\newblock {\em The American Naturalist}, 172(4):E150--E168, October 2008.
+
+\bibitem{Benesh:2016dj}
+Daniel~P Benesh.
+\newblock {Autonomy and integration in complex parasite life cycles.}
+\newblock {\em Parasitology}, 143(14):1824 -- 1846, 2016.
+
+\bibitem{Choisy2010}
+Marc Choisy and Jacobus~C. de~Roode.
+\newblock Mixed infections and the evolution of virulence: Effects of resource
+  competition, parasite plasticity, and impaired host immunity.
+\newblock {\em The American Naturalist}, 175(5):E105--E118, May 2010.
+
+\bibitem{Fenton2006}
+A.~Fenton and S.~A. Rands.
+\newblock The impact of parasite manipulation and predator foraging behavior on
+  predator - prey communitites.
+\newblock {\em Ecology}, 87(11):2832--2841, November 2006.
+
+\bibitem{Gandon2018}
+Sylvain Gandon.
+\newblock Evolution and manipulation of vector host choice.
+\newblock {\em The American Naturalist}, 192(1):23--34, July 2018.
+
+\bibitem{Hadeler1989}
+K.~P. Hadeler and H.~I. Freedman.
+\newblock Predator-prey populations with parasitic infection.
+\newblock {\em Journal of Mathematical Biology}, 27(6):609--631, November 1989.
+
+\bibitem{Hafer:2015gl}
+Nina Hafer and Manfred Milinski.
+\newblock {When parasites disagree: evidence for parasite-induced sabotage of
+  host manipulation.}
+\newblock {\em Evolution}, 69(3):611 -- 620, 2015.
+
+\bibitem{Hosack2008}
+Geoffrey~R. Hosack, Philippe~A. Rossignol, and P.~van~den Driessche.
+\newblock The control of vector-borne disease epidemics.
+\newblock {\em Journal of Theoretical Biology}, 255(1):16--25, November 2008.
+
+\bibitem{Hughes2012}
+David~P Hughes, Jacques Brodeur, and Frederic Thomas.
+\newblock {\em Host Manipulation by Parasites}.
+\newblock Oxford University Press, London, England, June 2012.
+
+\bibitem{Iritani2018}
+Ryosuke Iritani and Takuya Sato.
+\newblock Host-manipulation by trophically transmitted parasites: The
+  switcher-paradigm.
+\newblock {\em Trends in Parasitology}, 34(11):934--944, November 2018.
+
+\bibitem{molyneux_jefferies1986}
+D.~H. Molyneux and D.~Jefferies.
+\newblock Feeding behaviour of pathogen-infected vectors.
+\newblock {\em Parasitology}, 92(3):721–736, 1986.
+
+\bibitem{Parker2003}
+G.~A. Parker, J.~C. Chubb, G.~N. Roberts, M.~Michaud, and M.~Milinski.
+\newblock Optimal growth strategies of larval helminths in their intermediate
+  hosts.
+\newblock {\em Journal of Evolutionary Biology}, 16(1):47--54, January 2003.
+
+\bibitem{Ripa:Evol:2013}
+Jörgen Ripa and Ulf Dieckmann.
+\newblock Mutant invasions and adaptive dynamics in variable environments.
+\newblock {\em Evolution}, 67(5):1279--1290, 2013.
+
+\bibitem{Rogawa2018}
+Akiyoshi Rogawa, Shigeki Ogata, and Akihiko Mougi.
+\newblock Parasite transmission between trophic levels stabilizes
+  predator{\textendash}prey interaction.
+\newblock {\em Scientific Reports}, 8(1), August 2018.
+
+\bibitem{Rogers2007}
+Matthew~E Rogers and Paul~A Bates.
+\newblock Leishmania manipulation of sand fly feeding behavior results in
+  enhanced transmission.
+\newblock {\em {PLoS} Pathogens}, 3(6):e91, 2007.
+
+\bibitem{Roosien2013}
+Bryan~K. Roosien, Richard Gomulkiewicz, Laura~L. Ingwell, Nilsa~A.
+  Bosque-P{\'{e}}rez, Dheivasigamani Rajabaskar, and Sanford~D. Eigenbrode.
+\newblock Conditional vector preference aids the spread of plant pathogens:
+  Results from a model.
+\newblock {\em Environmental Entomology}, 42(6):1299--1308, December 2013.
+
+\bibitem{Seppl2008}
+Otto Sepp\"{a}l\"{a} and Jukka Jokela.
+\newblock Host manipulation as a parasite transmission strategy when
+  manipulation is exploited by non-host predators.
+\newblock {\em Biology Letters}, 4(6):663--666, August 2008.
+
+\bibitem{vanBaalen1995}
+Minus van Baalen and Maurice~W. Sabelis.
+\newblock The dynamics of multiple infection and the evolution of virulence.
+\newblock {\em The American Naturalist}, 146(6):881--910, December 1995.
+
+\bibitem{Vickery2009}
+William~L. Vickery and Robert Poulin.
+\newblock The evolution of host manipulation by parasites: a game theory
+  analysis.
+\newblock {\em Evolutionary Ecology}, 24(4):773--788, November 2009.
+
+\bibitem{Wedekind1996}
+C.~Wedekind and M.~Milinski.
+\newblock Do three-spined sticklebacks avoid consuming copepods, the first
+  intermediate host of \textit{Schistocephalus solidus}? - an experimental
+  analysis of behavioural resistance.
+\newblock {\em Parasitology}, 112(4):371--383, April 1996.
+
+\bibitem{zimmer:book:2001}
+Carl Zimmer.
+\newblock {\em {Parasite Rex: Inside the Bizarre World of Nature's Most
+  Dangerous Creatures}}.
+\newblock Atria Books, 2001.
+
+\end{thebibliography}
+
+\newpage{}
+
+\section*{Tables}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{table}{0}
+
+%\begin{table}[h]
+%\caption{Examples of natural drive elements with properties simulated in this study.}
+%\label{Table:Driveelements}
+%\centering
+%\begin{tabular}{lllll}\hline
+%Species & Drive element & Drive type \& parameters & Ecological properties
+% \\ \hline
+%\textit{Tribolium castaneum}  & Medea & Viability drive $d$ & Probably low k, highly \\
+%  & & & polyandrous\\
+ %   & & & \citep{pai:EntoEA:2020} \\
+%\textit{Drosophila melanogaster}  & Selfish Segregation  & Distortion drive
+%$p$,$c$ & Probably low k, Polyandry \\ 
+%& Distorter (SD) & & with some re-mating \\
+%& & & latency \citep{singh:CurrSci:2004}\\
+%\textit{Mus musculus}  & t-haplotype & Distortion drive
+%$p$,$c$ & Probably low k, \\ 
+%& & & Polyandry ($r=2,$, \\ 
+%& & & \citep{birand:MolEcol:2022}) \\ \hline 
+%\end{tabular}
+%\bigskip{}
+%\\
+%{\footnotesize Note: Table titles should be short. Further details should go in a `notes' area after the tabular environment, like this. $^a$ Published the first description of \textit{Dimetrodon}.}
+\end{table}
+%
+\newpage{}
+
+\section*{Figure legends}
+
+\renewcommand{\thefigure}{\arabic{figure}}
+\setcounter{figure}{0}
+%%
+
+%\begin{figure}[h!]
+ %   \centering
+% \includegraphics[width=0.65\columnwidth]{figure1.eps}
+ %   \caption{\textbf{Pictorial representation of the three mating complexities: mate-choice, mating network, and mating system that can affect gene drive's population dynamics.}}
+%    \label{fig:fig1}    
+%\end{figure}
+%%
+
+
+% \subsection*{figure legends for Appendices}
+
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{figure}{0}
 
 
 \end{document}
