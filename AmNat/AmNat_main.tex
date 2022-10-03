@@ -248,13 +248,13 @@ Because the disease-free dynamics is cyclic, it is difficult to analyse the spre
 Here, even if we solve the inequality $R_0 > 1$, which happens when the transmission rate from the environment to intermediate hosts $\gamma$ is greater than a threshold (the expression of the threshold is too complicated, hence it is not useful to write it here). 
 In addition, the reproduction of the parasites has to be sufficiently large (again, the expression of the thresholds are too complicated such that it is useless to write it here).
 
-Our simulations show that the parasite cannot persist even when its reproduction ratio is greater than one (Figure S\ref{fig:diseasefree:linear}). This result is, however, in agreement with the conclusion in \citet{Ripa:Evol:2013}, which suggests that it is harder for a mutant to invade a cyclic population. 
+Our simulations show that the parasite cannot persist even when its reproduction ratio is greater than one (Figure \ref{fig:diseasefree:linear}). This result is, however, in agreement with the conclusion in \citet{Ripa:Evol:2013}, which suggests that it is harder for a mutant to invade a cyclic population. 
 In our case, it is not the invasion of a mutant but a specific parasite in a cyclic disease-free host population. 
 This issue deserves a more thorough investigation. 
 To obtain a stable disease circulation state, we use a non-linear birth function of intermediate hosts. The following sections focus on analysing the ecological dynamics of the complex lifecycle parasite under different scenario of its manipulative ability.
 
 \begin{figure}
-\includegraphics[width=\textwidth]{Figures/diseasefree_linear}
+\includegraphics[width=\textwidth]{Figures/diseasefree_linear.jpg}
 \caption{Disease-free equilibrium using linear birth function. Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameter values  $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w =  \alpha_{ww} =  0, \ \beta_w  = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1,  \ c = 1.4, \ \mu = 0.9,  \ \sigma_w = \sigma_{ww} = 0, \ q = 0.01, \  f_w = 6.5, \  f_{ww} = 7.5, \ \delta = 0.9$ } 
 \label{fig:diseasefree:linear}
 \end{figure}
@@ -284,14 +284,15 @@ This equilibrium is stable if,
 The above conditions suggest that the intrinsic reproduction of intermediate hosts $r$ needs to be greater than their natural mortality rate $d$. 
 More importantly, the intraspecific competition coefficient has to be within a range. 
 It is neither too small such that the population cannot grow to infinity nor too large such that the population cannot survive. 
-Finally, the natural mortality rate of the definitive host has to be sufficiently large. Satisfying such conditions, we obtain a stable disease-free equilibrium (Figure S\ref{fig:diseasefree:nonlinear}).
+Finally, the natural mortality rate of the definitive host has to be sufficiently large. Satisfying such conditions, we obtain a stable disease-free equilibrium (Figure \ref{fig:ecotraject:nonlinear}).
 
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{Figures/diseasefree_nonlinear}
-\caption{Disease-free equilibrium. \textcolor{red}{put in supplementary}}
-\label{fig:diseasefree:nonlinear}
+\includegraphics[width=\textwidth]{Figures/ecotraject_nonlinear.jpeg}
+\caption{A) Trajectories of parasite and host dynamics. The host includes both intermediate (blue) and definitive (orange) ones. A) Disease free equilibrium where parasite densities is zero. B) Disease stable equilibrium where there are multiple parasite densities which correspond to free parasite pool, singly infected hosts and doubly infected hosts. Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.1, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.01, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
+\label{fig:ecotraject:nonlinear}
 \end{figure}
 
+\subsubsection*{Host manipulation}
 When a parasite is introduced in the disease-free equilibrium, it can spread if its reproduction ratio $R_0^{res} > 1$. 
 Since the expression is complicated, we could not obtain solutions for this inequality without assumptions. 
 Assuming that double infections and single infection result in the same parasite virulence and parasite reproduction, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$,and $f_w = \epsilon f_{ww}$, we found the the parasite can establish and spread in the population of intermediate and definitive hosts if its reproduction value in single infection $f_w$ is greater than a threshold (the expression of the threshold is rather complicated, therefore it is not useful to write down its expression) (Figure \ref{fig:bifurfw:nonlinear}). Interestingly, if the reproduction rate of the parasite in double infection state is greater than that in single infection state, bistability can occur such that the parasite population will crash if it is disturbed an become too small (Figure \ref{fig:bistability}). 
@@ -517,7 +518,7 @@ Carl Zimmer.
 \renewcommand{\thetable}{\arabic{table}}
 \setcounter{table}{0}
 
-%\begin{table}[h]
+\begin{table}[h]
 %\caption{Examples of natural drive elements with properties simulated in this study.}
 %\label{Table:Driveelements}
 %\centering
