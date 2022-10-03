@@ -233,7 +233,7 @@ B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c (D_s + D_w + D_{ww}) (I_s + I_w +
 
 where c is the efficiency of converting preys into offspring. It is noted that the birth rate of the predators depend on the capture rate but we do not allow host manipulation to affect the birth rate of the predators.
 
-\subsubsection*{Linear birth function of intermediate hosts}
+\subsection*{Linear birth function of intermediate hosts}
 We consider the system when the birth function $R$ of the intermediate host is linear, specifically, $R(I_s, I_w, I_ww) = r(I_s + I_w + I_ww)$. The equilibrium of intermediate and definitive hosts in the disease-free state are
 
 \begin{align*}
@@ -259,7 +259,7 @@ To obtain a stable disease circulation state, we use a non-linear birth function
 \label{fig:diseasefree:linear}
 \end{figure}
 
-\subsubsection*{Non-linear birth function of intermediate hosts}
+\subsection*{Non-linear birth function of intermediate hosts}
 The non-linear birth function of intermediate hosts is as followed
 
 \begin{align*}
@@ -292,22 +292,24 @@ Finally, the natural mortality rate of the definitive host has to be sufficientl
 \label{fig:ecotraject:nonlinear}
 \end{figure}
 
-\subsubsection*{Host manipulation}
-When a parasite is introduced in the disease-free equilibrium, it can spread if its reproduction ratio $R_0^{res} > 1$. 
+When a parasite is introduced in the disease-free equilibrium, it can spread if its reproduction ratio $R_0 > 1$. 
 Since the expression is complicated, we could not obtain solutions for this inequality without assumptions. 
-Assuming that double infections and single infection result in the same parasite virulence and parasite reproduction, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$,and $f_w = \epsilon f_{ww}$, we found the the parasite can establish and spread in the population of intermediate and definitive hosts if its reproduction value in single infection $f_w$ is greater than a threshold (the expression of the threshold is rather complicated, therefore it is not useful to write down its expression) (Figure \ref{fig:bifurfw:nonlinear}). Interestingly, if the reproduction rate of the parasite in double infection state is greater than that in single infection state, bistability can occur such that the parasite population will crash if it is disturbed an become too small (Figure \ref{fig:bistability}). 
+Assuming that double infections and single infection result in the same parasite virulence and parasite reproduction, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$,and $f_w = \epsilon f_{ww}$, we found the the parasite can establish and spread in the population of intermediate and definitive hosts if its reproduction value in single infection $f_w$ is greater than a threshold (the expression of the threshold is rather complicated, therefore it is not useful to write down its expression) (Figure \ref{fig:bistability}). It should be noted that parasite reproduction is extremely large compared to other parameters (its value is 40 times greater than the values of other parameters), suggesting that trophically transmitted parasites have to release a large amount of offspring into the environment to maintain its persistence. Interestingly, if the reproduction rate of the parasite in double infection state is greater than that in single infection state, bistability can occur such that the parasite population will crash if it is disturbed and become too small (Figure \ref{fig:bistability}A, B). In that case, as parasite reproduction increases, the density of singly infected definitive host saturated instead of increasing as in the case when there is no difference in reproduction between singly and doubly infection. 
 
 \begin{figure}[!ht]
-\includegraphics[width = \textwidth]{Figures/bistability.jpg}
-\caption{A) Bifurcation graph of $\epsilon$ and $f_w$. The white area is where the parasite goes extinct. The vertical line indicates where $\epsilon = 1$, i.e. reproduction in singly infection is equal to reproduction in double infection. B) Bistability with $\epsilon = 2$. C) No bistability when $\epsilon = 1$. Blue circles indicate stable equilibrium, Yellow circles indicate unstable equilibrium, Yellowish-blue circles indicate bistability of the system. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_ww =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.01, \ \delta = 0.9, \ k = 0.26$
+\includegraphics[width = \textwidth]{Figures/bistability.jpeg}
+\caption{Effect of parasite reproduction on the ecological dynamics. A, B) When reproduction of parasites in singly infected hosts is four times greater than those in doubly infected hosts $\epsilon = 4$. C, D) When reproduction of parasites are the same in singly and doubly infected hosts $\epsilon = 1$. Filled circles indicate stable equilibrium and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_ww =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.01, \ \delta = 0.9, \ k = 0.26$
 }
 \label{fig:bistability}
 \end{figure}
 
-Cooperation in parasite manipulation in fact widen the bistable state of the system (\ref{fig:manipbifur}). 
+\subsection*{The effect of host manipulation on ecological dynamics}
+
+
+Cooperation in parasite manipulation in fact widen the bistable state of the system especially when reproduction in doubly infected host is greater than reproduction in singly infected hosts (\ref{fig:manipbifur}). 
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{Figures/manip_bifurcation.jpg}
-\caption{Bifurcation graph of $\beta_w$ and $\beta_{ww}$. The white area is where the parasite goes extinct. The thick line indicates $\beta_w = \beta_ww$, i.e. manipulation in single infection is the same as manipulation in double infection. Blue circles indicate stable equilibrium, Yellowish-blue circles indicate bistability. A) When reproduction of double infection is smaller than that of single infection ($\epsilon = 0.5, f_w = 36$), B) When there is no difference in reproduction between single infection and double infection ($\epsilon = 1, f_w = 36$), C) When reproduction in double infection is greater than that of single infection ($\epsilon = 2, f_w = 35$).  Common parameter:$\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.1, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.01, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 0.5$ }
+\includegraphics[width=\textwidth]{Figures/manip_bifurcation.jpeg}
+\caption{Bifurcation graph of $\beta_w$ (manipulation in singly infected host) and $\beta_{ww}$ (manipulation in doubly infected host). The white area is where the parasite goes extinct. Bistability occurs in the bounded areas. Manipulation is indifference between single infection and double infection on the black thick line. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.1, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.01, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 0.5$. Orange thick boundary indicates when reproduction of double infection is smaller than that of single infection ($\epsilon = 0.5, f_w = 36$), B) Dashed green boundary indicates when there is no difference in reproduction between single infection and double infection ($\epsilon = 1, f_w = 36$), C) Dot-dashed blue boundary indicates when reproduction in double infection is greater than that of single infection ($\epsilon = 2, f_w = 35$).}
 \label{fig:manipbifur}
 \end{figure}
 
