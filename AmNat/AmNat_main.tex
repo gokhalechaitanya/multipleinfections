@@ -15,10 +15,13 @@
 \titleformat{\paragraph}[runin]{\itshape}{\theparagraph}{1em}{}[. ]\renewcommand{\refname}{Literature Cited}
 
 \usepackage{color}
+	\definecolor{darkred}{rgb}{0.75,0.1,0.1}
+	 \definecolor{darkblue}{rgb}{0,0,0.75}
+	 \definecolor{magenta}{rgb}{0,0,0.75}
+\newcommand{\cha}[1]{\textcolor{darkred}{(#1)}}
 
 \usepackage{hyperref}
 \definecolor{darkgreen}{rgb}{0.1,0.6,0.3}
-\definecolor{darkred}{rgb}{0.6,0.3,0.1}
 \hypersetup{
     colorlinks=true,       % false: boxed links; true: colored links
     linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
@@ -142,26 +145,26 @@ We analyse the effect of host manipulation on the ecological dynamics of the pre
 We focus on the complex lifecycle of a trophically transmitted parasite. 
 Thus the parasites can move through multiple hosts and reproduce inside their definitive hosts before being released into the environment. 
 The parasites pass through the intermediate hosts between the environment and the definitive host.
-When a definitive host consumes an infected intermediate host, the definitive host gets infected, and the parasite completes its lifecycle.
+The parasite completes its lifecycle when a definitive host becomes infected after consuming an infected intermediate host.
 
-For simplicity, intermediate and definitive hosts can be infected by one (single infection) or at most two parasites (double infections). 
-The probability that two parasites in the parasite pool co-transmit to an intermediate host is denoted by  $p$, and thus $1-p$ is the probability that a single parasite enters an intermediate host. 
-When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that both parasites co-transmit to the definitive host.
+For simplicity, we assume that hosts can be infected by one (single infection) or, at most, two parasites (double infections). 
+Given that infection occurs, the probability that two parasites from the parasite pool co-transmit to an intermediate host is denoted by  $p$, and thus $1-p$ is the probability that a single parasite enters an intermediate host. 
+When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that the parasites co-transmit to the definitive host.
 With probability $1-q$, only one parasite successfully transmits. 
-This formulation assumes that infection always happens whenever there are encounters between parasites and hosts.
-The dynamics of a complex lifecycle parasite that requires two hosts is described by the following ODEs, firstly for the intermediate host as,
-
+This formulation assumes that infection always happens hosts encounter parasites.
+The dynamics of a complex lifecycle parasite that requires two hosts is described by the following system of ODEs, firstly for the intermediate host as,
+%
 \begin{align}
 \frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - \Pi_s(D_s, D_w, D_{ww}) I_s  - \eta  I_s \nonumber \\ 
 \frac{dI_w}{dt} &=  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \Pi_w(D_s, D_w, D_{ww}, \beta_w) I_w \label{odes:ihosts} \\
 \frac{dI_{ww}}{dt} &= p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww} \nonumber
 \end{align}
-
-where $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, which is a function of both infected and uninfected individuals.
+%
+where $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, a function of both infected and uninfected individuals.
 $\Pi_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on susceptible, singly infected and doubly infected intermediate hosts respectively. 
 The predation function depends on the density of the definitive hosts and the manipulative strategies of parasites in the intermediate hosts. 
 In particular, if a single parasite infects an intermediate host, the manipulation strategy is $\beta_w$. 
-If two parasites infect it, the manipulation strategy is $\beta_{ww}$. 
+However if the intermediate host is co-infected, the manipulation strategy is $\beta_{ww}$. 
 The link between $\beta_w$ and $\beta_{ww}$, is explored further. 
 The force of infection by parasites in the environment is denoted by $\eta = \gamma W$. 
 The force of infection that corresponds respectively to singly infected intermediate host ($I_w$), or doubly infected intermediate hosts ($I_{ww}$) is denoted by $\lambda_i = \beta_i I_i$, where $i = \{ w, ww\}$. 
@@ -180,7 +183,7 @@ The dynamics of the parasites in the environment are then given solely by,
 \end{align}
 
 
-Definitions of different parameters can be found in Table \ref{table:varpardescription}.
+Definitions of different parameters can be found in Table~\ref{table:varpardescription}.
 %
 \begin{table}[!ht]
 \begin{tabular}{|p{2.5cm}|p{12cm}|} 
@@ -227,22 +230,36 @@ The dynamics of the system are illustrated in figure (\ref{fig:schematic}).
 
 \begin{figure}[ht!]
 \includegraphics[width=\textwidth]{Figures/schematics.pdf}
-\caption{Schematic of the model. The compartments of intermediate hosts are in the blue box, including $I_s$ (susceptible host), $I_w$ (singly infected host), and $I_{ww}$ (doubly infected host). The compartments of definitive hosts are in the red box, including $D_s$ (susceptible host), $D_w$ (singly infected host), and $D_{ww}$ (doubly infected host). Definitive hosts prey upon intermediate host and infection happens when infected intermediate hosts are eaten by definitive hosts. $W$ represents the parasite pool in the environment where parasites are released from the definitive hosts.}
+\caption{Schematic of the model. The compartments of intermediate hosts are in the blue box, including $I_s$ (susceptible host), $I_w$ (singly infected host), and $I_{ww}$ (doubly infected host). The compartments of definitive hosts are in the red box, including $D_s$ (susceptible host), $D_w$ (singly infected host), and $D_{ww}$ (doubly infected host). Definitive hosts prey upon intermediate host and infection happens when infected intermediate hosts are eaten by definitive hosts. 
+$W$ represents the parasite pool in the environment where parasites are released from the definitive hosts.
+\cha{The $W$ goes to to the Intermediate then? I would highlight the W as environment also in the figure.}
+}
 \label{fig:schematic}
 \end{figure}
 
 \subsection*{Basic reproduction ratio $R_0$}
 
+\cha{What does it mean by a basic reproductive ratio?.}
 We calculate the basic reproduction ratio $R_0$ of the parasite using the next generation method (ref) (details are in supplementary).
 \begin{align}
 R_0 = & \gamma I_s^* \frac{ p q \beta_{ww}}{\alpha_{ww} + d + \Pi_{ww}} \frac{D_s^*}{\mu +\sigma_{ww}} \frac{f_{ww}}{\delta +\gamma I_s^*} + \nonumber \\
 & \gamma  I_s^* \left( \frac{ (1-p)\beta_w}{\alpha_w + d + \Pi_w} + \frac{2 p (1-q) \beta_{ww}}{\alpha_{ww} + d + \Pi_{ww}} \right) \frac{D_s^*}{\lambda_w + 2 (1-q) \lambda_{ww}  + \mu + \sigma_w} \frac{f_w}{\delta +\gamma  I_s^*}
 \end{align}
 
-where $I_s^*$ and $D_s^*$ are the density of susceptible intermediate and definitive hosts at the disease free equilibrium. The expression of $R_0$ indicates the possible reproduction routes of a parasite, which can be via double infections or single infection. The first component corresponds to the double infections route, in which the focal parasite co-transmit with another parasite into a susceptible intermediate host, then co-transmit into a susceptible definitive host and reproduce. The second component corresponds to the single infection route, in which the focal parasite infects a susceptible intermediate host, either via singly or doubly infections. It then transmit alone into the susceptible definitive host, and eventually reproduce. It should be noted that, in a disease-free environment, parasites are so rare that the reproduction ratio compartments with sequential infection do not appear. 
+where $I_s^*$ and $D_s^*$ are the density of susceptible intermediate and definitive hosts at the disease-free equilibrium. 
+The expression of $R_0$ indicates the possible reproduction routes of a parasite, which can be via double or single infections. 
+The first component corresponds to the double infections route, in which the focal parasite co-transmit with another parasite into a susceptible intermediate host, then co-transmits into a susceptible definitive host and reproduces. 
+The second component corresponds to the single infection route, wherein the focal parasite infects a susceptible intermediate host via singly or doubly infections. 
+It then transmits alone into the susceptible definitive host and eventually reproduces. 
+In a disease-free environment, parasites are so rare that the reproduction ratio compartments with sequential infections do not appear. 
 
 
-If $R_0 > 1$, a parasite can spread when introduced into the disease-free equilibrium of prey and predator. This disease-free equilibrium exist regardless of the explicit form of the predation functions $Pi_w$ and $Pi_{ww}$. However, to further understand the effect of manipulation on the fitness of the parasites and the ecological dynamics of the system, we need to specify the predation functions and know the explicit form of the equilibrium $I_s^*$ and $D_s^*$. The explicit forms of $I_s^*$ and $D_s^*$ depend largely on the birth functions $R$ and $B$ of respectively the intermediate and definitive host, as well as predation functions $\Pi_s, \Pi_w, \Pi_{ww}$. For simplicity, we consider linear functions for predation 
+If $R_0 > 1$, a parasite can spread when introduced into the disease-free equilibrium of prey and predator. 
+This disease-free equilibrium exists regardless of the explicit form of the predation functions $Pi_w$ and $Pi_{ww}$. 
+To understand the effect of manipulation on the fitness of parasites and the ecological dynamics of the system, we need to specify the predation functions and know the explicit form of the equilibrium $I_s^*$ and $D_s^*$. 
+The explicit forms of $I_s^*$ and $D_s^*$ depend primarily on the birth functions $R$ and $B$ of, respectively, the intermediate and definitive host and on the predation functions $\Pi_s, \Pi_w, \Pi_{ww}$.
+\cha{Here we need to motivate the importance of knowing the form of the functions.}
+For simplicity, we consider linear functions for predation 
 
 \begin{align*}
 & \Pi_s(D_s + D_w + D_{ww}) = \rho (D_s + D_w + D_{ww}) \\
@@ -256,27 +273,32 @@ Here $\rho$ is the baseline capture rate of the predator on the prey. If an inte
 B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c (D_s + D_w + D_{ww}) (I_s + I_w + I_{ww})
 \end{align*}
 
-where c is the efficiency of converting preys into offspring. It is noted that the birth rate of the predators depend on the capture rate but we do not allow host manipulation to affect the birth rate of the predators.
+where c is the efficiency of converting preys into offspring. 
+The birth rate of the predators depends on the capture rate, but we do not allow host manipulation to affect the birth rate of the predators.
+
+\cha{The motivation for the linear and non-linear functions and a paragraph discussing that before we move to the next sections.}
 
 \subsection*{Linear birth function of intermediate hosts}
-We consider the system when the birth function $R$ of the intermediate host is linear, specifically, $R(I_s, I_w, I_ww) = r(I_s + I_w + I_ww)$. The equilibrium of intermediate and definitive hosts in the disease-free state are
-
+We consider the system when the birth function $R$ of the intermediate host is linear, specifically, $R(I_s, I_w, I_ww) = r(I_s + I_w + I_ww)$. 
+The equilibrium of intermediate and definitive hosts in the disease-free state are,
+%
 \begin{align*}
 & I_{s0}^* = \frac{\mu}{c \rho} \\
 & D_{s0}^* = \frac{r - d}{\rho}
 \end{align*}
-
+%
 This equilibrium is always unstable. 
-We always observe cyclic behaviour of the equilibrium because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has one imaginary eigenvalue with a positive real part. 
-This follows from the Lotka-Voltera system using linear functions for prey birth and predation (reference...). 
+We always observe the cyclic behaviour of the equilibrium because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has one imaginary eigenvalue with a positive real part. 
+This follows from the Lotka-Voltera system using linear functions for prey birth and predation (reference...). \cha{Use for motivation above.}
 Because the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite (often evaluated when the disease-free state is stable). 
-Here, even if we solve the inequality $R_0 > 1$, which happens when the transmission rate from the environment to intermediate hosts $\gamma$ is greater than a threshold (the expression of the threshold is too complicated, hence it is not useful to write it here). 
-In addition, the reproduction of the parasites has to be sufficiently large (again, the expression of the thresholds are too complicated such that it is useless to write it here).
+Here, even if we solve the inequality $R_0 > 1$, which happens when the transmission rate from the environment to intermediate hosts $\gamma$ is greater than a threshold (the expression of the threshold is complicated to express). 
+In addition, the reproduction of the parasites has to be sufficiently large.
 
-Our simulations show that the parasite cannot persist even when its reproduction ratio is greater than one (Figure \ref{fig:diseasefree:linear}). This result is, however, in agreement with the conclusion in \cite{Ripa:Evol:2013}, which suggests that it is harder for a mutant to invade a cyclic population. 
+Our simulations show that the parasite cannot persist even when its reproduction ratio is greater than one (Figure \ref{fig:diseasefree:linear}). However, this result agrees with the conclusion in \cite{Ripa:Evol:2013}, which suggests that it is difficult for a mutant to invade a cyclic population. 
 In our case, it is not the invasion of a mutant but a specific parasite in a cyclic disease-free host population. 
 This issue deserves a more thorough investigation. 
-To obtain a stable disease circulation state, we use a non-linear birth function of intermediate hosts. The following sections focus on analysing the ecological dynamics of the complex lifecycle parasite under different scenario of its manipulative ability.
+To obtain a stable disease circulation state, we use a non-linear birth function of intermediate hosts. 
+The following sections focus on analysing the ecological dynamics of the complex lifecycle parasite under various scenarios of its manipulative ability.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/diseasefree_linear.jpg}
