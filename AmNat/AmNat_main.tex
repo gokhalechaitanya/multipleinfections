@@ -301,27 +301,27 @@ To obtain a stable disease circulation state, we use a non-linear birth function
 The following sections focus on analysing the ecological dynamics of the complex lifecycle parasite under various scenarios of its manipulative ability.
 
 \begin{figure}
-\includegraphics[width=\textwidth]{Figures/diseasefree_linear.jpg}
+\includegraphics[width=\textwidth]{Figures/diseasefree_linear.pdf}
 \caption{Disease-free equilibrium using linear birth function. Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameter values  $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w =  \alpha_{ww} =  0, \ \beta_w  = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1,  \ c = 1.4, \ \mu = 0.9,  \ \sigma_w = \sigma_{ww} = 0, \ q = 0.01, \  f_w = 6.5, \  f_{ww} = 7.5, \ \delta = 0.9$ } 
 \label{fig:diseasefree:linear}
 \end{figure}
 
 \subsection*{Non-linear birth function of intermediate hosts}
-The non-linear birth function of intermediate hosts is as followed
-
+The non-linear birth function of intermediate hosts is as followed,
 \begin{align*}
 R(I_w, I_s,I_{ww}) = r (I_s + I_w + I_{ww}) (1 - k (I_s + I_w + I_{ww}))
 \end{align*}
-
-where $k$ is the intraspecific competition coefficient. The disease-free equilibrium is as follows
-
+%
+where $k$ is the intraspecific competition coefficient. 
+The disease-free equilibrium is as follows
+%
 \begin{align*}
 & I_s = \frac{\mu}{c \rho } \\
 & D_s = \frac{c \rho  (r-d) - k \mu  r}{c \rho ^2}
 \end{align*}
-
+%
 This equilibrium is stable if,
-
+%
 \begin{align*}
 & r > d \\
 & \frac{2 c \rho  \left(\sqrt{\frac{-d+\mu +r}{\mu }}-1\right)}{r}\leq k < \frac{c \rho  (r-d)}{\mu  r} \\
@@ -329,9 +329,9 @@ This equilibrium is stable if,
 \end{align*}
 
 The above conditions suggest that the intrinsic reproduction of intermediate hosts $r$ needs to be greater than their natural mortality rate $d$. 
-More importantly, the intraspecific competition coefficient has to be within a range. 
-It is neither too small such that the population cannot grow to infinity nor too large such that the population cannot survive. 
-Finally, the natural mortality rate of the definitive host has to be sufficiently large. Satisfying such conditions, we obtain a stable disease-free equilibrium (Figure \ref{fig:ecotraject:nonlinear}).
+More importantly, the intraspecific competition coefficient has to be within a range allowing the population to survive.
+Finally, the definitive host's natural mortality rate must be sufficiently large. 
+Satisfying such conditions, we obtain a stable disease-free equilibrium (Figure \ref{fig:ecotraject:nonlinear}).
 
 \begin{figure}[!ht]
 \includegraphics[width=\textwidth]{Figures/ecotraject_nonlinear.jpeg}
@@ -341,7 +341,11 @@ Finally, the natural mortality rate of the definitive host has to be sufficientl
 
 When a parasite is introduced in the disease-free equilibrium, it can spread if its reproduction ratio $R_0 > 1$. 
 Since the expression is complicated, we could not obtain solutions for this inequality without assumptions. 
-Assuming that double infections and single infection result in the same parasite virulence and parasite reproduction, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$,and $f_w = \epsilon f_{ww}$, we found the the parasite can establish and spread in the population of intermediate and definitive hosts if its reproduction value in single infection $f_w$ is greater than a threshold (the expression of the threshold is rather complicated, therefore it is not useful to write down its expression) (Figure \ref{fig:bistability}). It should be noted that parasite reproduction is extremely large compared to other parameters (its value is 40 times greater than the values of other parameters), suggesting that trophically transmitted parasites have to release a large amount of offspring into the environment to maintain its persistence. Interestingly, if the reproduction rate of the parasite in double infection state is greater than that in single infection state, bistability can occur such that the parasite population will crash if it is disturbed and become too small (Figure \ref{fig:bistability}A, B). In that case, as parasite reproduction increases, the density of singly infected definitive host saturated instead of increasing as in the case when there is no difference in reproduction between singly and doubly infection. 
+Assuming that double infections and single infection result in the same parasite virulence and parasite reproduction, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$, and $f_w = \epsilon f_{ww}$, we found that the parasite can establish and spread in the hosts if its reproduction value in single infection $f_w$ is greater than a threshold (Figure \ref{fig:bistability}). 
+The parasite reproduction is substantial compared to other parameters (its value is 40 times greater than other parameters), suggesting that trophically transmitted parasites must release many offspring into the environment to persist. 
+Interestingly, bistability occurs if the reproduction rate of the parasite in the co-infection state is greater than in the single infection state. 
+The parasite population will crash if it is disturbed and become too small (Figure \ref{fig:bistability}A, B). 
+In that case, as parasite reproduction increases, the density of the singly infected definitive host saturates instead of increasing, as is the case when there is no difference in reproduction between single and double infections.
 
 \begin{figure}[!ht]
 \includegraphics[width = \textwidth]{Figures/bistability.jpeg}
