@@ -119,10 +119,9 @@ Here, we attempt to fill the gap in the theoretical work on host manipulation in
 
 \section*{Model and Results}
 
-We focus on the complex lifecycle of a trophically transmitted parasite. 
-Thus the parasites can move through multiple hosts and reproduce inside their definitive hosts before being released into the environment. 
-The parasites pass through the intermediate hosts between the environment and the definitive host.
-When a definitive host consumes an infected intermediate host, the definitive host gets infected, and the parasite completes its lifecycle.
+We focus on the complex lifecycle of a trophically transmitted parasite that requires two hosts: an intermediate host and a definitive host. 
+The parasites only reproduce inside their definitive hosts and their offspring are released in to the environment. An intermediate host can be infected if it encounters this free-living parasite pool. 
+Finally, when a definitive host consumes an infected intermediate host, the definitive host gets infected, and the parasite completes its lifecycle.
 
 For simplicity, intermediate and definitive hosts can be infected by one (single infection) or at most two parasites (double infections). 
 The probability that two parasites in the parasite pool co-transmit to an intermediate host is denoted by  $p$, and thus $1-p$ is the probability that a single parasite enters an intermediate host. 
@@ -132,19 +131,19 @@ This formulation assumes that infection always happens whenever there are encoun
 The dynamics of a complex lifecycle parasite that requires two hosts is described by the following ODEs, firstly for the intermediate host as,
 
 \begin{align}
-\frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - \Pi_s(D_s, D_w, D_{ww}) I_s  - \eta  I_s \nonumber \\ 
-\frac{dI_w}{dt} &=  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \Pi_w(D_s, D_w, D_{ww}, \beta_w) I_w \label{odes:ihosts} \\
-\frac{dI_{ww}}{dt} &= p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww} \nonumber
+\frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - \P_s(D_s, D_w, D_{ww}) I_s  - \eta  I_s \nonumber \\ 
+\frac{dI_w}{dt} &=  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \P_w(D_s, D_w, D_{ww}, \beta_w) I_w \label{odes:ihosts} \\
+\frac{dI_{ww}}{dt} &= p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \P_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww} \nonumber
 \end{align}
 
 where $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, which is a function of both infected and uninfected individuals.
-$\Pi_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on susceptible, singly infected and doubly infected intermediate hosts respectively. 
+$\P_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on susceptible, singly infected and doubly infected intermediate hosts respectively. 
 The predation function depends on the density of the definitive hosts and the manipulative strategies of parasites in the intermediate hosts. 
 In particular, if a single parasite infects an intermediate host, the manipulation strategy is $\beta_w$. 
 If two parasites infect it, the manipulation strategy is $\beta_{ww}$. 
-The link between $\beta_w$ and $\beta_{ww}$, is explored further. 
+In the scope of this model, we assume no link between $\beta_w$ and $\beta_{ww}$. 
 The force of infection by parasites in the environment is denoted by $\eta = \gamma W$. 
-The force of infection that corresponds respectively to singly infected intermediate host ($I_w$), or doubly infected intermediate hosts ($I_{ww}$) is denoted by $\lambda_i = \beta_i I_i$, where $i = \{ w, ww\}$. 
+The force of infection that corresponds respectively to singly infected intermediate host ($I_w$), or doubly infected intermediate hosts ($I_{ww}$) is denoted respectively by $\lambda_w = \beta_w I_w$ and $\lambda_{ww} = \beta_{ww} I_{ww}$. Because in reality parasites can manipulate both intermediate and definitive hosts, here, whenever we mention host manipulation, it specifically refers to the manipulation in intermediate hosts, which correlates to the predation rate.
 
 For the definitive hosts we have,
 \begin{align}
@@ -153,8 +152,8 @@ For the definitive hosts we have,
 \frac{dD_{ww}}{dt} &= q \lambda_{ww} D_s + (2 (1 - q) \lambda_{ww} + \lambda_w) D_w - (\mu + \sigma_{ww}) D_{ww} \nonumber
 \end{align}
 %
-where $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts, which is a function of population density of both intermediate and definitive hosts, infected or uninfected alike. 
-The dynamics of the parasites in the environment are then given solely by,
+where $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts, which depends on the density of both intermediate and definitive hosts, infected or uninfected alike. 
+The dynamics of the free-living parasites in the environment are then given solely by,
 \begin{align}
 	\frac{dW}{dt} &= f_w D_w + f_{ww} D_{ww} - \delta W - \eta I_s \label{odes:eparasite}
 \end{align}
@@ -219,24 +218,24 @@ R_0 = & \gamma I_s^* \frac{ p q \beta_{ww}}{\alpha_{ww} + d + \Pi_{ww}} \frac{D_
 & \gamma  I_s^* \left( \frac{ (1-p)\beta_w}{\alpha_w + d + \Pi_w} + \frac{2 p (1-q) \beta_{ww}}{\alpha_{ww} + d + \Pi_{ww}} \right) \frac{D_s^*}{\lambda_w + 2 (1-q) \lambda_{ww}  + \mu + \sigma_w} \frac{f_w}{\delta +\gamma  I_s^*}
 \end{align}
 
-where $I_s^*$ and $D_s^*$ are the density of susceptible intermediate and definitive hosts at the disease free equilibrium. The expression of $R_0$ indicates the possible reproduction routes of a parasite, which can be via double infections or single infection. The first component corresponds to the double infections route, in which the focal parasite co-transmit with another parasite into a susceptible intermediate host, then co-transmit into a susceptible definitive host and reproduce. The second component corresponds to the single infection route, in which the focal parasite infects a susceptible intermediate host, either via singly or doubly infections. It then transmit alone into the susceptible definitive host, and eventually reproduce. It should be noted that, in a disease-free environment, parasites are so rare that the reproduction ratio compartments with sequential infection do not appear. 
+where $I_s^*$ and $D_s^*$ are the density of susceptible intermediate and definitive hosts at the disease free equilibrium. The expression of $R_0$ indicates the possible reproduction routes of a parasite when being introduced in a disease-free population. The routes can be via double infections or single infection. The first component corresponds to the double infections route, in which the focal parasite co-transmit with another parasite into a susceptible intermediate host, then co-transmit into a susceptible definitive host and reproduce. The second component corresponds to the single infection route, in which the focal parasite infects a susceptible intermediate host, either via singly or doubly infections. It then transmit alone into the susceptible definitive host, and eventually reproduce. The compartment with sequential infection do not appear in the reproduction route via double infections because parasites are assumed rare in a susceptible prey-predator population.
 
 
-If $R_0 > 1$, a parasite can spread when introduced into the disease-free equilibrium of prey and predator. This disease-free equilibrium exist regardless of the explicit form of the predation functions $Pi_w$ and $Pi_{ww}$. However, to further understand the effect of manipulation on the fitness of the parasites and the ecological dynamics of the system, we need to specify the predation functions and know the explicit form of the equilibrium $I_s^*$ and $D_s^*$. The explicit forms of $I_s^*$ and $D_s^*$ depend largely on the birth functions $R$ and $B$ of respectively the intermediate and definitive host, as well as predation functions $\Pi_s, \Pi_w, \Pi_{ww}$. For simplicity, we consider linear functions for predation 
+If $R_0 > 1$, a parasite can spread in the population. To further understand the effect of manipulation on the fitness of the parasites and the ecological dynamics of the system, we will specify the predation functions $P_s, P_w, P_{ww}$, and the birth functions $R$ and $B$ of respectively the intermediate and definitive host. For simplicity, we consider linear functions for predation 
 
 \begin{align*}
-& \Pi_s(D_s + D_w + D_{ww}) = \rho (D_s + D_w + D_{ww}) \\
-& \Pi_w(D_s, D_w, D_{ww}, \beta_w) = (\rho + \beta_w) (D_s + D_w + D_{ww}) \\
-& \Pi_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) =  (\rho + \beta_{ww}) (D_s + D_w + D_{ww})
+& \P_s(D_s + D_w + D_{ww}) = \rho (D_s + D_w + D_{ww}) \\
+& \P_w(D_s, D_w, D_{ww}, \beta_w) = (\rho + \beta_w) (D_s + D_w + D_{ww}) \\
+& \P_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) =  (\rho + \beta_{ww}) (D_s + D_w + D_{ww})
 \end{align*}
 
-Here $\rho$ is the baseline capture rate of the predator on the prey. If an intermediate hosts is infected, it is captured by the definitive hosts with rate $\rho + \beta_w$ if it is singly infected, and with rate $\rho + \beta_{ww}$ if it is doubly infected. Zero values for $\beta_w$ and $\beta_{ww}$ suggest no manipulation. We consider a linear function of the birth of definitive hosts
+where $\rho$ is the baseline capture rate of the predator on the prey. If an intermediate hosts is infected, it is captured by the definitive hosts with rate $\rho + \beta_w$ if it is singly infected, and with rate $\rho + \beta_{ww}$ if it is doubly infected. Zero values for $\beta_w$ and $\beta_{ww}$ suggest no manipulation. We consider a linear function of the birth of definitive hosts
 
 \begin{align*}
 B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c (D_s + D_w + D_{ww}) (I_s + I_w + I_{ww})
 \end{align*}
 
-where c is the efficiency of converting preys into offspring. It is noted that the birth rate of the predators depend on the capture rate but we do not allow host manipulation to affect the birth rate of the predators.
+where c is the efficiency of converting preys into offspring. It is noted that the birth rate of the predators depend on the capture rate but, to our best knowledge, there are no evident that host manipulation affects the birth rate of the predators.
 
 \subsection*{Linear birth function of intermediate hosts}
 We consider the system when the birth function $R$ of the intermediate host is linear, specifically, $R(I_s, I_w, I_ww) = r(I_s + I_w + I_ww)$. The equilibrium of intermediate and definitive hosts in the disease-free state are
