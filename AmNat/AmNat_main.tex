@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage[sc]{mathpazo} %Like Palatino with extensive math support
 \usepackage{fullpage}
-\usepackage[authoryear,sectionbib,sort]{natbib}
+%\usepackage[authoryear,sectionbib,sort]{natbib}
 \linespread{1.7}
 \usepackage[utf8]{inputenc}
 \usepackage{lineno}
@@ -15,10 +15,13 @@
 \titleformat{\paragraph}[runin]{\itshape}{\theparagraph}{1em}{}[. ]\renewcommand{\refname}{Literature Cited}
 
 \usepackage{color}
+	\definecolor{darkred}{rgb}{0.75,0.1,0.1}
+	 \definecolor{darkblue}{rgb}{0,0,0.75}
+	 \definecolor{magenta}{rgb}{0,0,0.75}
+\newcommand{\cha}[1]{\textcolor{darkred}{(#1)}}
 
 \usepackage{hyperref}
 \definecolor{darkgreen}{rgb}{0.1,0.6,0.3}
-\definecolor{darkred}{rgb}{0.6,0.3,0.1}
 \hypersetup{
     colorlinks=true,       % false: boxed links; true: colored links
     linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
@@ -106,16 +109,41 @@
 % section~\ref{section:CountingOwlEggs}), and refer to sections by name
 % (e.g. section ``Counting Owl Eggs'').
 
-Life on earth is ubiquitously infectes with parasites, many with complex life cycles \citep{zimmer:book:2001}. While a complex life cycle can be defined as abrupt ontogenic changes in morphology and/or ecology \citep{Benesh:2016dj}, a complex parasitic life cycle typically involves numerous hosts that a parasite needs to traverse in the process of completing its life cycle. This results in the evolution of various strategies that enable the success of parasite transmission from one host to another. One famous strategy that inspires many scifi movies and novels is host manipulation, where a parasite is able to alter the morphology and/or behaviour of its intermediate host in order to enhance its transmission to its definitive host \citep{Hughes2012}. Host manipulation has been shown in many host-parasite systems \citep{Hughes2012, molyneux_jefferies1986}. Sand flies infected by \textit{Leishmania} parasites bite more and take more time for a blood meal from mammals (the definitive host of \textit{Leishmania}) compared to their uninfected counterparts \citep{ Rogers2007}. Copepods infected by cestode parasites are more active and easier to caught by sticklebacks (the definitive hosts of the cestodes) compared to uninfected copepods \citep{Wedekind1996}. 
+Parasites infect Life on earth ubiquitously, and many of these parasites have complex life cycles \cite{zimmer:book:2001}. 
+While a complex lifecycle can be defined as abrupt ontogenic changes in morphology and ecology \cite{Benesh:2016dj}, a complex parasitic lifecycle typically involves numerous hosts that a parasite needs to traverse in the process of completing its life cycle. 
+This complex lifecycle results in the evolution of various strategies that enable the success of parasite transmission from one host to another. 
+One famous strategy that inspires many science fiction movies and novels is host manipulation, where a parasite can alter the morphology or behaviour of its intermediate host to enhance its transmission to its definitive host \cite{Hughes2012}. 
+Host manipulation has been shown in many host-parasite systems \cite{Hughes2012, molyneux_jefferies1986}. 
+Sand flies infected by \textit{Leishmania} parasites bite more and take more time for a blood meal from mammals (the definitive host of \textit{Leishmania}) compared to their uninfected counterparts \cite{ Rogers2007}. 
+Copepods infected by cestode parasites are more active and accessible to sticklebacks (the definitive hosts of the cestodes) compared to uninfected copepods \cite{Wedekind1996}.
 
 
-Theoretical studies have attempted to understand the ecological and evolutionary consequences of host manipulation. \cite{Roosien2013, Hosack2008} showed that manipulative parasite can increase the disease prevalence in an epidemic. \cite{Gandon2018} studies the evolution of the manipulative ability of infectious disease parasites, showing that different evolutionary outcomes depend on whether the pathogen can control its vector or host. \cite{Hadeler1989, Fenton2006} and \cite{Rogawa2018} showed that host manipulation can stabilise or destabilise the predator-prey dynamics depending on how manipulation affects the predation response function and the assumption on the fertility of infected definitive host. \cite{Seppl2008} showed that host manipulation can evolve even when it increases the risk of intermediate host being eaten by non-host predator given that the initial predation risk is sufficiently low. These models, however, do not consider multiple infections, a phenomenon that is in fact the norm rather than an exception in parasitism. Multiple infections results in the coinfection of more than one parasites inside a host, which may largely alter the manipulative outcomes. An alignment of interest between coinfecting parasites may lead to enhancement of manipulation while a conflict in interest may reduce the manipulative effect. \cite{Hafer:2015gl} showed that copepods infected by two cestode parasites reduce the activity of copepods when both parasites are at the same noninfectious stage, i.e. both parasites are not ready to transmit, thus the reduction in mobility is suggested to reduce the predation rate by the definitive hosts. When the copepods are infected by two infectious parasites, the copepods' activity increase and so does the predation risk. However, when the copepods are infected by one infectious and one noninfectious parasite, their interest conflicts and one parasite wins over the other. 
+Theoretical studies have attempted to understand host manipulation's ecological and evolutionary consequences. 
+Studies \cite{Roosien2013, Hosack2008} showed that manipulative parasites could increase the disease prevalence in an epidemic. \cite{Gandon2018} studies the evolution of the manipulative ability of infectious disease parasites, showing that different evolutionary outcomes depend on whether the pathogen can control its vector or host.
+\cite{Hadeler1989, Fenton2006} and \cite{Rogawa2018} showed that host manipulation could stabilise or destabilise the predator-prey dynamics depending on how manipulation affects the predation response function and the assumption on the fertility of the definitive infected host. \cite{Seppl2008} showed that host manipulation could evolve even when it increases the risk of the intermediate host being eaten by a non-host predator, given that the initial predation risk is sufficiently low. 
+However, these models do not consider multiple infections, a phenomenon that is the norm rather than an exception in parasitism. Multiple infections result in the coinfection of more than one parasite inside a host, which may vastly alter the manipulative outcomes. 
+An alignment of interest between coinfecting parasites may enhance manipulation, while a conflict of interest may reduce the manipulative effect. 
+\cite{Hafer:2015gl} showed that copepods infected by two cestode parasites reduce the activity of copepods when both parasites are at the same noninfectious stage, i.e. both parasites are not ready to transmit. Thus the reduction in mobility is suggested to reduce the predation rate by the definitive hosts. When two infectious parasites infect the copepods, the copepods' activity increases, and so does the predation risk. 
+However, when the copepods are infected by one infectious and one noninfectious parasite, their interest clash, and one parasite wins over the other. 
 
 
-Theoretical work that takes into account multiple infections often focus on the evolution of virulence \citep{vanBaalen1995, Alizon2013, Alizon2008, Choisy2010, Alizon2012}. They show that multiple infections can lead to an increase in virulence \citep{vanBaalen1995, Choisy2010}, a branching of one less virulent and one hypervirulent parasite when within-host dynamics are considered, a reduction in virulence if parasites are cotransmitted \citep{Alizon2012}. Virulence is often assumed to be trade off for transmission rate, which may be associated with host manipulation in cases of infectious disease parasites. Host manipulation in trophically transmitted parasites, however, is associated with predation rate, which itself largely affects the predator-prey dynamics. Theoretical studies on this type of host manipulation with multiple infection are rare \citep{Parker2003,Vickery2009} and they do not consider the prey-predator dynamics, which could have important feedback on the evolution of host manipulation. A few studies that consider the prey-predator dynamics do not incorporate multiple infections \citep{Rogawa2018, Iritani2018, Hadeler1989, Fenton2006}. More importantly, they often assume that transmission from definitive hosts to intermediate hosts is due to direct contact between the two type of hosts. This is often not the case in reality as parasites are released from the definitive hosts into the environment. Only when intermediate hosts have contact with this free-living parasite pool does transmission happen.
+Theoretical work that considers multiple infections often focuses on the evolution of virulence \cite{vanBaalen1995, Alizon2013, Alizon2008, Choisy2010, Alizon2012}. 
+They show that multiple infections can lead to an increase in virulence \cite{vanBaalen1995, Choisy2010}, a branching of one less virulent and one hypervirulent parasite when within-host dynamics are considered, a reduction in virulence if parasites are co-transmitted \cite{Alizon2012}. Virulence is often assumed to be a trade-off for transmission rate, which may be associated with host manipulation in cases of infectious disease parasites. 
+However, host manipulation in trophically transmitted parasites is associated with predation rate, which predominantly affects predator-prey dynamics. 
+Theoretical studies on this type of host manipulation with multiple infections are rare \cite{Parker2003,Vickery2009}, and they do not consider the prey-predator dynamics, which could have important feedback on the evolution of host manipulation. 
+A few studies that consider the prey-predator dynamics do not incorporate multiple infections \cite{Rogawa2018, Iritani2018, Hadeler1989, Fenton2006}. 
+More importantly, they often assume that transmission from definitive hosts to intermediate hosts is due to direct contact between the two types of hosts. 
+This is often not the case in reality, as parasites are released from the definitive hosts into the environment. 
+Transmission happens only when intermediate hosts have contact with this free-living parasite pool.
 
 
-Here, we attempt to fill the gap in the theoretical work on host manipulation in trophically transmitted parasites, that is, we include multiple infections and consider the dynamics of the free-living parasite pool. We use a compartmental model that illustrate a complex life-cycle parasite that has two hosts: an intermediate host that is preyed upon by a definitive host. Transmission from the intermediate host to the definitive host takes place when predation on infected intermediate hosts happens. Reproduction only happens in the definitive hosts, and new parasites are released into the environment where they again have contact with the intermediate hosts to complete its life-cycle. We focus on the manipulation of the intermediate hosts, such that the parasite increases the predation rate on the intermediate host by the definitive host to increase its transmission rate. We analyse the effect of host manipulation on the ecological dynamics of the prey-predator-parasite system, considering manipulation when multiple infections occur. We found that ....
+Our study addresses the gap in the theoretical work on host manipulation in trophically transmitted parasites.
+We include multiple infections and consider the dynamics of the free-living parasite pool. 
+We use a compartmental model that illustrates a complex lifecycle parasite with two hosts: an intermediate host preyed upon by a definitive host. 
+Transmission from the intermediate host to the definitive host occurs when predation on infected intermediate hosts happens. 
+Reproduction only happens in the definitive hosts, and new parasites are released into the environment, where they again have contact with the intermediate hosts to complete their lifecycle. 
+We focus on the manipulation of the intermediate hosts, such that the parasite increases the predation rate on the intermediate host by the definitive host to increase its transmission rate. 
+We analyse the effect of host manipulation on the ecological dynamics of the prey-predator-parasite system, considering manipulation when multiple infections occur. We found that ....
 
 \section*{Model and Results}
 
@@ -123,24 +151,25 @@ We focus on the complex lifecycle of a trophically transmitted parasite that req
 The parasites only reproduce inside their definitive hosts and their offspring are released in to the environment. An intermediate host can be infected if it encounters this free-living parasite pool. 
 Finally, when a definitive host consumes an infected intermediate host, the definitive host gets infected, and the parasite completes its lifecycle.
 
-For simplicity, intermediate and definitive hosts can be infected by one (single infection) or at most two parasites (double infections). 
-The probability that two parasites in the parasite pool co-transmit to an intermediate host is denoted by  $p$, and thus $1-p$ is the probability that a single parasite enters an intermediate host. 
-When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that both parasites co-transmit to the definitive host.
+
+For simplicity, we assume that hosts can be infected by one (single infection) or, at most, two parasites (double infections). 
+Given that infection occurs, the probability that two parasites from the parasite pool co-transmit to an intermediate host is denoted by  $p$, and thus $1-p$ is the probability that a single parasite enters an intermediate host. 
+When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that the parasites co-transmit to the definitive host.
 With probability $1-q$, only one parasite successfully transmits. 
-This formulation assumes that infection always happens whenever there are encounters between parasites and hosts.
-The dynamics of a complex lifecycle parasite that requires two hosts is described by the following ODEs, firstly for the intermediate host as,
-
+This formulation assumes that infection always happens when hosts encounter parasites.
+The dynamics of a complex lifecycle parasite that requires two hosts is described by the following system of ODEs, firstly for the intermediate host as,
+%
 \begin{align}
-\frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - \P_s(D_s, D_w, D_{ww}) I_s  - \eta  I_s \nonumber \\ 
-\frac{dI_w}{dt} &=  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - \P_w(D_s, D_w, D_{ww}, \beta_w) I_w \label{odes:ihosts} \\
-\frac{dI_{ww}}{dt} &= p \eta_w I_s  - (d + \alpha_ww) I_{ww} - \P_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww} \nonumber
+\frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - P_s(D_s, D_w, D_{ww}) I_s  - \eta  I_s \nonumber \\ 
+\frac{dI_w}{dt} &=  (1 - p) \eta_w I_s  - (d + \alpha_w) I_w - P_w(D_s, D_w, D_{ww}, \beta_w) I_w \label{odes:ihosts} \\
+\frac{dI_{ww}}{dt} &= p \eta_w I_s  - (d + \alpha_ww) I_{ww} - P_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) I_{ww} \nonumber
 \end{align}
-
-where $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, which is a function of both infected and uninfected individuals.
-$\P_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on susceptible, singly infected and doubly infected intermediate hosts respectively. 
+%
+where $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, a function of both infected and uninfected individuals.
+$P_i$, where $i = \{s, w, ww\}$ is the predation function of definitive hosts on susceptible, singly infected and doubly infected intermediate hosts respectively. 
 The predation function depends on the density of the definitive hosts and the manipulative strategies of parasites in the intermediate hosts. 
 In particular, if a single parasite infects an intermediate host, the manipulation strategy is $\beta_w$. 
-If two parasites infect it, the manipulation strategy is $\beta_{ww}$. 
+However if the intermediate host is co-infected, the manipulation strategy is $\beta_{ww}$. 
 In the scope of this model, we assume no link between $\beta_w$ and $\beta_{ww}$. 
 The force of infection by parasites in the environment is denoted by $\eta = \gamma W$. 
 The force of infection that corresponds respectively to singly infected intermediate host ($I_w$), or doubly infected intermediate hosts ($I_{ww}$) is denoted respectively by $\lambda_w = \beta_w I_w$ and $\lambda_{ww} = \beta_{ww} I_{ww}$. Because in reality parasites can manipulate both intermediate and definitive hosts, here, whenever we mention host manipulation, it specifically refers to the manipulation in intermediate hosts, which correlates to the predation rate.
@@ -159,7 +188,7 @@ The dynamics of the free-living parasites in the environment are then given sole
 \end{align}
 
 
-Definitions of different parameters can be found in Table \ref{table:varpardescription}.
+Definitions of different parameters can be found in Table~\ref{table:varpardescription}.
 %
 \begin{table}[!ht]
 \begin{tabular}{|p{2.5cm}|p{12cm}|} 
@@ -205,23 +234,37 @@ Therefore, a singly infected definitive host can be further infected by another 
 The dynamics of the system are illustrated in figure (\ref{fig:schematic}).
 
 \begin{figure}[ht!]
-\includegraphics[width=\textwidth]{Figures/schematics.pdf}
-\caption{Schematic of the model. The compartments of intermediate hosts are in the blue box, including $I_s$ (susceptible host), $I_w$ (singly infected host), and $I_{ww}$ (doubly infected host). The compartments of definitive hosts are in the red box, including $D_s$ (susceptible host), $D_w$ (singly infected host), and $D_{ww}$ (doubly infected host). Definitive hosts prey upon intermediate host and infection happens when infected intermediate hosts are eaten by definitive hosts. $W$ represents the parasite pool in the environment where parasites are released from the definitive hosts.}
+\includegraphics[width=\textwidth]{Figures/schematic.pdf}
+\caption{Schematic of the model. The compartments of intermediate hosts are in the blue box, including $I_s$ (susceptible host), $I_w$ (singly infected host), and $I_{ww}$ (doubly infected host). The compartments of definitive hosts are in the red box, including $D_s$ (susceptible host), $D_w$ (singly infected host), and $D_{ww}$ (doubly infected host). Definitive hosts prey upon intermediate host and infection happens when infected intermediate hosts are eaten by definitive hosts. 
+$W$ represents the parasite pool in the environment where parasites are released from the definitive hosts.
+\cha{The $W$ goes to to the Intermediate then? I would highlight the W as environment also in the figure.}
+}
 \label{fig:schematic}
 \end{figure}
 
 \subsection*{Basic reproduction ratio $R_0$}
 
-We calculate the basic reproduction ratio $R_0$ of the parasite using the next generation method (ref) (details are in supplementary).
+\cha{What does it mean by a basic reproductive ratio?.}
+The basic reproduction ratio $R_0$ (or basic reproduction number as often used in epidemiology) is an indication for parasite fitness. It can be understood as the expected number of offspring a parasite produces during its lifetime when introduced in a susceptible host population. We calculate the basic reproduction ratio $R_0$ using the next generation method (ref) (details are in supplementary).  
+
 \begin{align}
 R_0 = & \gamma I_s^* \frac{ p q \beta_{ww}}{\alpha_{ww} + d + \Pi_{ww}} \frac{D_s^*}{\mu +\sigma_{ww}} \frac{f_{ww}}{\delta +\gamma I_s^*} + \nonumber \\
 & \gamma  I_s^* \left( \frac{ (1-p)\beta_w}{\alpha_w + d + \Pi_w} + \frac{2 p (1-q) \beta_{ww}}{\alpha_{ww} + d + \Pi_{ww}} \right) \frac{D_s^*}{\lambda_w + 2 (1-q) \lambda_{ww}  + \mu + \sigma_w} \frac{f_w}{\delta +\gamma  I_s^*}
 \end{align}
 
-where $I_s^*$ and $D_s^*$ are the density of susceptible intermediate and definitive hosts at the disease free equilibrium. The expression of $R_0$ indicates the possible reproduction routes of a parasite when being introduced in a disease-free population. The routes can be via double infections or single infection. The first component corresponds to the double infections route, in which the focal parasite co-transmit with another parasite into a susceptible intermediate host, then co-transmit into a susceptible definitive host and reproduce. The second component corresponds to the single infection route, in which the focal parasite infects a susceptible intermediate host, either via singly or doubly infections. It then transmit alone into the susceptible definitive host, and eventually reproduce. The compartment with sequential infection do not appear in the reproduction route via double infections because parasites are assumed rare in a susceptible prey-predator population.
+where $I_s^*$ and $D_s^*$ are the density of susceptible intermediate and definitive hosts at the disease-free equilibrium. 
+Here, the expression of $R_0$ contains possible reproduction routes of a parasite, which can be via double or single infections. 
+The first component corresponds to the double infections route, in which the focal parasite co-transmit with another parasite into a susceptible intermediate host, then co-transmits into a susceptible definitive host and reproduces. 
+The second component corresponds to the single infection route, wherein the focal parasite infects a susceptible intermediate host via singly or doubly infections. 
+It then transmits alone into the susceptible definitive host and eventually reproduces. 
+In a disease-free environment, parasites are so rare that the reproduction ratio compartments with sequential infections do not appear. 
 
 
-If $R_0 > 1$, a parasite can spread in the population. To further understand the effect of manipulation on the fitness of the parasites and the ecological dynamics of the system, we will specify the predation functions $P_s, P_w, P_{ww}$, and the birth functions $R$ and $B$ of respectively the intermediate and definitive host. For simplicity, we consider linear functions for predation 
+If $R_0 > 1$, a parasite can spread when introduced into the disease-free equilibrium of prey and predator.
+Intuitively, the higher the density of susceptible intermediate and definitive hosts, the larger the value of $R_0$ as the reservoir for infection is larger. In contrast, regardless of the explicit form of the predation function, the higher the predation rate $P_w$ and $P_{ww}$, the lower the value of $R_0$ because the reservoir of intermediate hosts is smaller. 
+The effect of host manipulation on the value of $R_0$ is not so straight forward because more efficient manipulation can increase transmission rate from intermediate host to definitive host, but it can also increases the predation rate, leading to smaller intermediate host reservoir. To understand the effect of manipulation on the fitness of parasites and the ecological dynamics of the system, we need to specify the predation functions. 
+\cha{Here we need to motivate the importance of knowing the form of the functions.}
+For simplicity, we consider linear functions for predation 
 
 \begin{align*}
 & \P_s(D_s + D_w + D_{ww}) = \rho (D_s + D_w + D_{ww}) \\
@@ -229,56 +272,65 @@ If $R_0 > 1$, a parasite can spread in the population. To further understand the
 & \P_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) =  (\rho + \beta_{ww}) (D_s + D_w + D_{ww})
 \end{align*}
 
-where $\rho$ is the baseline capture rate of the predator on the prey. If an intermediate hosts is infected, it is captured by the definitive hosts with rate $\rho + \beta_w$ if it is singly infected, and with rate $\rho + \beta_{ww}$ if it is doubly infected. Zero values for $\beta_w$ and $\beta_{ww}$ suggest no manipulation. We consider a linear function of the birth of definitive hosts
+where $\rho$ is the baseline capture rate of the predator on the prey. If an intermediate hosts is infected, it is captured by the definitive hosts with rate $\rho + \beta_w$ if it is singly infected, and with rate $\rho + \beta_{ww}$ if it is doubly infected. Zero values for $\beta_w$ and $\beta_{ww}$ suggest no manipulation. 
+
+For simplicity, we also consider a linear function of the birth of definitive hosts
 
 \begin{align*}
 B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c (D_s + D_w + D_{ww}) (I_s + I_w + I_{ww})
 \end{align*}
 
-where c is the efficiency of converting preys into offspring. It is noted that the birth rate of the predators depend on the capture rate but, to our best knowledge, there are no evident that host manipulation affects the birth rate of the predators.
+where c is the efficiency of converting preys into predator's offspring. 
+The birth rate of the predators depends on the capture rate, but we do not allow host manipulation to affect the birth rate of the predators.
+
+The explicit form of $I_s^*$ and $D_s^*$ depends on the explicit form of all birth and predation functions $B, R, P_s, P_w$ and $P_{ww}$. However, it does not depends on the manipulation ability, or any parameter of the parasite. $I_s^*$ and $D_s^*$ simply represents the prey-predator dynamics when there is no parasite. Given that the birth rate of the predator and the predation rate are linear functions with respect to the prey and predator density, the form of birth rate of the prey (intermediate host) $R$ therefore has a large effect on the susceptible host dynamics. 
+
+\cha{The motivation for the linear and non-linear functions and a paragraph discussing that before we move to the next sections.}
 
 \subsection*{Linear birth function of intermediate hosts}
-We consider the system when the birth function $R$ of the intermediate host is linear, specifically, $R(I_s, I_w, I_ww) = r(I_s + I_w + I_ww)$. The equilibrium of intermediate and definitive hosts in the disease-free state are
-
+Here, we consider the system when the birth function $R$ of the intermediate host is linear, specifically, $R(I_s, I_w, I_ww) = r(I_s + I_w + I_ww)$. 
+The equilibrium of intermediate and definitive hosts in the disease-free state are,
+%
 \begin{align*}
 & I_{s0}^* = \frac{\mu}{c \rho} \\
 & D_{s0}^* = \frac{r - d}{\rho}
 \end{align*}
-
+%
 This equilibrium is always unstable. 
-We always observe cyclic behaviour of the equilibrium because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has one imaginary eigenvalue with a positive real part. 
-This follows from the Lotka-Voltera system using linear functions for prey birth and predation (reference...). 
+We always observe the cyclic behaviour of the equilibrium because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has one imaginary eigenvalue with a positive real part. 
+This follows from the Lotka-Voltera system using linear functions for prey birth and predation (reference...). \cha{Use for motivation above.}
 Because the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite (often evaluated when the disease-free state is stable). 
-Here, even if we solve the inequality $R_0 > 1$, which happens when the transmission rate from the environment to intermediate hosts $\gamma$ is greater than a threshold (the expression of the threshold is too complicated, hence it is not useful to write it here). 
-In addition, the reproduction of the parasites has to be sufficiently large (again, the expression of the thresholds are too complicated such that it is useless to write it here).
+Here, even if we solve the inequality $R_0 > 1$, which happens when the transmission rate from the environment to intermediate hosts $\gamma$ is greater than a threshold (the expression of the threshold is complicated to express). 
+In addition, the reproduction of the parasites has to be sufficiently large.
 
-Our simulations show that the parasite cannot persist even when its reproduction ratio is greater than one (Figure \ref{fig:diseasefree:linear}). This result is, however, in agreement with the conclusion in \citet{Ripa:Evol:2013}, which suggests that it is harder for a mutant to invade a cyclic population. 
+Our simulations show that the parasite cannot persist even when its reproduction ratio is greater than one (Figure \ref{fig:diseasefree:linear}). However, this result agrees with the conclusion in \cite{Ripa:Evol:2013}, which suggests that it is difficult for a mutant to invade a cyclic population. 
 In our case, it is not the invasion of a mutant but a specific parasite in a cyclic disease-free host population. 
 This issue deserves a more thorough investigation. 
-To obtain a stable disease circulation state, we use a non-linear birth function of intermediate hosts. The following sections focus on analysing the ecological dynamics of the complex lifecycle parasite under different scenario of its manipulative ability.
+To obtain a stable disease circulation state, we use a non-linear birth function of intermediate hosts. 
+The following sections focus on analysing the ecological dynamics of the complex lifecycle parasite under various scenarios of its manipulative ability.
 
 \begin{figure}
-\includegraphics[width=\textwidth]{Figures/diseasefree_linear.jpg}
+\includegraphics[width=\textwidth]{Figures/diseasefree_linear.pdf}
 \caption{Disease-free equilibrium using linear birth function. Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameter values  $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w =  \alpha_{ww} =  0, \ \beta_w  = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1,  \ c = 1.4, \ \mu = 0.9,  \ \sigma_w = \sigma_{ww} = 0, \ q = 0.01, \  f_w = 6.5, \  f_{ww} = 7.5, \ \delta = 0.9$ } 
 \label{fig:diseasefree:linear}
 \end{figure}
 
 \subsection*{Non-linear birth function of intermediate hosts}
-The non-linear birth function of intermediate hosts is as followed
-
+The non-linear birth function of intermediate hosts is as followed,
 \begin{align*}
 R(I_w, I_s,I_{ww}) = r (I_s + I_w + I_{ww}) (1 - k (I_s + I_w + I_{ww}))
 \end{align*}
-
-where $k$ is the intraspecific competition coefficient. The disease-free equilibrium is as follows
-
+%
+where $k$ is the intraspecific competition coefficient. 
+The disease-free equilibrium is as follows
+%
 \begin{align*}
 & I_s = \frac{\mu}{c \rho } \\
 & D_s = \frac{c \rho  (r-d) - k \mu  r}{c \rho ^2}
 \end{align*}
-
+%
 This equilibrium is stable if,
-
+%
 \begin{align*}
 & r > d \\
 & \frac{2 c \rho  \left(\sqrt{\frac{-d+\mu +r}{\mu }}-1\right)}{r}\leq k < \frac{c \rho  (r-d)}{\mu  r} \\
@@ -286,9 +338,9 @@ This equilibrium is stable if,
 \end{align*}
 
 The above conditions suggest that the intrinsic reproduction of intermediate hosts $r$ needs to be greater than their natural mortality rate $d$. 
-More importantly, the intraspecific competition coefficient has to be within a range. 
-It is neither too small such that the population cannot grow to infinity nor too large such that the population cannot survive. 
-Finally, the natural mortality rate of the definitive host has to be sufficiently large. Satisfying such conditions, we obtain a stable disease-free equilibrium (Figure \ref{fig:ecotraject:nonlinear}).
+More importantly, the intraspecific competition coefficient has to be within a range allowing the population to survive.
+Finally, the definitive host's natural mortality rate must be sufficiently large. 
+Satisfying such conditions, we obtain a stable disease-free equilibrium (Figure \ref{fig:ecotraject:nonlinear}).
 
 \begin{figure}[!ht]
 \includegraphics[width=\textwidth]{Figures/ecotraject_nonlinear.jpeg}
@@ -298,7 +350,12 @@ Finally, the natural mortality rate of the definitive host has to be sufficientl
 
 When a parasite is introduced in the disease-free equilibrium, it can spread if its reproduction ratio $R_0 > 1$. 
 Since the expression is complicated, we could not obtain solutions for this inequality without assumptions. 
-Assuming that double infections and single infection result in the same parasite virulence and parasite reproduction, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$,and $f_w = \epsilon f_{ww}$, we found the the parasite can establish and spread in the population of intermediate and definitive hosts if its reproduction value in single infection $f_w$ is greater than a threshold (the expression of the threshold is rather complicated, therefore it is not useful to write down its expression) (Figure \ref{fig:bistability}). It should be noted that parasite reproduction is extremely large compared to other parameters (its value is 40 times greater than the values of other parameters), suggesting that trophically transmitted parasites have to release a large amount of offspring into the environment to maintain its persistence. Interestingly, if the reproduction rate of the parasite in double infection state is greater than that in single infection state, bistability can occur such that the parasite population will crash if it is disturbed and become too small (Figure \ref{fig:bistability}A, B). In that case, as parasite reproduction increases, the density of singly infected definitive host saturated instead of increasing as in the case when there is no difference in reproduction between singly and doubly infection. 
+Assuming that double infections and single infection result in the same parasite virulence and parasite reproduction, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$, and $f_w = \epsilon f_{ww}$, we found that the parasite can establish and spread in the hosts if its reproduction value in single infection $f_w$ is greater than a threshold (Figure \ref{fig:bistability}). 
+The parasite reproduction is substantial compared to other parameters (its value is 40 times greater than other parameters), suggesting that trophically transmitted parasites must release many offspring into the environment to persist. 
+Interestingly, bistability occurs if the reproduction rate of the parasite in the co-infection state is greater than in the single infection state. 
+The parasite population will crash if it is disturbed and become too small (Figure \ref{fig:bistability}A, B). 
+In that case, as parasite reproduction increases, the density of the singly infected definitive host saturates instead of increasing, as is the case when there is no difference in reproduction between single and double infections.
+
 
 \begin{figure}[!ht]
 \includegraphics[width = \textwidth]{Figures/bistability.jpeg}
@@ -325,7 +382,6 @@ Parasites can be also cooperative in reproduction, that is, parasites in doubly 
 \caption{Bifurcation graph of $\beta_w$ (manipulation in singly infected host) and $\beta_{ww}$ (manipulation in doubly infected host) when cotransmission from the parasite pool to intermediate host is small $p = 0.01$ (A) and big $p = 0.5$. The white area is where the parasite goes extinct. Bistability occurs in the bounded areas. Manipulation is indifference between single infection and double infection on the black thick line. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.1, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.01, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 0.5$. Orange thick boundary indicates when reproduction of double infection is smaller than that of single infection ($\epsilon = 0.5, f_w = 36$), B) Dashed green boundary indicates when there is no difference in reproduction between single infection and double infection ($\epsilon = 1, f_w = 36$), C) Dot-dashed blue boundary indicates when reproduction in double infection is greater than that of single infection ($\epsilon = 2, f_w = 35$).}
 \label{fig:manipbifur}
 \end{figure}
-
 
 \section*{Discussion}
 
@@ -541,15 +597,15 @@ Carl Zimmer. 2001.
 % \\ \hline
 %\textit{Tribolium castaneum}  & Medea & Viability drive $d$ & Probably low k, highly \\
 %  & & & polyandrous\\
- %   & & & \citep{pai:EntoEA:2020} \\
+ %   & & & \cite{pai:EntoEA:2020} \\
 %\textit{Drosophila melanogaster}  & Selfish Segregation  & Distortion drive
 %$p$,$c$ & Probably low k, Polyandry \\ 
 %& Distorter (SD) & & with some re-mating \\
-%& & & latency \citep{singh:CurrSci:2004}\\
+%& & & latency \cite{singh:CurrSci:2004}\\
 %\textit{Mus musculus}  & t-haplotype & Distortion drive
 %$p$,$c$ & Probably low k, \\ 
 %& & & Polyandry ($r=2,$, \\ 
-%& & & \citep{birand:MolEcol:2022}) \\ \hline 
+%& & & \cite{birand:MolEcol:2022}) \\ \hline 
 %\end{tabular}
 %\bigskip{}
 %\\
