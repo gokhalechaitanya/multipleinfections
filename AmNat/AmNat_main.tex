@@ -109,17 +109,16 @@
 % section~\ref{section:CountingOwlEggs}), and refer to sections by name
 % (e.g. section ``Counting Owl Eggs'').
 
-Parasites infect Life on earth ubiquitously, and many of these parasites have complex life cycles \cite{zimmer:book:2001}. 
-While a complex lifecycle can be defined as abrupt ontogenic changes in morphology and ecology \cite{Benesh:2016dj}, a complex parasitic lifecycle typically involves numerous hosts that a parasite needs to traverse in the process of completing its life cycle. 
+Parasites infect life on earth ubiquitously, and many of these parasites have complex life cycles \cite{zimmer:book:2001}. 
+While a complex lifecycle can be defined as abrupt ontogenic changes in morphology and ecology \cite{Benesh:2016dj}, a complex parasitic lifecycle typically involves numerous hosts that a parasite needs to traverse to complete its life cycle. 
 This complex lifecycle results in the evolution of various strategies that enable the success of parasite transmission from one host to another. 
-One famous strategy that inspires many science fiction movies and novels is host manipulation, where a parasite can alter the morphology or behaviour of its intermediate host to enhance its transmission to its definitive host \cite{Hughes2012}. 
-Host manipulation has been shown in many host-parasite systems \cite{Hughes2012, molyneux_jefferies1986}. 
-Sand flies infected by \textit{Leishmania} parasites bite more and take more time for a blood meal from mammals (the definitive host of \textit{Leishmania}) compared to their uninfected counterparts \cite{ Rogers2007}. 
+One famous strategy that inspires many science fiction movies and novels is host manipulation, where a parasite can alter the morphology and/or behaviour of its  host to enhance its transmission to the next host \cite{Hughes2012}. 
+Host manipulation has been shown in many host-parasite systems, from parasites with simple life-cycle to those with complex life-cycle that involves more than one host \cite{Hughes2012, molyneux_jefferies1986}. 
+For instance, sand flies infected by \textit{Leishmania} parasites bite more and take more time for a blood meal from mammals (the definitive host of \textit{Leishmania}) compared to their uninfected counterparts \cite{ Rogers2007}. 
 Copepods infected by cestode parasites are more active and accessible to sticklebacks (the definitive hosts of the cestodes) compared to uninfected copepods \cite{Wedekind1996}.
 
 
-Theoretical studies have attempted to understand host manipulation's ecological and evolutionary consequences. 
-Studies \cite{Roosien2013, Hosack2008} showed that manipulative parasites could increase the disease prevalence in an epidemic. \cite{Gandon2018} studies the evolution of the manipulative ability of infectious disease parasites, showing that different evolutionary outcomes depend on whether the pathogen can control its vector or host.
+Theoretical studies have attempted to understand host manipulation's ecological and evolutionary consequences. \cite{Roosien2013, Hosack2008} showed that manipulative parasites could increase the disease prevalence in an epidemic. \cite{Gandon2018} studies the evolution of the manipulative ability of infectious disease parasites, showing that different evolutionary outcomes depend on whether the pathogen can control its vector or host.
 \cite{Hadeler1989, Fenton2006} and \cite{Rogawa2018} showed that host manipulation could stabilise or destabilise the predator-prey dynamics depending on how manipulation affects the predation response function and the assumption on the fertility of the definitive infected host. \cite{Seppl2008} showed that host manipulation could evolve even when it increases the risk of the intermediate host being eaten by a non-host predator, given that the initial predation risk is sufficiently low. 
 However, these models do not consider multiple infections, a phenomenon that is the norm rather than an exception in parasitism. Multiple infections result in the coinfection of more than one parasite inside a host, which may vastly alter the manipulative outcomes. 
 An alignment of interest between coinfecting parasites may enhance manipulation, while a conflict of interest may reduce the manipulative effect. 
@@ -249,7 +248,7 @@ The basic reproduction ratio $R_0$ (or basic reproduction number as often used i
 
 \begin{align}
 R_0 = & \gamma I_s^* \frac{ p q \beta_{ww}}{\alpha_{ww} + d + \Pi_{ww}} \frac{D_s^*}{\mu +\sigma_{ww}} \frac{f_{ww}}{\delta +\gamma I_s^*} + \nonumber \\
-& \gamma  I_s^* \left( \frac{ (1-p)\beta_w}{\alpha_w + d + \Pi_w} + \frac{2 p (1-q) \beta_{ww}}{\alpha_{ww} + d + \Pi_{ww}} \right) \frac{D_s^*}{\lambda_w + 2 (1-q) \lambda_{ww}  + \mu + \sigma_w} \frac{f_w}{\delta +\gamma  I_s^*}
+& \gamma  I_s^* \left( \frac{ (1-p)\beta_w}{\alpha_w + d + \Pi_w} + \frac{2 p (1-q) \beta_{ww}}{\alpha_{ww} + d + \Pi_{ww}} \right) \frac{D_s^*}{\mu + \sigma_w} \frac{f_w}{\delta +\gamma  I_s^*}
 \end{align}
 
 where $I_s^*$ and $D_s^*$ are the density of susceptible intermediate and definitive hosts at the disease-free equilibrium. 
@@ -257,19 +256,19 @@ Here, the expression of $R_0$ contains possible reproduction routes of a parasit
 The first component corresponds to the double infections route, in which the focal parasite co-transmit with another parasite into a susceptible intermediate host, then co-transmits into a susceptible definitive host and reproduces. 
 The second component corresponds to the single infection route, wherein the focal parasite infects a susceptible intermediate host via singly or doubly infections. 
 It then transmits alone into the susceptible definitive host and eventually reproduces. 
-In a disease-free environment, parasites are so rare that the reproduction ratio compartments with sequential infections do not appear. 
+In a disease-free environment, parasites are so rare that the reproduction ratio compartments with sequential infections is eliminated. 
 
 
-If $R_0 > 1$, a parasite can spread when introduced into the disease-free equilibrium of prey and predator.
-Intuitively, the higher the density of susceptible intermediate and definitive hosts, the larger the value of $R_0$ as the reservoir for infection is larger. In contrast, regardless of the explicit form of the predation function, the higher the predation rate $P_w$ and $P_{ww}$, the lower the value of $R_0$ because the reservoir of intermediate hosts is smaller. 
-The effect of host manipulation on the value of $R_0$ is not so straight forward because more efficient manipulation can increase transmission rate from intermediate host to definitive host, but it can also increases the predation rate, leading to smaller intermediate host reservoir. To understand the effect of manipulation on the fitness of parasites and the ecological dynamics of the system, we need to specify the predation functions. 
+If $R_0 > 1$, a parasite spreads when it is introduced into the disease-free equilibrium of prey and predator.
+Intuitively, the higher the density of susceptible intermediate and definitive hosts, the bigger the value of $R_0$ as the reservoir for infection is larger. In contrast, regardless of the explicit form of the predation function, the higher the predation rate $P_w$ and $P_{ww}$, the lower the value of $R_0$ because the reservoir of intermediate hosts is smaller. 
+The effect of host manipulation on the value of $R_0$ is not so straight forward because efficient manipulation increases transmission rate from intermediate host to definitive host, but it also increases the predation rate, leading to smaller intermediate host reservoir. To understand the effect of manipulation on the fitness of parasites and the ecological dynamics of the system, we need to specify the predation functions. 
 \cha{Here we need to motivate the importance of knowing the form of the functions.}
 For simplicity, we consider linear functions for predation 
 
 \begin{align*}
-& \P_s(D_s + D_w + D_{ww}) = \rho (D_s + D_w + D_{ww}) \\
-& \P_w(D_s, D_w, D_{ww}, \beta_w) = (\rho + \beta_w) (D_s + D_w + D_{ww}) \\
-& \P_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) =  (\rho + \beta_{ww}) (D_s + D_w + D_{ww})
+& P_s(D_s + D_w + D_{ww}) = \rho (D_s + D_w + D_{ww}) \\
+& P_w(D_s, D_w, D_{ww}, \beta_w) = (\rho + \beta_w) (D_s + D_w + D_{ww}) \\
+& P_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) =  (\rho + \beta_{ww}) (D_s + D_w + D_{ww})
 \end{align*}
 
 where $\rho$ is the baseline capture rate of the predator on the prey. If an intermediate hosts is infected, it is captured by the definitive hosts with rate $\rho + \beta_w$ if it is singly infected, and with rate $\rho + \beta_{ww}$ if it is doubly infected. Zero values for $\beta_w$ and $\beta_{ww}$ suggest no manipulation. 
@@ -283,7 +282,7 @@ B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c (D_s + D_w + D_{ww}) (I_s + I_w +
 where c is the efficiency of converting preys into predator's offspring. 
 The birth rate of the predators depends on the capture rate, but we do not allow host manipulation to affect the birth rate of the predators.
 
-The explicit form of $I_s^*$ and $D_s^*$ depends on the explicit form of all birth and predation functions $B, R, P_s, P_w$ and $P_{ww}$. However, it does not depends on the manipulation ability, or any parameter of the parasite. $I_s^*$ and $D_s^*$ simply represents the prey-predator dynamics when there is no parasite. Given that the birth rate of the predator and the predation rate are linear functions with respect to the prey and predator density, the form of birth rate of the prey (intermediate host) $R$ therefore has a large effect on the susceptible host dynamics. 
+The explicit form of $I_s^*$ and $D_s^*$ depends on the explicit form of all birth and predation functions $B, R, P_s, P_w$ and $P_{ww}$, but it does not depends on the manipulation ability, or any parameter of the parasite. $I_s^*$ and $D_s^*$ simply represents the prey-predator dynamics when there is no parasite. Given that the birth rate of the predator and the predation rate are linear functions with respect to the prey and predator density, the form of the birth rate $R$ of the prey therefore has a large effect on the susceptible intermediate and definitive host dynamics. 
 
 \cha{The motivation for the linear and non-linear functions and a paragraph discussing that before we move to the next sections.}
 
