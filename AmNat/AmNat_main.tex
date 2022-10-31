@@ -261,33 +261,33 @@ In a disease-free environment, parasites are so rare that the reproduction ratio
 
 If $R_0 > 1$, a parasite spreads when it is introduced into the disease-free equilibrium of prey and predator.
 Intuitively, the higher the density of susceptible intermediate and definitive hosts, the bigger the value of $R_0$ as the reservoir for infection is larger. In contrast, regardless of the explicit form of the predation function, the higher the predation rate $P_w$ and $P_{ww}$, the lower the value of $R_0$ because the reservoir of intermediate hosts is smaller. 
-The effect of host manipulation on the value of $R_0$ is not so straight forward because efficient manipulation increases transmission rate from intermediate host to definitive host, but it also increases the predation rate, leading to smaller intermediate host reservoir. To understand the effect of manipulation on the fitness of parasites and the ecological dynamics of the system, we need to specify the predation functions. 
+The effect of host manipulation on the value of $R_0$ is not so straight forward because as host manipulation becomes more efficient, transmission rate from intermediate host to definitive host increases, but so does the predation rate. Higher predation rate results in smaller intermediate host reservoir for parasites to infect. To understand the effect of manipulation on the fitness of parasites and the ecological dynamics of the system, we need to specify the predation functions. 
 \cha{Here we need to motivate the importance of knowing the form of the functions.}
 For simplicity, we consider linear functions for predation 
 
 \begin{align*}
-& P_s(D_s + D_w + D_{ww}) = \rho (D_s + D_w + D_{ww}) \\
-& P_w(D_s, D_w, D_{ww}, \beta_w) = (\rho + \beta_w) (D_s + D_w + D_{ww}) \\
-& P_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) =  (\rho + \beta_{ww}) (D_s + D_w + D_{ww})
+& P_s(D_s + D_w + D_{ww}) = \rho D_{total}  \\
+& P_w(D_s, D_w, D_{ww}, \beta_w) = (\rho + \beta_w) D_{total} \\
+& P_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) =  (\rho + \beta_{ww})D_{total}
 \end{align*}
 
-where $\rho$ is the baseline capture rate of the predator on the prey. If an intermediate hosts is infected, it is captured by the definitive hosts with rate $\rho + \beta_w$ if it is singly infected, and with rate $\rho + \beta_{ww}$ if it is doubly infected. Zero values for $\beta_w$ and $\beta_{ww}$ suggest no manipulation. 
+where $D_{total} = D_s + D_w + D_{ww}$ is the total density of the definitive hosts, and $\rho$ is the baseline capture rate of the predator on the prey. If an intermediate hosts is infected, it is captured by the definitive hosts with rate $\rho + \beta_w$ if it is singly infected, and with rate $\rho + \beta_{ww}$ if it is doubly infected. Zero values for $\beta_w$ and $\beta_{ww}$ suggest no manipulation. 
 
 For simplicity, we also consider a linear function of the birth of definitive hosts
 
 \begin{align*}
-B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c (D_s + D_w + D_{ww}) (I_s + I_w + I_{ww})
+B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c D_{total} I_{total}
 \end{align*}
 
-where c is the efficiency of converting preys into predator's offspring. 
+where c is the efficiency of converting preys into predator's offspring, and $I_{total} = I_s + I_w + I_{ww}$ is the total density of the intermediate hosts.
 The birth rate of the predators depends on the capture rate, but we do not allow host manipulation to affect the birth rate of the predators.
 
-The explicit form of $I_s^*$ and $D_s^*$ depends on the explicit form of all birth and predation functions $B, R, P_s, P_w$ and $P_{ww}$, but it does not depends on the manipulation ability, or any parameter of the parasite. $I_s^*$ and $D_s^*$ simply represents the prey-predator dynamics when there is no parasite. Given that the birth rate of the predator and the predation rate are linear functions with respect to the prey and predator density, the form of the birth rate $R$ of the prey therefore has a large effect on the susceptible intermediate and definitive host dynamics. 
+The explicit form of $I_s^*$ and $D_s^*$ depends on the explicit form of all birth and predation functions $B, R, P_s, P_w$ and $P_{ww}$, but it does not depends on the manipulation ability, or any other parameter of the parasite. $I_s^*$ and $D_s^*$ simply represents the prey-predator dynamics when there is no parasite. Given that the birth rate of the predator and the predation rate are linear functions with respect to the prey and predator density, the form of the birth rate $R$ of the prey therefore has a large effect on the susceptible intermediate and definitive host dynamics. 
 
 \cha{The motivation for the linear and non-linear functions and a paragraph discussing that before we move to the next sections.}
 
 \subsection*{Linear birth function of intermediate hosts}
-Here, we consider the system when the birth function $R$ of the intermediate host is linear, specifically, $R(I_s, I_w, I_ww) = r(I_s + I_w + I_{ww})$. 
+Here, we consider the system when the birth function $R$ of the intermediate host is linear, specifically, $R(I_s, I_w, I_ww) = r I_{total}$. 
 The equilibrium of intermediate and definitive hosts in the disease-free state are,
 %
 \begin{align*}
@@ -299,10 +299,11 @@ This equilibrium is always unstable.
 In particular, it has a cyclic behaviour because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has one imaginary eigenvalue with a positive real part. 
 This follows from the Lotka-Voltera system using linear functions for prey birth and predation (reference...). \cha{Use for motivation above.}
 Because the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite (often evaluated when the disease-free state is stable). 
-Here,  $R_0 > 1$  happens when the transmission rate from the environment to intermediate hosts $\gamma$ and the reproduction of the parasites $f_w$ and $f_{ww}$ has to be greater than a threshold (see supplementary ). However, even when $R_0 > 1$, the parasite may not be able to spread and persist in a cyclic susceptible host dynamics (Figure \ref{fig:diseasefree:linear}). This result indeed agrees with the conclusion in \cite{Ripa:Evol:2013}, which suggests that it is difficult for a mutant to invade a cyclic population. 
+Here,  $R_0 > 1$  happens when the transmission rate from the environment to intermediate hosts $\gamma$ and the reproduction of the parasites $f_w$ and $f_{ww}$ has to be greater than a threshold (see supplementary ). 
+However, even when this condition is satisfied, the parasite may not be able to spread and persist in a cyclic susceptible host dynamics (Figure \ref{fig:diseasefree:linear}). This result indeed agrees with the conclusion in \cite{Ripa:Evol:2013}, which suggests that it is difficult for a mutant to invade a cyclic population. 
 In our case, it is not the invasion of a mutant but a specific parasite in a cyclic disease-free host population. 
 This issue deserves a more thorough investigation, which is out of the scope of this article. 
-We therefore chose a non-linear birth function of the intermediate hosts to obtain a stable disease circulation state. 
+We therefore chose a non-linear birth function of the intermediate hosts to obtain a stable disease circulation state and focus on the effect of host manipulation on the ecological dynamics. 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{Figures/diseasefree_linear.pdf}
@@ -313,7 +314,7 @@ We therefore chose a non-linear birth function of the intermediate hosts to obta
 \subsection*{Non-linear birth function of intermediate hosts}
 The non-linear birth function of intermediate hosts is as followed,
 \begin{align*}
-R(I_w, I_s,I_{ww}) = r (I_s + I_w + I_{ww}) (1 - k (I_s + I_w + I_{ww}))
+R(I_w, I_s,I_{ww}) = r I_{total} (1 - k I_{total})
 \end{align*}
 %
 where $k$ is the intraspecific competition coefficient. 
