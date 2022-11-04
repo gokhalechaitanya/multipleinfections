@@ -10,7 +10,7 @@ sys (List): the ode system (form: {a var1 + b var2,  x var2 - y var2 var3});
 "
 
 
-FollowRoot::usage = "FollowRoot[system,commonpars,followPar,range,variables, initialEq] 
+FollowRoot::usage = "FollowRoot[odesystem(list),commonpars(rule list),followPar(parameter name),range(list of values),variables(list of variable name), initialEq(list of rules)] 
 system (List): the dynamical system
 commonpars (List): fixed parameters
 followPar (Symbol): name of the bifurcation parameter
@@ -33,7 +33,7 @@ return a list of bifurcation parameter values and their corresponding solutions
 "
 
 
-ListStableMark::usage = "ListStableMark[jacobmatrix, parcommon, parfollow, range, equiList, markerCode:{'@', '*', '.'}
+ListStableMark::usage = "ListStableMark[jacobmatrix, parcommon, parfollow, range, equiList, markerCode:{`*`, `\[EmptySmallCircle]`, `\[FilledSmallCircle]`}
 return a list of symbols that correspond to the stability of the equilibrium 
 
 jacobmatrix (Nested List): jacobian matrix of the system (form: {{a, b}, {c, d}});
@@ -41,7 +41,7 @@ parcommon (List of Rule): values of fixed parameters (form: {p1 -> 2, p2-> 3};
 parfollow (Symbol): bifurcation parameter (form: symbol of the bifurcation parameter);
 range (List): values of the bifurcation parameter (form: {0.1, 0.2});
 equiList (Nested List of Rule): list of values of equilibrium corresponds with different values of bifurcation parameter (form: {{var1 -> 4.5, var2 -> 44}, {var1 -> 4.6, var2-> 45}};
-markerCode (List): by default cycle: '@', unstable equilibrium '*', stable equilibrium: '.'
+markerCode (List): by default cycle: '*', unstable equilibrium '\[EmptySmallCircle]', stable equilibrium: '\[FilledSmallCircle]'
 "
 
 
@@ -101,13 +101,14 @@ sysOft = sys/.Thread[var-> varOft];
 Thread[D[varOft, t] == sysOft]]
 
 
-FollowRoot[system_,commonpars_,followPar_,range_,variables_, initialEq_]:=
+FollowRoot[system_,commonpars_,followPar_,range_,variables_, initialEq_, eqsym_: eq]:=
 Module[{nbvar, iEq, eq, pars, results, initValues, isResultsWithinRange, checkresults},
 
 nbvar = Length@initialEq;
 On[Assert];
-Thread[(Head/@variables) === ConstantArray[Rule, nbvar]];
-Thread[(Head/@initialEq)=== ConstantArray[Rule, nbvar]];
+Check[Assert@(Thread[(Head/@variables) === ConstantArray[Symbol, nbvar]]), Abort[]];
+Check[Assert@(Thread[(Head/@initialEq)=== ConstantArray[Rule, nbvar]]), Abort[]];
+Check[Assert@(Head[followPar/.commonpars] === Symbol), Abort[]];
 
 iEq = initialEq; 
 results={};
@@ -115,7 +116,7 @@ results={};
 Do[
 	eq=iEq;
 	pars = Join[commonpars, {followPar -> i}];
-	initValues = Thread[{variables, variables/.iEq, 0, Infinity}];
+	initValues = Thread[{variables, variables/.iEq, -Infinity, Infinity}];
 	isResultsWithinRange = Thread[variables->-1];
 	iEq = Check[
 				FindRoot[Thread[system == 0]/.pars, initValues, MaxIterations->2000, PrecisionGoal->Infinity], 
@@ -127,7 +128,8 @@ Do[
 		AllTrue[variables/.iEq, #==-1&] || AnyTrue[checkresults, # > 10^-10&], 
 		Break[]
 		];
-	results = AppendTo[results, iEq], {i, range}];
+	results = AppendTo[results,{followPar -> i, eqsym -> iEq}], 
+	{i, range}];
 	results
 	]
 
@@ -137,7 +139,7 @@ Module[
 {eqAll, eqpos, nbpos, fparlist},
 
 On[Assert];
-Assert[Head[followPar]=== Rule];
+Check[Assert[Head[followPar]=== Rule], Abort[]];
 
 eqAll = NSolve[Thread[(system/.commonpars/.followPar) == 0], variables, Reals, WorkingPrecision->precision];
 eqpos = Select[eqAll, AllTrue[variables/.# , Positive]&]//Sort;
@@ -155,7 +157,7 @@ If[
 ]
 
 
-SingleStableMark[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, markerlist_:{"@", "*", "."}]:=
+SingleStableMark[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, markerlist_:{"*", "\[EmptySmallCircle]", "\[FilledSmallCircle]"}]:=
 (* Mark an equilibrium depending on its stability 
 Input:
 jacobmatrix: jacobian matrix of the system (form: {{a, b}, {c, d}});
@@ -165,12 +167,12 @@ equilibrium: values of equilibrium (form: {var1 -> 4.5, var2 -> 44};
 markerlist: list of marker that one wish to set, markerlist[[1]]: cycle, markerlist[[2]]: unstable, markerlist[[3]]: stable
 *)
 Module[
-{eiv, anyZero, anyPos, allNeg, ps},
+{eiv, allZero, anyPos, allNeg, ps},
 eiv = Eigenvalues[jacobmatrix/.parcommon/.parsfollow/.equilibrium];
-anyZero = AnyTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
+allZero = AllTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
 anyPos = AnyTrue[Thread[Re[eiv]>10^-10], TrueQ];
 allNeg = AllTrue[Thread[Re[eiv]<-10^-10], TrueQ];
-Which[anyZero, markerlist[[1]], anyPos, markerlist[[2]], allNeg, markerlist[[3]]]
+Which[allZero, markerlist[[1]], anyPos, markerlist[[2]], allNeg, markerlist[[3]]]
 ]
 
 
@@ -192,7 +194,7 @@ Which[
 ]
 
 
-ListStableMark[jacobmatrix_, parcommon_, parfollow_, range_,equiList_, markerCode_:{"@", "*", "."}, useColor_:False]:=
+ListStableMark[jacobmatrix_, parcommon_, parfollow_, range_,equiList_, markerCode_:{"*", "\[EmptySmallCircle]", "\[FilledSmallCircle]"}, useColor_:False]:=
 (* MapThread[SingleStableMark,
 			{ConstantArray[jacobmatrix, Length[equiList]], 
 			 ConstantArray[parcommon, Length[equiList]], 
@@ -202,9 +204,10 @@ ListStableMark[jacobmatrix_, parcommon_, parfollow_, range_,equiList_, markerCod
 Module[{lenEqList, markers},
 lenEqList = Length[equiList];
 markers = ConstantArray[markerCode, lenEqList];
+On[Assert];
+Check[Assert[lenEqList == Length[range]], Abort[]];
 If[useColor,
-	On[Assert];
-	Head[markerCode[[1]]] === RGBColor//Assert;
+	Check[Assert[Head[markerCode[[1]]] === RGBColor], Abort[]];
 	marklist = MapThread[SingleStableColor,
 						{ConstantArray[jacobmatrix, lenEqList], 
 						 ConstantArray[parcommon, lenEqList],
@@ -224,6 +227,13 @@ If[useColor,
 NSolveCodim2Positive[system_, commonpars_, bifurpar1_, bifurpar2_,bfparsName_, equisymbol_,variables_, precision_:MachinePrecision]:=
 Module[
 {eqAll, parspairVal, eqpos, nbpos, fparlist},
+
+On[Assert];
+Check[Assert[Head[bifurpar1] === List, "bifurpar1 has to be a List {bifurpar1 -> value}"], Abort[]];
+Check[Assert[Head[bifurpar2] === List, "bifurpar2 has to be a List {bifurpar2 -> value}"], Abort[]];
+Check[Assert[Head[bfparsName] === Symbol, "bfparsName has to be a Symbol"], Abort[]];
+Check[Assert[Head[equisymbol] === Symbol, "equisymbol has to be a Symbol"], Abort[]];
+
 eqAll = NSolve[Thread[(system/.commonpars/.bifurpar1/.bifurpar2)==0], variables, Reals, WorkingPrecision->precision];
 eqpos = Select[eqAll,And@@Thread[(variables/.# )> 0]&]//Sort;
 nbpos = Length[eqpos];
@@ -296,6 +306,8 @@ End[]
 
 
 EndPackage[]
+
+
 
 
 (* ::Input:: *)
