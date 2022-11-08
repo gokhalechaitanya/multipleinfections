@@ -321,8 +321,8 @@ where $k$ is the intraspecific competition coefficient.
 The disease-free equilibrium is as follows
 %
 \begin{align*}
-& I_s = \frac{\mu}{c \rho } \\
-& D_s = \frac{c \rho  (r-d) - k \mu  r}{c \rho ^2}
+& I_{s0}^* = \frac{\mu}{c \rho } \\
+& D_{s0}^* = \frac{c \rho  (r-d) - k \mu  r}{c \rho ^2}
 \end{align*}
 %
 This equilibrium is stable if,
@@ -336,7 +336,7 @@ This equilibrium is stable if,
 The above conditions suggest that the intrinsic reproduction of intermediate hosts $r$ needs to be greater than their natural mortality rate $d$. 
 More importantly, the intraspecific competition coefficient has to be within a range allowing the population to survive.
 Finally, the definitive host's natural mortality rate must be sufficiently large. 
-Satisfying such conditions, we obtain a stable disease-free equilibrium (Figure \ref{fig:ecotraject:nonlinear}).
+Satisfying such conditions, we obtain a stable disease-free equilibrium (Figure \ref{fig:ecotraject:nonlinear}B).
 
 \begin{figure}[!ht]
 \includegraphics[width=\textwidth]{Figures/ecotraject_nonlinear.jpeg}
@@ -344,11 +344,12 @@ Satisfying such conditions, we obtain a stable disease-free equilibrium (Figure 
 \label{fig:ecotraject:nonlinear}
 \end{figure}
 
-When a parasite is introduced in the disease-free equilibrium, it can spread if its reproduction ratio $R_0 > 1$. 
+When a parasite is introduced in the disease-free equilibrium, it spreads if its reproduction ratio $R_0 > 1$. 
 Since the expression is complicated, we could not obtain solutions for this inequality without assumptions. 
-Assuming that double infections and single infection result in the same parasite virulence and parasite reproduction, that is, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$, and $f_w = \epsilon f_{ww}$, we found that the parasite can establish and spread in the hosts if its reproduction value in single infection $f_w$ is greater than a threshold (Figure \ref{fig:bistability}). 
-The parasite reproduction is substantial compared to other parameters (its value is 40 times greater than other parameters), suggesting that trophically transmitted parasites must release many offspring into the environment to persist. 
-Interestingly, bistability occurs if the reproduction rate of the parasite in the co-infection state is greater than in the single infection state. 
+Assuming that double infections and single infection result in the same parasite virulence ($\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$), and reproduction in single infection is a linear function with respect to reproduction in double infections ($f_w = \epsilon f_{ww}$), we found that the parasite can establish and spread in the hosts if its reproduction value in single infection $f_w$ is greater than a threshold (Figure \ref{fig:bistability}, supplementary ). When $\epsilon > 1$, reproduction in double infections is greater than reproduction in single infection, whereas $\epsilon \leq 1$, reproduction in double infections is lower or equal to reproduction in single infection.
+ 
+Our numerical results show that the parasite reproduction is substantial compared to other parameters (its value is 40 times greater than other parameters), suggesting that trophically transmitted parasites must release many offspring into the environment to persist. 
+Interestingly, bistability occurs if the reproduction rate of the parasite indouble infections is greater than in the single infection state. 
 The parasite population will crash if it is disturbed and become too small (Figure \ref{fig:bistability}A, B). 
 In that case, as parasite reproduction increases, the density of the singly infected definitive host saturates instead of increasing, as is the case when there is no difference in reproduction between single and double infections.
 
