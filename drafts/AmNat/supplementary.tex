@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+\usepackage[sc]{mathpazo} %Like Palatino with extensive math support
+\usepackage{fullpage}
+\usepackage[authoryear,sectionbib,sort]{natbib}
+\linespread{1.7}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage{titlesec}
+\usepackage{amsmath}  % for equations
+
+\begin{document}
+\section*{Supplementary 1. Reproduction ratio R0}
+
+The reproduction ratio of the parasite is derived from the dynamical system of the parasite which only include infected intermediate and definitive hosts and the free-living parasite pool. The dynamical system can be written in matrix form as followed:
+\[
+\frac{d \mathbf{n}}{dt} = \mathbf{M} \mathbf{n}
+\]
+
+where $\mathbf{n}$ is the vector of singly and doubly infected intermediate hosts, singly and doubly infected definitive hosts and free-living parasites ($dI_w, I_{ww}, D_w, D_{ww}, W$) and $\mathbf{M}$ is the matrix that describes the dynamics
+\[ \mathbf{M} = 
+\begin{pmatrix}
+- d - \alpha_w - P_w & 0 & 0 & 0 & (1 - p) \gamma I_s \\
+0 & -d - \alpha_{ww} - P_{ww} & 0 & 0 & p \gamma I_s \\
+\beta_w D_s & 2 \beta_{ww} (1-q) D_s &-\lambda_w - 2  (1-q)\lambda_{ww}  -\mu -\sigma_w & 0 & 0 \\
+0 & \beta_{ww} q D_s  & \lambda_w + 2 (1-q) \lambda_{ww}  & -\mu - \sigma_{ww} & 0 \\
+ 0 & 0 & f_w & f_{ww} &- \delta - \gamma I_s  \\
+\end{pmatrix}
+\]
+
+The matrix $\mathbf{M}$ can be written as $\mathbf{M} = \mathbf{F} - \mathbf{V}$, where
+
+\[
+\mathbf{F} = 
+\begin{pmatrix}
+0 & 0 & 0 & 0 & 0  \\
+0 & 0 & 0 & 0 & 0  \\
+0 & 0 & 0 & 0 & 0  \\
+0 & 0 & 0 & 0 & 0  \\
+0 & 0 & f_w & f_{ww} & 0
+\end{pmatrix}
+\]
+
+is the matrix in which its elements are the reproduction contribution of one compartment to the other compartments in the next generation, and
+
+\[
+\mathbf{V} = 
+\begin{pmatrix}
+\alpha_w + d + P_w  & 0 & 0 & 0 & - (1 - p) \gamma  I_s\\
+ 0 & \alpha_{ww} + d + P_{ww} & 0 & 0 & - p \gamma I_s \\
+- \beta_w D_s & -2 \beta_{ww}  (1 - q) D_s & \lambda_w + 2 \lambda_{ww} (1-q) + \mu + \sigma_w & 0 & 0 \\
+ 0 & -\beta_{ww} q D_s  & -\lambda_w - 2 \lambda_{ww} (1 - q) & \mu + \sigma_{ww} & 0 \\
+ 0 & 0 & 0 & 0 & \delta + \gamma I_s \\
+\end{pmatrix}
+\]
+
+is the matrix in which its elements include death rates or transition rates from one compartment to the others.
+
+The reproduction ratio $R_0$ is then the leading eigenvalue of the matrix $\mathbf{F}.\mathbf{V}^-1$, evaluated at the disease-free equilibrium of the intermediate and definitive hosts $I_s^*$, $D_s^*$, and $I_w = I_{ww} = D_w = D_{ww} = 0$.
+
+\section*{Equilibrium stability using linear birth function for intermediate hosts}
+
+The jacobian matrix of the system (1), (2), (3), evaluated at the disease-free equilibrium, and $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c D_{total} I_{total}$ is
+
+\[
+\begin{pmatrix}
+0 & r & r & -\frac{\mu}{c} & -\frac{\mu }{c} & -\frac{\mu }{c} & -\frac{\gamma  \mu }{c \rho } \\
+0 & -\alpha_w + \frac{(\beta_w + \rho ) (d-r)}{\rho } - d & 0 & 0 & 0 & 0 & \frac{\gamma  \mu  (1-p)}{c \rho } \\
+0 & 0 & -\alpha_{ww} + \frac{(\beta_{ww} + \rho ) (d-r)}{\rho } - d & 0 & 0 & 0 & \frac{\gamma  \mu  p}{c \rho } \\
+-c (d-r) & \frac{\beta_w (d-r)}{\rho } - c (d-r) & \frac{\beta_{ww} (d-r)}{\rho }-c (d-r) & 0 & \mu  & \mu  & 0 \\
+0 & -\frac{\beta_w (d-r)}{\rho } & -\frac{2 \beta_{ww} (1-q) (d-r)}{\rho } & 0 & -\mu - \sigma_w & 0 & 0 \\
+ 0 & 0 & -\frac{\beta_{ww} q (d-r)}{\rho } & 0 & 0 & -\mu - \sigma_{ww} & 0 \\
+ 0 & 0 & 0 & 0 & f_w & f_{ww} & -\frac{\gamma  \mu }{c \rho } - \delta  \\
+\end{pmatrix}
+\]
+
+This jacobian has seven eigenvalues, two of which have explicit expressions as $\pm \sqrt{d - r}$. Here, we always have $r > d$ so that the equilibrium is positive, therefore these two eigenvalues are always pure imaginary. We cannot obtain the explicit expression of the other five eigenvalues but the dynamics remain unstable regardless of their values.
+\end{document}

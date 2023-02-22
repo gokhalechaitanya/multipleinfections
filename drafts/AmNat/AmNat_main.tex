@@ -187,7 +187,7 @@ Finally, when a definitive host consumes an infected intermediate host, the defi
 
 
 For simplicity, we assume that hosts can be infected by one (single infection) or, at most, two parasites (double infections). 
-Our model is therefore more close to macro-parasitic system.
+Our model is therefore more relevant to macro-parasitic system.
 Given that infection occurs, the probability that two parasites from the parasite pool co-transmit to an intermediate host is denoted by  $p$, and thus $1-p$ is the probability that a single parasite enters an intermediate host. 
 When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that the parasites co-transmit to the definitive host.
 With probability $1-q$, only one parasite successfully transmits. 
@@ -337,7 +337,7 @@ The equilibrium of intermediate and definitive hosts in the disease-free state a
 \end{align*}
 %
 This equilibrium is always unstable. 
-In particular, it has a cyclic behaviour because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has one imaginary eigenvalue with a positive real part. 
+In particular, it has a cyclic behaviour because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has two pure imaginary eigenvalues (see SI). 
 This follows from the Lotka-Volterra system using linear functions for prey birth and predation \citep{Lotka1920}.
 Because the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite (often evaluated when the disease-free state is stable). 
 Here,  $R_0 > 1$  happens when $\gamma$, the transmission rate from the environment to intermediate hosts, and $f_w, f_{ww}$, the reproduction of the parasites are greater than a threshold (see supplementary ). 
