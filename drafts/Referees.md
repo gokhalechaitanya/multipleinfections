@@ -5,3 +5,4 @@
 - Daniel Bolnick
 - Dan Benesh
 - Per Jacobsen
+- Mathias Wegner
