@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     83553,       2262]
-NotebookOptionsPosition[     79250,       2181]
-NotebookOutlinePosition[     79724,       2199]
-CellTagsIndexPosition[     79681,       2196]
+NotebookDataLength[     83761,       2266]
+NotebookOptionsPosition[     79458,       2185]
+NotebookOutlinePosition[     79932,       2203]
+CellTagsIndexPosition[     79889,       2200]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1583,56 +1583,60 @@ Cell[BoxData[
         TagBox[
          RowBox[{"{", 
           RowBox[{
+           RowBox[{"-", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"k", " ", "r", " ", "\[Mu]"}], "+", 
+              RowBox[{
+               SqrtBox[
+                RowBox[{"-", "\[Mu]"}]], " ", 
+               SqrtBox[
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"-", 
+                   SuperscriptBox["k", "2"]}], " ", 
+                  SuperscriptBox["r", "2"], " ", "\[Mu]"}], "-", 
+                 RowBox[{
+                 "4", " ", "c", " ", "k", " ", "r", " ", "\[Mu]", " ", 
+                  "\[Rho]"}], "+", 
+                 RowBox[{"4", " ", 
+                  SuperscriptBox["c", "2"], " ", 
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "d"}], "+", "r"}], ")"}], " ", 
+                  SuperscriptBox["\[Rho]", "2"]}]}]]}]}], 
+             RowBox[{"2", " ", "c", " ", "\[Rho]"}]]}], ",", 
            FractionBox[
             RowBox[{
              RowBox[{
-              RowBox[{"-", 
-               SuperscriptBox["c", "3"]}], " ", "k", " ", "r", " ", "\[Mu]", 
-              " ", 
-              SuperscriptBox["\[Rho]", "9"]}], "-", 
+              RowBox[{"-", "k"}], " ", "r", " ", "\[Mu]"}], "+", 
              RowBox[{
-              SuperscriptBox["c", "3"], " ", 
               SqrtBox[
                RowBox[{"-", "\[Mu]"}]], " ", 
-              SuperscriptBox["\[Rho]", "9"], " ", 
               SqrtBox[
                RowBox[{
                 RowBox[{
                  RowBox[{"-", 
                   SuperscriptBox["k", "2"]}], " ", 
                  SuperscriptBox["r", "2"], " ", "\[Mu]"}], "-", 
-                RowBox[{
-                "4", " ", "c", " ", "k", " ", "r", " ", "\[Mu]", " ", 
-                 "\[Rho]"}], "-", 
+                RowBox[{"4", " ", "c", " ", "k", " ", 
+                 TemplateBox[{"1"},
+                  "OutputSizeLimit`Skeleton"], " ", "\[Mu]", " ", "\[Rho]"}], 
+                "+", 
                 RowBox[{"4", " ", 
-                 SuperscriptBox["c", "2"], " ", "d", " ", 
-                 SuperscriptBox["\[Rho]", "2"]}], "+", 
-                RowBox[{"4", " ", 
-                 SuperscriptBox["c", "2"], " ", "r", " ", 
+                 SuperscriptBox["c", "2"], " ", 
+                 RowBox[{"(", 
+                  TemplateBox[{"1"},
+                   "OutputSizeLimit`Skeleton"], ")"}], " ", 
                  SuperscriptBox["\[Rho]", "2"]}]}]]}]}], 
-            RowBox[{"2", " ", 
-             SuperscriptBox["c", "4"], " ", 
-             SuperscriptBox["\[Rho]", "10"]}]], ",", 
+            RowBox[{"2", " ", "c", " ", "\[Rho]"}]], ",", 
            FractionBox[
+            RowBox[{"Root", "[", 
+             RowBox[{
+              RowBox[{
+               TemplateBox[{"1"},
+                "OutputSizeLimit`Skeleton"], "&"}], ",", "1"}], "]"}], 
             RowBox[{
-             RowBox[{
-              RowBox[{"-", 
-               SuperscriptBox["c", "3"]}], " ", "k", " ", "r", " ", "\[Mu]", 
-              " ", 
-              SuperscriptBox["\[Rho]", "9"]}], "+", 
-             RowBox[{
-              SuperscriptBox["c", "3"], " ", 
-              TemplateBox[{"1"},
-               "OutputSizeLimit`Skeleton"], " ", 
-              TemplateBox[{"1"},
-               "OutputSizeLimit`Skeleton"], " ", 
-              SqrtBox[
-               RowBox[{
-                TemplateBox[{"5"},
-                 "OutputSizeLimit`Skeleton"], "+", 
-                TemplateBox[{"1"},
-                 "OutputSizeLimit`Skeleton"]}]]}]}], 
-            RowBox[{"2", " ", 
              SuperscriptBox["c", "4"], " ", 
              SuperscriptBox["\[Rho]", "10"]}]], ",", 
            FractionBox[
@@ -1641,14 +1645,15 @@ Cell[BoxData[
               "OutputSizeLimit`Skeleton"], "]"}], 
             RowBox[{
              SuperscriptBox["c", "4"], " ", 
-             SuperscriptBox["\[Rho]", "10"]}]], ",", 
-           TemplateBox[{"1"},
-            "OutputSizeLimit`Skeleton"], ",", 
+             TemplateBox[{"1"},
+              "OutputSizeLimit`Skeleton"]}]], ",", 
            FractionBox[
-            TemplateBox[{"1"},
-             "OutputSizeLimit`Skeleton"], 
-            TemplateBox[{"1"},
-             "OutputSizeLimit`Skeleton"]], ",", 
+            RowBox[{"Root", "[", 
+             TemplateBox[{"1"},
+              "OutputSizeLimit`Skeleton"], "]"}], 
+            RowBox[{
+             SuperscriptBox["c", "4"], " ", 
+             SuperscriptBox["\[Rho]", "10"]}]], ",", 
            FractionBox[
             RowBox[{"Root", "[", 
              RowBox[{
@@ -1739,7 +1744,7 @@ Cell[BoxData[
            BaselinePosition->Baseline,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            OutputSizeLimit`Defer, 47, 30404189224470572746, 5/2],
+            OutputSizeLimit`Defer, 48, 30404189224470572746, 5/2],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -1774,9 +1779,8 @@ Cell[BoxData[
             ImageSize->{Automatic, {25, Full}}],
            Appearance->None,
            BaselinePosition->Baseline,
-           
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            OutputSizeLimit`Defer, 47, 30404189224470572746, 5 2],
+            OutputSizeLimit`Defer, 48, 30404189224470572746, 5 2],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -1813,7 +1817,7 @@ Cell[BoxData[
            BaselinePosition->Baseline,
            
            ButtonFunction:>OutputSizeLimit`ButtonFunction[
-            OutputSizeLimit`Defer, 47, 30404189224470572746, Infinity],
+            OutputSizeLimit`Defer, 48, 30404189224470572746, Infinity],
            Enabled->True,
            Evaluator->Automatic,
            Method->"Queued"], 
@@ -1882,11 +1886,11 @@ Cell[BoxData[
    Deploy,
    DefaultBaseStyle->"Deploy"],
   If[30404189224470572746 === $SessionID, 
-   Out[47], Message[
+   Out[48], Message[
      MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
    Null]]], "Output",
- CellChangeTimes->{3.8860687792174397`*^9},
- CellLabel->"Out[47]=",ExpressionUUID->"4a827b30-ef93-4df9-8ab9-2895e14a0d27"]
+ CellChangeTimes->{3.8860687792174397`*^9, 3.886068814007744*^9},
+ CellLabel->"Out[48]=",ExpressionUUID->"3973b8a2-1f4f-40af-9f01-66bc734948ab"]
 }, Open  ]],
 
 Cell[BoxData[{
@@ -2255,13 +2259,13 @@ Cell[49689, 1382, 5442, 162, 324, "Output",ExpressionUUID->"aec7b422-ae9a-4a13-8
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[55168, 1549, 996, 25, 109, "Input",ExpressionUUID->"e0155942-bf15-4069-9a78-aaddd62c7bdf"],
-Cell[56167, 1576, 11974, 312, 203, "Output",ExpressionUUID->"4a827b30-ef93-4df9-8ab9-2895e14a0d27"]
+Cell[56167, 1576, 12182, 316, 203, "Output",ExpressionUUID->"3973b8a2-1f4f-40af-9f01-66bc734948ab"]
 }, Open  ]],
-Cell[68156, 1891, 2175, 44, 140, "Input",ExpressionUUID->"1739ca06-4369-4e62-b176-8f986c99e5ed"],
+Cell[68364, 1895, 2175, 44, 140, "Input",ExpressionUUID->"1739ca06-4369-4e62-b176-8f986c99e5ed"],
 Cell[CellGroupData[{
-Cell[70356, 1939, 2081, 42, 140, "Input",ExpressionUUID->"cb70ac6b-4189-4ef4-ac10-8a1a12515b25"],
-Cell[72440, 1983, 1206, 33, 73, "Output",ExpressionUUID->"5e488fb3-67bb-40fc-90a3-e5349d8d41d2"],
-Cell[73649, 2018, 5573, 159, 245, "Output",ExpressionUUID->"de7d303c-b65e-47cc-9f93-e7144e2d13e9"]
+Cell[70564, 1943, 2081, 42, 140, "Input",ExpressionUUID->"cb70ac6b-4189-4ef4-ac10-8a1a12515b25"],
+Cell[72648, 1987, 1206, 33, 73, "Output",ExpressionUUID->"5e488fb3-67bb-40fc-90a3-e5349d8d41d2"],
+Cell[73857, 2022, 5573, 159, 245, "Output",ExpressionUUID->"de7d303c-b65e-47cc-9f93-e7144e2d13e9"]
 }, Open  ]]
 }, Open  ]]
 }
