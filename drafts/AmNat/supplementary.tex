@@ -9,7 +9,7 @@
 \usepackage{amsmath}  % for equations
 
 \begin{document}
-\section*{Supplementary 1. Reproduction ratio R0}
+\section*{Supplementary Information 1. Reproduction ratio R0}
 
 The reproduction ratio of the parasite is derived from the dynamical system of the parasite which only include infected intermediate and definitive hosts and the free-living parasite pool. The dynamical system can be written in matrix form as followed:
 \[
@@ -57,7 +57,9 @@ is the matrix in which its elements include death rates or transition rates from
 
 The reproduction ratio $R_0$ is then the leading eigenvalue of the matrix $\mathbf{F}.\mathbf{V}^-1$, evaluated at the disease-free equilibrium of the intermediate and definitive hosts $I_s^*$, $D_s^*$, and $I_w = I_{ww} = D_w = D_{ww} = 0$.
 
-\section*{Equilibrium stability using linear birth function for intermediate hosts}
+\section*{Supplementary Information 2. Linear birth function for intermediate hosts}
+
+\subsection*{Equilibrium stability}
 
 The jacobian matrix of the system (1), (2), (3), evaluated at the disease-free equilibrium, and $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c D_{total} I_{total}$ is
 
@@ -74,4 +76,24 @@ The jacobian matrix of the system (1), (2), (3), evaluated at the disease-free e
 \]
 
 This jacobian has seven eigenvalues, two of which have explicit expressions as $\pm \sqrt{d - r}$. Here, we always have $r > d$ so that the equilibrium is positive, therefore these two eigenvalues are always pure imaginary. We cannot obtain the explicit expression of the other five eigenvalues but the dynamics remain unstable regardless of their values.
+
+\subsection*{Invasion of parasites}
+
+The basic reproduction ratio $R_0$ is
+
+\begin{equation}
+	R_0 = \frac{\gamma  \mu  (d-r) \left(\frac{f_w \rho  \left(\frac{2 \beta_{ww} p (1-q)}{\beta_{ww} d - \rho  (\alpha_{ww}+r) - \beta_{ww} r} + \frac{\beta_w(1 - p)}{\beta_w d - \rho  (\alpha_w + r) -\beta_w r}\right)}{\mu +\sigma_w}+\frac{\beta_{ww}f_{ww} p q \rho }{(\mu +\sigma_{ww}) (-\alpha_{ww} \rho +\beta_{ww} d-r (\beta_{ww}+\rho ))}\right)}{\rho  (c \delta  \rho +\gamma  \mu )}
+\end{equation}
+
+The condition for $R_0 > 1$ is
+
+\begin{align}
+	f_{ww} > & \frac{(\mu +\sigma_{ww})}{\beta_{ww} \gamma  \mu  p q (d-r) (\mu +\sigma_w) (-\alpha_w \rho +\beta_wd-r (\beta_w+\rho ))} \notag \\
+	& \left(\beta_w \beta_{ww} d^2 ((\mu +\sigma_w) (c \delta  \rho +\gamma  \mu )+\gamma f_w \mu  (2 p q-p-1)) + \right. \notag \\
+	& \left. d (\gamma f_w \mu  (-2 \beta_{ww} p (q-1) \rho  (\alpha_w + r) + \right. \notag \\
+	& \left. 2 \beta_w \beta_{ww} r (-2 p q+p+1)-\beta_w(p-1) \rho  (\alpha_{ww}+r)) - \right. \notag \\
+	& \left. (\mu +\sigma_w) (c \delta  \rho +\gamma  \mu ) (\beta_{ww} \rho  (\alpha_w + r) + \beta_w \rho  (\alpha_{ww}+r) + 2 \beta_w\beta_{ww} r)) + \right. \notag \\
+	& \left. (\mu +\sigma_w) (\rho  (\alpha_w + r)+\beta_w r) (\rho  (\alpha_{ww}+r) + \beta_{ww} r) (c \delta  \rho +\gamma  \mu ) + \right. \notag \\
+	& \left. \gamma f_w \mu  r (2 \beta_{ww} p (q-1) \rho  (\alpha_w + r)+ \beta_w\beta_{ww} r (2 p q-p-1)+\beta_w(p-1) \rho  (\alpha_{ww}+r)) \right)
+\end{align}
 \end{document}

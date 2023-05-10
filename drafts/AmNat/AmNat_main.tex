@@ -19,6 +19,7 @@
 	 \definecolor{darkblue}{rgb}{0,0,0.75}
 	 \definecolor{magenta}{rgb}{0,0,0.75}
 \newcommand{\cha}[1]{\textcolor{darkred}{(#1)}}
+\newcommand{\ph}[1]{\textcolor{darkblue}{(#1)}}
 
 \usepackage{hyperref}
 \definecolor{darkgreen}{rgb}{0.1,0.6,0.3}
@@ -133,7 +134,7 @@ Theoretical studies have long attempted to understand the ecological and evoluti
 These models, however, lack a crucial aspect of parasite dynamics, multiple infections \citep{kalbe:JFB:2002} 
 
 Typical studies do not consider multiple infections, a phenomenon that is the norm rather than an exception in parasitism. 
-Multiple infections result in the coinfection of more than one parasite inside a host, which may alter the manipulative outcomes. 
+Multiple infections result in the coinfection of more than one parasite inside a host, which may alter the manipulative outcomes (figure \ref{fig:empirical}). 
 An alignment of interest between coinfecting parasites may enhance manipulation, while a conflict of interest may reduce the manipulative effect. 
 Indeed, \cite{Hafer:2015gl} showed that copepods infected by two cestode parasites reduce the activity of copepods when both parasites are at the same noninfectious stage, i.e. both parasites are not ready to transmit. 
 Thus the reduction in mobility is suggested to reduce the predation rate by the definitive hosts. 
@@ -153,7 +154,7 @@ The timing is crucial as the chances of success are greatest if the larvae devel
 The presence of multiple parasites in the same host can lead to competition and strategic decision pertaining to investment in manipulation and growth.
 And indeed a stickleback can be infected by numerous tapeworms as shown above by Martin Kalbe.
 }
-\label{fig:schematic}
+\label{fig:empirical}
 \end{figure}
 
 
@@ -176,7 +177,7 @@ Reproduction only happens in the definitive hosts.
 New parasites are then released into the environment, where they again have contact with the intermediate hosts to complete their lifecycle. 
 We focus on the manipulation of the intermediate hosts, such that the parasite increases the predation rate on the intermediate host by the definitive host to increase its transmission rate. 
 We then analyse the effect of host manipulation on the ecological dynamics in the prey-predator-parasite system. 
-We found that cooperation in host manipulation leads to bistability in the predator-pray system, given that reproduction from multiple infections is sufficiently high. 
+We found that cooperation in host manipulation leads to bistability in the predator-prey system, given that reproduction from multiple infections is sufficiently high. 
 This finding suggests that the predator-prey parasite system is finely balanced and susceptible to extinction via ecological disturbances.
 Initially surprising, we show how sabotage in host manipulation guarantees a unique stable equilibrium in the system. 
 
@@ -247,7 +248,7 @@ and the transparent hexagon represents the parasite pool compartment with red ci
 
 The basic reproduction ratio $R_0$ (or basic reproduction number as often used in epidemiology) is an indication of parasite fitness. 
 It can be understood as the expected number of offspring a parasite produces during its lifetime when introduced to a susceptible host population. 
-We calculate the basic reproduction ratio $R_0$ using the next-generation method \citep{Diekmann1990, Diekmann2009, Hurford2009} (See SI for details).
+We calculate the basic reproduction ratio $R_0$ using the next-generation method \citep{Diekmann1990, Diekmann2009, hurford:JRSI:2010} (See SI1 for details).
 
 \begin{align}
 R_0 = & \overbrace{\gamma I_s^* \frac{ p q \beta_{ww}}{\alpha_{ww} + d + P_{ww}} \frac{D_s^*}{\mu +\sigma_{ww}} \frac{f_{ww}}{\delta +\gamma I_s^*}}^{ \texttt{Double infections}} + \nonumber \\
@@ -303,13 +304,13 @@ The equilibrium of intermediate and definitive hosts in the disease-free state a
 \end{align*}
 %
 This equilibrium is always unstable. 
-In particular, it has a cyclic behaviour because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has two pure imaginary eigenvalues (see SI). 
+In particular, it has a cyclic behaviour because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has two pure imaginary eigenvalues (see SI2). 
 This follows from the Lotka-Volterra system using linear functions for prey birth and predation \citep{Lotka1920}.
 Because the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite (often evaluated when the disease-free state is stable). 
-Here,  $R_0 > 1$  happens when $\gamma$, the transmission rate from the environment to intermediate hosts, and $f_w, f_{ww}$, the reproduction of the parasites are greater than a threshold (see supplementary ). 
+Here,  $R_0 > 1$  happens when $\gamma$, the transmission rate from the environment to intermediate hosts, and $f_w, f_{ww}$, the reproduction of the parasites are greater than a threshold (see SI2). 
 However, even when this condition is satisfied, the parasite may not be able to spread and persist in cyclic susceptible host dynamics (Figure \ref{fig:diseasefree:linear}). 
 This result agrees with the conclusion in \citep{Ripa:Evol:2013}, which suggests that it is difficult for a mutant to invade a cyclic population. 
-In our case, it is not the invasion of a mutant but the spread of a parasite in a cyclic disease-free host population, but the argument remains valid in both cases. 
+In our case, it is not the invasion of a mutant but the invasion of a parasite in a cyclic disease-free host population, but the argument remains valid in both cases. 
 This issue deserves a more thorough investigation, which is out of the scope of this article. 
 We, therefore, choose a non-linear birth function of the intermediate hosts to obtain a stable disease circulation state and focus on the effect of host manipulation on the ecological dynamics. 
 
@@ -320,8 +321,7 @@ We, therefore, choose a non-linear birth function of the intermediate hosts to o
 \end{figure}
 
 \subsection*{Non-linear birth function of intermediate hosts}
-The non-linear birth function of intermediate hosts is as followed,
-\begin{align*}
+We chose the logistic growth for the non-linear birth function, that is \begin{align*}
 R(I_w, I_s,I_{ww}) = r I_{total} (1 - k I_{total})
 \end{align*}
 %
@@ -388,11 +388,10 @@ Likewise, parasites can persist if uncooperative but can manipulate the intermed
 
 Cooperation between parasites need not be limited to host manipulation. Parasites can cooperate to have a higher reproduction rate in co-infections, i.e. $f_{ww} > f_w$. 
 \cha{Move to Discussion?} Likewise, they can compete for resources, so reproduction in double infection is smaller than in single infection. 
-Without any assumption on the relationship between manipulative ability and reproduction, we explore all possible combinations of cooperation and sabotage in both manipulation and reproduction. 
-
+Without any assumption on the relationship between manipulative ability and reproduction, we explore all possible combinations of cooperation and sabotage in both manipulation and reproduction. \ph{ I actually prefer to put it here because the next paragraph discusses about the cooperation in reproduction, and since the beginning we only mention cooperation in manipulation. It's no super long?}
 Interestingly, higher cooperation in manipulation and reproduction enlarges the area of bistability even though it also shrinks the extinction space (Figure \ref{fig:manipbifur}). 
 This suggests that systems in which parasites have much higher manipulative ability and reproduction rate when co-infected than when singly infected are more prone to instability than systems with less cooperative parasites or systems with parasites that sabotage each other in co-infection. 
-In other words, having the best of both worlds at the individual level may not benefit the population as a whole.
+In other words, having the best of both worlds, effective manipulation and reproduction, at the individual level may not benefit the population as a whole.
 
 \begin{figure}[!ht]
 \centering
