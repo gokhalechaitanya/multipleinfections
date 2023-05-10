@@ -79,21 +79,43 @@ This jacobian has seven eigenvalues, two of which have explicit expressions as $
 
 \subsection*{Invasion of parasites}
 
-The basic reproduction ratio $R_0$ is
-
-\begin{equation}
-	R_0 = \frac{\gamma  \mu  (d-r) \left(\frac{f_w \rho  \left(\frac{2 \beta_{ww} p (1-q)}{\beta_{ww} d - \rho  (\alpha_{ww}+r) - \beta_{ww} r} + \frac{\beta_w(1 - p)}{\beta_w d - \rho  (\alpha_w + r) -\beta_w r}\right)}{\mu +\sigma_w}+\frac{\beta_{ww}f_{ww} p q \rho }{(\mu +\sigma_{ww}) (-\alpha_{ww} \rho +\beta_{ww} d-r (\beta_{ww}+\rho ))}\right)}{\rho  (c \delta  \rho +\gamma  \mu )}
-\end{equation}
-
-The condition for $R_0 > 1$ is
+$R_0 > 1$ when the transmission rate from the parasite pool to intermediate hosts satisfies
 
 \begin{align}
-	f_{ww} > & \frac{(\mu +\sigma_{ww})}{\beta_{ww} \gamma  \mu  p q (d-r) (\mu +\sigma_w) (-\alpha_w \rho +\beta_wd-r (\beta_w+\rho ))} \notag \\
-	& \left(\beta_w \beta_{ww} d^2 ((\mu +\sigma_w) (c \delta  \rho +\gamma  \mu )+\gamma f_w \mu  (2 p q-p-1)) + \right. \notag \\
-	& \left. d (\gamma f_w \mu  (-2 \beta_{ww} p (q-1) \rho  (\alpha_w + r) + \right. \notag \\
-	& \left. 2 \beta_w \beta_{ww} r (-2 p q+p+1)-\beta_w(p-1) \rho  (\alpha_{ww}+r)) - \right. \notag \\
-	& \left. (\mu +\sigma_w) (c \delta  \rho +\gamma  \mu ) (\beta_{ww} \rho  (\alpha_w + r) + \beta_w \rho  (\alpha_{ww}+r) + 2 \beta_w\beta_{ww} r)) + \right. \notag \\
-	& \left. (\mu +\sigma_w) (\rho  (\alpha_w + r)+\beta_w r) (\rho  (\alpha_{ww}+r) + \beta_{ww} r) (c \delta  \rho +\gamma  \mu ) + \right. \notag \\
-	& \left. \gamma f_w \mu  r (2 \beta_{ww} p (q-1) \rho  (\alpha_w + r)+ \beta_w\beta_{ww} r (2 p q-p-1)+\beta_w(p-1) \rho  (\alpha_{ww}+r)) \right)
+	\gamma > & \frac{c \delta  \rho  (\mu + \sigma_w) (\mu + \sigma_{ww}) (-\alpha_w \rho + \beta_w d-r (\beta_w+\rho )) (\alpha_{ww} \rho + \beta_{ww} (-d)+r (\beta_{ww}+\rho ))}{\mu } \notag \\
+	& \frac{1}{\begin{pmatrix}
+		\beta_w \beta_{ww} d^2 (f_w (\mu +\sigma_{ww}) (2 p q-p-1) + (\mu +\sigma_w) (-f_{ww} p q+\mu +\sigma_{ww})) - & \\
+		 d (f_w (\mu +\sigma_{ww}) (2 \beta_{ww} p (q-1) \rho  (\alpha_w+r)+2 \beta_w \beta_{ww} r (p (2 q-1)-1)+ & \\
+		 \beta_w (p-1) \rho  (\alpha_{ww}+r)) + (\mu +\sigma_w) ((\mu +\sigma_{ww}) (\beta_{ww} \rho  (\alpha_w+r) + & \\ 
+		 \beta_w \rho  (\alpha_{ww}+r)+2 \beta_w \beta_{ww} r)-\beta_{ww} f_{ww} p q (\rho  (\alpha_w+r)+2 \beta_w r))) + & \\
+		 f_w r (\mu +\sigma_{ww}) (2 \beta_{ww} p (q-1) \rho  (\alpha_w+r) +  & \\
+		 \beta_w \beta_{ww} r (p (2 q-1)-1) + \beta_w (p-1) \rho  (\alpha_{ww}+r)) + & \\
+		 (\mu +\sigma_w) (\alpha_w \rho +r (\beta_w+\rho )) ((\mu +\sigma_{ww}) (\rho  (\alpha_{ww}+r)+\beta_{ww} r)-\beta_{ww} f_{ww} p q r)
+		\end{pmatrix}}
+\end{align}
+
+and the reproduction rates $f_w$ and $f_{ww}$ satisfies either of the following conditions
+
+\begin{align}
+f_{ww}\geq \frac{-\alpha_{ww} \mu  \rho -\alpha_{ww} \rho  \sigma_{ww} + \beta_{ww} d \mu +\beta_{ww} d \sigma_{ww}-\beta_{ww} \mu  r-\beta_{ww} r \sigma_{ww}-\mu  \rho  r-\rho  r \sigma_{ww}}{\beta_{ww} d p q-\beta_{ww} p q r}
+\end{align}
+
+or
+
+\begin{align}
+	f_{ww} < & \frac{-\alpha_{ww} \mu  \rho -\alpha_{ww} \rho  \sigma_{ww} + \beta_{ww} d \mu +\beta_{ww} d \sigma_{ww}-\beta_{ww} \mu  r-\beta_{ww} r \sigma_{ww}-\mu  \rho  r-\rho  r \sigma_{ww}}{\beta_{ww} d p q-\beta_{ww} p q r} \notag \\
+	f_w > & \frac{(\mu +\sigma_w) (-\alpha_w \rho + \beta_w d-r (\beta_w+\rho ))}{(d-r) (\mu + \sigma_{ww})} \notag \\
+	& \frac{\beta_{ww} d (f_{ww} p q-\mu -\sigma_{ww})+\beta_{ww} (-f_{ww}) p q r+(\mu +\sigma_{ww}) (\rho  (\alpha_{ww}+r)+\beta_{ww} r)}{\beta_w \beta_{ww} (d-r) (p (2 q-1)-1)+\rho  (-2 \beta_{ww} p (q-1) (\alpha_w+r)-(\beta_w (p-1) (\alpha_{ww}+r)))} 
+\end{align}
+\section*{Supplementary Information 3. Non-linear birth function for intermediate hosts - invasion condition}
+
+The condition for parasite invasion is $R_0 > 1$, which is satisfied when
+
+\begin{align}
+	f_w > & \frac{(c \delta  \rho +\gamma  \mu ) (k \mu  r (\beta_w+\rho )-c \rho  (\beta_w (-d)+\rho  (\alpha +r)+\beta_w r))}{\gamma  \mu  (c \rho  (d-r)+k \mu  r)} \notag \\
+	& \frac{(\mu +\sigma ) (k \mu  r (\beta_{ww}+\rho )-c \rho  (\beta_{ww} (-d)+\rho  (\alpha +r)+\beta_{ww} r))}{ \begin{pmatrix} c \rho  (\beta_w \beta_{ww} (d-r) (p q (\epsilon -2)+p+1) + & \\ 
+			\rho  (\alpha +r) (\beta_w (p-1)-\beta_{ww} p (q (\epsilon -2)+2))) + & \\
+			 k \mu  r (\beta_w (\beta_{ww} (p q (\epsilon -2)+p+1)-p \rho + & \\
+			 \rho )+\beta_{ww} p \rho  (q (\epsilon -2)+2)) \end{pmatrix}}
 \end{align}
 \end{document}
