@@ -6,10 +6,32 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lineno}
 \usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{color}
 \usepackage{amsmath}  % for equations
 
+\title{Supplementary Information:\\ On multiple infections by parasites with complex life cycles}
+
+% This version of the LaTeX template was last updated on
+% November 8, 2019.
+
+%%%%%%%%%%%%%%%%%%%%%
+% Authorship
+%%%%%%%%%%%%%%%%%%%%%
+% Please remove authorship information while your paper is under review,
+% unless you wish to waive your anonymity under double-blind review. You
+% will need to add this information back in to your final files after
+% acceptance.
+
+%\author{Phuong Linh Nguyen$^{1,\ast}$ \& 
+%Chaitanya S. Gokhale$^{2,3}$
+%}
+\date{}
+
 \begin{document}
-\section*{Supplementary Information 1. Reproduction ratio R0}
+\maketitle
+
+\section*{SI 1. Reproduction ratio $R_0$}
 
 The reproduction ratio of the parasite is derived from the dynamical system of the parasite which only include infected intermediate and definitive hosts and the free-living parasite pool. The dynamical system can be written in matrix form as followed:
 \[
@@ -53,15 +75,15 @@ is the matrix in which its elements are the reproduction contribution of one com
 \end{pmatrix}
 \]
 
-is the matrix in which its elements include death rates or transition rates from one compartment to the others.
+is the matrix in which its elements include death rates or transition rates from one compartment to the others. \textcolor{red}{(Whom should we cite for the next generation method?)}
 
 The reproduction ratio $R_0$ is then the leading eigenvalue of the matrix $\mathbf{F}.\mathbf{V}^-1$, evaluated at the disease-free equilibrium of the intermediate and definitive hosts $I_s^*$, $D_s^*$, and $I_w = I_{ww} = D_w = D_{ww} = 0$.
 
-\section*{Supplementary Information 2. Linear birth function for intermediate hosts}
+\section*{SI 2. Linear birth function for intermediate hosts}
 
 \subsection*{Equilibrium stability}
 
-The jacobian matrix of the system (1), (2), (3), evaluated at the disease-free equilibrium, and $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c D_{total} I_{total}$ is
+The jacobian matrix of the system (1), (2), (3), \textcolor{red}{(We need to be a bit more explicit here when connecting ot the main text)} evaluated at the disease-free equilibrium, and $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c D_{total} I_{total}$ is
 
 \[
 \begin{pmatrix}
@@ -107,7 +129,9 @@ or
 	f_w > & \frac{(\mu +\sigma_w) (-\alpha_w \rho + \beta_w d-r (\beta_w+\rho ))}{(d-r) (\mu + \sigma_{ww})} \notag \\
 	& \frac{\beta_{ww} d (f_{ww} p q-\mu -\sigma_{ww})+\beta_{ww} (-f_{ww}) p q r+(\mu +\sigma_{ww}) (\rho  (\alpha_{ww}+r)+\beta_{ww} r)}{\beta_w \beta_{ww} (d-r) (p (2 q-1)-1)+\rho  (-2 \beta_{ww} p (q-1) (\alpha_w+r)-(\beta_w (p-1) (\alpha_{ww}+r)))} 
 \end{align}
-\section*{Supplementary Information 3. Non-linear birth function for intermediate hosts - invasion condition}
+
+
+\section*{SI 3. Non-linear birth function for intermediate hosts - invasion condition}
 
 The condition for parasite invasion is $R_0 > 1$, which is satisfied when
 
