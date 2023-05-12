@@ -1,6 +1,6 @@
 # multipleinfections
 
-This git repository provides information to produce the manuscript "Multiple infections and complex life cycles"
+This git repository provides information to produce the manuscript "On multiple infections by parasites with complex life cycles"
 
 The code folder contains mathematica files:
 
