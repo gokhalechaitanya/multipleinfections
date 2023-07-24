@@ -167,13 +167,12 @@ equilibrium: values of equilibrium (form: {var1 -> 4.5, var2 -> 44};
 markerlist: list of marker that one wish to set, markerlist[[1]]: cycle, markerlist[[2]]: unstable, markerlist[[3]]: stable
 *)
 Module[
-{eiv, anyZero, anyPos, allNeg,allImNonZero, ps},
+{eiv, allZero, anyPos, allNeg, ps},
 eiv = Eigenvalues[jacobmatrix/.parcommon/.parsfollow/.equilibrium];
-anyZero = AnyTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
+allZero = AllTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
 anyPos = AnyTrue[Thread[Re[eiv]>10^-10], TrueQ];
 allNeg = AllTrue[Thread[Re[eiv]<-10^-10], TrueQ];
-allImNonZero = AllTrue[Thread[Abs[Im[eiv]]> 10^-10], TrueQ];
-Which[anyZero || (allImNonZero && anyPos), markerlist[[1]], anyPos, markerlist[[2]], allNeg, markerlist[[3]]]
+Which[allZero, markerlist[[1]], anyPos, markerlist[[2]], allNeg, markerlist[[3]]]
 ]
 
 
