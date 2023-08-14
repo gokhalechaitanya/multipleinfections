@@ -175,14 +175,15 @@ Since parasites can manipulate intermediate and definitive hosts, here, whenever
 For the definitive hosts we have,
 %
 \begin{align}
-\frac{dD_s}{dt} &= B(D_s,  D_w,  D_{ww},  I_s, I_w, I_{ww})  - \mu D_s - (\lambda_{ww} + \lambda_w) D_s \nonumber \\    
-\frac{dD_w}{dt} &= (\lambda_w + 2 (1 - q) \lambda_{ww}) D_s - (\mu + \sigma_w) Dw - (2 (1 - q) \lambda_{ww} + \lambda_w) D_w  \label{odes:dhosts} \\         
-\frac{dD_{ww}}{dt} &= q \lambda_{ww} D_s + (2 (1 - q) \lambda_{ww} + \lambda_w) D_w - (\mu + \sigma_{ww}) D_{ww} \nonumber
+\frac{dD_s}{dt} &= B(D_s,  D_w,  D_{ww},  I_s, I_w, I_{ww})  - \mu D_s - (2 \lambda_{ww} + \lambda_w) D_s \nonumber \\    
+\frac{dD_w}{dt} &= (\lambda_w + 2 (1 - q) \lambda_{ww}) D_s - (\mu + \sigma_w) D_w - (2 (1 - q) \lambda_{ww} + \lambda_w) D_w  \label{odes:dhosts} \\         
+\frac{dD_{ww}}{dt} &= 2 q \lambda_{ww} D_s + (2 (1 - q) \lambda_{ww} + \lambda_w) D_w - (\mu + \sigma_{ww}) D_{ww} \nonumber
 \end{align}
 %
 where $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts.
 The birth rates depend on the density of both intermediate and definitive hosts, infected or uninfected. 
-The force of infection that corresponds respectively to singly infected intermediate host ($I_w$) and doubly infected intermediate hosts ($I_{ww}$) is denoted respectively by $\lambda_w = \beta_w I_w$ and $\lambda_{ww} = \beta_{ww} I_{ww}$. 
+The force of infection that corresponds respectively to singly infected intermediate host ($I_w$) and doubly infected intermediate hosts ($I_{ww}$) is denoted respectively by $\lambda_w = h_1 (\rho + \beta_w)  I_w$ and $\lambda_{ww} = h_2 (\rho + \beta_{ww}) I_{ww}$, where $\rho$ is the based line predation rate and $h_1$ and $h_2$ are the probability that the parasite successfully established inside the host.
+If there is no manipulation, that is, $\beta_w = \beta_{ww} = 0$, the parasite is still transmitted via the based line predation.
 The dynamics of the free-living parasites in the environment are then given by,
 \begin{align}
 	\frac{dW}{dt} &= f_w D_w + f_{ww} D_{ww} - \delta W - \eta I_s. \label{odes:eparasite}
@@ -212,8 +213,8 @@ It can be understood as the expected number of offspring a parasite produces dur
 We calculate the basic reproduction ratio $R_0$ using the next-generation method \citep{Diekmann1990, Diekmann2009, hurford:JRSI:2010} (See SI1 for details).
 %
 \begin{align}
-R_0 = & \overbrace{\gamma I_s^* \frac{ p q \beta_{ww}}{\alpha_{ww} + d + P_{ww}} \frac{D_s^*}{\mu +\sigma_{ww}} \frac{f_{ww}}{\delta +\gamma I_s^*}}^{ \texttt{Double infections}} + \nonumber \\
-& \underbrace{\gamma  I_s^* \left( \frac{ (1-p)\beta_w}{\alpha_w + d + P_w} + \frac{2 p (1-q) \beta_{ww}}{\alpha_{ww} + d + P_{ww}} \right) \frac{D_s^*}{\mu + \sigma_w} \frac{f_w}{\delta +\gamma  I_s^*}}_{\texttt{Single infection}}
+R_0 = & \overbrace{\gamma I_s^* \frac{2 p q h (\rho +  \beta_{ww})}{\alpha_{ww} + d + P_{ww}} \frac{D_s^*}{\mu +\sigma_{ww}} \frac{f_{ww}}{\delta +\gamma I_s^*}}^{ \texttt{Double infections}} + \nonumber \\
+& \underbrace{\gamma  I_s^* \left( \frac{ (1-p) h (\rho + \beta_w)}{\alpha_w + d + P_w} + \frac{2 p (1-q) h (\rho + \beta_{ww})}{\alpha_{ww} + d + P_{ww}} \right) \frac{D_s^*}{\mu + \sigma_w} \frac{f_w}{\delta +\gamma  I_s^*}}_{\texttt{Single infection}}
 \end{align}
 %
 where $I_s^*$ and $D_s^*$ are the densities of susceptible intermediate and definitive hosts at the disease-free equilibrium. 
@@ -475,7 +476,8 @@ $\beta_i$ & Transmission rate of parasites from intermediate hosts to definitive
 $f_i$ & Reproduction rate of parasites in singly infected definitive hosts ($i = w$) or doubly infected hosts ($i = ww$)\\
 \hline
 $\delta$ & Natural death rate of parasites in the environment \\
-\hline
+\hline 
+$h$ & Probability that the parasites successfully established inside the definitive host 
 \end{tabular}
 \bigskip{}\\
 \end{table}

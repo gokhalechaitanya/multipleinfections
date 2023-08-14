@@ -1,12 +1,4 @@
 .DS_Store
-drafts/*.aux
-drafts/*.log
-drafts/*.out
-drafts/*.gz
-drafts/*.toc
-drafts/*.bbl
-drafts/*.blg
-drafts/*.pdf
 drafts/AmNat/*.aux
 drafts/AmNat/*.log
 drafts/AmNat/*.out
@@ -15,3 +7,12 @@ drafts/AmNat/*.toc
 drafts/AmNat/*.bbl
 drafts/AmNat/*.blg
 drafts/AmNat/*.pdf
+
+drafts/EcologyandEvolution/*.aux
+drafts/EcologyandEvolution/*.log
+drafts/EcologyandEvolution/*.out
+drafts/EcologyandEvolution/*.gz
+drafts/EcologyandEvolution/*.toc
+drafts/EcologyandEvolution/*.bbl
+drafts/EcologyandEvolution/*.blg
+drafts/EcologyandEvolution/*.pdf
