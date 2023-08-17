@@ -254,27 +254,18 @@ The birth rate of the predators depends on the capture rate, but it is not affec
 The explicit form of $I_s^*$ and $D_s^*$, capturing the predator-prey dynamics, depends on the precise form of all birth and predation functions $B, R, P_s, P_w$ and $P_{ww}$.
 But, it does not depend on the manipulation ability or any other parameter of the parasite. 
 Given that the birth rate of the predator and the predation rate are linear functions in prey and predator density, the form of the birth rate $R$ of the prey has a significant effect on the susceptible intermediate and definitive host dynamics.
-Hence we explore the exact structure of these birth functions next.
 
-\subsection*{Linear birth function of intermediate hosts}
-Here, we consider the system when the birth function $R$ of the intermediate host is linear, specifically, $R(I_s, I_w, I_{ww}) = r I_{total}$. 
-The equilibrium of intermediate and definitive hosts in the disease-free state are,
-%
-\begin{align*}
- I_s^* &= \frac{\mu}{c \rho} \\
- D_s^* &= \frac{r - d}{\rho}
-\end{align*}
-%
-This equilibrium is always unstable. 
-In particular, it has a cyclic behaviour because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has two pure imaginary eigenvalues (see SI2). 
+\subsection*{Birth function of intermediate hosts}
+
+The simplest form of the prey's birth rate is linear, in which case the disease free equilibrium is always unstable. In particular, it has a cyclic behaviour because, at this equilibrium, the jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has two pure imaginary eigenvalues (see SI 2). 
 This follows from the Lotka-Volterra system using linear functions for prey birth and predation \citep{Lotka1920}.
-Since the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite (often evaluated when the disease-free state is stable). 
+Since the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite using the basic reproduction ratio, which is evaluated when the disease-free state is stable. 
 Here,  $R_0 > 1$  happens when $\gamma$, the transmission rate from the environment to intermediate hosts, and the reproduction rates $f_w, f_{ww}$ are significantly large (the specific mathematical conditions can be found in SI2). 
 However, even when this condition is satisfied, the parasite may not be able to spread and persist in cyclic susceptible host dynamics (Figure \ref{fig:diseasefree:linear}). 
 This result agrees with the conclusion in \citep{Ripa:Evol:2013}, which suggests that it is difficult for a mutant to invade a cyclic resident population. 
 In our case, it is not the invasion of a mutant in a resident population but the invasion of a parasite in a cyclic disease-free host population; the argument, however, remains valid in both cases. 
 This issue deserves a more thorough investigation, which is out of the scope of this article. 
-We, therefore, choose a non-linear birth function of the intermediate hosts to obtain a stable disease circulation state and focus on the effect of host manipulation on the ecological dynamics. 
+Here, we choose a non-linear birth function of the intermediate hosts to obtain a stable disease circulation state and focus on the effect of host manipulation on the ecological dynamics. 
 
 \begin{figure}[!ht]
 \includegraphics[width=\textwidth]{Figures/diseasefree_linear.pdf}
@@ -282,8 +273,7 @@ We, therefore, choose a non-linear birth function of the intermediate hosts to o
 \label{fig:diseasefree:linear}
 \end{figure}
 
-\subsection*{Non-linear birth function of intermediate hosts}
-We chose the logistic growth for the non-linear birth function, that is 
+The logistic growth for the non-linear birth function follows by 
 %
 \begin{align*}
 R(I_w, I_s,I_{ww}) = r I_{total} (1 - k I_{total})
@@ -321,13 +311,13 @@ We assume the same parasite virulence, $\alpha_w = \alpha_{ww}$, $\sigma_w = \si
 When $\epsilon > 1$, reproduction in double infections is greater than reproduction in a single infection, whereas $\epsilon \leq 1$, reproduction in double infections is lower or equal to reproduction in a single infection.
 We found that the parasite can establish if its reproduction value in a single infection $f_w$ is more significant than a threshold (Figure \ref{fig:bistability},see SI3). 
 
-Our numerical results show that the parasite reproduction is substantial compared to other parameters (its value is 40 times greater than other parameters).
+Our numerical results show that the parasite reproduction is substantial compared to other parameters (its value is nearly 40 times greater than other parameters).
 This observation suggests that trophically transmitted parasites must release many offspring into the environment to persist. 
 Interestingly, bistability occurs if the reproduction rate of the parasite in double infections is greater than in the single infection state (Figure \ref{fig:bistability}A, B). 
 
 \begin{figure}[!ht]
-\includegraphics[width = \textwidth]{Figures/bistability.pdf}
-\caption{Effect of parasite reproduction on the ecological dynamics. A, B) When reproduction of parasites are the same in singly and doubly infected hosts $f_{ww} = f_w$. C, D)  When reproduction of parasites in singly infected hosts is four times greater than those in doubly infected hosts $f_{ww} = 4 f_w$. Filled circles indicate stable equilibrium and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_ww =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.01, \ \delta = 0.9, \ k = 0.26$
+\includegraphics[width = \textwidth]{Figures/reproduction_bifurcation.pdf}
+\caption{Effect of parasite reproduction on the ecological dynamics. A) Increasing reproduction in doubly infection leads to bistability, B, C) Density of singly infected host at equilibrium when reproduction of parasites are the same in singly and doubly infected hosts $f_{ww} = f_w$, and when reproduction of parasites in doubly infected hosts is four times greater than those in singly infected hosts $f_{ww} = 4 f_w$. Filled circles indicate stable equilibrium and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_ww =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.01, \ \delta = 0.9, \ k = 0.26$
 }
 \label{fig:bistability}
 \end{figure}
@@ -346,7 +336,7 @@ Likewise, parasites can persist if uncooperative but can manipulate the intermed
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{Figures/manip_bifur_R0.pdf}
-\caption{$R_0$ values increase with more efficient manipulation in both single and double infection. The parasite goes extinct if its manipulative ability is insufficient (dotted area). Bistability region occurs when cooperation in manipulation is intermediate (hatched area). As manipulation in single infection increases, the system only has one stable equilibrium. On the black line, manipulation is indifference between single infection and double infection ($\beta_w = \beta_{ww}$). $R_0 < 1$ in the hatched area indicates that the parasite cannot establish in a disease free prey-predator population.}
+\caption{$R_0$ values increase with more efficient manipulation in both single and double infection. The parasite goes extinct if its manipulative ability is insufficient (dotted area). Bistability region occurs when cooperation in manipulation is intermediate (hatched area). As manipulation in single infection increases, the system only has one stable equilibrium. On the black line, manipulation is indifference between single infection and double infection ($\beta_w = \beta_{ww}$). }
 \label{fig:manipR0}
 \end{figure}
 
