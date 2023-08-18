@@ -326,17 +326,15 @@ Interestingly, bistability occurs if the reproduction rate of the parasite in do
 
 Host manipulation can be cooperative; two parasites increase the predation rate on intermediate hosts, or $\beta_{ww} > \beta_w$. 
 However, it can also be uncooperative; that is, the predation rate on doubly-infected intermediate hosts lower than that on singly-infected ones, or $\beta_{ww} < \beta_w$.
-Cooperation in parasite manipulation increases the parasite's basic reproduction ratio ($R_0$) (Figure \ref{fig:manipR0}). 
+Cooperation in parasite manipulation does increases the parasite's basic reproduction ratio $R_0$ but the manipulation in single infection has a stronger effect on the value of $R_0$ (Figure \ref{fig:manipR0}). 
 However, suppose the ability to manipulate the host in a single infection is not strong enough. 
 In that case, cooperation in host manipulation leads to a bistable state of the system. 
-Within the bistable region, the basic reproduction ratio is less than one, suggesting that the parasite cannot spread when its manipulative values are within this area of weak manipulation when coinfected. 
-Parasites that can persist in the population may have weak manipulative activity in a single infection but become much more manipulative in coinfection. 
-Likewise, parasites can persist if uncooperative but can manipulate the intermediate hosts effectively when alone.
+Within the bistable region, the basic reproduction ratio can be less than one, suggesting that the parasite cannot spread when its manipulative values are within this area of weak manipulation when coinfected. 
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{Figures/manip_bifur_R0.pdf}
-\caption{$R_0$ values increase with more efficient manipulation in both single and double infection. The parasite goes extinct if its manipulative ability is insufficient (dotted area). Bistability region occurs when cooperation in manipulation is intermediate (hatched area). As manipulation in single infection increases, the system only has one stable equilibrium. On the black line, manipulation is indifference between single infection and double infection ($\beta_w = \beta_{ww}$). }
+\caption{$R_0$ values increase with more efficient manipulation in both single and double infection. The parasite goes extinct if its manipulative ability is insufficient (white area). Bistability region occurs when cooperation in manipulation is intermediate (hatched area). As manipulation in single infection increases, the system only has one stable equilibrium. On the black line, manipulation is indifference between single infection and double infection ($\beta_w = \beta_{ww}$). }
 \label{fig:manipR0}
 \end{figure}
 
@@ -344,14 +342,19 @@ Cooperation between parasites need not be limited to host manipulation.
 Parasites can cooperate to have a higher reproduction rate in co-infections, i.e. $f_{ww} > f_w$. 
 Likewise, they can compete for resources, so reproduction in double infection is smaller than in single infection. 
 Without any assumption on the relationship between manipulative ability and reproduction, we explore all possible combinations of cooperation and sabotage in both manipulation and reproduction.
-Interestingly, higher cooperation in manipulation and reproduction enlarges the area of bistability even though it also shrinks the extinction space (Figure \ref{fig:manipbifur}). 
-This suggests that systems in which parasites have much higher manipulative ability and reproduction rate when co-infected than when singly infected are more prone to instability than systems with less cooperative parasites or systems with parasites that sabotage each other in co-infection. 
+Intuitively, if parasites are uncooperative in both reproduction and manipulation, they can not persist. 
+In contrast, if they are highly cooperative in both aspects, that is, reproduction and manipulation in double infections are much higher than in single infection, there is one guaranteed single equilibrium for parasite existence. 
+For intermediate cooperation of both reproduction and manipulation, there exist the area of bistability, whose size is sensitive to the reproduction value in single infection. In particular, a higher value of reproduction on single infection lead to smaller bistability area.
+If the parasites only sabotage host manipulation, the system is highly prone to bistability, and only has a single equilibrium when cooperation in reproduction is extremely high (i.e. reproduction in double infections is much higher than reproduction in single infection).
+Interestingly, noncooperative in reproduction always lead to single equilibrium of the system (Figure \ref{fig:manipbifur}). 
+Bistability area indicates that a disturbance of the system may likely lead to extinction of parasite. 
+This suggests that, if the reproduction in single infection is sufficiently small, systems in which parasites cooperate in both reproduction and manipulation may be more vulnerable to extinction than systems with less cooperative parasites. 
 In other words, having the best of both worlds, effective manipulation and reproduction, at the individual level may not benefit the population as a whole.
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\textwidth]{Figures/manip_bifurcation.pdf}
-\caption{Changes of the bistability area (shaded areas) with respect to different reproduction rates in single and double infection (different boundary styles), and varying cotransmission probability. Manipulation is indifference between single infection and double infection on the black line. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.1, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.01, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 0.5$. Parameter for the thick boundary $\epsilon = 0.5, f_w = 36$, the dashed boundary $\epsilon = 1, f_w = 36$, and the dot-dashed boundary $\epsilon = 2, f_w = 35$.}
+\includegraphics[width=\textwidth]{Figures/ratio_reproduction_manipulation.pdf}
+\caption{Changes of the bistability area (shaded areas) with respect to different reproduction rates in single infection (different boundary styles). Manipulation and reproduction is indifference between single infection and double infection on the vertical and horizontal lines respectively. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 0.5, \ \beta_w = 1.5,$.}
 \label{fig:manipbifur}
 \end{figure}
 
@@ -364,6 +367,13 @@ Cooperation in manipulation, therefore, needs to be sufficiently high to avoid b
 Sequential transmission is also rarer because the probability of a single infection $1-q$ is low. 
 Suppose the number of doubly infected intermediate hosts is low. 
 In that case, general transmission from intermediate hosts to definitive hosts is limited, which explains the wide extinction area.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/coinfect_transmission.pdf}
+	\caption{Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 0.5, \ \beta_w = 1.5,$.}
+	\label{fig:contransmission}
+\end{figure}
 
 \section*{Discussion \& Conclusion}
 Host manipulation is a ubiquitous phenomenon suggested to affect the prey-predator dynamics in trophically transmitted parasites. 
