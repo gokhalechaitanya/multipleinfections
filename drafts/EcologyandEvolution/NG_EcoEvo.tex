@@ -327,7 +327,8 @@ Interestingly, bistability occurs if the reproduction rate of the parasite in do
 Host manipulation can be cooperative; two parasites increase the predation rate on intermediate hosts, or $\beta_{ww} > \beta_w$. 
 However, it can also be uncooperative; that is, the predation rate on doubly-infected intermediate hosts lower than that on singly-infected ones, or $\beta_{ww} < \beta_w$.
 Cooperation in parasite manipulation does increases the parasite's basic reproduction ratio $R_0$ but the manipulation in single infection has a stronger effect on the value of $R_0$ (Figure \ref{fig:manipR0}). 
-However, suppose the ability to manipulate the host in a single infection is not strong enough. 
+Intuitively, if the manipulation in single infection is small, there is not enough transmission and the parasite goes extinct.
+However, suppose the ability to manipulate the host in a single infection is just enough for the parasite population to escape extinction but not strong. 
 In that case, cooperation in host manipulation leads to a bistable state of the system. 
 Within the bistable region, the basic reproduction ratio can be less than one, suggesting that the parasite cannot spread when its manipulative values are within this area of weak manipulation when coinfected. 
 
@@ -342,14 +343,17 @@ Cooperation between parasites need not be limited to host manipulation.
 Parasites can cooperate to have a higher reproduction rate in co-infections, i.e. $f_{ww} > f_w$. 
 Likewise, they can compete for resources, so reproduction in double infection is smaller than in single infection. 
 Without any assumption on the relationship between manipulative ability and reproduction, we explore all possible combinations of cooperation and sabotage in both manipulation and reproduction.
-Intuitively, if parasites are uncooperative in both reproduction and manipulation, they can not persist. 
-In contrast, if they are highly cooperative in both aspects, that is, reproduction and manipulation in double infections are much higher than in single infection, there is one guaranteed single equilibrium for parasite existence. 
-For intermediate cooperation of both reproduction and manipulation, there exist the area of bistability, whose size is sensitive to the reproduction value in single infection. In particular, a higher value of reproduction on single infection lead to smaller bistability area.
-If the parasites only sabotage host manipulation, the system is highly prone to bistability, and only has a single equilibrium when cooperation in reproduction is extremely high (i.e. reproduction in double infections is much higher than reproduction in single infection).
-Interestingly, noncooperative in reproduction always lead to single equilibrium of the system (Figure \ref{fig:manipbifur}). 
-Bistability area indicates that a disturbance of the system may likely lead to extinction of parasite. 
-This suggests that, if the reproduction in single infection is sufficiently small, systems in which parasites cooperate in both reproduction and manipulation may be more vulnerable to extinction than systems with less cooperative parasites. 
-In other words, having the best of both worlds, effective manipulation and reproduction, at the individual level may not benefit the population as a whole.
+Cooperation indicates that the value in double infections is larger than that in single infection, whereas the reverse suggests uncooperation.
+If parasites are uncooperative in both reproduction and manipulation, they can not persist. 
+In contrast, if they are highly cooperative in both aspects, there is one guaranteed single equilibrium for parasite existence. 
+For intermediate cooperation of both reproduction and manipulation, there could exist the area of bistability.
+However, the size of the bistability area is highly sensitive to the value of reproduction and manipulation in single infection. 
+In particular, higher values of these two parameters reduce the bistability area, whereas larger values increase the bistability area.
+If the parasites only sabotage host manipulation, the system is highly prone to bistability, and only has a single equilibrium when cooperation in reproduction is extremely high.
+Interestingly, noncooperative in reproduction always lead to single equilibrium of the system given sufficiently large values of reproduction and manipulation in single infection (Figure \ref{fig:manipbifur}). 
+While a single equilibrium guarantees existence of parasite population, bistability indicates that a disturbance of the system may likely lead to extinction of parasite. 
+This suggests that whether or not cooperation benefits the population is very context dependent. 
+Cooperation in one aspect or insufficient cooperation in both aspects may make the parasite population more vulnerable to extinction than systems with less cooperative parasites.
 
 \begin{figure}[!ht]
 \centering
@@ -358,15 +362,8 @@ In other words, having the best of both worlds, effective manipulation and repro
 \label{fig:manipbifur}
 \end{figure}
 
-Increasing the co-transmission probability $p$ from the parasite pool to intermediate hosts reduces the extinction area. 
-When $p$ is high, doubly infected intermediate hosts are more abundant. Cooperation in host manipulation then need not be too high to bring the population out of the bi-stability state. 
-However, it also means that the singly infected intermediate hosts are few and parasites in a single infection must make more manipulative effort to successfully transmit (Figure \ref{fig:manipbifur}B). 
-On the other hand, increasing the co-transmission probability $q$ from intermediate hosts to definitive hosts broadens the extinction area. 
-When $q$ is high, successful transmission to definitive hosts relies on the predation of susceptible definitive hosts on doubly infected intermediate hosts. 
-Cooperation in manipulation, therefore, needs to be sufficiently high to avoid bi-stability. 
-Sequential transmission is also rarer because the probability of a single infection $1-q$ is low. 
-Suppose the number of doubly infected intermediate hosts is low. 
-In that case, general transmission from intermediate hosts to definitive hosts is limited, which explains the wide extinction area.
+Co-transmission probability from the parasite pool to intermediate hosts $p$ has opposite effect on the bistable area compared to co-transmission probability $q$ from intermediate hosts to intermediate hosts. In particular, when parasite sabotage the manipulation, increasing $p$ enlarge the bistable area whereas increasing $q$ reduce it. In contrast, when parasites cooperate in manipulation, reducing $p$ decreases the bistable area while reducing $q$ widen it. Considering bistablility indicates vulnerability to disturbance, this suggests that cooperation in manipulation may be beneficial when the co-transmission from the pool to intermediate host increases. However, cooperation in manipulation may be harmful to the population. Evidently, if cooperation is extremely high, the population will always exist.
+
 
 \begin{figure}[!ht]
 	\centering
