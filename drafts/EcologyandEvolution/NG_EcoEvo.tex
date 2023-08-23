@@ -192,6 +192,7 @@ The dynamics of the free-living parasites in the environment are then given by,
 Definitions of different parameters can be found in Table~\ref{table:varpardescription}.
 
 Here, we focus on manipulation that enhances transmission from intermediate hosts to definitive hosts; we thus simplify the transmission from the parasite pool to intermediate hosts such that no sequential infection occurs at this transmission state. 
+This assumption may not be implausible, given that the prey' lifecycle is often shorter than that of the predator. A prey likely encounters the free-living parasite pool once and then either die due to predation, making sequential transmission less likely at this state.
 Sequential infection can happen when parasites transmit from intermediate hosts to definitive hosts. 
 Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts. 
 The system's dynamics are illustrated in figure (\ref{fig:schematic}).
@@ -350,10 +351,11 @@ For intermediate cooperation of both reproduction and manipulation, there could 
 However, the size of the bistability area is highly sensitive to the value of reproduction and manipulation in single infection. 
 In particular, higher values of these two parameters reduce the bistability area, whereas larger values increase the bistability area.
 If the parasites only sabotage host manipulation, the system is highly prone to bistability, and only has a single equilibrium when cooperation in reproduction is extremely high.
-Interestingly, noncooperative in reproduction always lead to single equilibrium of the system given sufficiently large values of reproduction and manipulation in single infection (Figure \ref{fig:manipbifur}). 
+Interestingly, sufficiently high cooperation in reproduction leads to bistability (i.e. $f_{ww}$ is at least 4 times $f_w$), and noncooperation in reproduction always lead to single equilibrium of the system, given sufficiently large values of reproduction and manipulation in single infection (Figure \ref{fig:manipbifur}). 
 While a single equilibrium guarantees existence of parasite population, bistability indicates that a disturbance of the system may likely lead to extinction of parasite. 
 This suggests that whether or not cooperation benefits the population is very context dependent. 
-Cooperation in one aspect or insufficient cooperation in both aspects may make the parasite population more vulnerable to extinction than systems with less cooperative parasites.
+Clearly, if there is no limitation to cooperation, and if reproduction or manipulation in single infection is large enough, cooperation always hold an advantage. 
+On the other hand, cooperation in one aspect or insufficient cooperation in both aspects may make the parasite population more vulnerable to extinction than systems with less cooperative parasites.
 
 \begin{figure}[!ht]
 \centering
@@ -385,29 +387,34 @@ This result is likely due to the introduction of a free-living parasitic pool. O
 
 In the study by \cite{Rogawa2018}, a non-manipulative parasite can invade a susceptible prey-predator population and causes the system to cycle. 
 The system is stabilised when the parasite becomes manipulative, and the stability increases with the manipulative ability.
-In our model, non-manipulative parasites cannot persist in the system. The parasite does not necessarily destabilise the predator-prey system, which may contradict the result of \cite{Rogawa2018}. 
+In our model, non-manipulative parasites cannot persist in the system, and the parasite never leads the system into cyclic dynamics. 
+These results may contradict with  \cite{Rogawa2018}, where non-manipulative parasites lead to a stable system, while increasing manipulation induces the cyclic behaviour of the population. 
 We suggest that the different results may be due to our introduction of a parasite pool and multiple infections, unlike the model of \cite{Rogawa2018}. 
 In their system, transmission from the definitive host to the intermediate host was assumed to result from direct contact between the two hosts. 
 Such immediate transmission could directly accelerate the feedback loop between prey and predator. 
 Hence, faster predator-prey dynamics occur, which may lead to cyclic dynamics when parasites are introduced.
 
-However, in our study, host manipulation can destabilise the predator-prey system under particular circumstances and in a different way than the models of \cite{Rogawa2018}. 
-In particular, the destabilisation of the system is possible due to the occurrence of bistability when parasite reproduction in coinfection is boosted. 
-In this bistability region, if the system is disturbed (e.g. migration of the intermediate or definitive hosts or predation of intermediate hosts by other predators), then the density of the infected hosts may crash, leading to parasite extinction. 
-The bistability region widens as the manipulation in double infection increases, and manipulation in a single infection is insufficient. 
+In our study, population dynamics exhibit bistability under certain circumstances. 
+This is very likely due to the introduction of co-transmission, which has been shown to result in bistable population dynamics in plant virus \cite{allen_modelling_2019}  and infectious disease \cite{gao_coinfection_2016-1}.
+ In this bistability region, if the system is disturbed (e.g. migration of the intermediate or definitive hosts or predation of intermediate hosts by other predators), then the density of the infected hosts may crash, leading to parasite extinction. 
+ In other word, it is a way of destabilising the predator-prey system that is different from the result of  \cite{Rogawa2018} (where destabilising means cyclic behaviour). 
+ In particular, the destabilisation of the system is possible due to the occurrence of bistability when parasite reproduction in coinfection is boosted. 
+The bistability region widens as parasites cooperate in reproduction but sabotage in manipulation. 
 This extension is because the density of the doubly infected hosts is always much smaller than the singly infected host density, limited by sequential transmission and a small probability of co-transmission. 
 Suppose manipulation in a single infection is not sufficient. 
 In that case, the transmission of the parasites depends mainly on the double infection hosts, which is rare. 
 So extinction is possible if manipulation in double infection is not sufficiently high.
 
 \cite{Iritani2018} show that manipulative parasites can persist if they can alternate manipulation between enhancing and suppressing predation rate. 
-In our model, the parasite cannot switch its manipulative strategy. However, we show that sabotage in manipulation when parasites are coinfected almost always leads to a single stable equilibrium scenario. 
+In our model, the parasite cannot switch its manipulative strategy. 
+However, we show that sabotage in manipulation when parasites are coinfected always leads to a single stable equilibrium scenario when there is no cooperation in reproduction. 
 This result suggests that manipulation suppression, either by alternating manipulative strategy or sabotaging, can be crucial in maintaining the parasite population.
 
 Finally, our study focuses on the ecological dynamics of the trophically transmitted parasite. 
-However, investigating the evolution of host manipulation is a natural extension beyond the scope of a single manuscript, given the complexities that arise in the ecological dynamics itself (we tried). 
-The occurrence of bistability in our model suggests that the evolution of host manipulation may drive the parasite population to extinction simply because of the scarcity of the mutant and the Allee effect in the population dynamics. 
-Moreover, the parasite can enhance both values if there is no tradeoff between manipulation and reproduction. 
+However, investigating the evolution of host manipulation is a natural extension beyond the scope of a single manuscript, given the complexities that arise in the ecological dynamics itself.
+Studying evolution of host manipulation taking into account free-living parasite pool calls for thorough analyses, which itself could be a standalone study. 
+In addition, the occurrence of bistability in our model suggests that the evolution of host manipulation may drive the parasite population to extinction simply because of the scarcity of the mutant and the Allee effect in the population dynamics. 
+The parasite can enhance both values if there is no tradeoff between manipulation and reproduction. 
 Nevertheless, our model shows that this strategy, which seems to make the best of both worlds, can make the system even more unstable. 
 Evolutionary dynamics here depend mainly on the tradeoff between host manipulation and other traits of the parasites, such as reproduction, virulence, and survivorship in the parasite pool, to list a few. 
 This extension deserves thorough analysis, and we will treat it as a separate matter.
