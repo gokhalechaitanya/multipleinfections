@@ -3,13 +3,13 @@
 ### Phuong
 
 - reanalysed the mathematica with 2 **done**
-- do the graphs for ratio of \beta
-- for which parameter combinations does bistability occur and what it means.
+- do the graphs for ratio of \beta **done**
+- for which parameter combinations does bistability occur and what it means. **done**
 - Birth function - impact of manipulation is on the population dynamics/epidemiology and not physiological
 	- talk a bit more about the predation functions and show the connection to the birth of definitive hosts or rather the transmission functions \lambda
 - **Introduction** -- differentiate between infection biology and macroparasite infections ... and differences between microparasite and macroparasitic models. 
 - how much do we remove/reduce the linear system
-- definitely include the suggested $\lambda$s from reviewer 1
+- definitely include the suggested $\lambda$s from reviewer 1 **done**
 
 ### Chaitanya
 
