@@ -54,8 +54,8 @@ where $\mathbf{n}$ is the vector of singly and doubly infected intermediate host
 \begin{pmatrix}
 - d - \alpha_w - P_w & 0 & 0 & 0 & (1 - p) \gamma I_s \\
 0 & -d - \alpha_{ww} - P_{ww} & 0 & 0 & p \gamma I_s \\
-h (\beta_w + \rho ) D_s & 2 h (\beta_{ww} + \rho) (1-q) D_s &-\lambda_w - 2  (1-q)\lambda_{ww}  -\mu -\sigma_w & 0 & 0 \\
-0 & 2 h (\beta_{ww} + \rho ) q D_s  & \lambda_w + 2 (1-q) \lambda_{ww}  & -\mu - \sigma_{ww} & 0 \\
+h (\beta_w + \rho ) D_s &  h (\beta_{ww} + \rho) (1-q) D_s &-\lambda_w -   (1-q)\lambda_{ww}  -\mu -\sigma_w & 0 & 0 \\
+0 &  h (\beta_{ww} + \rho ) q D_s  & \lambda_w +  (1-q) \lambda_{ww}  & -\mu - \sigma_{ww} & 0 \\
  0 & 0 & f_w & f_{ww} &- \delta - \gamma I_s  \\
 \end{pmatrix}
 \]
@@ -80,8 +80,8 @@ is the matrix in which its elements are the reproduction contribution of one com
 \begin{pmatrix}
 \alpha_w + d + P_w  & 0 & 0 & 0 & - (1 - p) \gamma  I_s\\
  0 & \alpha_{ww} + d + P_{ww} & 0 & 0 & - p \gamma I_s \\
-- h(\rho + \beta_w) D_s & -2 h(\rho + \beta_{ww})  (1 - q) D_s & \lambda_w + 2 \lambda_{ww} (1-q) + \mu + \sigma_w & 0 & 0 \\
- 0 & -h (\rho + \beta_{ww}) q D_s  & -\lambda_w - 2 \lambda_{ww} (1 - q) & \mu + \sigma_{ww} & 0 \\
+- h(\rho + \beta_w) D_s & - h(\rho + \beta_{ww})  (1 - q) D_s & \lambda_w +  \lambda_{ww} (1-q) + \mu + \sigma_w & 0 & 0 \\
+ 0 & -h (\rho + \beta_{ww}) q D_s  & -\lambda_w -  \lambda_{ww} (1 - q) & \mu + \sigma_{ww} & 0 \\
  0 & 0 & 0 & 0 & \delta + \gamma I_s \\
 \end{pmatrix}
 \]
@@ -100,7 +100,7 @@ The jacobian matrix of the system of equations (1), (2), and (3), as given in th
 	0 & -\alpha_w + \frac{(\beta_w + \rho ) (d-r)}{\rho } - d & 0 & 0 & 0 & 0 & \frac{\gamma  \mu  (1-p)}{c \rho } \\
 	0 & 0 & -\alpha_{ww} + \frac{(\beta_{ww} + \rho ) (d-r)}{\rho } - d & 0 & 0 & 0 & \frac{\gamma  \mu  p}{c \rho } \\
 	-c (d-r) & \frac{\beta_w (d-r)}{\rho } - c (d-r) & \frac{\beta_{ww} (d-r)}{\rho }-c (d-r) & 0 & \mu  & \mu  & 0 \\
-	0 & -\frac{\beta_w (d-r)}{\rho } & -\frac{2 \beta_{ww} (1-q) (d-r)}{\rho } & 0 & -\mu - \sigma_w & 0 & 0 \\
+	0 & -\frac{\beta_w (d-r)}{\rho } & -\frac{ \beta_{ww} (1-q) (d-r)}{\rho } & 0 & -\mu - \sigma_w & 0 & 0 \\
 	0 & 0 & -\frac{\beta_{ww} q (d-r)}{\rho } & 0 & 0 & -\mu - \sigma_{ww} & 0 \\
 	0 & 0 & 0 & 0 & f_w & f_{ww} & -\frac{\gamma  \mu }{c \rho } - \delta  \\
 \end{pmatrix}
@@ -111,7 +111,7 @@ This jacobian has seven eigenvalues, two of which have explicit expressions as $
 \section*{SI 3. Invasion of parasite - Linear birth function }
 
 
-$R_0 > 1$ when the transmission rate from the parasite pool to intermediate hosts satisfies
+For simplification, we assume that $h_1 = h_2 = 1$, $R_0 > 1$ when the transmission rate from the parasite pool to intermediate hosts satisfies
 
 \begin{align}
 	\gamma > & \frac{c \delta  \rho  (\mu + \sigma_w) (\mu + \sigma_{ww}) (-\alpha_w \rho + \beta_w d-r (\beta_w+\rho )) (\alpha_{ww} \rho + \beta_{ww} (-d)+r (\beta_{ww}+\rho ))}{\mu } \notag \\
@@ -162,19 +162,19 @@ The disease free equilibrium is stable if the above polynomial has all negative 
 We know that $A_4 = 1$ is always positive. 
 
 \begin{equation}
-	A_3 = c^2 \rho ^7 (X (\beta_w + \beta_{ww}+2 \rho ) + c \rho^2  (2 \alpha +\delta +\mu +\sigma + 2 d  )+\gamma  \mu  \rho )
+	A_3 = \rho ^7 \left(X (\beta_w + \beta_{ww}+2 \rho ) + c \rho^2  (2 \alpha +\delta +\mu +\sigma + 2 d  )+\gamma  \mu  \rho \right)
 \end{equation}
 
 is always postive as all the elements of $A_3$ are positive.
 
 \begin{align}
-	A_3 = & c^4 \rho^{14} (c \rho ^3 (c \rho  (\alpha ^2+2 \alpha  (\delta +\mu +\sigma )+\delta  (\mu +\sigma ))+(2 \alpha +d+\mu +\sigma ) (c d \rho +\gamma  \mu )+c d \rho  (2 \delta +\mu +\sigma )+\gamma  d \mu ) \notag \\
-	&+X (\beta_w + \beta_{ww}+2 \rho ) (c \rho ^2 (\alpha +d+\delta +\mu +\sigma )+\gamma  \mu  \rho )+X^2 (\beta_w+\rho ) (\beta_{ww}+\rho ))
+	A_2 = & \rho^{14} \left(c \rho ^3 (c \rho  (\alpha ^2+2 \alpha  (\delta +\mu +\sigma )+\delta  (\mu +\sigma ))+(2 \alpha +d+\mu +\sigma ) (c d \rho +\gamma  \mu )+c d \rho  (2 \delta +\mu +\sigma )+\gamma  d \mu ) \right. \notag \\
+	&\left. +X (\beta_w + \beta_{ww}+2 \rho ) (c \rho ^2 (\alpha +d+\delta +\mu +\sigma )+\gamma  \mu  \rho )+X^2 (\beta_w+\rho ) (\beta_{ww}+\rho )\right)
 \end{align}
 is always positive because all elements of $A_2$ are positive.
 
 \begin{align}
-	A_1 = c^6 \rho ^{22} (c^2 \rho ^2 A_{10} +A_{11}-c \gamma  X  A_{12} f_w h \mu  \rho ^2)
+	A_1 =  \rho ^{22} \left(c^2 \rho ^2 A_{10} +A_{11}-c \gamma  X  A_{12} f_w h \mu  \rho ^2 \right)
 \end{align}
 is positive if reproduction in single infection $f_w$, the probability to sucessfully established in the definitive host $h$, and cooperation in reproduction $\epsilon$ are small enough because 
 \begin{equation}
@@ -188,20 +188,20 @@ is always positive positive, and
 \end{align}
 is always positive.
 \begin{equation}
-	A_{12} = \beta_w (1-p)+2 \beta_{ww} p (q (\epsilon -1)+1)+\rho  (2 p q (\epsilon -1)+p+1)
+	A_{12} =\beta_w (1-p)+p (\beta_{ww}+q (\epsilon -1) (\beta_{ww}+\rho ))+\rho
 \end{equation}
-is always positive because $0 \leq p \leq 1$ and $0 \leq q \leq 1$. If $\epsilon > 1$, then $A_{12}$ is always positive. The smaller the value of $\epsilon$, the more likely $A_{12}$ is negative. However, even when $\epsilon = 0$, $A_{12} =  \beta_w (1-p)+2 \beta_{ww} p (1- q)+\rho  (1 - 2 p q + p)$ is always positive.
+is always positive because $0 \leq p \leq 1$ and $0 \leq q \leq 1$. If $\epsilon > 1$, then $A_{12}$ is always positive. The smaller the value of $\epsilon$, the more likely $A_{12}$ is negative. However, even when $\epsilon = 0$, $A_{12} = \beta_w (1-p) + \beta_{ww} p (1-q)+\rho  (1-p q)$ is always positive.
 Because $A_{12}$ is positive, if $f_w$, $h$ and $\epsilon$ are sufficiently large, $A_1$ can be negative and the polynomial will not have all negative eigenvalues.
 
 Finally, we have
 
 \begin{equation}
-	A_0 = -f_w h \gamma \mu A_{00} + A_{01}
+	A_0 = c^9 \rho^{31} \left(-f_w h \gamma \mu A_{00} + A_{01}\right)
 \end{equation}
 
 where 
 \begin{align}
-	A_{00} = X (c A_{12} \rho ^2 (\alpha +d) + X (\beta_w+\rho ) (\beta_{ww}+\rho ) (2 p q (\epsilon -1)+p+1))
+	A_{00} = X (c  \rho ^2 (\alpha +d) A_{12} + X (\beta_w+\rho ) (\beta_{ww}+\rho ) ( p q (\epsilon -1)+1))
 \end{align}
 is always positive, and
 \begin{align}
