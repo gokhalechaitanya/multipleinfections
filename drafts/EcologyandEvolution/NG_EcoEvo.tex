@@ -220,8 +220,8 @@ It can be understood as the expected number of offspring a parasite produces dur
 We calculate the basic reproduction ratio $R_0$ using the next-generation method \citep{Diekmann1990, Diekmann2009, hurford:JRSI:2010} (See SI1 for details).
 %
 \begin{align}
-R_0 = & \overbrace{\gamma I_s^* \frac{2 p q h (\rho +  \beta_{ww})}{\alpha_{ww} + d + P_{ww}} \frac{D_s^*}{\mu +\sigma_{ww}} \frac{f_{ww}}{\delta +\gamma I_s^*}}^{ \texttt{Double infections}} + \nonumber \\
-& \underbrace{\gamma  I_s^* \left( \frac{ (1-p) h (\rho + \beta_w)}{\alpha_w + d + P_w} + \frac{2 p (1-q) h (\rho + \beta_{ww})}{\alpha_{ww} + d + P_{ww}} \right) \frac{D_s^*}{\mu + \sigma_w} \frac{f_w}{\delta +\gamma  I_s^*}}_{\texttt{Single infection}}
+R_0 = & \overbrace{\gamma I_s^* \frac{p q h (\rho +  \beta_{ww})}{\alpha_{ww} + d + P_{ww}} \frac{D_s^*}{\mu +\sigma_{ww}} \frac{f_{ww}}{\delta +\gamma I_s^*}}^{ \texttt{Double infections}} + \nonumber \\
+& \underbrace{\gamma  I_s^* \left( \frac{ (1-p) h (\rho + \beta_w)}{\alpha_w + d + P_w} + \frac{p (1-q) h (\rho + \beta_{ww})}{\alpha_{ww} + d + P_{ww}} \right) \frac{D_s^*}{\mu + \sigma_w} \frac{f_w}{\delta +\gamma  I_s^*}}_{\texttt{Single infection}}
 \end{align}
 %
 where $I_s^*$ and $D_s^*$ are the densities of susceptible intermediate and definitive hosts at the disease-free equilibrium. 
@@ -374,7 +374,7 @@ However, cooperation in manipulation may harm the population when the co-transmi
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=\textwidth]{Figures/coinfect_transmission.pdf}
-	\caption{Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 4.5, \ \beta_w = 1.3, \ f_w = 35, \ h_1 = h_2 = 0.6$.}
+	\caption{\cha{Left: Right: }Common parameters:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 4.5, \ \beta_w = 1.3, \ f_w = 35, \ h_1 = h_2 = 0.6$.}
 	\label{fig:contransmission}
 \end{figure}
 
