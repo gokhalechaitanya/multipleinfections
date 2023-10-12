@@ -23,27 +23,29 @@
 
 \usepackage{setspace}
 
-\newcommand{\fig}[1]{Fig.~\ref{fig:#1}}
-\newcommand{\Fig}[1]{Figure~\ref{fig:#1}}
-\newcommand{\figs}[2]{Figures~\ref{fig:#1},~\ref{fig:#2}}
-\newcommand{\eq}[1]{Eq.~\ref{eq:#1}}
-\newcommand{\sect}[1]{Section~\ref{sect:#1}}
-\newcommand{\app}[1]{Appendix~\ref{app:#1}}
-\newcommand{\esm}[0]{\textcolor{red}{ESM}}
+%\newcommand{\fig}[1]{Fig.~\ref{fig:#1}}
+%\newcommand{\Fig}[1]{Figure~\ref{fig:#1}}
+%\newcommand{\figs}[2]{Figures~\ref{fig:#1},~\ref{fig:#2}}
+%\newcommand{\eq}[1]{Eq.~\ref{eq:#1}}
+%\newcommand{\sect}[1]{Section~\ref{sect:#1}}
+%\newcommand{\app}[1]{Appendix~\ref{app:#1}}
+%\newcommand{\esm}[0]{\textcolor{red}{ESM}}
 
 \begin{document}
 \sffamily
 \title{
 On multiple infections by parasites with complex life cycles
 }   
-%\author{Chaitanya S.~Gokhale$^{\dag \star}$, Arne Traulsen$^{\dag}$ and Gerrit Joop$^{\ddag}$\\
-%\small{$^\dag$Department of Evolutionary Theory,}\\
-%\small{Max Planck Institute for Evolutionary Biology,}\\
-%\small{August-Thienemann-Stra{\ss}e 2, 24306 Pl\"{o}n, Germany}\\
-%\small{$^\ddag$Institut f\"ur Insektenbiotechnologie, University of Giessen,}\\
-%\small{Evolutionary Ecology and Genetics, University of Kiel, Germany}\\
-%\small{$^\star$gokhale@evolbio.mpg.de}
-%}
+\author{Phuong L. Nguyen $^{\dag}$ and Chaitanya S. Gokhale $^{\ddag}$\\
+\small{$^\dag$ Department of Biology, University of Fribourg,}\\
+\small{Chemin du musee 15, Switzerland}\\
+\small{$^\ddag$Max Planck Institute for Evolutioanry Biology, Department of Theoretical Biology}\\
+\small{August-Thienemann-Stra{\ss}e 2, 24306 Pl\"{o}n, Germany}\\
+\small{Center for Computational and Theoretical Biology, University of W\"{u}rzburg,}\\
+\small{Klara-Oppenheimer Weg, 32, 97074, W\"{u}rzburg, Germany}\\
+\small{$^\dag$linh.phuong.nguyen@evobio.eu}\\
+\small{$^\ddag$gokhale@evolbio.mpg.de}
+}
 
 \date{}
 \maketitle
@@ -52,25 +54,31 @@ On multiple infections by parasites with complex life cycles
 
 \linenumbers
 
-\begin{abstract}
-{
-\sffamily
-Host manipulation is a common strategy of parasites of different complexity. 
-It directly affects predator-prey dynamics in trophically transmitted parasites, where parasite transmission requires predation. Theoretical studies suggest that manipulation that enhances predation often results in a heavy burden on the prey population. 
-Consequently, the system is often destabilised, making parasites prone to extinction. 
-Host manipulation, however, can also suppress predation.
-Such suppression is possible if multiple parasites coinfect a host with conflicting interests in manipulation. 
-The interests could be misaligned for various reasons, such as limited carrying capacity or parasitoid developmental stage.
-Multiple infections are a norm in parasite ecology but are often neglected in the theoretical assessment of host-parasite dynamics.
-We tease apart the effect of host manipulation of coinfected parasites and manipulation interests via a mathematical model of a trophically transmitted parasite with a complex life cycle.
-The life cycle comprises a free-living state, an intermediate and a definitive host. 
-With coinfection, we show that host manipulation that enhances predation need not permanently destabilise the predator-prey system. 
-However, sabotage in manipulation can induce bistability such that a slight disturbance in the system drives the parasite population to extinction. 
-Intriguingly, cooperation in host manipulation and synergism in reproduction might not ensure system stability. 
-In some cases, depressed reproduction in co-infecting parasites may prevent the dynamical system from bistability.
-Our study highlights the necessity and means of incorporating the reality of multiple parasites and their multi-trophic life cycles in a single system in studying parasite ecology.
-}
-\end{abstract}
+\begin{itemize}
+	\item a short running title - Parasites with complex life cycles
+	\item 10 keywords
+	\item Article type - Letter
+	\item Number of words - Abstract (137), Main text (excluding abstract, acknowledgements, references, table and figure legends) (4377),
+	\item Number of references - 30
+	\item number of figures (6), tables (0), and text boxes (0)
+	\item Corresponding author: Dr. Phuong L. Nguyen, Department of Biology, University of Fribourg, Chemin du musee 15, Switzerland, email: linh.phuong.nguyen@evobio.eu
+\end{itemize}
+
+\newpage
+%\begin{abstract}
+%{
+%\sffamily
+%Host manipulation is a common strategy of parasites with complex lifecycles. 
+%It directly affects predator-prey dynamics in trophically transmitted parasites. 
+%Theoretical studies suggest that predation-enhancing manipulation often decimates the prey population, making parasites prone to extinction. 
+%Host manipulation, however, can also suppress predation due to conflicting interests when multiple parasites infect a host, often neglected in theoretical studies.
+%Misaligned interests of coinfecting parasites can occur due to limited carrying capacity or parasitoid developmental stage.
+%Including this realistic complexity in a mathematical model, the results 
+%depart from previous studies substantially. 
+%We show that coinfecting multi-trophic parasites can preserve the predator-prey system and themselves through a combination of manipulation and reproduction parameters.
+%Our study highlights the necessity and provides the means of incorporating the reality of multiple parasites and their multi-trophic life cycles in the theory of parasite ecology.
+%}
+%\end{abstract}
 
 \sffamily
 
@@ -194,10 +202,10 @@ The dynamics of the free-living parasites in the environment are then given by,
 	\frac{dW}{dt} &= f_w D_w + f_{ww} D_{ww} - \delta W - \eta I_s. \label{odes:eparasite}
 \end{align}
 %
-Definitions of different parameters can be found in Table~\ref{table:varpardescription}.
+Definitions of different parameters can be found in Table~SI.1.%\ref{table:varpardescription}.
 
 Here, we focus on manipulation that enhances transmission from intermediate hosts to definitive hosts; we thus simplify the transmission from the parasite pool to intermediate hosts such that no sequential infection. 
-This assumption is motivated given that the prey' lifecycle is often shorter than that of the predator \cha{citation}. 
+This assumption is motivated given that the prey' lifecycle is often shorter than that of the predator. 
 A prey likely encounters the free-living parasite pool once and then dies due to predation, making sequential transmission less likely at this state.
 Sequential infection can happen when parasites transmit from intermediate hosts to definitive hosts. 
 Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts. 
@@ -320,18 +328,11 @@ In contrast, with sufficient disturbance, the parasite population could go extin
 
 Host manipulation can be cooperative; two parasites increase the predation rate on intermediate hosts, or $\beta_{ww} > \beta_w$. 
 However, it can also be uncooperative; the predation rate on doubly-infected intermediate hosts is lower than that on singly-infected ones or $\beta_{ww} < \beta_w$.
-Cooperation in parasite manipulation increases the parasite's basic reproduction ratio $R_0$, but the manipulation in a single infection substantially affects the value of $R_0$ (Figure \ref{fig:manipR0}). 
+Cooperation in parasite manipulation increases the parasite's basic reproduction ratio $R_0$, but the manipulation in a single infection substantially affects the value of $R_0$ (Figure \ref{fig:manipbifur} Left). 
 Intuitively, if the manipulation in a single infection is minor, there is not enough transmission, and the parasite goes extinct.
 However, suppose the ability to manipulate the host in a single infection is merely enough for the parasite population to escape extinction. 
 In that case, cooperation in host manipulation leads to a bistable system state. 
 Within the bistable region, the basic reproduction ratio can be less than one, suggesting that the parasite cannot spread when its manipulative values are within this area of weak manipulation when coinfected. 
-
-\begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth]{Figures/manip_bifur_R0.pdf}
-\caption{$R_0$ values increase with more efficient manipulation in both single and double infection. The parasite goes extinct if its manipulative ability is insufficient (white area). Bistability region occurs when cooperation in manipulation is intermediate (hatched area). As manipulation in single infection increases, the system only has one stable equilibrium. On the black line, manipulation is indifference between single infection and double infection ($\beta_w = \beta_{ww}$). Other parameters are the same as in Figure \ref{fig:bistability} and $f_w = 37 $}
-\label{fig:manipR0}
-\end{figure}
 
 Co-infecting parasites can influence each other in different life history traits besides manipulation.
 Parasites can have an enhanced reproduction rate in coinfections, i.e. $f_{ww} > f_w$. 
@@ -352,7 +353,7 @@ Coordinating holds an advantage if there are no significant tradeoffs and if rep
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\textwidth]{Figures/ratio_reproduction_manipulation.pdf}
-\caption{Changes of the bistability area (shaded areas) with respect to different reproduction rates in single infection (different boundary styles). Manipulation and reproduction is indifference between single infection and double infection on the vertical and horizontal lines respectively. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h_1 = h_2 = 0.6$.}
+\caption{Left: $R_0$ values increase with more efficient manipulation in both single and double infection. The parasite goes extinct if its manipulative ability is insufficient (white area). Bistability region occurs when cooperation in manipulation is intermediate (hatched area). As manipulation in single infection increases, the system only has one stable equilibrium. On the black line, manipulation is indifference between single infection and double infection ($\beta_w = \beta_{ww}$). Other parameters are the same as in Figure \ref{fig:bistability} and $f_w = 37 $. Right: Changes of the bistability area (shaded areas) with respect to different reproduction rates in single infection (different boundary styles). Manipulation and reproduction is indifference between single infection and double infection on the vertical and horizontal lines respectively. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h_1 = h_2 = 0.6$.}
 \label{fig:manipbifur}
 \end{figure}
 
@@ -367,7 +368,7 @@ However, cooperation in manipulation may harm the population when the co-transmi
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=\textwidth]{Figures/coinfect_transmission.pdf}
-	\caption{\cha{Left: Effect of cotransmission from parasite pool to intermediate host. Right: Effect of cotransmission from intermediate to definitive host.} Common parameters:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 4.5, \ \beta_w = 1.45, \ f_w = 38, \ h_1 = h_2 = 0.6$.}
+	\caption{Left: Effect of cotransmission from parasite pool to intermediate host. Right: Effect of cotransmission from intermediate to definitive host. Common parameters:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 4.5, \ \beta_w = 1.45, \ f_w = 38, \ h_1 = h_2 = 0.6$.}
 	\label{fig:contransmission}
 \end{figure}
 
@@ -415,68 +416,23 @@ Evolutionary dynamics would therefore depend on the tradeoff between host manipu
 This extension deserves thorough analysis, and we will treat it as a separate matter.
 
 
-\section*{Acknowledgements} 
-We thank the Swiss National Science Foundation Sinergia grant no CRSII5\_202290 for supporting Phuong Nguyen to work on this manuscript as a side project.
-Funding from Bayerische Forschungsallianz and from the Max Planck Society if gratefully acknowledged (CSG).
-We also thank Tina Scheibe for helpful discussions.
-This paper is dedicated to the memory of Martin Kalbe, an exceptional parasitologist who made remarkable contributions to the field.
-Beyond his academic prowess, Martin was a truly exemplary friend and human being, touching the lives of those around him with his warmth, kindness, and unwavering support.
+%\section*{Acknowledgements} 
+%We thank the Swiss National Science Foundation Sinergia grant no CRSII5\_202290 for supporting Phuong Nguyen to work on this manuscript as a side project.
+%Funding from Bayerische Forschungsallianz and from the Max Planck Society if gratefully acknowledged (CSG).
+%We also thank Tina Scheibe for helpful discussions.
+%This paper is dedicated to the memory of Martin Kalbe, an exceptional parasitologist who made remarkable contributions to the field.
+%Beyond his academic prowess, Martin was a truly exemplary friend and human being, touching the lives of those around him with his warmth, kindness, and unwavering support.
 
-\section*{Statement of Authorship}
-Both authors developed the theory.
-P.L.N developed and implemented the computational model.
-Both authors wrote the manuscript.
- 
-\section*{Data and Code Availability}
-All data and simulation codes for generating figures are available on 
-\url{https://anonymous.4open.science/r/multipleinfections}
+%\section*{Statement of Authorship}
+%Both authors developed the theory.
+%P.L.N developed and implemented the computational model.
+%Both authors wrote the manuscript.
+% 
+%\section*{Data and Code Availability}
+%All data and simulation codes for generating figures are available on 
+%\url{https://anonymous.4open.science/r/multipleinfections}
 
 \bibliographystyle{evolution}
 \bibliography{references}
-
-\section*{Tables}
-\renewcommand{\thetable}{\arabic{table}}
-\setcounter{table}{0}
-
-\begin{table}[!ht]
-\caption{Description of variables and parameters}
-\label{table:varpardescription}
-\centering
-\begin{tabular}{c|p{10cm}}%{|p{2.5cm}|p{12cm}|} 
-\hline
-Parameters and Variables    &  Description  \\
-\hline
-$I_i$  & Density of intermediate hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ \\
-\hline
-$D_i$ & Density of definitive hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ \\
-\hline
-$W$ & Density of parasites released from definitive hosts into the environment \\
-\hline
-$d$ & Natural death rate of intermediate hosts \\
-\hline
-$\alpha_i$ & Additional death rate of intermediate hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) \\
-\hline
-$p$ & Probability that two parasites cotransmit from the environment to an intermediate host \\
-\hline
-$\gamma$ & Transmission rate of parasites in the environment to intermediate hosts \\
-\hline
-$\mu$ & Natural death rate of definitive hosts \\
-\hline
-$\sigma_i$ & Additional death rate of definitive hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) \\
-\hline
-$\sigma_i$ & Additional death rate of the hosts due to being infected by a singly parasite ($i = w$) or two parasites ($i = ww$) \\
-\hline
-$q$ & Probability that two parasites cotransmit from intermediate hosts to definitive hosts \\
-\hline
-$\beta_i$ & Transmission rate of parasites from intermediate hosts to definitive hosts \\
-\hline
-$f_i$ & Reproduction rate of parasites in singly infected definitive hosts ($i = w$) or doubly infected hosts ($i = ww$)\\
-\hline
-$\delta$ & Natural death rate of parasites in the environment \\
-\hline 
-$h$ & Probability that the parasites successfully established inside the definitive host 
-\end{tabular}
-\bigskip{}\\
-\end{table}
 
 \end{document}

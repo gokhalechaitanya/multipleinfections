@@ -39,6 +39,9 @@
 \renewcommand{\thefigure}{SI.\arabic{figure}}
 \setcounter{figure}{0}
 
+\renewcommand{\thetable}{SI.\arabic{table}}
+\setcounter{table}{0}
+
 \section*{SI 1. Reproduction ratio $R_0$}
 
 The reproduction ratio of the parasite is derived from the dynamical system of the parasite which only include infected intermediate and definitive hosts and the free-living parasite pool. The dynamical system can be written in matrix form as followed:
@@ -220,14 +223,53 @@ The condition for parasite invasion is $R_0 > 1$, which is satisfied when
 			 \rho )+\beta_{ww} p \rho  (q (\epsilon -2)+2)) \end{pmatrix}}
 \end{align}
 
-%\section*{Supplementary Figure}
-%
-%\begin{figure}[ht!]
-%	\centering
-%	\includegraphics[width=\textwidth]{Figures/ratio_reproduction_manipulation_beta.pdf}
-%	\caption{Changes of the bistability area (shaded areas) with respect to different manipulation in single infection (different boundary styles). Manipulation and reproduction is indifference between single infection and double infection on the vertical and horizontal lines respectively. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  f_w = 35, h_1 = h_2 = 0.6$.}
-%\end{figure}
 
+\section*{Tables}
+
+
+\begin{table}[!ht]
+\caption{Description of variables and parameters}
+\label{table:varpardescription}
+\centering
+\begin{tabular}{c|p{10cm}}%{|p{2.5cm}|p{12cm}|} 
+\hline
+Parameters and Variables    &  Description  \\
+\hline
+$I_i$  & Density of intermediate hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ \\
+\hline
+$D_i$ & Density of definitive hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ \\
+\hline
+$W$ & Density of parasites released from definitive hosts into the environment \\
+\hline
+$d$ & Natural death rate of intermediate hosts \\
+\hline
+$\alpha_i$ & Additional death rate of intermediate hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) \\
+\hline
+$p$ & Probability that two parasites cotransmit from the environment to an intermediate host \\
+\hline
+$\gamma$ & Transmission rate of parasites in the environment to intermediate hosts \\
+\hline
+$\mu$ & Natural death rate of definitive hosts \\
+\hline
+$\sigma_i$ & Additional death rate of definitive hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) \\
+\hline
+$\sigma_i$ & Additional death rate of the hosts due to being infected by a singly parasite ($i = w$) or two parasites ($i = ww$) \\
+\hline
+$q$ & Probability that two parasites cotransmit from intermediate hosts to definitive hosts \\
+\hline
+$\beta_i$ & Transmission rate of parasites from intermediate hosts to definitive hosts \\
+\hline
+$f_i$ & Reproduction rate of parasites in singly infected definitive hosts ($i = w$) or doubly infected hosts ($i = ww$)\\
+\hline
+$\delta$ & Natural death rate of parasites in the environment \\
+\hline 
+$h$ & Probability that the parasites successfully established inside the definitive host 
+\end{tabular}
+\bigskip{}
+\end{table}
+
+\section*{Supplementary Figure}
+%
 \begin{figure}[!ht]
 \includegraphics[width=\textwidth]{Figures/diseasefree_linear.pdf}
 \caption{Disease-free equilibrium using linear birth function, where parasite goes extinct (left panel), and susceptible hosts demonstrate cyclic dynamics (right panel). Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameter values  $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w =  \alpha_{ww} =  0, \ \beta_w  = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1,  \ c = 1.4, \ \mu = 0.9,  \ \sigma_w = \sigma_{ww} = 0, \ q = 0.01, \  f_w = 6.5, \  f_{ww} = 7.5, \ \delta = 0.9$,$h_1 = h_2 = 0.8$, $R_0 = 4.997$ } 
