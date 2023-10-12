@@ -269,17 +269,11 @@ The simplest form of the prey's birth rate is a linear function, in which case t
 This follows from the Lotka-Volterra system using linear functions for prey birth and predation \citep{Lotka1920}.
 Since the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite using the basic reproduction ratio, which is evaluated when the disease-free state is stable. 
 Here,  $R_0 > 1$  happens when $\gamma$, the transmission rate from the environment to intermediate hosts, and the reproduction rates $f_w, f_{ww}$ are significantly large (the specific mathematical conditions can be found in SI3). 
-However, even when this condition is satisfied, the parasite may not be able to spread and persist in cyclic susceptible host dynamics (Figure \ref{fig:diseasefree:linear}). 
+However, even when this condition is satisfied, the parasite may not be able to spread and persist in cyclic susceptible host dynamics (Figure SI1). 
 This result agrees with the conclusion in \citep{Ripa:Evol:2013}, which suggests that it is difficult for a mutant to invade a cyclic resident population. 
 In our case, it is not the invasion of a mutant in a resident population but the invasion of a parasite in a cyclic disease-free host population; the argument, however, remains valid in both cases. 
 This issue deserves a more thorough investigation, which is out of the scope of this article. 
 Here, we choose a non-linear birth function of the intermediate hosts to obtain a stable disease circulation state and focus on the effect of host manipulation on the ecological dynamics. 
-
-\begin{figure}[!ht]
-\includegraphics[width=\textwidth]{Figures/diseasefree_linear.pdf}
-\caption{Disease-free equilibrium using linear birth function, where parasite goes extinct (left panel), and susceptible hosts demonstrate cyclic dynamics (right panel). Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameter values  $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w =  \alpha_{ww} =  0, \ \beta_w  = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1,  \ c = 1.4, \ \mu = 0.9,  \ \sigma_w = \sigma_{ww} = 0, \ q = 0.01, \  f_w = 6.5, \  f_{ww} = 7.5, \ \delta = 0.9$,$h_1 = h_2 = 0.8$, $R_0 = 4.997$ } 
-\label{fig:diseasefree:linear}
-\end{figure}
 
 The logistic growth for the non-linear birth function follows by 
 %
@@ -299,7 +293,7 @@ This equilibrium is positive and stable if components of the parasite, such as r
 
 \begin{figure}[!ht]
 \includegraphics[width=\textwidth]{Figures/ecotraject_nonlinear.pdf}
-\caption{A, B)Disease free equilibrium where parasite cannot persist. C, D) Disease stable equilibrium. Annotations are the same in figure \ref{fig:diseasefree:linear}. Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.05, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26, \ h_1 = h_2 = 0.8$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
+\caption{A, B)Disease free equilibrium where parasite cannot persist. C, D) Disease stable equilibrium. Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.05, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26, \ h_1 = h_2 = 0.6$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
 \label{fig:ecotraject:nonlinear}
 \end{figure}
 
@@ -317,7 +311,7 @@ In contrast, with sufficient disturbance, the parasite population could go extin
 
 \begin{figure}[!ht]
 \includegraphics[width = \textwidth]{Figures/reproduction_bifurcation.pdf}
-\caption{Effect of parasite reproduction on the ecological dynamics. A) Enhanced reproduction in double infection leads to bistability, B, C) Density of singly infected host at equilibrium when reproduction of parasites are the same in singly and doubly infected hosts $f_{ww} = f_w$, and when reproduction of parasites in doubly infected hosts is enhanced four times than those in singly infected hosts $f_{ww} = 4 f_w$. Filled circles indicate stable equilibrium and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_ww =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.05, \ \delta = 0.9, \ k = 0.26, \ h_1 = h_2 = 0.6$
+\caption{Effect of parasite reproduction on the ecological dynamics. A) Enhanced reproduction in double infection leads to bistability, B, C) Density of singly infected host at equilibrium when reproduction of parasites are the same in singly and doubly infected hosts $f_{ww} = f_w$, and when reproduction of parasites in doubly infected hosts is enhanced four times than those in singly infected hosts $f_{ww} = 4 f_w$. Filled circles indicate stable equilibrium and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.05, \ \delta = 0.9, \ k = 0.26, \ h_1 = h_2 = 0.6$
 }
 \label{fig:bistability}
 \end{figure}
@@ -335,7 +329,7 @@ Within the bistable region, the basic reproduction ratio can be less than one, s
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{Figures/manip_bifur_R0.pdf}
-\caption{$R_0$ values increase with more efficient manipulation in both single and double infection. The parasite goes extinct if its manipulative ability is insufficient (white area). Bistability region occurs when cooperation in manipulation is intermediate (hatched area). As manipulation in single infection increases, the system only has one stable equilibrium. On the black line, manipulation is indifference between single infection and double infection ($\beta_w = \beta_{ww}$). Other parameters are the same as in Figure \ref{fig:manipR0}. $f_w = 30 $}
+\caption{$R_0$ values increase with more efficient manipulation in both single and double infection. The parasite goes extinct if its manipulative ability is insufficient (white area). Bistability region occurs when cooperation in manipulation is intermediate (hatched area). As manipulation in single infection increases, the system only has one stable equilibrium. On the black line, manipulation is indifference between single infection and double infection ($\beta_w = \beta_{ww}$). Other parameters are the same as in Figure \ref{fig:bistability} and $f_w = 37 $}
 \label{fig:manipR0}
 \end{figure}
 
@@ -354,7 +348,6 @@ Interestingly, sufficiently high reproduction enhancement leads to bistability (
 While a single equilibrium guarantees the existence of a parasite population, bistability indicates that a disturbance of the system may likely lead to the extinction of the parasite population. 
 This suggests that the benefits of coordination in reproduction and manipulation are context-dependent. 
 Coordinating holds an advantage if there are no significant tradeoffs and if reproduction or manipulation in single infections are large enough. 
-%On the other hand, coordinating in one aspect or insufficient cooperation in both aspects may make the parasite population more vulnerable to extinction than systems with less cooperative parasites.
 
 \begin{figure}[!ht]
 \centering
@@ -374,7 +367,7 @@ However, cooperation in manipulation may harm the population when the co-transmi
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=\textwidth]{Figures/coinfect_transmission.pdf}
-	\caption{\cha{Left: Right: }Common parameters:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 4.5, \ \beta_w = 1.3, \ f_w = 35, \ h_1 = h_2 = 0.6$.}
+	\caption{\cha{Left: Effect of cotransmission from parasite pool to intermediate host. Right: Effect of cotransmission from intermediate to definitive host.} Common parameters:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 4.5, \ \beta_w = 1.45, \ f_w = 38, \ h_1 = h_2 = 0.6$.}
 	\label{fig:contransmission}
 \end{figure}
 
@@ -401,17 +394,14 @@ Hence, faster predator-prey dynamics occur, which may lead to cyclic dynamics wh
 In our study, population dynamics exhibit bistability under certain circumstances. 
 This is very likely due to the introduction of co-transmission, which has been shown to result in bistable population dynamics in plant virus \cite{allen_modelling_2019} and infectious diseases \cite{gao_coinfection_2016-1}.
  In this bistability region, if the system is disturbed (e.g. migration of the intermediate or definitive hosts or predation of intermediate hosts by other predators), then the density of the infected hosts may crash, leading to parasite extinction. 
-% In other words, it is a way of destabilising the predator-prey system.%, different from the result of \cite{Rogawa2018}. 
- %In particular, the destabilisation of the system is possible due to the occurrence of bistability when parasite reproduction in coinfection is boosted. 
 The bistability region widens as parasites show enhanced reproduction but sabotage manipulation. 
 This extension is because the density of the doubly infected hosts is always much smaller than the singly infected hosts, limited by sequential transmission and a small probability of co-transmission. 
 If manipulation in a single infection is not sufficient then the transmission of the parasites depends mainly on the doubly infected hosts, which is rare. 
 So, extinction is possible if manipulation in double infections is low.
 
-\cha{\cite{Iritani2018} show that manipulative parasites can persist if they can alternate manipulation between boosting and suppressing predation rate. 
+\cite{Iritani2018} show that manipulative parasites persist if they can alternate manipulation between boosting and suppressing predation rate. 
 In our model, the parasite cannot switch its manipulative strategy. 
-However, we show that sabotage in manipulation when parasites are coinfected always leads to a single stable equilibrium scenario when there is depressed reproduction. 
-This result suggests that manipulation suppression, either by alternating manipulative strategy or sabotaging, can be crucial in maintaining the parasite population.}
+Sabotaging manipulation reduces the basic reproduction ration $R_0$ and makes the system bistable, exposing the parasite to the risk of extinction. This result contrasts with \cite{Iritani2018} because in our model, sabotage decreases transmissmion rate from intermediate to definitive host, and does not benefit the parasite.
 
 Finally, our study focuses on the ecological dynamics of the trophically transmitted parasite. 
 However, investigating the evolution of host manipulation is a natural extension beyond the scope of a single manuscript, given the complexities that arise in the ecological dynamics itself.
