@@ -8,7 +8,8 @@
 \usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage{amsmath}  % for equations
+\usepackage{amsmath}
+\usepackage{ulem}  % for equations
 
 \title{Supplementary Information:\\ On multiple infections by parasites with complex life cycles}
 
@@ -30,6 +31,13 @@
 
 \begin{document}
 \maketitle
+
+\renewcommand{\theequation}{SI.\arabic{equation}}
+\setcounter{equation}{0}
+
+\renewcommand{\thefigure}{SI.\arabic{figure}}
+\renewcommand{\thefigure}{SI.\arabic{figure}}
+\setcounter{figure}{0}
 
 \section*{SI 1. Reproduction ratio $R_0$}
 
@@ -212,12 +220,18 @@ The condition for parasite invasion is $R_0 > 1$, which is satisfied when
 			 \rho )+\beta_{ww} p \rho  (q (\epsilon -2)+2)) \end{pmatrix}}
 \end{align}
 
-\section*{Supplementary Figure}
+%\section*{Supplementary Figure}
+%
+%\begin{figure}[ht!]
+%	\centering
+%	\includegraphics[width=\textwidth]{Figures/ratio_reproduction_manipulation_beta.pdf}
+%	\caption{Changes of the bistability area (shaded areas) with respect to different manipulation in single infection (different boundary styles). Manipulation and reproduction is indifference between single infection and double infection on the vertical and horizontal lines respectively. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  f_w = 35, h_1 = h_2 = 0.6$.}
+%\end{figure}
 
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=\textwidth]{Figures/ratio_reproduction_manipulation_beta.pdf}
-	\caption{Changes of the bistability area (shaded areas) with respect to different manipulation in single infection (different boundary styles). Manipulation and reproduction is indifference between single infection and double infection on the vertical and horizontal lines respectively. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_ww = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  f_w = 35, h_1 = h_2 = 0.6$.}
+\begin{figure}[!ht]
+\includegraphics[width=\textwidth]{Figures/diseasefree_linear.pdf}
+\caption{Disease-free equilibrium using linear birth function, where parasite goes extinct (left panel), and susceptible hosts demonstrate cyclic dynamics (right panel). Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameter values  $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w =  \alpha_{ww} =  0, \ \beta_w  = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1,  \ c = 1.4, \ \mu = 0.9,  \ \sigma_w = \sigma_{ww} = 0, \ q = 0.01, \  f_w = 6.5, \  f_{ww} = 7.5, \ \delta = 0.9$,$h_1 = h_2 = 0.8$, $R_0 = 4.997$ } 
+\label{fig:diseasefree:linear}
 \end{figure}
 
 \bibliographystyle{evolution}
