@@ -114,11 +114,11 @@ This jacobian has seven eigenvalues, two of which have explicit expressions as $
 $R_0 > 1$ when the transmission rate from the parasite pool to intermediate hosts satisfies
 
 \begin{align}
-	\gamma > & \frac{c \delta  \rho  (\mu +\sigma_w) (\mu + \sigma_{ww}) (\beta_w (r-d)+\rho  (\alpha_w+ r)) (\beta_{ww} (r-d)+\rho  (\alpha_{ww}+r))}{\mu } \notag \\
+	\gamma > & \frac{c \delta  \rho  (\mu +\sigma_w) (\mu + \sigma_{ww}) (\beta_w (r-d)+\rho  (\alpha_w+ r)) (\beta_{ww} (r-d)+\rho  (\alpha_{ww}+r))}{\mu } \notag \times \\
 	& \frac{1}{\begin{pmatrix}
 			d^2 \left(f_w h (\mu  + \sigma_{ww}) (\beta_{ww} (1-p) \rho  + \beta_w \beta_{ww} (1-p q)+\beta_w p (1-q) \rho ) - \right. \\
 			\left. \beta_w (\mu + \sigma_w) (\beta_{ww} (\mu +\sigma_{ww}) - f_{ww} h p q (\beta_{ww}+\rho ))\right) + \\
-			d \left(f_w h (\mu +\sigma_{ww}) (- \alpha_{ww} (1-p) \rho  (\beta_w + \rho )  \right. \\
+			d \left(f_w h (\mu +\sigma_{ww}) (- \alpha_{ww} (1-p) \rho  (\beta_w + \rho )  \right.  \\
 			\left. - \alpha_w p (1 - q) \rho  (\beta_{ww}+\rho ) - 2 \beta_w \beta_{ww} r (1-p q) \right. + \\
 			\left. \beta_w \rho  r (p (2 q-1)-1) + \rho  r (\beta_{ww} (p q + p-2)+\rho  (p q - 1))) \right. + \\
 			\left. (\mu +\sigma_w) ((\mu +\sigma_{ww}) (\beta_{ww} \rho  (\alpha_w+r) + \beta_w \rho  (\alpha_{ww}+r) \right. + \\
@@ -127,38 +127,17 @@ $R_0 > 1$ when the transmission rate from the parasite pool to intermediate host
 			(\mu +\sigma_w) (\alpha_w \rho +r (\beta_w+\rho )) (\alpha_{ww} \rho  (\mu +\sigma_{ww})+r (\beta_{ww}+\rho ) (-f_{ww} h p q+\mu +\sigma_{ww}))
 		\end{pmatrix}}
 \end{align}
-%\begin{align}
-%	\gamma > & \frac{c \delta  \rho  (\mu + \sigma_w) (\mu + \sigma_{ww}) (-\alpha_w \rho + \beta_w d-r (\beta_w+\rho )) (\alpha_{ww} \rho + \beta_{ww} (-d)+r (\beta_{ww}+\rho ))}{\mu } \notag \\
-%	& \frac{1}{\begin{pmatrix}
-%		\beta_w \beta_{ww} d^2 (f_w (\mu +\sigma_{ww}) (2 p q-p-1) + (\mu +\sigma_w) (-f_{ww} p q+\mu +\sigma_{ww})) - & \\
-%		 d (f_w (\mu +\sigma_{ww}) (2 \beta_{ww} p (q-1) \rho  (\alpha_w+r)+2 \beta_w \beta_{ww} r (p (2 q-1)-1)+ & \\
-%		 \beta_w (p-1) \rho  (\alpha_{ww}+r)) + (\mu +\sigma_w) ((\mu +\sigma_{ww}) (\beta_{ww} \rho  (\alpha_w+r) + & \\ 
-%		 \beta_w \rho  (\alpha_{ww}+r)+2 \beta_w \beta_{ww} r)-\beta_{ww} f_{ww} p q (\rho  (\alpha_w+r)+2 \beta_w r))) + & \\
-%		 f_w r (\mu +\sigma_{ww}) (2 \beta_{ww} p (q-1) \rho  (\alpha_w+r) +  & \\
-%		 \beta_w \beta_{ww} r (p (2 q-1)-1) + \beta_w (p-1) \rho  (\alpha_{ww}+r)) + & \\
-%		 (\mu +\sigma_w) (\alpha_w \rho +r (\beta_w+\rho )) ((\mu +\sigma_{ww}) (\rho  (\alpha_{ww}+r)+\beta_{ww} r)-\beta_{ww} f_{ww} p q r)
-%		\end{pmatrix}}
-%\end{align}
 
 and the reproduction rates $f_w$ and $f_{ww}$ satisfies either of the following conditions
-
-%\begin{align}
-%f_{ww}\geq \frac{-\alpha_{ww} \mu  \rho -\alpha_{ww} \rho  \sigma_{ww} + \beta_{ww} d \mu +\beta_{ww} d \sigma_{ww}-\beta_{ww} \mu  r-\beta_{ww} r \sigma_{ww}-\mu  \rho  r-\rho  r \sigma_{ww}}{\beta_{ww} d p q-\beta_{ww} p q r}
-%\end{align}
 
 \begin{align}
 	f_{ww} \geq \frac{(\mu + \sigma_{ww}) (-\alpha_{ww} \rho + \beta_{ww}d-r (\beta_{ww}+\rho ))}{h p q (\beta_{ww}+\rho ) (d-r)}
 \end{align}
 or
 
-%\begin{align}
-%	f_{ww} < & \frac{-\alpha_{ww} \mu  \rho -\alpha_{ww} \rho  \sigma_{ww} + \beta_{ww} d \mu +\beta_{ww} d \sigma_{ww}-\beta_{ww} \mu  r-\beta_{ww} r \sigma_{ww}-\mu  \rho  r-\rho  r \sigma_{ww}}{\beta_{ww} d p q-\beta_{ww} p q r} \notag \\
-%	f_w > & \frac{(\mu +\sigma_w) (-\alpha_w \rho + \beta_w d-r (\beta_w+\rho ))}{(d-r) (\mu + \sigma_{ww})} \notag \\
-%	& \frac{\beta_{ww} d (f_{ww} p q-\mu -\sigma_{ww})+\beta_{ww} (-f_{ww}) p q r+(\mu +\sigma_{ww}) (\rho  (\alpha_{ww}+r)+\beta_{ww} r)}{\beta_w \beta_{ww} (d-r) (p (2 q-1)-1)+\rho  (-2 \beta_{ww} p (q-1) (\alpha_w+r)-(\beta_w (p-1) (\alpha_{ww}+r)))} 
-%\end{align}
 \begin{align}
 	f_{ww} < &  \frac{(\mu + \sigma_{ww}) (-\alpha_{ww} \rho + \beta_{ww}d-r (\beta_{ww}+\rho ))}{h p q (\beta_{ww}+\rho ) (d-r)} \notag \\
-	f_w > & \frac{(\mu + \sigma_w) (- \alpha_w \rho + \beta_w d-r (\beta_w+\rho ))}{h (d-r) (\mu + \sigma_{ww})}  \\
+	f_w > & \frac{(\mu + \sigma_w) (- \alpha_w \rho + \beta_w d-r (\beta_w+\rho ))}{h (d-r) (\mu + \sigma_{ww})} \times  \\
 	          & \frac{(r-d) (\beta_{ww} (\mu + \sigma_{ww}) - f_{ww} h p q (\beta_{ww}+\rho ))+\rho  (\mu +\sigma_{ww}) (\alpha_{ww} + r)}{\begin{pmatrix}
 	          		d (-\beta_{ww} (1-p) \rho +\beta_w \beta_{ww} (-(1-p q))-\beta_w p (1-q) \rho ) + \\
 	          		\alpha_{ww} (1-p) \rho  (\beta_w+\rho )+\alpha_w p (1-q) \rho  (\beta_{ww}+\rho )+r (\beta_w+\rho ) (\beta_{ww}+\rho ) (1-p q)
