@@ -167,24 +167,28 @@ equilibrium: values of equilibrium (form: {var1 -> 4.5, var2 -> 44};
 markerlist: list of marker that one wish to set, markerlist[[1]]: cycle, markerlist[[2]]: unstable, markerlist[[3]]: stable
 *)
 Module[
-{eiv, allZero, anyPos, allNeg, ps},
+{eiv, allZero, anyPos, allNeg, ps, allImNonZero},
 eiv = Eigenvalues[jacobmatrix/.parcommon/.parsfollow/.equilibrium];
 allZero = AllTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
 anyPos = AnyTrue[Thread[Re[eiv]>10^-10], TrueQ];
 allNeg = AllTrue[Thread[Re[eiv]<-10^-10], TrueQ];
-Which[allZero, markerlist[[1]], anyPos, markerlist[[2]], allNeg, markerlist[[3]]]
+allImNonZero = AllTrue[Thread[Abs[Im[eiv]]> 10^-10], TrueQ];
+Which[allZero, markerlist[[1]], allImNonZero && anyPos, "@", anyPos, markerlist[[2]], allNeg, markerlist[[3]]]
 ]
 
 
 SingleStableColor[jacobmatrix_, parcommon_, parsfollow_, equilibrium_, colorlist_, opacity_:0.3, pointsize_:0.02]:=
 (*Similar to the SingleStableMark function, but instead of returning the mark, this function returns the colors*)
-Module[{eiv, anyZero, anyPos, allNeg},
+Module[{eiv, allZero, anyPos, allNeg, allImNonZero},
 eiv = Eigenvalues[jacobmatrix/.parcommon/.parsfollow/.equilibrium];
-anyZero = AnyTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
+allZero = AllTrue[Thread[-10^-10<=Re[eiv]<=10^-10], TrueQ];
 anyPos = AnyTrue[Thread[Re[eiv]>10^-10], TrueQ];
 allNeg = AllTrue[Thread[Re[eiv]<-10^-10], TrueQ];
+allImNonZero = AllTrue[Thread[Abs[Im[eiv]]> 10^-10], TrueQ];
 Which[
-	anyZero, 
+	allZero, 
+	Directive[Black, Opacity[opacity], PointSize[pointsize]],
+	allImNonZero && anyPos,
 	Directive[colorlist[[3]], Opacity[opacity], PointSize[pointsize]],
 	anyPos, 
 	Directive[colorlist[[2]], Opacity[opacity], PointSize[pointsize]], 
