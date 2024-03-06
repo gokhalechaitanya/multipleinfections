@@ -164,21 +164,27 @@ And indeed a stickleback can be infected by numerous tapeworms as shown above by
 \end{figure}
 
 
-Theoretical work that considers multiple infections often focuses on the evolution of virulence \citep{vanBaalen1995, Alizon2013, Alizon2008, Choisy2010, Alizon2012}. 
-They show multiple infections can increase virulence \citep{vanBaalen1995, Choisy2010}.
-Evolutionary branching of a less virulent and a hypervirulent parasite can occur when considering within-host dynamics \citep{ Alizon2008}, and a reduction in virulence is possible if parasites are co-transmitted \citep{Alizon2012}. 
-These studies also involve host manipulation to a certain extent, as it can affect transmission rates, even though they do not explicitly consider the trait. 
-Host manipulation in trophically transmitted parasites receives less attention. 
-Although manipulation correlates with the transmission rate in trophically transmitted parasites and infectious diseases, there are differences. 
-Host manipulation influences the predation rate in trophically transmitted parasites, predominantly affecting predator-prey dynamics. 
-Theoretical studies on host manipulation in trophically transmitted parasites with multiple infections are rare \citep{Parker2003,Vickery2009}. 
-Moreover, they do not consider the prey-predator dynamics, which will likely have important feedback on the evolution of host manipulation. 
-A few studies considering the prey-predator dynamics do not incorporate multiple infections \citep{Rogawa2018, Iritani2018, Hadeler1989, Fenton2006}. 
-More importantly, they assume that transmission from definitive hosts to intermediate hosts is due to direct contact between the two types of hosts. 
-This is often not the case, as parasites are released from the definitive hosts into the environment. 
-Transmission happens only when intermediate hosts have contact with this free-living parasite pool.
+Theoretical work that considers multiple infections often focuses on the evolution of virulence \citep{vanBaalen1995, Alizon2013, Alizon2008, Choisy2010, Alizon2012}, while host manipulation in trophically transmitted parasites receives less attention. 
+\color{red} Even though host manipulation and virulence both correlates with parasite transmission, there are subtle differences, such that virulence implies an additional mortality rate to the natural mortality rate of the infected host, while manipulation lead to immediate death of the intermediate host due to higher predation. 
+Host manipulation therefore not only affects the intermediate host population but the entire predator-prey dynamics. 
+Theoretical studies on host manipulation in trophically transmitted parasites rarely consider multiple infections and those that did incorporate this feature neglect the prey-predator dynamics, which will likely have important feedback on the evolution of host manipulation \citep{Parker2003,Vickery2009}.
+Moreover, these mdoels assume that transmission from definitive hosts to intermediate hosts is due to direct contact between the two types of hosts \citep{Rogawa2018, Iritani2018, Hadeler1989, Fenton2006}. 
+This is often not the case in nature, as parasites are released from the definitive hosts into the environment. Transmission thus happens only when intermediate hosts have contact with this free-living parasite pool. The inclusion of this free-living stage could induce profound effect on the dynamics of the whole predator-prey-parasite system.
+%They show multiple infections can increase virulence \citep{vanBaalen1995, Choisy2010}.
+%Evolutionary branching of a less virulent and a hypervirulent parasite can occur when considering within-host dynamics \citep{ Alizon2008}, and a reduction in virulence is possible if parasites are co-transmitted \citep{Alizon2012}. 
+%These studies also involve host manipulation to a certain extent, as it can affect transmission rates, even though they do not explicitly consider the trait. 
+%Host manipulation in trophically transmitted parasites receives less attention. 
+%Although manipulation correlates with the transmission rate in trophically transmitted parasites and infectious diseases, there are differences. 
+%Host manipulation influences the predation rate in trophically transmitted parasites, predominantly affecting predator-prey dynamics. 
+%Theoretical studies on host manipulation in trophically transmitted parasites with multiple infections are rare \citep{Parker2003,Vickery2009}. 
+%Moreover, they do not consider the prey-predator dynamics, which will likely have important feedback on the evolution of host manipulation. 
+%A few studies considering the prey-predator dynamics do not incorporate multiple infections \citep{Rogawa2018, Iritani2018, Hadeler1989, Fenton2006}. 
+%More importantly, they assume that transmission from definitive hosts to intermediate hosts is due to direct contact between the two types of hosts. 
+%This is often not the case, as parasites are released from the definitive hosts into the environment. 
+%Transmission happens only when intermediate hosts have contact with this free-living parasite pool.
 
-Our study addresses the gap in the theoretical work on host manipulation in trophically transmitted parasites.
+
+\color{black}Our study addresses the gap in the theoretical work on host manipulation in trophically transmitted parasites.
 We include multiple infections and consider the dynamics of the free-living parasite pool. 
 Our compartment model helps illustrate a parasite's complex lifecycle with two hosts: an intermediate host preyed upon by a definitive host. 
 Transmission from the intermediate host to the definitive host occurs when predation on infected intermediate hosts happens. 
@@ -191,7 +197,7 @@ We found that sabotage in host manipulation almost always pushes the dynamical s
 The bistable nature suggests that the predator-prey parasite system is finely balanced and susceptible to extinction via ecological disturbances. 
 Initially surprising, we showed that cooperation in host manipulation and enhanced reproduction in co-infecting parasites is not always beneficial and might expose the parasite population to the risk of extinction.
 
-\section*{Model and Results}
+\section*{Model}
 
 Our model concerns the complex lifecycle of a trophically transmitted parasite that requires two hosts: an intermediate host and a definitive host. 
 Reproduction only happens inside the definitive hosts, releasing new parasitic progeny in the environment. 
@@ -258,6 +264,7 @@ and the transparent hexagon represents the parasite pool compartment with red ci
 \label{fig:schematic}
 \end{figure}
 
+\section*{Results}
 \subsection*{Basic reproduction ratio $R_0$ of the parasites}
 
 The basic reproduction ratio $R_0$ (or basic reproduction number as often used in epidemiology) indicates parasite fitness. 
