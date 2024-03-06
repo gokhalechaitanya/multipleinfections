@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: /Users/gokhale/Documents/Working/phuong/multipleinfections/drafts/EcologyandEvolution/.texpadtmp/NG_EcoEvo.aux
+The style file: ../evolution.bst
+Database file #1: ../references.bib
+You've used 30 entries,
+            2892 wiz_defined-function locations,
+            835 strings with 10836 characters,
+and the built_in function-call counts, 17893 in all, are:
+= -- 1568
+> -- 785
+< -- 18
++ -- 265
+- -- 225
+* -- 1274
+:= -- 2877
+add.period$ -- 113
+call.type$ -- 30
+change.case$ -- 223
+chr.to.int$ -- 30
+cite$ -- 30
+duplicate$ -- 1249
+empty$ -- 1312
+format.name$ -- 331
+if$ -- 3575
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 252
+newline$ -- 179
+num.names$ -- 120
+pop$ -- 454
+preamble$ -- 1
+purify$ -- 195
+quote$ -- 0
+skip$ -- 395
+stack$ -- 0
+substring$ -- 993
+swap$ -- 555
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 264
+warning$ -- 0
+while$ -- 139
+width$ -- 0
+write$ -- 439

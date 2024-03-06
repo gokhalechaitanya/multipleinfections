@@ -1,0 +1,22 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Diekmann et~al.(1990)Diekmann, Heesterbeek, and Metz}]{Diekmann1990}
+Diekmann, O., J.~Heesterbeek, and J.~Metz. 1990.
+\newblock On the definition and the computation of the basic reproduction ratio
+  r 0 in models for infectious diseases in heterogeneous populations.
+\newblock Journal of Mathematical Biology 28.
+
+\bibitem[{Diekmann et~al.(2009)Diekmann, Heesterbeek, and
+  Roberts}]{Diekmann2009}
+Diekmann, O., J.~A.~P. Heesterbeek, and M.~G. Roberts. 2009.
+\newblock The construction of next-generation matrices for compartmental
+  epidemic models.
+\newblock Journal of The Royal Society Interface 7:873--885.
+
+\bibitem[{Hurford et~al.(2010)Hurford, Cownden, and Day}]{hurford:JRSI:2010}
+Hurford, A., D.~Cownden, and T.~Day. 2010.
+\newblock {Next-generation tools for evolutionary invasion analyses}.
+\newblock Journal of The Royal Society Interface 7:561--571.
+
+\end{thebibliography}
