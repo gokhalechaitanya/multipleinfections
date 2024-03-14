@@ -256,10 +256,12 @@ Figure (\ref{fig:schematic}) illustrates the system's dynamics.
 \begin{figure}[ht!]
 \captionsetup{format=plain}
 \centering
-\includegraphics[width=\textwidth]{Figures/schematic.jpeg}
-\caption{Schematic of the model. Blue ovals represent intermediate host compartment, 
-green diamonds represent definitive host compartment, 
-and the transparent hexagon represents the parasite pool compartment with red circles illustrating individual parasites.
+\includegraphics[width=\textwidth]{Figures/schematic.pdf}
+\caption{\textbf{Schematic of the model.} 
+Blue ovals represent the intermediate hosts, while the green diamonds represent the definitive hosts.
+The hexagon represents the parasite pool compartment, with the red circles illustrating the free-living individual parasites.
+The parasites infect the intermediate hosts singly ($I_w$, top) or doubly ($I_{ww}$, bottom).
+These intermediate hosts are then predated upon by the definitive hosts, thus moving the parasites to the final host (either as $D_w$ or $D_{ww}$) where they can reproduce and reenter the free-living stage in the environmental pool $\mathbf{W}$.
 }
 \label{fig:schematic}
 \end{figure}
@@ -346,7 +348,7 @@ This equilibrium is positive and stable if components of the parasite, such as r
 \begin{figure}[!ht]
 \captionsetup{format=plain}
 \includegraphics[width=\textwidth]{Figures/ecotraject_nonlinear.pdf}
-\caption{A, B)Disease free equilibrium where parasite cannot persist. C, D) Disease stable equilibrium. Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.05, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
+\caption{A, B) \cha{mention A and B separately and same for C and D} Disease-free equilibrium where the parasite cannot persist. C, D) Disease stable equilibrium. Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.05, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
 \label{fig:ecotraject:nonlinear}
 \end{figure}
 
@@ -400,7 +402,13 @@ Coordinating holds an advantage if there are no significant tradeoffs and if rep
 \captionsetup{format=plain}
 \centering
 \includegraphics[width=\textwidth]{Figures/ratio_reproduction_manipulation_combi.pdf}
-\caption{Left: $R_0$ values increase with more efficient manipulation in both single and double infection.  Hatched area indicates bistable region. As manipulation in single infection increases, the system only has one stable equilibrium. On the black line, manipulation is indifference between single infection and double infection ($\beta_w = \beta_{ww}$). Right: Changes of the bistability area (shaded areas) with respect to different reproduction rates in single infection (different boundary styles). Manipulation and reproduction is indifference between single infection and double infection on the vertical and horizontal lines respectively. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h = 0.6$.}
+\caption{\cha{\textbf{title}}
+Left: $R_0$ values increase with more efficient manipulation in both single and double infection.  The hatched area indicates the bistable region. 
+As manipulation in single infection increases, the system only has one stable equilibrium. 
+On the black line, the manipulation level is equal between single and double infection ($\beta_w = \beta_{ww}$). 
+Right: Changes of the bistability area shaded areas) concerning different reproduction rates in single infection (different boundary styles). 
+Manipulation and reproduction levels are equal between single and double infection on the vertical and horizontal lines. 
+Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h = 0.6$.}
 \label{fig:manipbifur}
 \end{figure}
 

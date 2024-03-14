@@ -1,7 +1,7 @@
 \documentclass[a4paper]{scrartcl}
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL Oikos_submittedversion.tex   Wed Mar  6 16:04:29 2024
-%DIF ADD Oikos_main.tex               Wed Mar  6 15:49:15 2024
+%DIF ADD Oikos_main.tex               Thu Mar 14 11:34:56 2024
 \usepackage[round,authoryear]{natbib}
 \usepackage{graphicx}
 \usepackage{color}
@@ -143,12 +143,13 @@
 \title{
 On multiple infections by parasites with complex life cycles
 }   
-\author{Phuong L. Nguyen $^{\dag}$ and Chaitanya S. Gokhale $^{\ddag}$\\
+\author{Phuong L. Nguyen $^{\dag}$ and Chaitanya S. Gokhale \DIFdelbegin \DIFdel{$^{\ddag}$}\DIFdelend \DIFaddbegin \DIFadd{$^{\ddag,\ast}$}\DIFaddend \\
 \small{$^\dag$ Department of Biology, University of Fribourg,}\\
 \small{Chemin du mus\'{e}e 15, Switzerland}\\
 \small{$^\ddag$Max Planck Institute for Evolutioanry Biology, Department of Theoretical Biology}\\
 \small{August-Thienemann-Stra{\ss}e 2, 24306 Pl\"{o}n, Germany}\\
-\small{Center for Computational and Theoretical Biology, University of W\"{u}rzburg,}\\
+\DIFdelbegin %DIFDELCMD < \small{Center for Computational and Theoretical Biology, University of W\"{u}rzburg,}%%%
+\DIFdelend \DIFaddbegin \small{$^\ast$Center for Computational and Theoretical Biology, University of W\"{u}rzburg,}\DIFaddend \\
 \small{Klara-Oppenheimer Weg, 32, 97074, W\"{u}rzburg, Germany}\\
 \small{$^\dag$linh.phuong.nguyen@evobio.eu}\\
 \small{$^\ddag$chaitanya.gokhale@uni-wuerzburg.de}
@@ -259,7 +260,7 @@ Evolutionary branching of a less virulent and a hypervirulent parasite can occur
 . 
 These studies also involve host manipulation to a certain extent, as it can affect transmission rates, even though they do not explicitly consider the trait. 
 Host manipulation }\DIFdelend \DIFaddbegin \DIFadd{, while host manipulation }\DIFaddend in trophically transmitted parasites receives less attention. 
-\DIFdelbegin \DIFdel{Although manipulation correlates with the transmissionrate in trophically transmitted parasites and infectious diseases}\DIFdelend \DIFaddbegin \color{red} \DIFadd{Even though host manipulation and virulence both correlates with parasite transmission}\DIFaddend , there are \DIFdelbegin \DIFdel{differences}\DIFdelend \DIFaddbegin \DIFadd{subtle differences, such that virulence implies an additional mortality rate to the natural mortality rate of the infected host, while manipulation lead to immediate death of the intermediate host due to higher predation}\DIFaddend . 
+\DIFdelbegin \DIFdel{Although manipulation correlates with the transmissionrate in trophically transmitted parasites and infectious diseases}\DIFdelend \DIFaddbegin \color{red} \DIFadd{Even though host manipulation and virulence both correlates with parasite transmission}\DIFaddend , there are \DIFdelbegin \DIFdel{differences}\DIFdelend \DIFaddbegin \DIFadd{subtle differences, such that virulence implies an addition to the natural mortality rate of the infected host, while manipulation links to immediate death of the intermediate host due to predation}\DIFaddend . 
 Host manipulation \DIFdelbegin \DIFdel{influences the predation rate in trophically transmitted parasites, predominantly affecting }\DIFdelend \DIFaddbegin \DIFadd{therefore not only affects the intermediate host population but the entire }\DIFaddend predator-prey dynamics. 
 Theoretical studies on host manipulation in trophically transmitted parasites \DIFdelbegin \DIFdel{with multiple infections are rare \mbox{%DIFAUXCMD
 \citep{Parker2003,Vickery2009}}\hskip0pt%DIFAUXCMD
@@ -271,10 +272,10 @@ A few studies considering the prey-predator dynamics do not incorporate multiple
 More importantly, they }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
 \citep{Parker2003,Vickery2009}}\hskip0pt%DIFAUXCMD
 .
-Moreover, these mdoels }\DIFaddend assume that transmission from definitive hosts to intermediate hosts is due to direct contact between the two types of hosts \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+Moreover, these models }\DIFaddend assume that transmission from definitive hosts to intermediate hosts is due to direct contact between the two types of hosts \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
 \citep{Rogawa2018, Iritani2018, Hadeler1989, Fenton2006}}\hskip0pt%DIFAUXCMD
 }\DIFaddend . 
-This is often not the case \DIFaddbegin \DIFadd{in nature}\DIFaddend , as parasites are released from the definitive hosts into the environment. Transmission \DIFaddbegin \DIFadd{thus }\DIFaddend happens only when intermediate hosts have contact with this free-living parasite pool. \DIFaddbegin \DIFadd{The inclusion of this free-living stage could induce profound effect on the dynamics of the whole predator-prey-parasite system.
+This is often not the case \DIFaddbegin \DIFadd{in nature}\DIFaddend , as parasites are released from the definitive hosts into the environment. Transmission \DIFaddbegin \DIFadd{thus }\DIFaddend happens only when intermediate hosts have contact with this free-living parasite pool. \DIFaddbegin \DIFadd{The inclusion of this free-living stage could have profound effect on the dynamics of the whole predator-prey-parasite system.
 %DIF > They show multiple infections can increase virulence \citep{vanBaalen1995, Choisy2010}.
 %DIF > Evolutionary branching of a less virulent and a hypervirulent parasite can occur when considering within-host dynamics \citep{ Alizon2008}, and a reduction in virulence is possible if parasites are co-transmitted \citep{Alizon2012}. 
 %DIF > These studies also involve host manipulation to a certain extent, as it can affect transmission rates, even though they do not explicitly consider the trait. 
@@ -362,11 +363,16 @@ Figure (\ref{fig:schematic}) illustrates the system's dynamics.
 \begin{figure}[ht!]
 \captionsetup{format=plain}
 \centering
-\includegraphics[width=\textwidth]{Figures/schematic.jpeg}
-\caption{Schematic of the model. Blue ovals represent intermediate host compartment, 
-green diamonds represent definitive host compartment, 
-and the transparent hexagon represents the parasite pool compartment with red circles illustrating individual parasites.
-}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{Figures/schematic.jpeg}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{Figures/schematic.pdf}
+\DIFaddendFL \caption{\DIFdelbeginFL \DIFdelFL{Schematic of the model. }\DIFdelendFL \DIFaddbeginFL \textbf{\DIFaddFL{Schematic of the model.}} 
+\DIFaddendFL Blue ovals represent \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL intermediate \DIFdelbeginFL \DIFdelFL{host compartment}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{hosts}\DIFaddendFL , \DIFaddbeginFL \DIFaddFL{while the }\DIFaddendFL green diamonds represent \DIFdelbeginFL \DIFdelFL{definitive host compartment, 
+and }\DIFdelendFL the \DIFdelbeginFL \DIFdelFL{transparent }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{definitive hosts.
+The }\DIFaddendFL hexagon represents the parasite pool compartment\DIFaddbeginFL \DIFaddFL{, }\DIFaddendFL with \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL red circles illustrating \DIFaddbeginFL \DIFaddFL{the free-living }\DIFaddendFL individual parasites.
+\DIFaddbeginFL \DIFaddFL{The parasites infect the intermediate hosts singly ($I_w$, top) or doubly ($I_{ww}$, bottom).
+These intermediate hosts are then predated upon by the definitive hosts, thus moving the parasites to the final host (either as $D_w$ or $D_{ww}$) where they can reproduce and reenter the free-living stage in the environmental pool $\mathbf{W}$.
+}\DIFaddendFL }
 \label{fig:schematic}
 \end{figure}
 
@@ -452,7 +458,7 @@ This equilibrium is positive and stable if components of the parasite, such as r
 \begin{figure}[!ht]
 \captionsetup{format=plain}
 \includegraphics[width=\textwidth]{Figures/ecotraject_nonlinear.pdf}
-\caption{A, B)Disease free equilibrium where parasite cannot persist. C, D) Disease stable equilibrium. Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.05, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
+\caption{A, B) \DIFdelbeginFL \DIFdelFL{Disease free }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\cha{mention A and B separately and same for C and D} Disease-free }\DIFaddendFL equilibrium where \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL parasite cannot persist. C, D) Disease stable equilibrium. Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.05, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
 \label{fig:ecotraject:nonlinear}
 \end{figure}
 
@@ -505,8 +511,16 @@ Coordinating holds an advantage if there are no significant tradeoffs and if rep
 \begin{figure}[!ht]
 \captionsetup{format=plain}
 \centering
-\includegraphics[width=\textwidth]{Figures/ratio_reproduction_manipulation.pdf}
-\caption{Left: $R_0$ values increase with more efficient manipulation in both single and double infection.  Hatched area indicates bistable region. As manipulation in single infection increases, the system only has one stable equilibrium. On the black line, manipulation is indifference between single infection and double infection ($\beta_w = \beta_{ww}$). Right: Changes of the bistability area (shaded areas) with respect to different reproduction rates in single infection (different boundary styles). Manipulation and reproduction is indifference between single infection and double infection on the vertical and horizontal lines respectively. Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h = 0.6$.}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{Figures/ratio_reproduction_manipulation.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{Figures/ratio_reproduction_manipulation_combi.pdf}
+\DIFaddendFL \caption{\DIFaddbeginFL \DIFaddFL{\cha{\textbf{title}}
+}\DIFaddendFL Left: $R_0$ values increase with more efficient manipulation in both single and double infection.  \DIFdelbeginFL \DIFdelFL{Hatched }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The hatched }\DIFaddendFL area indicates \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL bistable region. 
+As manipulation in single infection increases, the system only has one stable equilibrium. 
+On the black line, \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL manipulation \DIFaddbeginFL \DIFaddFL{level }\DIFaddendFL is \DIFdelbeginFL \DIFdelFL{indifference }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{equal }\DIFaddendFL between single \DIFdelbeginFL \DIFdelFL{infection }\DIFdelendFL and double infection ($\beta_w = \beta_{ww}$). 
+Right: Changes of the bistability area \DIFdelbeginFL \DIFdelFL{(}\DIFdelendFL shaded areas) \DIFdelbeginFL \DIFdelFL{with respect to }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{concerning }\DIFaddendFL different reproduction rates in single infection (different boundary styles). 
+Manipulation and reproduction \DIFdelbeginFL \DIFdelFL{is indifference }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{levels are equal }\DIFaddendFL between single \DIFdelbeginFL \DIFdelFL{infection }\DIFdelendFL and double infection on the vertical and horizontal lines\DIFdelbeginFL \DIFdelFL{respectively}\DIFdelendFL . 
+Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h = 0.6$.}
 \label{fig:manipbifur}
 \end{figure}
 
