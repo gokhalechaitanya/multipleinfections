@@ -44,7 +44,7 @@
 
 \section*{SI 1. Reproduction ratio $R_0$}
 
-The reproduction ratio of the parasite is derived from the dynamical system of the parasite which only include infected intermediate and definitive hosts and the free-living parasite pool. The dynamical system can be written in matrix form as followed:
+The reproduction ratio of the parasite is derived from the dynamical system of the parasite, which only includes infected intermediate and definitive hosts and the free-living parasite pool. The dynamical system can be written in matrix form as follows:
 \[
 \frac{d \mathbf{n}}{dt} = \mathbf{M} \mathbf{n}
 \]
@@ -92,7 +92,7 @@ The reproduction ratio $R_0$ is then the leading eigenvalue of the matrix $\math
 
 \section*{SI 2. Equilibrium stability - linear birth function for intermediate hosts}
 
-The jacobian matrix of the system of equations (1), (2), and (3), as given in the main text  is evaluated at the disease-free equilibrium, and $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c D_{total} I_{total}$ is
+The Jacobian matrix of the system of equations (1), (2), and (3), as given in the main text, is evaluated at the disease-free equilibrium, and $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c D_{total} I_{total}$ is
 
 \[
 \begin{pmatrix}
@@ -106,7 +106,10 @@ The jacobian matrix of the system of equations (1), (2), and (3), as given in th
 \end{pmatrix}
 \]
 
-This jacobian has seven eigenvalues, two of which have explicit expressions as $\pm \sqrt{d - r}$. Here, we always have $r > d$ so that the equilibrium is positive, therefore these two eigenvalues are always pure imaginary. We cannot obtain the explicit expression of the other five eigenvalues but the dynamics remain unstable regardless of their values.
+This jacobian has seven eigenvalues, two of which have explicit expressions as $\pm \sqrt{d - r}$. 
+Here, we always have $r > d$ to keep the equilibrium positive. 
+Therefore, these two eigenvalues are always pure imaginary. 
+We cannot obtain the explicit expression of the other five eigenvalues, but the dynamics remain unstable regardless of their values.
 
 \section*{SI 3. Invasion of parasite - Linear birth function }
 
@@ -145,7 +148,7 @@ or
 \end{align}
 
 \section*{SI 4. Equilibrium stability - Non-linear birth function for intermediate hosts }
-The disease free equilibrium of the system of equations (1), (2), (3) given in the main text is
+The disease-free equilibrium of the system of equations (1), (2), (3) given in the main text is
 
 \begin{align}
 	I_s^* & = \frac{\mu}{c \rho} \\
@@ -154,13 +157,13 @@ The disease free equilibrium of the system of equations (1), (2), (3) given in t
 
 $D_s^*$ is positive if $X = c \rho  (r-d)-k \mu  r$ is positive.
 
-The eigenvalues of the Jacobian matrix established at the disease free equilibrium are roots of the following polynomial:
+The eigenvalues of the Jacobian matrix established at the disease-free equilibrium are roots of the following polynomial:
 
 \begin{equation}
 	A_4 \lambda^4 + A_3 \lambda^3 + A_2 \lambda^2 + A_1 \lambda + A_0
 \end{equation}
 
-The disease free equilibrium is stable if the above polynomial has all negative real roots. Using the Descarte rule, the polynomial has all negative real root if all the coefficients are positive.
+The disease-free equilibrium is stable if the above polynomial has all negative real roots. Using the Descartes rule, the polynomial has all negative real roots if all the coefficients are positive.
 
 We know that $A_4 = 1$ is always positive. 
 
@@ -168,7 +171,7 @@ We know that $A_4 = 1$ is always positive.
 	A_3 = \rho ^7 \left(X (\beta_w + \beta_{ww}+2 \rho ) + c \rho^2  (2 \alpha +\delta +\mu +\sigma + 2 d  )+\gamma  \mu  \rho \right)
 \end{equation}
 
-is always postive as all the elements of $A_3$ are positive.
+is always positive as all the elements of $A_3$ are positive.
 
 \begin{align}
 	A_2 = & \rho^{14} \left(c \rho ^3 (c \rho  (\alpha ^2+2 \alpha  (\delta +\mu +\sigma )+\delta  (\mu +\sigma ))+(2 \alpha +d+\mu +\sigma ) (c d \rho +\gamma  \mu )+c d \rho  (2 \delta +\mu +\sigma )+\gamma  d \mu ) \right. \notag \\
@@ -183,7 +186,7 @@ is positive if reproduction in single infection $f_w$, the probability to sucess
 \begin{equation}
 	A_{10} = \alpha  \rho ^2 (\alpha  \gamma  \mu +\alpha  c \rho  (\delta +\mu +\sigma )+2 (\mu +\sigma ) (c \delta  \rho +\gamma  \mu ))
 \end{equation}
-is always positive positive, and
+is always positive, and
 \begin{align}
 	A_{11} = & c \rho ^2 (2 c d \rho  \rho + X (\beta_w + \beta_{ww}+2 \rho )) (\alpha  \gamma  \mu +\alpha  c \rho  (\delta +\mu +\sigma ) +  (\mu +\sigma ) (c \delta  \rho +\gamma  \mu )) + \\
 	& c d \rho ^2 (c \rho  (\delta +\mu +\sigma )+\gamma  \mu ) (c d \rho ^2+X (\beta_w+\beta_{ww}+2 \rho )) + \\
@@ -206,13 +209,13 @@ where
 \begin{align}
 	A_{00} = X (c  \rho ^2 (\alpha +d) A_{12} + X (\beta_w+\rho ) (\beta_{ww}+\rho ) ( p q (\epsilon -1)+1))
 \end{align}
-is always positive, and
+is always positive and
 \begin{align}
 	A_{01} = (\mu +\sigma ) (c \delta  \rho +\gamma  \mu ) (c^2 \rho ^4 (\alpha +d)^2+c X \rho ^2 (\beta_w+\rho ) (\alpha +d)+c X \rho ^2 (\beta_{ww}+\rho ) (\alpha +d)+X^2 (\beta_w+\rho ) (\beta_{ww}+\rho ))
 \end{align}
 is always positive. Therefore, if $f_w$ , $h$, and $\epsilon$ are sufficiently large, $A_0$ could be negative, leading to non-negative eigenvalues of the polynomial.
 
-For all the above argument, the disease free equilibrium is positive and stable if $f_w$, $h$ and $\epsilon$ are sufficiently small, eventhough we cannot deduce the explicit expression for the condition.
+For all the above arguments, the disease-free equilibrium is positive and stable if $f_w$, $h$, and $\epsilon$ are sufficiently small, even though we cannot deduce the explicit expression for the condition.
 
 \section*{SI 5. Non-linear birth function for intermediate hosts - invasion condition}
 
@@ -286,7 +289,9 @@ The condition for parasite invasion is $R_0 > 1$, which is satisfied when
 %
 \begin{figure}[!ht]
 \includegraphics[width=\textwidth]{Figures/diseasefree_linear.pdf}
-\caption{Disease-free equilibrium using linear birth function, where parasite goes extinct (left panel), and susceptible hosts demonstrate cyclic dynamics (right panel). Solid gray line indicate the density of free-living parasites, blue lines indicate infected intermediate hosts while red lines indicate infected definitive hosts. Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameter values  $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w =  \alpha_{ww} =  0, \ \beta_w  = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1,  \ c = 1.4, \ \mu = 0.9,  \ \sigma_w = \sigma_{ww} = 0, \ q = 0.01, \  f_w = 6.5, \  f_{ww} = 7.5, \ \delta = 0.9$,$h_1 = h_2 = 0.8$, $R_0 = 4.997$ } 
+\caption{Disease-free equilibrium using a linear birth function, where parasite goes extinct (left panel), and susceptible hosts demonstrate cyclic dynamics (right panel). 
+Solid grey lines indicate the density of free-living parasites, blue lines indicate infected intermediate hosts and red lines indicate infected definitive hosts. 
+Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly infected hosts. Parameter values  $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w =  \alpha_{ww} =  0, \ \beta_w  = 1.5, \ \beta_{ww} = 1.5, \ p = 0.1,  \ c = 1.4, \ \mu = 0.9,  \ \sigma_w = \sigma_{ww} = 0, \ q = 0.01, \  f_w = 6.5, \  f_{ww} = 7.5, \ \delta = 0.9$,$h_1 = h_2 = 0.8$, $R_0 = 4.997$ } 
 \label{fig:diseasefree:linear}
 \end{figure}
 
