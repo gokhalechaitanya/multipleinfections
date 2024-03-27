@@ -427,10 +427,10 @@ On the other extreme, where they are highly cooperative in manipulation and show
 Note that this happens at the combination of $\beta_{ww}/\beta_w \rightarrow \infty$ and $f_{ww}/f_w \rightarrow \infty$, a scenario that is rather impossible in reality. 
 Very often, we expect intermediate levels of coordination where a bistable area could occur (top left quadrant in Figure \ref{fig:manipbifur} at $f_w = (37, 37.5)$).
 However, the size of this area is sensitive to the value of reproduction and manipulation in a single infection. 
-In particular, higher values of these two parameters reduce the bistability area to the point that sufficiently large reproduction in single infection can guarantee single equilibrium when parasites coordinate (top left quadrant in Figure \ref{fig:manipbifur} Left at $f_w = (38)$, Figure SI.1 \textcolor{red}{include Figure in supplementary, this is not correct}).
-In contrast, smaller values of reproduction and manipulation in single infection increase the bistability area (Figure \textcolor{red}{include also supplementary figure}).
+In particular, higher values of these two parameters reduce the bistability area to the point that sufficiently large reproduction in single infection can guarantee single equilibrium when parasites coordinate (top left quadrant in Figure \ref{fig:manipbifur} Left at $f_w = (38)$, Figure SI.2 ).
+In contrast, slightly reducing values of reproduction and manipulation in single infection increase the bistability area.
 If the parasites sabotage each other, the system is highly prone to bistability and only has a single equilibrium when reproduction is especially enhanced (left side of vertical line in Figure \ref{fig:manipbifur} Left).
-Interestingly, sufficiently high reproduction enhancement leads to bistability (i.e. $f_{ww}$ is at least four times $f_w$), and reproductive incoordination, i.e. depressed reproduction and manipulative cooperation, always leads to a single equilibrium of the system (Figure \ref{fig:bistability}A, bottom right quadrant in Figure \ref{fig:manipbifur}Left). 
+Interestingly, sufficiently high reproduction enhancement leads to bistability (i.e. $f_{ww}$ is at least four times $f_w$), and reproductive incoordination, i.e. depressed reproduction and manipulative cooperation, always leads to a single equilibrium of the system (Figure \ref{fig:bistability}A, and bottom right quadrant in Figure \ref{fig:manipbifur}Left). 
 While a single equilibrium guarantees the existence of a parasite population, bistability indicates that a disturbance of the system may likely lead to the extinction of the parasite population. 
 This suggests that the benefits of coordination in reproduction and manipulation are context-dependent. 
 Coordinating is advantageous if no significant tradeoffs and reproduction or manipulation in single infections are large enough. 
@@ -446,24 +446,26 @@ As manipulation in single infection increases, the system only has one stable eq
 On the black line, the manipulation level is equal between single and double infection ($\beta_w = \beta_{ww}$). 
 In the upper triangular area, parasites cooperate, and in the lower triangular area, parasites sabotage.
 Right: Changes in the bistability area (shaded areas) concerning different reproduction rates in single infection (different boundary styles). 
-Manipulation and reproduction levels are equal between single and double infection on the vertical and horizontal lines. 
+Manipulation and reproduction levels are equal between single and double infection on the vertical and horizontal lines. On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of thevertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. On the upper part of the horizontal line, $f_{ww} > f_w$, indicating enhanded reproduction, whereas, on the lower part of the horizontal line, $f_{ww} < f_w$, indicating suppressed reproduction.
 Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h = 0.6$.}
 \label{fig:manipbifur}
 \end{figure}
 
-Co-transmission probability from the parasite pool to intermediate hosts $p$ has the opposite effect on the bistable area compared to co-transmission probability $q$ from intermediate hosts to intermediate hosts (Figure \ref{fig:contransmission}). 
-In particular, when the parasite sabotages the manipulation, increasing $p$ enlarges the bistable area, whereas increasing $q$ reduces it. 
-In contrast, when parasites cooperate in manipulation, reducing $p$ decreases the bistable area while reducing $q$ widens it.  
-If cooperation in manipulation is exceptionally high, the population will always exist with one stable equilibrium regardless of the co-transmission value.
-However, there are always limitations and trade-offs, so high values may only be possible sometimes.
-Bistability indicates vulnerability to disturbance, suggesting that cooperation in manipulation may be beneficial when the co-transmission from the pool to the intermediate host increases. 
-However, cooperation in manipulation may harm the population when the co-transmission from the intermediate host to the definitive host increases.
+We now explore the effect of co-transmission probability on the bistability of the system (Figure \ref{fig:contransmission}). 
+First, extinction is more likely with varying levels of co-transmission from the parasite pool to intermediate host $p$ compared to varying levels of co-transmission from intermediate host to definitive host $q$. 
+For exceptionally high level of cooperation and not very small  values of both $p$ and $q$, the predator-prey-parasite system will always persist with one stable equilibrium.
+However, limitations and trade-offs are often unavoidable, and such high values of cooperation may be impossible, putting the system in the parameter space where bistability likely occurs.
+When the parasite sabotages manipulation, the bistable area decreases with increasing $p$ and $q$. 
+However, this bistable area disapears with high values of $q$ but not with high values of $p$. 
+When parasites cooperate in manipulation, reducing $p$ almost always lead to bistability where as reducing $q$ can lead to single equilibrium if cooperation is sufficiently large.  
+Bistability indicates vulnerability to disturbance, and so cooperation in manipulation may be beneficial when $q$, the co-transmission from the intermediate host to the definitive host decreases. 
+However, cooperation in manipulation may still harm the population with reducing $p$, the co-transmission from the parasite pool to intermediate host.
 
 \begin{figure}[!ht]
 	\captionsetup{format=plain}
 	\centering
 	\includegraphics[width=\textwidth]{Figures/coinfect_transmission.pdf}
-	\caption{Left: Effect of cotransmission from parasite pool to intermediate host. Right: Effect of cotransmission from intermediate to definitive host. Common parameters:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 4.5, \ \beta_w = 1.45, \ f_w = 38, \ h = 0.6$.}
+	\caption{Left: Effect of cotransmission from parasite pool to intermediate host. Right: Effect of cotransmission from intermediate to definitive host. On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of thevertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. Common parameters:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 4.5, \ \beta_w = 1.45, \ f_w = 38, \ h = 0.6$.}
 	\label{fig:contransmission}
 \end{figure}
 
