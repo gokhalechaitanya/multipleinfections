@@ -1,7 +1,7 @@
 \documentclass[a4paper]{scrartcl}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL Oikos_submittedversion.tex   Wed Mar  6 16:49:09 2024
-%DIF ADD Oikos_main.tex               Wed Mar 27 21:37:56 2024
+%DIF DEL Oikos_submittedversion.tex   Thu Mar 28 13:48:24 2024
+%DIF ADD Oikos_main.tex               Thu Mar 28 14:29:09 2024
 \usepackage[round,authoryear]{natbib}
 \usepackage{graphicx}
 \usepackage{color}
@@ -222,8 +222,8 @@ Our study highlights the necessity of, and provides the means for, incorporating
 % (e.g. section ``Counting Owl Eggs'').
 
 Parasites infect life on earth ubiquitously, and many of these parasites have complex life cycles \citep{zimmer:book:2001}. 
-While a complex \DIFdelbegin \DIFdel{lifecycle }\DIFdelend \DIFaddbegin \DIFadd{life cycle }\DIFaddend can be defined as abrupt ontogenic changes in morphology and ecology \citep{Benesh:2016dj}, a complex parasitic \DIFdelbegin \DIFdel{lifecycle }\DIFdelend \DIFaddbegin \DIFadd{life cycle }\DIFaddend typically involves numerous hosts that a parasite needs to traverse to complete its life cycle. 
-This complex \DIFdelbegin \DIFdel{lifecycle }\DIFdelend \DIFaddbegin \DIFadd{life cycle }\DIFaddend results in the evolution of various strategies that enable the success of parasite transmission from one host to another. 
+While a complex \DIFdelbegin \DIFdel{lifecycle }\DIFdelend \DIFaddbegin \DIFadd{life cycle }\DIFaddend can be defined as abrupt ontogenic changes in morphology and ecology \citep{Benesh:2016dj}, \DIFdelbegin \DIFdel{a complex parasitic lifecycle }\DIFdelend \DIFaddbegin \DIFadd{it }\DIFaddend typically involves numerous \DIFdelbegin \DIFdel{hosts }\DIFdelend \DIFaddbegin \DIFadd{host species }\DIFaddend that a parasite needs to traverse to complete its life cycle. 
+This complex \DIFdelbegin \DIFdel{lifecycle }\DIFdelend \DIFaddbegin \DIFadd{life cycle }\DIFaddend results in the evolution of various strategies that enable the success of parasite transmission from one host \DIFaddbegin \DIFadd{species }\DIFaddend to another. 
 One famous strategy that inspires many science fiction movies and novels is host manipulation, where a parasite can alter the morphology and/or behaviour of its  host to enhance its transmission to the next host \citep{Hughes2012}. 
 Host manipulation has been shown in many host-parasite systems, from parasites with simple \DIFdelbegin \DIFdel{life-cycle }\DIFdelend \DIFaddbegin \DIFadd{life cycles }\DIFaddend to those with \DIFdelbegin \DIFdel{complex life-cycle }\DIFdelend \DIFaddbegin \DIFadd{a complex life cycle }\DIFaddend that involves more than one host \DIFaddbegin \DIFadd{species }\DIFaddend \citep{Hughes2012,molyneux_jefferies1986}. 
 For instance, sand flies infected by \textit{Leishmania} parasites bite more and take more time for a blood meal from mammals (the definitive host of \textit{Leishmania}) compared to their uninfected counterparts \citep{Rogers2007}. 
@@ -313,7 +313,7 @@ Initially surprising, we showed that cooperation in host manipulation and enhanc
 
 \section*{Model\DIFdelbegin \DIFdel{and Results}\DIFdelend }
 
-Our model concerns the complex lifecycle of a trophically transmitted parasite that requires two hosts: an intermediate host and a definitive host. 
+Our model concerns the complex \DIFdelbegin \DIFdel{lifecycle }\DIFdelend \DIFaddbegin \DIFadd{life cycle }\DIFaddend of a trophically transmitted parasite that requires two hosts: an intermediate host and a definitive host. 
 Reproduction only happens inside the definitive hosts, releasing new parasitic progeny in the environment. 
 An intermediate host can be infected if it encounters this free-living parasite pool. 
 Finally, when a definitive host consumes an infected intermediate host, the definitive host gets infected, and the parasite completes its \DIFdelbegin \DIFdel{lifecycle}\DIFdelend \DIFaddbegin \DIFadd{life cycle}\DIFaddend .
@@ -326,7 +326,7 @@ Thus\DIFaddbegin \DIFadd{, }\DIFaddend $1-p$ is the probability that a single pa
 When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that the parasites co-transmit to the definitive host.
 With probability $1-q$, only one parasite successfully transmits. 
 This formulation assumes that infection always happens when hosts encounter parasites.
-The dynamics of a complex \DIFdelbegin \DIFdel{lifecycle }\DIFdelend \DIFaddbegin \DIFadd{life cycle }\DIFaddend parasite that requires two hosts is described by the following system of equations, firstly for the intermediate host as,
+The dynamics of a complex \DIFdelbegin \DIFdel{lifecycle }\DIFdelend \DIFaddbegin \DIFadd{life cycle }\DIFaddend parasite that requires two \DIFdelbegin \DIFdel{hosts }\DIFdelend \DIFaddbegin \DIFadd{host species }\DIFaddend is described by the following system of equations, firstly for the intermediate host as,
 %
 \begin{align}
 \frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - P_s(D_s, D_w, D_{ww}) I_s  - \eta  I_s \nonumber \\ 
@@ -370,9 +370,8 @@ This assumption is motivated given that the prey \DIFdelbegin \DIFdel{' lifecycl
 A prey likely encounters the free-living parasite pool once and then dies due to predation, making sequential transmission less likely at this state.
 Sequential infection can happen when parasites transmit from intermediate hosts to definitive hosts. 
 Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts. 
-Figure (\ref{fig:schematic}) illustrates the system's dynamics\DIFdelbegin \DIFdel{.
-}\DIFdelend \DIFaddbegin \DIFadd{, and Table.~(\ref{table:varpardescription}) contains the different parameters and variables used.
-}\DIFaddend %
+Figure (\ref{fig:schematic}) illustrates the system's dynamics\DIFaddbegin \DIFadd{, and Table.~(\ref{table:varpardescription}) contains the different parameters and variables used}\DIFaddend .
+%
 \begin{figure}[ht!]
 \captionsetup{format=plain}
 \centering
@@ -507,14 +506,14 @@ I_s^* = \frac{\mu}{c \rho } \ ;\  D_s^* = \frac{c \rho  (r-d) - k \mu  r}{c \rho
 \end{align*}
 %
 This equilibrium is positive and stable if components of the parasite, such as reproduction and transmission\DIFaddbegin \DIFadd{, }\DIFaddend are sufficiently small\DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{; }\DIFaddend details of the condition can be found in section SI 4. 
-\DIFaddbegin \DIFadd{Here, because reproduction and transmission value of the parasite are not sufficient, it goes extinct }\DIFaddend (Figure \ref{fig:ecotraject:nonlinear}\DIFdelbegin \DIFdel{B).
-}\DIFdelend \DIFaddbegin \DIFadd{A), leaving the predator-prey dynamics attaining equilibrium (Figure \ref{fig:ecotraject:nonlinear}B)
-}\DIFaddend 
+\DIFaddbegin \DIFadd{Here, because reproduction and transmission value of the parasite are not sufficient, it goes extinct (Figure \ref{fig:ecotraject:nonlinear}A), leaving the predator-prey dynamics attaining equilibrium }\DIFaddend (Figure \ref{fig:ecotraject:nonlinear}B)
+\DIFdelbegin \DIFdel{.
+}\DIFdelend 
 
 \begin{figure}[!ht]
 \captionsetup{format=plain}
 \includegraphics[width=\textwidth]{Figures/ecotraject_nonlinear.pdf}
-\caption{\DIFaddbeginFL \textbf{\DIFaddFL{Ecological dynamics of the predator-prey-parasite system.}} \DIFaddendFL A\DIFdelbeginFL \DIFdelFL{, B}\DIFdelendFL ) \DIFdelbeginFL \DIFdelFL{Disease free equilibrium where }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Ecological trajectories of infected hosts and free-living }\DIFaddendFL parasite \DIFaddbeginFL \DIFaddFL{when parasites }\DIFaddendFL cannot persist\DIFdelbeginFL \DIFdelFL{. C}\DIFdelendFL , \DIFdelbeginFL \DIFdelFL{D}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{B}\DIFaddendFL ) \DIFdelbeginFL \DIFdelFL{Disease stable equilibrium. Solid gray line indicate the density }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Phase plane }\DIFaddendFL of \DIFdelbeginFL \DIFdelFL{free-living parasites, blue lines indicate infected }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{susceptible }\DIFaddendFL intermediate \DIFdelbeginFL \DIFdelFL{hosts while red lines indicate infected }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{and }\DIFaddendFL definitive hosts \DIFaddbeginFL \DIFaddFL{under disease free scenario}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{Dashed lines indicate singly }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{C) Ecological trajectories of }\DIFaddendFL infected hosts \DIFdelbeginFL \DIFdelFL{while dot-dashed lines indicate doubly infected hosts}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{and free-living parasite when parasites persist}\DIFaddendFL . \DIFaddbeginFL \DIFaddFL{D) Phase plane of susceptible and definitive host under disease circulating scenario. }\DIFaddendFL Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.05, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
+\caption{\DIFaddbeginFL \textbf{\DIFaddFL{Ecological dynamics of the predator-prey-parasite system.}} \DIFaddendFL A\DIFdelbeginFL \DIFdelFL{, B}\DIFdelendFL ) \DIFdelbeginFL \DIFdelFL{Disease free equilibrium where }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Ecological trajectories of infected hosts and free-living }\DIFaddendFL parasite \DIFaddbeginFL \DIFaddFL{when parasites }\DIFaddendFL cannot persist\DIFdelbeginFL \DIFdelFL{. C}\DIFdelendFL , \DIFdelbeginFL \DIFdelFL{D}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{B}\DIFaddendFL ) \DIFdelbeginFL \DIFdelFL{Disease stable equilibrium. Solid gray line indicate the density }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Phase plane }\DIFaddendFL of \DIFdelbeginFL \DIFdelFL{free-living parasites, blue lines indicate infected }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{susceptible }\DIFaddendFL intermediate \DIFdelbeginFL \DIFdelFL{hosts while red lines indicate infected }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{and }\DIFaddendFL definitive hosts \DIFaddbeginFL \DIFaddFL{under disease free scenario}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{Dashed lines indicate singly infected hosts while dot-dashed lines indicate doubly }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{C) Ecological trajectories of }\DIFaddendFL infected hosts \DIFaddbeginFL \DIFaddFL{and free-living parasite when parasites persist. D) Phase plane of susceptible and definitive host under disease circulating scenario}\DIFaddendFL . Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.05, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
 \label{fig:ecotraject:nonlinear}
 \end{figure}
 
@@ -548,11 +547,9 @@ Intuitively, if the manipulation in a single infection is minor, there is not en
 However, suppose the ability to manipulate the host in a single infection is merely enough for the parasite population to escape extinction. 
 In that case, \DIFaddbegin \DIFadd{the system is in a bistable state where intermediate }\DIFaddend cooperation in host manipulation \DIFdelbegin \DIFdel{leads to a bistable system state. 
 Within }\DIFdelend \DIFaddbegin \DIFadd{cannot guarantee a single equilibrium (Hatched area Figure \ref{fig:manipbifur} Left). 
-In }\DIFaddend the bistable region, the basic reproduction ratio can be less than one, \DIFdelbegin \DIFdel{suggesting }\DIFdelend \DIFaddbegin \DIFadd{implying }\DIFaddend that the parasite \DIFdelbegin \DIFdel{cannot spread when its manipulative values are within this area of weak manipulation when coinfected. 
-}\DIFdelend \DIFaddbegin \DIFadd{with manipulative values within this range, i.e. weak manipulation ability, cannot spread. 
+In }\DIFaddend the bistable region, the basic reproduction ratio can be less than one, \DIFdelbegin \DIFdel{suggesting }\DIFdelend \DIFaddbegin \DIFadd{implying }\DIFaddend that the parasite \DIFdelbegin \DIFdel{cannot spread when its manipulative values are within this area of weak manipulation when coinfected}\DIFdelend \DIFaddbegin \DIFadd{with manipulative values within this range, i.e. weak manipulation ability, cannot spread. 
 When the system encounters bistability, the parasite population risks extinction if there is a disturbance in the community.
-In the following parts, we will explore scenarios where bistability may occur. 
-}\DIFaddend 
+In the following parts, we will explore scenarios where bistability may occur}\DIFaddend . 
 
 \DIFdelbegin \DIFdel{Co-infecting }\DIFdelend \DIFaddbegin \DIFadd{Besides manipulation, co-infecting }\DIFaddend parasites can influence each other in different life history traits\DIFdelbegin \DIFdel{besides manipulation}\DIFdelend .
 Parasites can have an enhanced reproduction rate in coinfections, i.e. $f_{ww} > f_w$ \DIFaddbegin \DIFadd{(upper part of the horizontal line in Figure \ref{fig:manipbifur} Right)}\DIFaddend . 
@@ -561,7 +558,7 @@ Without any assumption on the relationship between manipulative ability and repr
 }
 
 \DIFadd{If coinfected parasites are discordant, i.e. }\DIFaddend uncooperative in manipulations and \DIFdelbegin \DIFdel{shows depressed }\DIFdelend \DIFaddbegin \DIFadd{show suppressed }\DIFaddend reproduction, they cannot persist (Figure \ref{fig:manipbifur}). 
-\DIFdelbegin \DIFdel{In contrast, if }\DIFdelend \DIFaddbegin \DIFadd{On the other extreme, where }\DIFaddend they are highly cooperative in manipulation and show enhanced reproduction\DIFdelbegin \DIFdel{(}\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend i.e.\DIFdelbegin \DIFdel{$\beta_{ww}/\beta_w \rightarrow \infty$ and $f_{ww}/f_w \rightarrow \infty$), }\DIFdelend \DIFaddbegin \DIFadd{, an extreme level of coordination, }\DIFaddend there is a guaranteed single equilibrium for parasite existence. 
+\DIFdelbegin \DIFdel{In contrast, if }\DIFdelend \DIFaddbegin \DIFadd{On the other extreme, where }\DIFaddend they are highly cooperative in manipulation and show enhanced reproduction\DIFdelbegin \DIFdel{(}\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend i.e.\DIFdelbegin \DIFdel{$\beta_{ww}/\beta_w \rightarrow \infty$ and $f_{ww}/f_w \rightarrow \infty$)}\DIFdelend \DIFaddbegin \DIFadd{, an extreme level of coordination}\DIFaddend , there is a guaranteed single equilibrium for parasite existence. 
 \DIFdelbegin %DIFDELCMD < 
 
 %DIFDELCMD < %%%
@@ -590,25 +587,22 @@ As manipulation in single infection increases, the system only has one stable eq
 On the black line, \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL manipulation \DIFaddbeginFL \DIFaddFL{level }\DIFaddendFL is \DIFdelbeginFL \DIFdelFL{indifference }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{equal }\DIFaddendFL between single \DIFdelbeginFL \DIFdelFL{infection }\DIFdelendFL and double infection ($\beta_w = \beta_{ww}$). 
 \DIFaddbeginFL \DIFaddFL{In the upper triangular area, parasites cooperate, and in the lower triangular area, parasites sabotage.
 }\DIFaddendFL Right: Changes \DIFdelbeginFL \DIFdelFL{of }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{in }\DIFaddendFL the bistability area (shaded areas) \DIFdelbeginFL \DIFdelFL{with respect to }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{concerning }\DIFaddendFL different reproduction rates in single infection (different boundary styles). 
-Manipulation and reproduction \DIFdelbeginFL \DIFdelFL{is indifference }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{levels are equal }\DIFaddendFL between single \DIFdelbeginFL \DIFdelFL{infection }\DIFdelendFL and double infection on the vertical and horizontal lines\DIFdelbeginFL \DIFdelFL{respectively}\DIFdelendFL . \DIFaddbeginFL \DIFaddFL{On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of thevertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. On the upper part of the horizontal line, $f_{ww} > f_w$, indicating enhanded reproduction, whereas, on the lower part of the horizontal line, $f_{ww} < f_w$, indicating suppressed reproduction.
-}\DIFaddendFL Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h = 0.6$.}
+Manipulation and reproduction \DIFdelbeginFL \DIFdelFL{is indifference }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{levels are equal }\DIFaddendFL between single \DIFdelbeginFL \DIFdelFL{infection }\DIFdelendFL and double infection on the vertical and horizontal lines\DIFdelbeginFL \DIFdelFL{respectively}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{. On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of thevertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. On the upper part of the horizontal line, $f_{ww} > f_w$, indicating enhanded reproduction, whereas, on the lower part of the horizontal line, $f_{ww} < f_w$, indicating suppressed reproduction}\DIFaddendFL .
+Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h = 0.6$.}
 \label{fig:manipbifur}
 \end{figure}
 
-\DIFdelbegin \DIFdel{Co-transmission probability }\DIFdelend \DIFaddbegin \DIFadd{We now explore the effect of co-transmission probability on the bistability of the system (Figure \ref{fig:contransmission}). 
-First, extinction is more likely with varying levels of co-transmission }\DIFaddend from the parasite pool to intermediate \DIFdelbegin \DIFdel{hosts }\DIFdelend \DIFaddbegin \DIFadd{host }\DIFaddend $p$ \DIFdelbegin \DIFdel{has the opposite effect on the bistable area compared to }\DIFdelend \DIFaddbegin \DIFadd{compared to varying levels of }\DIFaddend co-transmission \DIFdelbegin \DIFdel{probability $q$ from intermediate hosts to intermediate hosts (Figure \ref{fig:contransmission}). 
-In particular, when the parasite sabotages the manipulation, increasing }\DIFdelend \DIFaddbegin \DIFadd{from intermediate host to definitive host $q$. 
-For exceptionally high level of cooperation and not very small  values of both }\DIFaddend $p$ \DIFdelbegin \DIFdel{enlarges }\DIFdelend \DIFaddbegin \DIFadd{and $q$, }\DIFaddend the \DIFaddbegin \DIFadd{predator-prey-parasite system will always persist with one stable equilibrium.
-However, limitations and trade-offs are often unavoidable, and such high values of cooperation may be impossible, putting the system in the parameter space where bistability likely occurs.
-When the parasite sabotages manipulation, the }\DIFaddend bistable area \DIFdelbegin \DIFdel{, whereas increasing }\DIFdelend \DIFaddbegin \DIFadd{decreases with increasing $p$ and }\DIFaddend $q$\DIFdelbegin \DIFdel{reduces it. 
-In contrast, when }\DIFdelend \DIFaddbegin \DIFadd{. 
+\DIFdelbegin \DIFdel{Co-transmission probability from the parasite pool to intermediate hosts $p$ has the opposite effect on the bistable area compared to }\DIFdelend \DIFaddbegin \DIFadd{We now explore the effect of }\DIFaddend co-transmission probability \DIFdelbegin \DIFdel{$q$ from intermediate hosts to intermediate hosts }\DIFdelend \DIFaddbegin \DIFadd{on the bistability of the system }\DIFaddend (Figure \ref{fig:contransmission}). 
+\DIFdelbegin \DIFdel{In particular, when the parasite sabotages the manipulation, increasing }\DIFdelend \DIFaddbegin \DIFadd{First, extinction is more likely with varying levels of co-transmission from the parasite pool to intermediate host, }\DIFaddend $p$\DIFdelbegin \DIFdel{enlarges the bistable area, whereas increasing }\DIFdelend \DIFaddbegin \DIFadd{, compared to varying levels of co-transmission from intermediate host to definitive host, }\DIFaddend $q$\DIFdelbegin \DIFdel{reduces it. 
+In contrast, when parasites cooperate in manipulation, reducing }\DIFdelend \DIFaddbegin \DIFadd{. 
+For exceptionally high level of cooperation and not very small  values of both }\DIFaddend $p$ \DIFdelbegin \DIFdel{decreases the bistable area while reducing $q$ widens it. 
+If cooperation in manipulation is exceptionally high , the population will always exist }\DIFdelend \DIFaddbegin \DIFadd{and $q$, the predator-prey-parasite system will always persist }\DIFaddend with one stable equilibrium\DIFdelbegin \DIFdel{regardless of the co-transmission value}\DIFdelend .
+However, \DIFdelbegin \DIFdel{as there are always }\DIFdelend limitations and trade-offs \DIFdelbegin \DIFdel{, high values may not be possible}\DIFdelend \DIFaddbegin \DIFadd{are often unavoidable, and such high values of cooperation may be impossible, putting the system in the parameter space where bistability likely occurs.
+When the parasite sabotages manipulation, the bistable area decreases with increasing $p$ and $q$. 
 However, this bistable area disapears with high values of $q$ but not with high values of $p$. 
-When }\DIFaddend parasites cooperate in manipulation, reducing $p$ \DIFdelbegin \DIFdel{decreases the bistable area while }\DIFdelend \DIFaddbegin \DIFadd{almost always lead to bistability where as }\DIFaddend reducing $q$ \DIFdelbegin \DIFdel{widens it.  
-If cooperation in manipulation is exceptionally high, the population will always exist with one stable equilibrium regardless of the co-transmission value.  
-However, as there are always limitations and trade-offs, high values may not be possible.
-}\DIFdelend \DIFaddbegin \DIFadd{can lead to single equilibrium if cooperation is sufficiently large.  
-}\DIFaddend Bistability indicates vulnerability to disturbance, \DIFdelbegin \DIFdel{suggesting that }\DIFdelend \DIFaddbegin \DIFadd{and so }\DIFaddend cooperation in manipulation may be beneficial when \DIFaddbegin \DIFadd{$q$, }\DIFaddend the co-transmission from the \DIFdelbegin \DIFdel{pool to the intermediate host increases}\DIFdelend \DIFaddbegin \DIFadd{intermediate host to the definitive host decreases}\DIFaddend . 
-However, cooperation in manipulation may \DIFaddbegin \DIFadd{still }\DIFaddend harm the population \DIFdelbegin \DIFdel{when }\DIFdelend \DIFaddbegin \DIFadd{with reducing $p$, }\DIFaddend the co-transmission from the \DIFdelbegin \DIFdel{intermediate host to the definitive host increases}\DIFdelend \DIFaddbegin \DIFadd{parasite pool to intermediate host}\DIFaddend .
+When parasites cooperate in manipulation, reducing $p$ almost always lead to bistability where as reducing $q$ can lead to single equilibrium if cooperation is sufficiently large}\DIFaddend .  
+Bistability indicates vulnerability to disturbance, \DIFdelbegin \DIFdel{suggesting that }\DIFdelend \DIFaddbegin \DIFadd{and so }\DIFaddend cooperation in manipulation may be beneficial when \DIFaddbegin \DIFadd{$q$, }\DIFaddend the co-transmission from the \DIFdelbegin \DIFdel{pool to the intermediate hostincreases}\DIFdelend \DIFaddbegin \DIFadd{intermediate host to the definitive host, decreases}\DIFaddend . 
+However, cooperation in manipulation may \DIFaddbegin \DIFadd{still }\DIFaddend harm the population \DIFdelbegin \DIFdel{when }\DIFdelend \DIFaddbegin \DIFadd{with reducing $p$, }\DIFaddend the co-transmission from the \DIFdelbegin \DIFdel{intermediate host to the definitive hostincreases}\DIFdelend \DIFaddbegin \DIFadd{parasite pool to intermediate host}\DIFaddend .
 
 \begin{figure}[!ht]
 	\captionsetup{format=plain}
@@ -638,7 +632,7 @@ In their system, transmission from the definitive host to the intermediate host 
 Such immediate transmission could directly accelerate the feedback loop between prey and predator. 
 Hence, faster predator-prey dynamics occur, which may lead to cyclic dynamics when parasites are introduced.
 
-\DIFdelbegin \DIFdel{In our }\DIFdelend \DIFaddbegin \DIFadd{Another study on host manipulation, \mbox{%DIFAUXCMD
+\DIFaddbegin \DIFadd{Another study on host manipulation, \mbox{%DIFAUXCMD
 \cite{Iritani2018}}\hspace{0pt}%DIFAUXCMD
 , showed that manipulative parasites persist if they switch from suppressing to boosting predation rate.
 This theoretical work modelled the ability to change the manipulative strategy of a single parasite inside a host, which can be equal to introducing the developmental state of a parasite, where a suppressed predation rate protects the parasites that are not ready to transmit.
@@ -649,7 +643,7 @@ This result contrasts with \mbox{%DIFAUXCMD
 because in our model, the parasite cannot switch its manipulative strategy, and sabotage decreases the transmission rate from intermediate to definitive host and does not benefit the parasite in any way. 
 }
 
-\DIFadd{In our }\DIFaddend study, population dynamics exhibit bistability under certain circumstances. 
+\DIFaddend In our study, population dynamics exhibit bistability under certain circumstances. 
 This is very likely due to the introduction of co-transmission, which has been shown to result in bistable population dynamics in plant virus \cite{allen_modelling_2019} and infectious diseases \cite{gao_coinfection_2016-1}.
  In this bistability region, if the system is disturbed (e.g. migration of the intermediate or definitive hosts or predation of intermediate hosts by other predators), then the density of the infected hosts may crash, leading to parasite extinction. 
 The bistability region widens as parasites show enhanced reproduction but sabotage manipulation. 
@@ -667,22 +661,21 @@ because in our model, sabotage decreases transmissmion rate from intermediate to
 }%DIFDELCMD < 
 
 %DIFDELCMD < %%%
-\DIFdelend Finally, our study focuses on the ecological dynamics of \DIFdelbegin \DIFdel{the }\DIFdelend \DIFaddbegin \DIFadd{a }\DIFaddend trophically transmitted parasite \DIFdelbegin \DIFdel{. 
-However, investigating the evolution of host manipulation is a natural extension beyond the scope of a single manuscript, given the complexities that arise in the ecological dynamics itself.
-Studying the evolution of host manipulation, considering the }\DIFdelend \DIFaddbegin \DIFadd{between two host species. 
-In nature, parasites with complex life cycles can have more than two hosts. 
-However, our model of a single intermediate host species can already provide enough complexity to discuss the relationship between transmission and manipulation.
-Here, we introduce more realistic features compared to previous models, such as a }\DIFaddend free-living parasite pool \DIFdelbegin \DIFdel{, calls for thorough analyses, which could be a standalone study. 
-For example, we would need to include differences between the traits of the multiple parasites and hence the }\DIFdelend \DIFaddbegin \DIFadd{and multiple infections, regardless of some simplifications, such as multiple infections being limited to at most two parasites. 
+\DIFdelend Finally, our study focuses on the ecological dynamics of \DIFdelbegin \DIFdel{the }\DIFdelend \DIFaddbegin \DIFadd{a }\DIFaddend trophically transmitted parasite \DIFaddbegin \DIFadd{between two host species. 
+In nature, parasites with complex life cycles can have more than two hosts}\DIFaddend . 
+However, \DIFdelbegin \DIFdel{investigating the evolution of host manipulation is a natural extension beyond the scope }\DIFdelend \DIFaddbegin \DIFadd{our model }\DIFaddend of a single \DIFdelbegin \DIFdel{manuscript, given the complexities that arise in the ecological dynamics itself.
+Studying the evolution of host manipulation, considering the }\DIFdelend \DIFaddbegin \DIFadd{intermediate host species can already provide enough complexity to discuss the relationship between transmission and manipulation.
+Here, we introduce more realistic features compared to previous models, such as a }\DIFaddend free-living parasite pool \DIFaddbegin \DIFadd{and multiple infections, regardless of some simplifications, such as multiple infections being limited to at most two parasites. 
 In this way, we can obtain analytical results of the reproduction ratio and mathematical expressions for the existing condition of the parasite. 
 Our model serves as a groundwork for future exploration into more complex and realistic systems, where numerical simulation may be the only possible approach.
-Moreover, the results of our }\DIFaddend ecological model \DIFdelbegin \DIFdel{becomes more complex than presented in this study.
+Moreover, the results of our ecological model are a baseline for further investigation of the evolution of host manipulation}\DIFaddend , \DIFdelbegin \DIFdel{calls for thorough analyses, which could be a standalone study. 
+For example, we would need to include differences between the traits of the multiple parasites and hence the ecological model becomes more complex than presented in this study.
 The combinatorics and orderings of sequential infections wil lthen become important.
-In addition, the occurrence of bistability in our model suggests that }\DIFdelend \DIFaddbegin \DIFadd{are a baseline for further investigation of }\DIFaddend the evolution of host manipulation\DIFdelbegin \DIFdel{may drive the parasite to extinction simply because of the rarity of the mutant and the Allee effect as per Adaptive dynamics approaches. 
-The coinfecting parasites can increase manipulation and enhance reproduction freely if there exist no tradeoffs. 
+In addition, the occurrence of bistability in our model suggests that the evolution of host manipulation may drive the parasite to extinction simply because of the rarity of the mutant and the Allee effect as per Adaptive dynamics approaches. 
+The coinfecting parasites can increase manipulation and enhance reproduction freely if there exist no tradeoffs.
 Nevertheless, our model shows that the benefits of this strategy are context-dependent, making it suboptimal in certain cases. 
-Evolutionary dynamics would therefore depend on the tradeoff between host manipulation and other traits of the parasites, such as reproduction, virulence, and survivorship in the parasite pool , to list a few. 
-This extension deserves thorough analysis, and we will treat it as a separate matter}\DIFdelend \DIFaddbegin \DIFadd{, where introducing the parasite pool may create interesting eco-evolutionary feedbacks to the system}\DIFaddend .
+Evolutionary dynamics would therefore depend on the tradeoff between host manipulationand other traits of the parasites, such as reproduction, virulence, and survivorship in }\DIFdelend \DIFaddbegin \DIFadd{where introducing }\DIFaddend the parasite pool \DIFdelbegin \DIFdel{, to list a few. 
+This extension deserves thorough analysis, and we will treat it as a separate matter}\DIFdelend \DIFaddbegin \DIFadd{may create interesting eco-evolutionary feedbacks to the system}\DIFaddend .
 
 
 %\section*{Acknowledgements} 
