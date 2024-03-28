@@ -1,7 +1,7 @@
 \documentclass[a4paper]{scrartcl}
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL Oikos_submittedversion.tex   Thu Mar 28 13:48:24 2024
-%DIF ADD Oikos_main.tex               Thu Mar 28 14:29:09 2024
+%DIF ADD Oikos_main.tex               Thu Mar 28 15:27:08 2024
 \usepackage[round,authoryear]{natbib}
 \usepackage{graphicx}
 \usepackage{color}
@@ -159,6 +159,16 @@ On multiple infections by parasites with complex life cycles
 \maketitle
 
 %\onehalfspacing
+\DIFaddbegin \textbf{\DIFadd{Statement of Authorship}}
+
+\DIFadd{Both authors developed the theory.
+}
+
+\DIFadd{P.L.N developed and implemented the computational model.
+}
+
+\DIFadd{Both authors wrote the manuscript.
+}\DIFaddend 
 
 \linenumbers
 
@@ -172,13 +182,16 @@ On multiple infections by parasites with complex life cycles
 %	\item Corresponding author: Dr. Phuong L. Nguyen, Department of Biology, University of Fribourg, Chemin du musee 15, Switzerland, email: linh.phuong.nguyen@evobio.eu
 %\end{itemize}
 
-%\textbf{Statement of Authorship}
-%
-%Both authors developed the theory.
-%P.L.N developed and implemented the computational model.
-%Both authors wrote the manuscript.
 
-%\textbf{Data and Code Availability}
+%DIF < \textbf{Statement of Authorship}
+%DIF < 
+%DIF < Both authors developed the theory.
+%DIF < P.L.N developed and implemented the computational model.
+%DIF < Both authors wrote the manuscript.
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend %\textbf{Data and Code Availability}
 %
 %All data and simulation codes for generating figures are available on 
 %\url{https://anonymous.4open.science/r/multipleinfections}
