@@ -74,6 +74,13 @@ On multiple infections by parasites with complex life cycles
 \maketitle
 
 %\onehalfspacing
+\textbf{Statement of Authorship}
+
+Both authors developed the theory.
+
+P.L.N developed and implemented the computational model.
+
+Both authors wrote the manuscript.
 
 \linenumbers
 
@@ -87,11 +94,6 @@ On multiple infections by parasites with complex life cycles
 %	\item Corresponding author: Dr. Phuong L. Nguyen, Department of Biology, University of Fribourg, Chemin du musee 15, Switzerland, email: linh.phuong.nguyen@evobio.eu
 %\end{itemize}
 
-%\textbf{Statement of Authorship}
-%
-%Both authors developed the theory.
-%P.L.N developed and implemented the computational model.
-%Both authors wrote the manuscript.
 
 %\textbf{Data and Code Availability}
 %
@@ -125,8 +127,8 @@ Our study highlights the necessity of, and provides the means for, incorporating
 % (e.g. section ``Counting Owl Eggs'').
 
 Parasites infect life on earth ubiquitously, and many of these parasites have complex life cycles \citep{zimmer:book:2001}. 
-While a complex life cycle can be defined as abrupt ontogenic changes in morphology and ecology \citep{Benesh:2016dj}, a complex parasitic life cycle typically involves numerous hosts that a parasite needs to traverse to complete its life cycle. 
-This complex life cycle results in the evolution of various strategies that enable the success of parasite transmission from one host to another. 
+While a complex life cycle can be defined as abrupt ontogenic changes in morphology and ecology \citep{Benesh:2016dj}, it typically involves numerous host species that a parasite needs to traverse to complete its life cycle. 
+This complex life cycle results in the evolution of various strategies that enable the success of parasite transmission from one host species to another. 
 One famous strategy that inspires many science fiction movies and novels is host manipulation, where a parasite can alter the morphology and/or behaviour of its  host to enhance its transmission to the next host \citep{Hughes2012}. 
 Host manipulation has been shown in many host-parasite systems, from parasites with simple life cycles to those with a complex life cycle that involves more than one host species \citep{Hughes2012,molyneux_jefferies1986}. 
 For instance, sand flies infected by \textit{Leishmania} parasites bite more and take more time for a blood meal from mammals (the definitive host of \textit{Leishmania}) compared to their uninfected counterparts \citep{Rogers2007}. 
@@ -188,7 +190,7 @@ Initially surprising, we showed that cooperation in host manipulation and enhanc
 
 \section*{Model}
 
-Our model concerns the complex lifecycle of a trophically transmitted parasite that requires two hosts: an intermediate host and a definitive host. 
+Our model concerns the complex life cycle of a trophically transmitted parasite that requires two hosts: an intermediate host and a definitive host. 
 Reproduction only happens inside the definitive hosts, releasing new parasitic progeny in the environment. 
 An intermediate host can be infected if it encounters this free-living parasite pool. 
 Finally, when a definitive host consumes an infected intermediate host, the definitive host gets infected, and the parasite completes its life cycle.
@@ -201,7 +203,7 @@ Thus, $1-p$ is the probability that a single parasite enters an intermediate hos
 When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that the parasites co-transmit to the definitive host.
 With probability $1-q$, only one parasite successfully transmits. 
 This formulation assumes that infection always happens when hosts encounter parasites.
-The dynamics of a complex life cycle parasite that requires two hosts is described by the following system of equations, firstly for the intermediate host as,
+The dynamics of a complex life cycle parasite that requires two host species is described by the following system of equations, firstly for the intermediate host as,
 %
 \begin{align}
 \frac{dI_s}{dt} &= R(I_s, I_w, I_{ww}) - d I_s - P_s(D_s, D_w, D_{ww}) I_s  - \eta  I_s \nonumber \\ 
@@ -452,13 +454,13 @@ Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w
 \end{figure}
 
 We now explore the effect of co-transmission probability on the bistability of the system (Figure \ref{fig:contransmission}). 
-First, extinction is more likely with varying levels of co-transmission from the parasite pool to intermediate host $p$ compared to varying levels of co-transmission from intermediate host to definitive host $q$. 
+First, extinction is more likely with varying levels of co-transmission from the parasite pool to intermediate host, $p$, compared to varying levels of co-transmission from intermediate host to definitive host, $q$. 
 For exceptionally high level of cooperation and not very small  values of both $p$ and $q$, the predator-prey-parasite system will always persist with one stable equilibrium.
 However, limitations and trade-offs are often unavoidable, and such high values of cooperation may be impossible, putting the system in the parameter space where bistability likely occurs.
 When the parasite sabotages manipulation, the bistable area decreases with increasing $p$ and $q$. 
 However, this bistable area disapears with high values of $q$ but not with high values of $p$. 
 When parasites cooperate in manipulation, reducing $p$ almost always lead to bistability where as reducing $q$ can lead to single equilibrium if cooperation is sufficiently large.  
-Bistability indicates vulnerability to disturbance, and so cooperation in manipulation may be beneficial when $q$, the co-transmission from the intermediate host to the definitive host decreases. 
+Bistability indicates vulnerability to disturbance, and so cooperation in manipulation may be beneficial when $q$, the co-transmission from the intermediate host to the definitive host, decreases. 
 However, cooperation in manipulation may still harm the population with reducing $p$, the co-transmission from the parasite pool to intermediate host.
 
 \begin{figure}[!ht]
