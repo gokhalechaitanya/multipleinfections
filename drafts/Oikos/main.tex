@@ -198,11 +198,16 @@ Finally, when a definitive host consumes an infected intermediate host, the defi
 For simplicity, we assume that hosts can be infected by one (single infection) or, at most, two parasites (double infections).
 Thus, while $I_s$ and $D_s$ are the susceptible intermediate and definitive hosts, their singly and doubly infected counterparts are denoted by $I_w$ and $D_w$ and $I_{ww}$ and $D_{ww}$ respectively.
 Our model is, therefore, more relevant to the macroparasitic system.
-Given that infection occurs, the probability that two parasites from the parasite pool co-transmit to an intermediate host is denoted by  $p$. 
+Note that, multiple infections in nature often involve more than two parasites.
+Typically, the number of parasites in multiple infections follows a negative binomial distribution, i.e. most hosts are infected with a few parasites while very few hosts are infected with many parasites (ref).
+However, since we use a compartmental model, enabling binomial distribution would mean infinite number of differential equations, making it impossible to formulate and analyze the model.
+Furthermore, what matters is the magnitude of the manipulative effect in multiple infections versus in single infection.
+Instead, we focus on another aspect of multiple infections, that is, co-transmission, which has shown to affect evolutionary trajectories of parasites in infectious disease (Alizon).
+Given that infection occurs, the probability that two parasites from the parasite pool co-transmit to an intermediate host is denoted by $p$. 
 Thus, $1-p$ is the probability that a single parasite enters an intermediate host. 
 When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that the parasites co-transmit to the definitive host.
 With probability $1-q$, only one parasite successfully transmits. 
-This formulation assumes that infection always happens when hosts encounter parasites.
+This formulation assumes that infection always happens when intermediate hosts encounter free-living parasites, and when definitive hosts consume infected intermediate hosts.
 The dynamics of a complex life cycle parasite that requires two host species is described by the following system of equations, firstly for the intermediate host as,
 %
 \begin{align}
@@ -213,11 +218,12 @@ The dynamics of a complex life cycle parasite that requires two host species is 
 %
 where $R(I_s, I_w, I_{ww})$ represents the birth rate of the intermediate hosts, a function of both infected and uninfected individuals.
 $P_s, \ P_w, \ P_{ww}$ are the predation functions of definitive hosts on susceptible, singly infected and doubly infected intermediate hosts. 
+Intermediate hosts die at a natural rate $d$, and parasites cause additional mortality rate $\alpha_w$ in single infection and $\alpha_{ww}$ in double infection.
 The predation function depends on the density of the definitive hosts and the manipulative strategies of parasites in the intermediate hosts. 
 In particular, if a single parasite infects an intermediate host, the manipulation strategy is $\beta_w$. 
 However, if the intermediate host is co-infected, the manipulation strategy is $\beta_{ww}$. 
 In the scope of this model, we assume no specific relationship between $\beta_w$ and $\beta_{ww}$ to explore all possible ecological outcomes of the system. 
-The force of infection by parasites in the environment is denoted by $\eta = \gamma W$. 
+The force of infection by parasites in the environment is denoted by $\eta = \gamma W$, where $\gamma$ represents the infection rate of free-living parasites. 
 The force of infection is a term often used in epidemiology, which represents the rate at which a host gets infected by the parasites.
 Since parasites can manipulate intermediate and definitive hosts, whenever we mention host manipulation, it specifically refers to the manipulation in intermediate hosts, which correlates to the predation rate.
 
@@ -231,13 +237,14 @@ For the definitive hosts, we have,
 %
 where $B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww})$ represents the birth rate of definitive hosts.
 The birth rates depend on the density of both intermediate and definitive hosts, infected or uninfected. 
+The natural mortality rate of definitive hosts is represented by $\mu$, and parasites induce additional mortality rates $\sigma_w$ and $\sigma_{ww}$ in single and double infection respectively.
 The force of infection that corresponds respectively to singly infected intermediate host ($I_w$) and doubly infected intermediate hosts ($I_{ww}$) is denoted respectively by $\lambda_w = h (\rho + \beta_w)  I_w$ and $\lambda_{ww} = h (\rho + \beta_{ww}) I_{ww}$, where $\rho$ is the baseline predation rate, i.e. the basic constitutive level of predation, and $h$ is the probability that the parasite successfully establishes inside the host.
 Without manipulation, that is, $\beta_w = \beta_{ww} = 0$, the parasite is still transmitted via the baseline predation $\rho$. 
 The dynamics of the free-living parasites in the environment are then given by
 \begin{align}
 	\frac{dW}{dt} &= f_w D_w + f_{ww} D_{ww} - \delta W - \eta I_s. \label{odes:eparasite}
 \end{align}
-%
+where $f_w$ and $f_{ww}$ are the reproduction rates of parasite in single and double infection respectively, and parasites die naturally at a rate $\delta$.
 
 Here, we focus on manipulation that enhances transmission from intermediate hosts to definitive hosts; we thus simplify the transmission from the parasite pool to intermediate hosts so that no sequential infection occurs. 
 This assumption is motivated given that the prey life cycle is often shorter than the predator's. 
@@ -299,6 +306,7 @@ $h$ & Probability that the parasites successfully established inside the definit
 \end{tabular}
 \bigskip{}
 \end{table}
+
 
 \section*{Results}
 \subsection*{Basic reproduction ratio $R_0$ of the parasites}
