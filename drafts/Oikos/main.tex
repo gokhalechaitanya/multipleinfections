@@ -146,7 +146,7 @@ An alignment of interest between coinfecting parasites may enhance manipulation,
 Indeed, \cite{Hafer:2015gl} showed that copepods infected by two cestode parasites reduce the activity of copepods when both parasites are at the same noninfectious stage, i.e. both parasites are not ready to transmit. 
 Thus, the reduction in mobility is suggested to reduce the predation rate by the definitive hosts. 
 When two infectious parasites infect the copepods, the copepods' activity increases, and so does the predation risk for the copepod. 
-However, when the copepods are infected by one infectious and one noninfectious parasite, their interests clash, and one parasite wins. 
+However, when the copepods are infected by one infectious and one noninfectious parasite, their interests clash, and the infectious parasite wins. 
 
 \begin{figure}[ht!]
 \captionsetup{format=plain}
@@ -404,13 +404,14 @@ Our numerical results show that the parasite reproduction is substantial compare
 For instance, in the parameter set used to generate Figure (\ref{fig:bistability}B, to spread in the predator-prey system, the value of parasite reproduction ($f_w$) has to be at least  20 times the value of intermediate host reproduction $r = 2.5$, given that both these parameters represent the \textit{per capita} growth rate of the parasite and the intermediate host population.
 This observation suggests that trophically transmitted parasites must release a large amount of offspring into the environment to persist. 
 Interestingly, bistability occurs if the reproduction rate of the parasite in double infections is enhanced (Figure \ref{fig:bistability}A). 
-The parasite population can reach a stable equilibrium in the bistable region if the initial density is large enough. 
-In contrast, with sufficient disturbance, the parasite population could go extinct.
+Bistability suggests that parasite population is vulnerable to extinction. 
+Specifically, if sufficient parasites are introduced into the disease-free predator-prey populations, the parasite population persists and reach a stable equilibrium (Figure \ref{fig:bistability}B, C). 
+In contrast, if only a few parasites are introduced into the disease-free populations, or if sufficient disturbance occur when the parasite population already establishes, the parasite population could go extinct (Figure \ref{fig:bistability}B, C).
 
 \begin{figure}[!ht]
 \captionsetup{format=plain}
-\includegraphics[width = \textwidth]{Figures/reproduction_bifurcation.pdf}
-\caption{\textbf{Effect of parasite reproduction on the ecological dynamics}. A) Enhanced reproduction in double infection leads to bistability, B, C) Density of singly infected host at equilibrium when reproduction of parasites are the same in singly and doubly infected hosts $f_{ww} = f_w$, and when reproduction of parasites in doubly infected hosts is enhanced four times than those in singly infected hosts $f_{ww} = 4 f_w$. Filled circles indicate stable equilibrium and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.05, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$.
+\includegraphics[width = \textwidth]{Figures/reproduction_bifurcation2.pdf}
+\caption{\textbf{Effect of parasite reproduction on the ecological dynamics}. A) Enhanced reproduction in double infection leads to bistability, suggesting vulnerability of parasite population to extinction. B) Stability of the equilibrium of singly infected host when $f_{ww} = 4 f_w$, which correspond to the purple line in A). C). Parasite population dynamics in the case of bistability, which correspond to the star in A). If initial population is sufficiently large, the population persists, but if initial population is sufficiently small, the population goes extinct. D) Stability of the equilibrium of singly infected host when $f_{ww} =  f_w$, which correspond to the pink line in A). Filled circles indicate stable equilibrium and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.05, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$.
 }
 \label{fig:bistability}
 \end{figure}
@@ -427,20 +428,34 @@ In the bistable region, the basic reproduction ratio can be less than one, imply
 When the system encounters bistability, the parasite population risks extinction if there is a disturbance in the community.
 In the following parts, we will explore scenarios where bistability may occur. 
 
-Besides manipulation, co-infecting parasites can influence each other in different life history traits.
-Parasites can have an enhanced reproduction rate in coinfections, i.e. $f_{ww} > f_w$ (upper part of the horizontal line in Figure \ref{fig:manipbifur} Right). 
-Likewise, they can compete for resources, so reproduction in double infection is suppressed compared to single infection (lower part of the horizontal line in Figure \ref{fig:manipbifur} Right). 
-Without any assumption on the relationship between manipulative ability and reproduction, we explore all possible combinations of cooperation-sabotage range in manipulation and suppressed-enhanced range in reproduction. This results in four scenarios of parameter combinations: i, parasites sabotage manipulation but have enhanced reproduction -- manipulative incoordination (top left quadrant in Figure \ref{fig:manipbifur} Right), ii, parasites cooperate to increase manipulation and enhance reproduction -- coordination (top right quadrant in Figure \ref{fig:manipbifur} Right), iii, parasites cooperate in manipulation but suppress reproduction -- reproductive incoordination (bottom right quadrant in Figure \ref{fig:manipbifur} Right), and iv, parasites sabotage manipulation and suppress reproduction -- discordance (bottom left quadrant in Figure \ref{fig:manipbifur} Right).
+\begin{figure}[!ht]
+	\captionsetup{format=plain}
+	\centering
+	\includegraphics[scale=0.7]{Figures/contour_R0.pdf}
+	\caption{\textbf{Effect of manipulation in single and double infections on the reproduction ratio $R_0$.}
+		 $R_0$ values increase with more efficient manipulation in single and double infection.  
+		The hatched area indicates the bistable region. 
+		As manipulation in single infection increases, the system only has one stable equilibrium. 
+		On the black line, the manipulation level is equal between single and double infection ($\beta_w = \beta_{ww}$). 
+		In the upper triangular area, parasites cooperate, and in the lower triangular area, parasites sabotage.
+		Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  f_w = 37, \ \epsilon= 4.5, \ h = 0.6$.}
+	\label{fig:R0}
+\end{figure}
 
-If coinfected parasites are discordant, i.e. uncooperative in manipulations and show suppressed reproduction, they cannot persist (Figure \ref{fig:manipbifur}). 
+Besides manipulation, co-infecting parasites can influence each other in different life history traits.
+Parasites can have an enhanced reproduction rate in coinfections, i.e. $f_{ww} > f_w$ (upper part of the horizontal line in all panels Figure \ref{fig:manipbifur}). 
+Likewise, they can compete for resources, so reproduction in double infection is suppressed compared to single infection (lower parts of the horizontal lines in all panels Figure \ref{fig:manipbifur}). 
+Without any assumption on the relationship between manipulative ability and reproduction, we explore all possible combinations of cooperation-sabotage range in manipulation and suppressed-enhanced range in reproduction. This results in four scenarios of parameter combinations: i, parasites sabotage manipulation but have enhanced reproduction -- manipulative incoordination (top left quadrants in all panels Figure \ref{fig:manipbifur}), ii, parasites cooperate to increase manipulation and enhance reproduction -- coordination (top right quadrants in all panels Figure \ref{fig:manipbifur}), iii, parasites cooperate in manipulation but suppress reproduction -- reproductive incoordination (bottom right quadrants in all panels Figure \ref{fig:manipbifur} ), and iv, parasites sabotage manipulation and suppress reproduction -- discordance (bottom left quadrants in all panels Figure \ref{fig:manipbifur} ).
+
+If coinfected parasites are discordant, i.e. uncooperative in manipulations and show suppressed reproduction, they cannot persist (Figure \ref{fig:manipbifur}A-D). 
 On the other extreme, where they are highly cooperative in manipulation and show enhanced reproduction, i.e., an extreme level of coordination, there is a guaranteed single equilibrium for parasite existence. 
 Note that this happens at the combination of $\beta_{ww}/\beta_w \rightarrow \infty$ and $f_{ww}/f_w \rightarrow \infty$, a scenario that is rather impossible in reality. 
-Very often, we expect intermediate levels of coordination where a bistable area could occur (top left quadrant in Figure \ref{fig:manipbifur} at $f_w = (37, 37.5)$).
+Very often, we expect intermediate levels of coordination where a bistable area could occur (top left quadrant in Figure \ref{fig:manipbifur}A, C, D).
 However, the size of this area is sensitive to the value of reproduction and manipulation in a single infection. 
-In particular, higher values of these two parameters reduce the bistability area to the point that sufficiently large reproduction in single infection can guarantee single equilibrium when parasites coordinate (top left quadrant in Figure \ref{fig:manipbifur} Left at $f_w = (38)$, Figure SI.2 ).
-In contrast, slightly reducing values of reproduction and manipulation in single infection increase the bistability area.
-If the parasites sabotage each other, the system is highly prone to bistability and only has a single equilibrium when reproduction is especially enhanced (left side of vertical line in Figure \ref{fig:manipbifur} Left).
-Interestingly, sufficiently high reproduction enhancement leads to bistability (i.e. $f_{ww}$ is at least four times $f_w$), and reproductive incoordination, i.e. depressed reproduction and manipulative cooperation, always leads to a single equilibrium of the system (Figure \ref{fig:bistability}A, and bottom right quadrant in Figure \ref{fig:manipbifur}Left). 
+In particular, higher values of these two parameters reduce the bistability area to the point that sufficiently large reproduction in single infection can guarantee single equilibrium when parasites coordinate (Figure \ref{fig:manipbifur} B).
+In contrast, slightly reducing values of either reproduction or manipulation in single infection increase the bistability area (Figure \ref{fig:manipbifur}A, C, D).
+If the parasites sabotage each other, the system is highly prone to bistability and only has a single equilibrium when reproduction is especially enhanced.
+Interestingly, reproductive incoordination, i.e. depressed reproduction and manipulative cooperation, always leads to a single equilibrium of the system (Figure \ref{fig:bistability}B, D). 
 While a single equilibrium guarantees the existence of a parasite population, bistability indicates that a disturbance of the system may likely lead to the extinction of the parasite population. 
 This suggests that the benefits of coordination in reproduction and manipulation are context-dependent. 
 Coordinating is advantageous if no significant tradeoffs and reproduction or manipulation in single infections are large enough. 
@@ -448,14 +463,9 @@ Coordinating is advantageous if no significant tradeoffs and reproduction or man
 \begin{figure}[!ht]
 \captionsetup{format=plain}
 \centering
-\includegraphics[width=\textwidth]{Figures/ratio_reproduction_manipulation_combi.pdf}
+\includegraphics[width=\textwidth]{Figures/manip_bifur.pdf}
 \caption{\textbf{Effect of manipulation and reproduction on bistability.}
-Left: $R_0$ values increase with more efficient manipulation in single and double infection.  
-The hatched area indicates the bistable region. 
-As manipulation in single infection increases, the system only has one stable equilibrium. 
-On the black line, the manipulation level is equal between single and double infection ($\beta_w = \beta_{ww}$). 
-In the upper triangular area, parasites cooperate, and in the lower triangular area, parasites sabotage.
-Right: Changes in the bistability area (shaded areas) concerning different reproduction rates in single infection (different boundary styles). 
+The bistability area (shaded areas) reduces as the reproduction rate in single infection $f_w$ increases (different boundary styles).
 Manipulation and reproduction levels are equal between single and double infection on the vertical and horizontal lines. On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of thevertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. On the upper part of the horizontal line, $f_{ww} > f_w$, indicating enhanded reproduction, whereas, on the lower part of the horizontal line, $f_{ww} < f_w$, indicating suppressed reproduction.
 Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h = 0.6$.}
 \label{fig:manipbifur}
