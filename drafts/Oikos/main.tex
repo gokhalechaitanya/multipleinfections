@@ -214,7 +214,7 @@ The dynamics of a complex life cycle parasite that requires two host species is 
 \begin{align}
 \frac{dI_s}{dt} &= R(I_{total}) - d I_s - P_s(D_{total}) I_s  - \eta  I_s \nonumber \\ 
 \frac{dI_w}{dt} &=  (1 - p) \eta I_s  - (d + \alpha_w) I_w - P_w(D_{total}, \beta_w) I_w \label{odes:ihosts} \\
-\frac{dI_{ww}}{dt} &= p \eta I_s  - (d + \alpha_{ww}) I_{ww} - P_{ww}(D_{total}}, \beta_{ww}) I_{ww} \nonumber
+\frac{dI_{ww}}{dt} &= p \eta I_s  - (d + \alpha_{ww}) I_{ww} - P_{ww}(D_{total}, \beta_{ww}) I_{ww} \nonumber
 \end{align}
 %
 where $R(I_{total})$ represents the birth rate of the intermediate hosts, a function of both infected and uninfected individuals $I_{total} = I_s + I_w + I_{ww}$.
@@ -336,22 +336,22 @@ To understand the effect of manipulation on parasites' fitness and the system's 
 We consider linear functions for predation to begin with,
 %
 \begin{align*}
- P_s(D_s, D_w, D_{ww}) &= \rho D_{total}  \\
- P_w(D_s, D_w, D_{ww}, \beta_w) &= (\rho + \beta_w) D_{total} \\
- P_{ww}(D_s, D_w, D_{ww}, \beta_{ww}) &=  (\rho + \beta_{ww})D_{total}
+ P_s(D_{total}) &= \rho D_{total}  \\
+ P_w(D_{total}, \beta_w) &= (\rho + \beta_w) D_{total} \\
+ P_{ww}(D_{total}, \beta_{ww}) &=  (\rho + \beta_{ww})D_{total}
 \end{align*}
 %
-where $D_{total} = D_s + D_w + D_{ww}$ is the total density of the definitive hosts, and $\rho$ is the baseline capture rate of the predator on the prey. 
+where  $\rho$ is the baseline capture rate of the predator on the prey. 
 If an intermediate host is infected, it is captured by the definitive hosts with rate $\rho + \beta_w$ if it is singly infected and with rate $\rho + \beta_{ww}$ if it is doubly infected. 
 Zero values for $\beta_w$ and $\beta_{ww}$ suggest no manipulation, and predation is at the baseline value $\rho$.
 
 For simplicity, we also consider a linear function of the birth of definitive hosts
 %
 \begin{align*}
-B(D_s, D_w, D_{ww}, I_s, I_w, I_{ww}) = \rho c D_{total} I_{total}
+B(D_{total},  I_{total}) = \rho c D_{total} I_{total}
 \end{align*}
 %
-where $c$ is the efficiency of converting prey into predator's offspring, and $I_{total} = I_s + I_w + I_{ww}$ is the total density of the intermediate hosts.
+where $c$ is the efficiency of converting prey into predator's offspring.
 It is important to note that host manipulation affects population dynamics via its influence on the predation rate, not the physiological aspect of the definitive host, i.e., the predator.
 The birth rate of the predators thus depends on the capture rate, but it is not affected by host manipulation; to our best knowledge, there is no supporting evidence to consider otherwise.
 
