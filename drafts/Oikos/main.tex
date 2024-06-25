@@ -167,7 +167,7 @@ Indeed, a stickleback can be infected by numerous parasites, all vying for contr
 
 Theoretical work that considers multiple infections often focuses on the evolution of virulence \citep{vanBaalen1995, Alizon2013, Alizon2008, Choisy2010, Alizon2012}, while host manipulation in trophically transmitted parasites receives less attention. 
 Even though host manipulation and virulence correlate with parasite transmission, there are subtle differences, such that virulence implies an addition to the natural mortality rate of the infected host, whereas manipulation links to the immediate death of the intermediate host due to predation. 
-Host manipulation in trophically transmitted parasites, therefore, affects not only the intermediate host population but also the entire predator-prey dynamics. 
+Host manipulation in trophically transmitted parasites, therefore, strongly affects the entire predator-prey dynamics. 
 Theoretical studies regarding host manipulation rarely consider multiple infections. 
 Studies incorporating this feature neglect the predator-prey dynamics, which will likely have important feedback on the evolution of host manipulation \citep{Parker2003,Vickery2009}.
 Moreover, these models assume that transmission from definitive hosts to intermediate hosts is due to direct contact between the two types of hosts \citep{Rogawa2018, Hadeler1989, Fenton2006}. 
@@ -220,7 +220,7 @@ Given that infection occurs, the probability that two parasites from the parasit
 Thus, $1-p$ is the probability that a single parasite enters an intermediate host. 
 When a definitive host consumes an intermediate host infected by two parasites, there is a probability $q$ that the parasites co-transmit to the definitive host.
 With probability $1-q$, only one parasite successfully transmits. 
-This formulation assumes that infection always happens when intermediate hosts encounter free-living parasites and when definitive hosts consume infected intermediate hosts (Fig.~\ref{fig:schematic}).
+This formulation assumes that infection always happens when intermediate hosts encounter free-living parasites and when definitive hosts consume infected intermediate hosts (Figure.~\ref{fig:schematic}).
 The dynamics of a complex life cycle parasite that requires two host species is described by the following system of equations, firstly for the intermediate host as,
 %
 \begin{align}
@@ -308,8 +308,7 @@ $h$ & Probability that the parasites successfully established inside the definit
 \end{table}
 
 
-\section*{Results}
-\subsection*{Basic reproduction ratio $R_0$ of the parasites}
+\section*{Basic reproduction ratio $R_0$ of the parasites}
 
 The basic reproduction ratio $R_0$ (or basic reproduction number as often used in epidemiology) indicates parasite fitness. 
 It can be understood as the expected number of offspring a parasite produces during its lifetime when introduced to a susceptible host population. 
@@ -359,9 +358,9 @@ The explicit form of $I_s^*$ and $D_s^*$, capturing the predator-prey dynamics, 
 However, it does not depend on the ability to manipulate or any other parameter of the parasite. 
 Given that the birth rate of the predator and the predation rate are linear functions in prey and predator density, the form of the birth rate $R$ of the prey has a significant effect on the susceptible intermediate and definitive host dynamics.
 
-\subsection*{Birth function of intermediate hosts}
+\section*{Birth function of intermediate hosts}
 
-The simplest form of the prey's birth rate is a linear function, in which case the disease-free equilibrium is always unstable. In particular, it has a cyclic behaviour because, at this equilibrium, the Jacobian matrix of the system (\ref{odes:ihosts}, \ref{odes:dhosts}, \ref{odes:eparasite}) always has two pure imaginary eigenvalues (see SI2). 
+The simplest form of the prey's birth rate is a linear function, in which case the disease-free equilibrium is always in a cyclic regime (see SI 2).
 This follows from the Lotka-Volterra system using linear functions for prey birth and predation \citep{Lotka1920}.
 Since the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite using the basic reproduction ratio, which is evaluated when the disease-free state is stable. 
 Here,  $R_0 > 1$  happens when $\gamma$, the transmission rate from the environment to intermediate hosts, and the reproduction rates $f_w, f_{ww}$ are quite large (as compared to the theoretical threshold shown by the mathematical conditions in SI3). 
@@ -369,7 +368,7 @@ However, even when this condition is satisfied, the parasite may not be able to 
 This result agrees with the conclusion in \citep{Ripa:Evol:2013}, which suggests that it is difficult for a mutant to invade a cyclic resident population. 
 In our case, it is not the invasion of a mutant in a resident population but the invasion of a parasite in a cyclic disease-free host population; the argument, however, remains valid in both cases. 
 This issue deserves a more thorough investigation, which is out of the scope of this article. 
-Here, we choose a non-linear birth function of the intermediate hosts to obtain a stable disease-free state and focus on the effect of host manipulation on the ecological dynamics (Figure \ref{fig:ecotraject:nonlinear}). 
+Therefore, we choose a non-linear birth function of the intermediate hosts to obtain a stable disease-free state and focus on the effect of host manipulation on the ecological dynamics (Figure \ref{fig:ecotraject:nonlinear}). 
 
 The logistic growth for the non-linear birth function follows by 
 %
@@ -385,7 +384,7 @@ I_s^* = \frac{\mu}{c \rho } \ ;\  D_s^* = \frac{c \rho  (r-d) - k \mu  r}{c \rho
 \end{align*}
 %
 This equilibrium is positive and stable if components of the parasite, such as reproduction and transmission, are sufficiently small; details of the condition can be found in section SI 4. 
-Here, as reproduction and transmission value of the parasite are not sufficient, it goes extinct (Figure \ref{fig:ecotraject:nonlinear}A), leaving the predator-prey dynamics attaining equilibrium (Figure \ref{fig:ecotraject:nonlinear}B)
+Here, as reproduction and transmission value of the parasite are not sufficient, it goes extinct (Figure \ref{fig:ecotraject:nonlinear}A, B), leaving the predator-prey dynamics attaining equilibrium (Figure \ref{fig:ecotraject:nonlinear}C, D)
 
 \begin{figure}[!ht]
 \captionsetup{format=plain}
@@ -398,19 +397,33 @@ Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \
 \label{fig:ecotraject:nonlinear}
 \end{figure}
 
-When a parasite appears in the disease-free equilibrium, it spreads if its reproduction ratio $R_0 > 1$ (Figure \ref{fig:ecotraject:nonlinear}C, D). 
+When a parasite appears in the disease-free equilibrium, it spreads if its reproduction ratio $R_0 > 1$ (Figure \ref{fig:R0}) . 
 Since the expression is complicated, we could only obtain analytical solutions for this inequality with assumptions. 
 We assume the same parasite virulence, $\alpha_w = \alpha_{ww}$, $\sigma_w = \sigma_{ww}$, and reproduction in double infection as a linear function concerning reproduction in single infections, $f_{ww} = \epsilon f_w$. 
 When $\epsilon > 1$, reproduction in double infections is enhanced compared to in single infections, whereas $\epsilon \leq 1$, reproduction in double infections is suppressed or equal to reproduction in single infections.
 We found that the parasite can establish if its reproduction value in a single infection $f_w$ is more significant than a threshold (Figure \ref{fig:bistability}, see section SI 5 and Eq.~(SI.19)). 
 
+\begin{figure}[!ht]
+	\captionsetup{format=plain}
+	\centering
+	\includegraphics[scale=0.5]{Figures/contour_R0.pdf}
+	\caption{\textbf{Effect of manipulation in single and double infections on the reproduction ratio $R_0$.}
+		$R_0$ values increase with more efficient manipulation in single and double infection.  
+		The hatched area indicates the bistable region. 
+		As manipulation in single infection increases, the system only has one stable equilibrium. 
+		On the black line, the manipulation level is equal between single and double infection ($\beta_w = \beta_{ww}$). 
+		In the upper triangular area, parasites cooperate, and in the lower triangular area, parasites sabotage.
+		Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  f_w = 37, \ \epsilon= 4.5, \ h = 0.6$.}
+	\label{fig:R0}
+\end{figure}
+
 Our numerical results show that the parasite reproduction is substantial compared to other parameters (Figure \ref{fig:bistability}A). 
-For instance, in the parameter set used to generate Figure (\ref{fig:bistability}B, to spread in the predator-prey system, the value of parasite reproduction ($f_w$) has to be at least  20 times the value of intermediate host reproduction $r = 2.5$, given that both these parameters represent the \textit{per capita} growth rate of the parasite and the intermediate host population.
+For instance, in the parameter set used to generate Figure \ref{fig:bistability}, to spread in the predator-prey system, the value of parasite reproduction ($f_w$) has to be at least  20 times the value of intermediate host reproduction $r = 2.5$, given that both these parameters represent the \textit{per capita} growth rate of the parasite and the intermediate host population.
 This observation suggests that trophically transmitted parasites should release many offspring into the environment to persist. 
-Interestingly, bistability occurs if the reproduction rate of the parasite in double infections is enhanced (Figure \ref{fig:bistability}A). 
+Interestingly, bistability occurs if the reproduction rate of the parasite in double infections is enhanced. 
 Bistability suggests that the parasite population is vulnerable to extinction. 
-Specifically, if sufficient parasites are introduced into the disease-free predator-prey populations, the parasite population persists and reaches a stable equilibrium (Figure \ref{fig:bistability}B, C). 
-In contrast, if only a few parasites are introduced into the disease-free populations, or if sufficient disturbance occurs when the parasite population is already established, the parasite population could go extinct (Figure \ref{fig:bistability}B, C).
+Specifically, if sufficient parasites are introduced into the disease-free predator-prey populations, the parasite population persists and reaches a stable equilibrium . 
+In contrast, if only a few parasites are introduced into the disease-free populations, or if sufficient disturbance occurs when the parasite population is already established, the parasite population could go extinct (Figure \ref{fig:bistability}C).
 
 \begin{figure}[!ht]
 \captionsetup{format=plain}
@@ -428,32 +441,18 @@ Filled circles indicate stable equilibrium and open circles indicate unstable eq
 
 Host manipulation can be cooperative; two parasites increase the predation rate on intermediate hosts, or $\beta_{ww} > \beta_w$ . 
 However, it can also be uncooperative; the predation rate on doubly-infected intermediate hosts is lower than that on singly-infected ones or $\beta_{ww} < \beta_w$.
-Cooperation in parasite manipulation increases the parasite's basic reproduction ratio $R_0$, but the manipulation in a single infection substantially affects the value of $R_0$ (Figure \ref{fig:manipbifur}). 
+Cooperation in parasite manipulation increases the parasite's basic reproduction ratio $R_0$, but the manipulation in a single infection substantially affects the value of $R_0$ (Figure \ref{fig:R0}). 
 Intuitively, if the manipulation in a single infection is minor, there is not enough transmission, and the parasite goes extinct.
 However, we could suppose that the ability to manipulate the host in a single infection is enough for the parasite population to escape extinction. 
-In that case, the system is in a bistable state where intermediate cooperation in host manipulation cannot guarantee a single equilibrium (Hatched area Figure \ref{fig:manipbifur} Left). 
+In that case, the system is in a bistable state where intermediate cooperation in host manipulation cannot guarantee a single equilibrium (Hatched area Figure \ref{fig:R0}). 
 In the bistable region, the basic reproduction ratio can be less than one, implying that the parasite with manipulative values within this range, i.e. weak manipulation ability, cannot spread. 
 When the system encounters bistability, the parasite population risks extinction if there is a disturbance in the community.
 In the following parts, we will explore scenarios where bistability may occur. 
 
-\begin{figure}[!ht]
-	\captionsetup{format=plain}
-	\centering
-	\includegraphics[scale=0.5]{Figures/contour_R0.pdf}
-	\caption{\textbf{Effect of manipulation in single and double infections on the reproduction ratio $R_0$.}
-		 $R_0$ values increase with more efficient manipulation in single and double infection.  
-		The hatched area indicates the bistable region. 
-		As manipulation in single infection increases, the system only has one stable equilibrium. 
-		On the black line, the manipulation level is equal between single and double infection ($\beta_w = \beta_{ww}$). 
-		In the upper triangular area, parasites cooperate, and in the lower triangular area, parasites sabotage.
-		Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  f_w = 37, \ \epsilon= 4.5, \ h = 0.6$.}
-	\label{fig:R0}
-\end{figure}
-
 Besides manipulation, co-infecting parasites can influence each other in different life history traits.
 Parasites can have an enhanced reproduction rate in coinfections, i.e. $f_{ww} > f_w$ (upper part of the horizontal line in all panels Figure \ref{fig:manipbifur}). 
 Likewise, they can compete for resources, so reproduction in double infection is suppressed compared to single infection (lower parts of the horizontal lines in all panels Figure \ref{fig:manipbifur}). 
-Without any assumption on the relationship between manipulative ability and reproduction, we explore all possible combinations of cooperation-sabotage range in manipulation and suppressed-enhanced range in reproduction. This results in four scenarios of parameter combinations: i, parasites sabotage manipulation but have enhanced reproduction -- manipulative incoordination (top left quadrants in all panels Figure \ref{fig:manipbifur}), ii, parasites cooperate to increase manipulation and enhance reproduction -- coordination (top right quadrants in all panels Figure \ref{fig:manipbifur}), iii, parasites cooperate in manipulation but suppress reproduction -- reproductive incoordination (bottom right quadrants in all panels Figure \ref{fig:manipbifur} ), and iv, parasites sabotage manipulation and suppress reproduction -- discordance (bottom left quadrants in all panels Figure \ref{fig:manipbifur} ).
+Without any assumption on the link between manipulative ability and reproduction, and a linear relationship between manipulation in single and double infections, we explore all possible combinations of cooperation-sabotage range in manipulation and suppressed-enhanced range in reproduction. This results in four scenarios of parameter combinations: i, parasites sabotage manipulation but have enhanced reproduction -- manipulative incoordination (top left quadrants in all panels Figure \ref{fig:manipbifur}), ii, parasites cooperate to increase manipulation and enhance reproduction -- coordination (top right quadrants in all panels Figure \ref{fig:manipbifur}), iii, parasites cooperate in manipulation but suppress reproduction -- reproductive incoordination (bottom right quadrants in all panels Figure \ref{fig:manipbifur} ), and iv, parasites sabotage manipulation and suppress reproduction -- discordance (bottom left quadrants in all panels Figure \ref{fig:manipbifur} ).
 
 If coinfected parasites are discordant, i.e. uncooperative in manipulations and show suppressed reproduction, they cannot persist (Figure \ref{fig:manipbifur}A-D). 
 On the other extreme, where they are highly cooperative in manipulation and show enhanced reproduction, i.e., an extreme level of coordination, there is a guaranteed single equilibrium for parasite existence. 
