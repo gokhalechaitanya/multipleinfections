@@ -199,10 +199,10 @@ Finally, when a definitive host consumes an infected intermediate host, the defi
 \centering
 \includegraphics[width=0.75\textwidth]{Figures/schematics.pdf}
 \caption{\textbf{Schematics of the transmission routes.} 
-Blue ovals represent the intermediate hosts, while the green diamonds represent the definitive hosts.
+Blue ovals represent the intermediate hosts, while green diamonds represent the definitive hosts.
 The hexagon represents the parasite pool compartment, with the red circles illustrating the free-living individual parasites.
-The parasites infect the intermediate hosts singly ($I_w$, top) or doubly ($I_{ww}$, bottom).
-These intermediate hosts are then predated upon by the definitive hosts, thus moving the parasites to the final host (either as $D_w$ or $D_{ww}$) where they can reproduce and reenter the free-living stage in the environmental pool $W$.
+The parasites infect the intermediate hosts singly ($I_w$) or doubly ($I_{ww}$) upon encounter between the intermediate hosts and the parasite pool (blue arrows).
+These intermediate hosts are then predated upon by the definitive hosts (green arrows), thus moving the parasites to the final host (either as $D_w$ or $D_{ww}$) where they can reproduce and reenter the free-living stage in the environmental pool $W$ (red dashed arrows).
 }
 \label{fig:schematic}
 \end{figure}
@@ -391,12 +391,10 @@ Here, as reproduction and transmission value of the parasite are not sufficient,
 \captionsetup{format=plain}
 \includegraphics[width=0.8\textwidth]{Figures/ecotraject_nonlinear.pdf}
 \caption{\textbf{Ecological dynamics of the predator-prey-parasite system.} 
-\cha{
-On the left, we show the density dynamics of the susceptible intermediate and definitive hosts. 
-The top shows the case of a disease-free equilibrium being reached from different initial conditions (ic). The bottom shows the case where the parasite also survives.
-The detailed dynamics of all different compartments are further shown for specific initial conditions (ic2), including the free-living parasite dynamics.
-}
-A) Ecological trajectories of infected hosts and free-living parasite when parasites cannot persist, B) Phase plane of susceptible intermediate and definitive hosts under disease free scenario. C) Ecological trajectories of infected hosts and free-living parasite when parasites persist. D) Phase plane of susceptible and definitive host under disease circulating scenario. Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.05, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
+On the left, we show the density dynamics of the susceptible intermediate and definitive hosts at different initial conditions (ic1, ic2, and ic3). 
+The detailed dynamics of infected compartments are further shown for specific initial conditions (ic2), including the free-living parasite dynamics.
+A-B) A case of a disease-free equilibrium being reached from different initial conditions (ic). C-D) A case where the parasite survives.
+Parameters for disease free equilibrium $\rho =  1.2, \ d = 0.9, \  r = 2.5, \ \gamma =  2.9, \alpha_w = \alpha_{ww} =  0, \ \beta_w = \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9, \ \sigma_w = \sigma_{ww} = 0, \ q = 0.05, \ f_w = f_{ww} = 7.5, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$. Disease stable equilibrium have the same parameter values except for higher host manipulation $ \beta_w =  \beta_{ww} = 4.5$ and parasite reproduction $ f_w  = f_{ww} = 45$}
 \label{fig:ecotraject:nonlinear}
 \end{figure}
 
@@ -418,7 +416,10 @@ In contrast, if only a few parasites are introduced into the disease-free popula
 \captionsetup{format=plain}
 \includegraphics[width = \textwidth]{Figures/reproduction_bifurcation2.pdf}
 \caption{\textbf{Effect of parasite reproduction on the ecological dynamics}. 
-\cha{Need to redo captions}A) Enhanced reproduction in double infection leads to bistability, suggesting vulnerability of parasite population to extinction. B) Stability of the equilibrium of singly infected host when $f_{ww} = 4 f_w$, which correspond to the purple line in A). C). Parasite population dynamics in the case of bistability, which correspond to the star in A). If initial population is sufficiently large, the population persists, but if initial population is sufficiently small, the population goes extinct. D) Stability of the equilibrium of singly infected host when $f_{ww} =  f_w$, which correspond to the pink line in A). Filled circles indicate stable equilibrium and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.05, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$.
+A) A bifurcation graph for different values of reproduction in single infection and double infections. B) Equilibrium values of intermediate host when $\epsilon = 4$ when bistability occur at high values of $f_w$ (in pink), and $\epsilon = 4$ when only one stable equilibrium exist at high values of $f_w$ (in purple). 
+C) Details of the parasites population dynamics in the case of bistability shown through the infected intermediate hosts. 
+When the parasites start at high density, the parasite population persists whereas when they start at lower density, the parasite population perishes.
+Filled circles indicate stable equilibrium and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.05, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$.
 }
 \label{fig:bistability}
 \end{figure}
@@ -472,8 +473,8 @@ Coordinating is advantageous if no significant tradeoffs and reproduction or man
 \centering
 \includegraphics[width=\textwidth]{Figures/manip_bifur.pdf}
 \caption{\textbf{Effect of manipulation and reproduction on bistability.}
-The bistability area (shaded areas) reduces as the reproduction rate in single infection $f_w$ increases (different boundary styles).
-Manipulation and reproduction levels are equal between single and double infection on the vertical and horizontal lines. On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of the vertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. On the upper part of the horizontal line, $f_{ww} > f_w$, indicating enhanced reproduction, whereas, on the lower part of the horizontal line, $f_{ww} < f_w$, indicating suppressed reproduction.
+The bistability area (shaded areas) reduces as the reproduction rate ($f_w$) and manipulation ($\beta_w$) in single infection increases. 
+Reproduction in single infection decreases from the upper panels (A, B) to the lower panels (C, D) while manipulation in single infection increases from the left panels (A, C) to the right panels (B, D). Manipulation and reproduction levels are equal between single and double infection on the vertical and horizontal lines. On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of the vertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. On the upper part of the horizontal line, $f_{ww} > f_w$, indicating enhanced reproduction, whereas, on the lower part of the horizontal line, $f_{ww} < f_w$, indicating suppressed reproduction.
 Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h = 0.6$.}
 \label{fig:manipbifur}
 \end{figure}
@@ -492,7 +493,7 @@ However, cooperation in manipulation may still harm the population by reducing $
 	\captionsetup{format=plain}
 	\centering
 	\includegraphics[width=\textwidth]{Figures/coinfect_transmission.pdf}
-	\caption{Left: Effect of cotransmission from parasite pool to intermediate host. Right: Effect of co-transmission from intermediate to the definitive host. On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of the vertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. Common parameters:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 4.5, \ \beta_w = 1.45, \ f_w = 38, \ h = 0.6$.}
+	\caption{A) Effect of cotransmission from parasite pool to intermediate host. B)Effect of co-transmission from intermediate to the definitive host. On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of the vertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. Common parameters:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \ \epsilon = 4.5, \ \beta_w = 1.45, \ f_w = 38, \ h = 0.6$.}
 	\label{fig:contransmission}
 \end{figure}
 
