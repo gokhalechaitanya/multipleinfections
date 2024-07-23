@@ -1,0 +1,57 @@
+SNSF Scientific Exchanges: Template for scientific event
+The completed template should not exceed 4 pages. 
+
+Timeframe of the event:	     
+
+Applicant(s):	Linh Phuong NGUYEN
+Discipline/research area of the event:	Ecology
+Overall format of the event (e.g. conference, workshop)	Conference
+In completing the following document, please note that the Scientific Exchanges applications will be assessed by generalists at the SNSF who may not have specific knowledge in the respective field, and answer the questions accordingly.
+
+1.	Topics / research questions and relevance
+What are the topics and research questions that the event focuses on? What is their relevance, both to the research field and beyond (if applicable)? 
+
+We focus on a fascinating strategy adopted by many parasites: host manipulation. This is the ability to modify the behaviour and morphology of hosts to increase transmission of parasites from one host to another. For instance, copepods infected by cestodes are more active than their uninfected counterparts, which increases the risk of predation by fishes - the subsequent host of the parasitic cestodes. Under this theme, we plan to organise a conference titled "Eco-evolutionary impacts of host manipulation by parasites". This event will address key questions concerning the evolution and ecological feedback of host manipulation:
+
+1. How do manipulation strategies evolve in general? 
+
+2. As multiple infections is often the norm in nature, what are the effects of multiple infections on the manipulative outcomes? In particular, when hosts are infected by multiple parasites, their interests may align, or conflicts may arise among them. This could lead to sabotage or cooperation in manipulation. Under what circumstances does sabotage manipulation evolve, and under which conditions does cooperation in manipulation arise?
+
+3. Several studies have shown that parasites play a key role in community structure, such as ensuring species coexistence via apparent competition. What are the effects of host manipulation if it evolves in such contexts? Is species coexistence still maintained, and is community stability reinforced or destroyed?
+
+4. Given that host manipulation results in behavioural and morphological differences between infected and uninfected hosts, can it lead to segregation of populations within the same host species?
+
+5. Finally, ecology and evolution often entangle with each other. What is the eco-evolutionary feedback between host manipulation and the dynamics of the host-parasite system, including predator-prey-parasite system in trophically transmitted parasites?
+
+In our rapidly changing environments, host manipulation has significant impacts on ecological and epidemiological dynamics, community structure, and status of species coexistence. The conference welcomes both theoretical and empirical studies on these topics.
+
+2.	Aims and objectives
+What are the concrete aims and objectives of this event? What is the added value of the event to the research community in Switzerland and abroad? 
+We have two main objectives: (i) linking the ecological and evolutionary domains of studies on host manipulation, and (ii) bridging theoretical and empirical research on host manipulation.
+
+Host parasite is a fascinating system that inspire many researchers. However, studies specifically focusing on the evolution of host manipulation and its ecological impacts are rather neglected. This conference will bring together theoretical and empirical researchers from both ecological and ecological domains from Switzerland and other countries together to exchange knowledge and scientific works. This is the best way to move forward studies on host manipulation in particular and host-parasite in general.
+
+3.	Format and organisation
+What is the planned format for the event? How does this format help deliver the aims and objectives described above? Is the event physical, online or a hybrid of the two?
+The event will be organized in conference format. This format provides opportunities for both senior and junior researchers to share their research in presentation form. Coffee break during the day gives opportunities to exchange ideas and knowledge.
+
+We aim to organize the conference physically as we would like to encourage as much interactions as possible among researchers of different disciplines and domains, and meeting in person is so far the best way. In addition, we wish to also make the presentation available online for broader audience who is interested in the topic as well as those who cannot participate in the conference.
+
+4.	Active participants
+How many active participants (researchers or practitioners) will be contributing actively? How many of them should be supported by the SNSF grant, and what will be their roles/functions at the event? What thought has been given to gender awareness/balance and to actively involving early-career researchers?
+     
+
+
+5.	Target audience
+Does the event foresee an audience beyond the active participants? What is the expected audience size? What different audience groups is the event aimed at? Is the event public, and if so, how is this reflected in the event design? Will the content of the event be made available to a wider audience in other formats (e.g. video streaming)?
+     
+
+
+6.	Planned outcomes
+What concrete outcomes are planned? In what timeframe? How will the success of the event be assessed? 
+     
+
+
+
+
+
