@@ -1,0 +1,25 @@
+14c14
+< We focus on a fascinating strategy adopted by many parasites: host manipulation. This is the ability to modify the behaviour and morphology of hosts to increase transmission of parasites from one host to another. For instance, copepods infected by cestodes are more active than their uninfected counterparts, which increases the risk of predation by fishes - the subsequent host of the parasitic cestodes. Under this theme, we plan to organise a conference titled "Eco-evolutionary impacts of host manipulation by parasites". This event will address key questions concerning the evolution and ecological feedback of host manipulation:
+---
+> We focus on a fascinating strategy adopted by many parasites: host manipulation. In parasites with complex life cycles, i.e. with multiple hosts, manipulation can modify the behaviour and morphology of hosts to increase parasite transmission. For instance, copepods infected by cestodes are more active than their uninfected counterparts, which increases the risk of predation by fishes - the subsequent host of the parasitic cestodes. Several diseases, such as malaria or schistosomiasis, are caused by parasites with such complex lifecycles. Under this theme, we plan to organise a conference titled "Eco-evolutionary impacts of host manipulation by parasites". This event will address key questions concerning the evolution and ecological feedback of host manipulation:
+29c29,30
+< What are the concrete aims and objectives of this event? What is the added value of the event to the research community in Switzerland and abroad? 
+---
+> What are the concrete aims and objectives of this event? What is the added value of the event to the research community in Switzerland and abroad? 
+> 
+32c33
+< Host parasite is a fascinating system that inspire many researchers. However, studies specifically focusing on the evolution of host manipulation and its ecological impacts are rather neglected. This conference will bring together theoretical and empirical researchers from both ecological and ecological domains from Switzerland and other countries together to exchange knowledge and scientific works. This is the best way to move forward studies on host manipulation in particular and host-parasite in general.
+---
+> Host-parasite dynamics is a fascinating topic that inspires many researchers. However, studies focusing jointly on the ecological and evolutionary characteristics of host manipulation and its impacts are rare. This conference will bring together theoretical and empirical researchers from both ecological and evolutionary domains from Switzerland and other countries together to exchange knowledge and scientific works. This is the best way to move forward studies on host manipulation in particular and host-parasite systems in general.
+35,36c36
+< What is the planned format for the event? How does this format help deliver the aims and objectives described above? Is the event physical, online or a hybrid of the two?
+< The event will be organized in conference format. This format provides opportunities for both senior and junior researchers to share their research in presentation form. Coffee break during the day gives opportunities to exchange ideas and knowledge.
+---
+> What is the planned format for the event? How does this format help deliver the aims and objectives described above? Is the event physical, online or a hybrid of the two?
+38c38
+< We aim to organize the conference physically as we would like to encourage as much interactions as possible among researchers of different disciplines and domains, and meeting in person is so far the best way. In addition, we wish to also make the presentation available online for broader audience who is interested in the topic as well as those who cannot participate in the conference.
+---
+> The event will be organized in conference format. This format provides opportunities for both senior and early career researchers to share their research in presentation form. Coffee break during the day gives opportunities to exchange ideas and knowledge.
+39a40,41
+> We aim to organize the conference physically as we would like to encourage as much interactions as possible among researchers of different disciplines and domains, and meeting in person is so far the best way. In addition, we wish to also make the presentation available online for a broader audience interested in the topic and for those who cannot participate in the conference due to other constrains.
+> 
