@@ -221,13 +221,6 @@ For all the above arguments, the disease-free equilibrium is positive and stable
 
 The condition for parasite invasion is $R_0 > 1$, which is satisfied when
 
-%\begin{align}
-%	f_w > & \frac{(c \delta  \rho +\gamma  \mu ) (k \mu  r (\beta_w+\rho )-c \rho  (\beta_w (-d)+\rho  (\alpha +r)+\beta_w r))}{\gamma  \mu  (c \rho  (d-r)+k \mu  r)} \notag \\
-%	& \frac{(\mu +\sigma ) (k \mu  r (\beta_{ww}+\rho )-c \rho  (\beta_{ww} (-d)+\rho  (\alpha +r)+\beta_{ww} r))}{ \begin{pmatrix} c \rho  (\beta_w \beta_{ww} (d-r) (p q (\epsilon -2)+p+1) + & \\ 
-%			\rho  (\alpha +r) (\beta_w (p-1)-\beta_{ww} p (q (\epsilon -2)+2))) + & \\
-%			 k \mu  r (\beta_w (\beta_{ww} (p q (\epsilon -2)+p+1)-p \rho + & \\
-%			 \rho )+\beta_{ww} p \rho  (q (\epsilon -2)+2)) \end{pmatrix}}
-%\end{align}
 
 \begin{align}
 	f_w > \frac{\begin{pmatrix}
@@ -240,6 +233,23 @@ The condition for parasite invasion is $R_0 > 1$, which is satisfied when
 		p (\beta_{ww}+\beta_{ww} q (\epsilon -1)+q \rho  (\epsilon -1))+\rho )+r (\beta_w+\rho ) (\beta_{ww}+\rho ) (p q (\epsilon -1)+1))
 	\end{pmatrix}}
 \end{align}
+
+\section*{SI 6. Effect of manipulation on the reproduction ratio}
+
+The effect of manipulation in single infection on the reproduction ratio $R_0$ is
+
+\begin{equation}
+	 \frac{d R_0}{d \beta_w} = \frac{\gamma  D_s^*  I_s^* f_w h  (1 - p) (d + \alpha_w)}{(\mu + \sigma_w) (\delta + \gamma  I_s^*) (d + \alpha_w + D_{total} (\beta_w + \rho ))^2}
+\end{equation}
+Both numerator and denominator are positive, therefore $R_0$ is an increasing function with respect to $\beta_{w}$.
+
+The effect of manipulation in double infection on the reproduction ratio $R_0$ is
+
+\begin{equation}
+	\frac{d R_0}{d \beta_{ww}} = \frac{\gamma D_s^* I_s^* f_w h  p (d+ \alpha_{ww}) (\mu +(1 - q) \sigma_{ww} + \mu  q (\epsilon - 1) + q \sigma_w \epsilon )}{(\mu + \sigma_w) (\mu + \sigma_{ww}) (\delta + \gamma  I_s^*) (d + \alpha_{ww} + D_{total} (\beta_{ww} + \rho ))^2}
+\end{equation}
+
+Both numerator and denominator are positive, therefore $R_0$ is an increasing function with respect to $\beta_{ww}$.
 
 \clearpage
 
