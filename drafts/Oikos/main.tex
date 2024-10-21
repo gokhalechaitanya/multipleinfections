@@ -271,41 +271,48 @@ Therefore, a singly infected definitive host can be further infected by another 
 \caption{Description of variables and parameters}
 \label{table:varpardescription}
 \centering
-\begin{tabular}{c|p{10cm}}%{|p{2.5cm}|p{12cm}|} 
+\begin{tabular}{p{2cm}|p{10cm}|p{3cm}}
 \hline
-Parameters and Variables    &  Description  \\
+Parameters and Variables    &  Description & Dimensionality \\
 \hline
-$I_i$  & Density of intermediate hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ \\
+$I_i$  & Density of intermediate hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ & $indv \ area^{-1}  t^{-1}$\\
 \hline
-$D_i$ & Density of definitive hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ \\
+$D_i$ & Density of definitive hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ & $indv \ area^{-1}  t^{-1}$ \\
 \hline
-$W$ & Density of parasites released from definitive hosts into the environment \\
+$W$ & Density of parasites released from definitive hosts into the environment & $indv \ area^{-1}  t^{-1}$\\
 \hline
-$d$ & Natural death rate of intermediate hosts \\
+$r$ & Reproduction rate of intermediate host & $t^{-1}$ \\
 \hline
-$\alpha_i$ & Additional death rate of intermediate hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) \\
+$k$ & Competition coefficient & $[I_i]^{-1}$ \\
 \hline
-$p$ & Probability that two parasites cotransmit from the environment to an intermediate host \\
+$d$ & Natural death rate of intermediate hosts & $t^{-1}$\\
 \hline
-$\gamma$ & Transmission rate of parasites in the environment to intermediate hosts \\
+$\alpha_i$ & Additional death rate of intermediate hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) & $t^{-1}$ \\
 \hline
-$\mu$ & Natural death rate of definitive hosts \\
+$p$ & Probability that two parasites cotransmit from the environment to an intermediate host  & dimensionless\\
 \hline
-$\sigma_i$ & Additional death rate of definitive hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) \\
+$\gamma$ & Transmission rate of parasites in the environment to intermediate hosts &  $t^{-1}  indv^{-1}$ \\
 \hline
-$\sigma_i$ & Additional death rate of the hosts due to being infected by a singly parasite ($i = w$) or two parasites ($i = ww$) \\
+$\rho$ & Baseline capture rate & $t^{-1} [I_i]^{-1}$ \\
 \hline
-$q$ & Probability that two parasites cotransmit from intermediate hosts to definitive hosts \\
+$c$ & Coefficient of energy conversion into new definitive host & Dimensionless \\
 \hline
-$\beta_i$ & Transmission rate of parasites from intermediate hosts to definitive hosts \\
+$\mu$ & Natural death rate of definitive hosts & $t^{-1}$ \\
 \hline
-$f_i$ & Reproduction rate of parasites in singly infected definitive hosts ($i = w$) or doubly infected hosts ($i = ww$)\\
+$\sigma_i$ & Additional death rate of definitive hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) & $t^{-1}$ \\
 \hline
-$\delta$ & Natural death rate of parasites in the environment \\
+$\sigma_i$ & Additional death rate of the hosts due to being infected by a singly parasite ($i = w$) or two parasites ($i = ww$) & $t^{-1}$\\
+\hline
+$q$ & Probability that two parasites cotransmit from intermediate hosts to definitive hosts & dimensionless \\
+\hline
+$\beta_i$ & Transmission rate of parasites from intermediate hosts to definitive hosts & $t^{-1} indv^{-1}$\\
+\hline
+$f_i$ & Reproduction rate of parasites in singly infected definitive hosts ($i = w$) or doubly infected hosts ($i = ww$) &  $t^{-1}$ \\
+\hline
+$\delta$ & Natural death rate of parasites in the environment & $t^{-1}$ \\
 \hline 
-$h$ & Probability that the parasites successfully established inside the definitive host 
+$h$ & Probability that the parasites successfully established inside the definitive host &  dimensionless \\
 \end{tabular}
-\bigskip{}
 \end{table}
 
 
@@ -374,7 +381,7 @@ Therefore, we choose a non-linear birth function of the intermediate hosts to ob
 The logistic growth for the non-linear birth function follows by 
 %
 \begin{align*}
-R(I_{total}) = r I_{total} (1 - k I_{total})
+R(I_{total}) = r I_{total} (1 - k I_{total}) 
 \end{align*}
 %
 where $k$ is the intraspecific competition coefficient. 
