@@ -371,8 +371,8 @@ Given that the birth rate of the predator and the predation rate are linear func
 The simplest form of the prey's birth rate is a linear function, in which case the disease-free equilibrium is always in a cyclic regime (see SI 2).
 This follows from the Lotka-Volterra system using linear functions for prey birth and predation \citep{Lotka1920}.
 Since the disease-free dynamics is cyclic, it is difficult to analyse the spread of a parasite using the basic reproduction ratio, which is evaluated when the disease-free state is stable. 
-Here,  $R_0 > 1$  happens when $\gamma$, the transmission rate from the environment to intermediate hosts, and the reproduction rates $f_w, f_{ww}$ are quite large (as compared to the theoretical threshold shown by the mathematical conditions in SI3). 
-However, even when this condition is satisfied, the parasite may not be able to spread and persist in cyclic susceptible host dynamics (Figure SI1). 
+Here,  $R_0 > 1$  happens when $\gamma$, the transmission rate from the environment to intermediate hosts, and the reproduction rates $f_w, f_{ww}$ are quite large (as compared to the theoretical threshold shown by the mathematical conditions in SI 3). 
+However, even when this condition is satisfied, the parasite may not be able to spread and persist in cyclic susceptible host dynamics (Figure SI.1). 
 This result agrees with the conclusion in \citep{Ripa:Evol:2013}, which suggests that it is difficult for a mutant to invade a cyclic resident population. 
 In our case, it is not the invasion of a mutant in a resident population but the invasion of a parasite in a cyclic disease-free host population; the argument, however, remains valid in both cases. 
 This issue deserves a more thorough investigation, which is out of the scope of this article. 
@@ -455,8 +455,10 @@ Cooperation in parasite manipulation increases the parasite's basic reproduction
 Intuitively, if the manipulation in a single infection is minor, there is not enough transmission, and the parasite goes extinct.
 However, we could suppose that the ability to manipulate the host in a single infection is enough for the parasite population to escape extinction. 
 In that case, the system is in a bistable state where intermediate cooperation in host manipulation cannot guarantee a single equilibrium (Hatched area Figure \ref{fig:R0}). 
-In the bistable region, the basic reproduction ratio can be less than one, implying that the parasite with manipulative values within this range, i.e. weak manipulation ability, cannot spread. 
-When the system encounters bistability, the parasite population risks extinction if there is a disturbance in the community.
+In the bistable region, the basic reproduction ratio can be less than one, implying that the parasite with manipulative values within this range, i.e. weak manipulation ability, cannot spread.
+This is due to the Allee effect where the parasite spreads and persists if, initially, there are sufficient parasites in the free-living pool as well as in the intermediate and definitive hosts.
+On the contrary, if the initial populations of parasites are insufficient, the parasite will perish (Figure SI.2).
+In addition, when the system encounters bistability, the parasite population risks extinction if there is a disturbance in the community.
 In the following parts, we will explore scenarios where bistability may occur. 
 
 Besides manipulation, co-infecting parasites can influence each other in different life history traits.
@@ -472,7 +474,7 @@ However, the size of this area is sensitive to the value of reproduction and man
 In particular, higher values of these two parameters reduce the bistability area so that sufficiently large reproduction in a single infection can guarantee single equilibrium when parasites coordinate (Figure \ref{fig:manipbifur} B, D).
 In contrast, slightly reducing values of either reproduction or manipulation in a single infection increases the bistability area (Figure \ref{fig:manipbifur}A, C, D).
 If the parasites sabotage each other, the system is highly prone to bistability and only has a single equilibrium when reproduction is enhanced.
-Interestingly, reproductive incoordination, with depressed reproduction and sufficient manipulative cooperation, always leads to a single equilibrium of the system (bottom right quadrants Figure \ref{fig:manipbifur}A, B). 
+Interestingly, reproductive incoordination, with depressed reproduction and sufficient manipulative cooperation, always leads to a single equilibrium of the system (bottom right quadrants Figure \ref{fig:manipbifur}, note that if we extend the relative manipulation in Figure C and D, we also obtain single equilibrium in this area). 
 While a single equilibrium guarantees the existence of a parasite population, bistability indicates that a disturbance of the system may likely lead to the extinction of the parasite population. 
 This suggests that the benefits of coordination in reproduction and manipulation are context-dependent. 
 Coordinating is advantageous if no significant tradeoffs and reproduction or manipulation in single infections are large enough. 
@@ -540,13 +542,18 @@ This extension is because the density of the doubly infected hosts is always muc
 If manipulation in a single infection is insufficient, then the transmission of the parasites depends mainly on the doubly infected hosts, which is rare. 
 So, extinction is possible if manipulation in double infections is low.
 
-Finally, our study focuses on the ecological dynamics of a trophically transmitted parasite between two host species. 
+Our study specifically focuses on the ecological dynamics of a trophically transmitted parasite between two host species. 
 In nature, parasites with complex life cycles can have more than two hosts. 
 However, our model of a single intermediate host species already includes enough complexity to discuss the relationship between transmission and manipulation.
 Here, we introduce more realistic features compared to previous models, such as a free-living parasite pool and multiple infections, regardless of some simplifications, such as multiple infections being limited to at most two parasites. 
-In this way, we can obtain analytical results of the reproduction ratio and mathematical expressions for the existing condition of the parasite. 
+In this way, we can obtain analytical results of the reproduction ratio and mathematical expressions for the existing condition of the parasite.
 Our model serves as a groundwork for future exploration into more complex and realistic systems, where numerical simulation may be the only possible approach.
-Moreover, the results of our ecological model are a baseline for further investigation of the evolution of host manipulation, where introducing the parasite pool may create interesting eco-evolutionary feedback to the system.
+It calls for additional experiments and field work to quantify ecological parameters of trophically transmitted parasites, especially those from the parasite's perspective. 
+For intance, comparing the reproduction rate of parasites in single versus multiple infections (parameters $f_w$ and $f_{ww}$) sheds light on parasite cooperation in definitive hosts.
+Studying distribution of parasites in the environment (the variable $W$) informs us about feeding strategies and reflect distribution of parasites within intermediate hosts.
+Finally, comparing conditions of host (parameters $\alpha_w$, $\alpha_{ww}$, $\sigma_w$, and $\sigma_{ww}$) between noninfection, single and multiple infections illustrates the magnitude of parasite virulence. 
+Although parasite virulence has been quantified in some studies, none have examined differences between single and multiple infection.
+Eventually, the results of our ecological model are a baseline for further investigation of the evolution of host manipulation, where introducing the parasite pool may create interesting eco-evolutionary feedback to the system.
 
 
 %\section*{Acknowledgements} 
