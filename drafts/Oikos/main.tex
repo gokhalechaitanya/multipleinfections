@@ -151,7 +151,7 @@ However, when the copepods are infected by one infectious and one noninfectious 
 \begin{figure}[ht!]
 \captionsetup{format=plain}
 \centering
-\includegraphics[width=0.5\columnwidth]{Figures/Sept_10.pdf}
+\includegraphics[width=0.8\columnwidth]{Figures/cartoon2.pdf}
 \caption{\textbf{Who is in control?}
 Schistocephalus eggs hatch into microscopically tiny swimming larvae. 
 These larvae are eaten by copepods, where they develop to the second larval stage. 
@@ -176,7 +176,7 @@ Transmission thus happens only when intermediate hosts have contact with this fr
 
 
 Our study addresses the gap in the theoretical work on host manipulation in trophically transmitted parasites.
-We include multiple infections and consider the dynamics of the free-living parasite pool. 
+We include multiple infections of the same parasite species and consider the dynamics of the free-living parasite pool. 
 Our compartment model helps illustrate a parasite's complex life cycle with two host species: an intermediate host preyed upon by a definitive host. 
 Transmission from the intermediate host to the definitive host occurs when predation on infected intermediate hosts happens. 
 Reproduction only happens in the definitive hosts. 
@@ -207,7 +207,7 @@ These intermediate hosts are then predated upon by the definitive hosts (green a
 \label{fig:schematic}
 \end{figure}
 
-For simplicity, we assume that hosts can be infected by one (single infection) or, at most, two parasites (double infections).
+For simplicity, we assume that hosts can be infected by one (single infection) or, at most, two parasites of the same species (double infections).
 Thus, while $I_s$ and $D_s$ are the susceptible intermediate and definitive hosts, their singly and doubly infected counterparts are denoted by $I_w$ and $D_w$ and $I_{ww}$ and $D_{ww}$ respectively.
 Our model is, therefore, more relevant to the macroparasitic system.
 Figure (\ref{fig:schematic}) illustrates the transmission dynamics, and details of the model's variables and parameters are shown in Table \ref{table:varpardescription}.
@@ -384,7 +384,7 @@ The logistic growth for the non-linear birth function follows by
 R(I_{total}) = r I_{total} (1 - k I_{total}) 
 \end{align*}
 %
-where $k$ is the intraspecific competition coefficient. 
+where $r$ is the intrinsic growth rate of the intermediate hosts, and $k$ is the intraspecific competition coefficient. 
 The disease-free equilibrium is as follows,
 %
 \begin{align*}
@@ -464,7 +464,7 @@ In the following parts, we will explore scenarios where bistability may occur.
 Besides manipulation, co-infecting parasites can influence each other in different life history traits.
 Parasites can have an enhanced reproduction rate in coinfections, i.e. $f_{ww} > f_w$ (upper part of the horizontal line in all panels Figure \ref{fig:manipbifur}). 
 Likewise, they can compete for resources, so reproduction in double infection is suppressed compared to single infection (lower parts of the horizontal lines in all panels Figure \ref{fig:manipbifur}). 
-Without any assumption on the link between manipulative ability and reproduction, and a linear relationship between manipulation in single and double infections, we explore all possible combinations of cooperation-sabotage range in manipulation and suppressed-enhanced range in reproduction. This results in four scenarios of parameter combinations: i, parasites sabotage manipulation but have enhanced reproduction -- manipulative incoordination (top left quadrants in all panels Figure \ref{fig:manipbifur}), ii, parasites cooperate to increase manipulation and enhance reproduction -- coordination (top right quadrants in all panels Figure \ref{fig:manipbifur}), iii, parasites cooperate in manipulation but suppress reproduction -- reproductive incoordination (bottom right quadrants in all panels Figure \ref{fig:manipbifur} ), and iv, parasites sabotage manipulation and suppress reproduction -- discordance (bottom left quadrants in all panels Figure \ref{fig:manipbifur} ).
+Without any assumption on the link between manipulative ability and reproduction, and a linear relationship between manipulation in single and double infections, we explore all possible combinations of cooperation-sabotage range in manipulation and suppressed-enhanced range in reproduction. This results in four scenarios of parameter combinations: i, parasites sabotage manipulation but have enhanced reproduction -- manipulative incoordination (top left quadrants in all panels Figure \ref{fig:manipbifur}), ii, parasites cooperate to increase manipulation and enhance reproduction -- coordination (top right quadrants in all panels Figure \ref{fig:manipbifur}), iii, parasites cooperate in manipulation but suppress reproduction -- reproductive incoordination (bottom right quadrants in all panels Figure \ref{fig:manipbifur}), and iv, parasites sabotage manipulation and suppress reproduction -- discordance (bottom left quadrants in all panels Figure \ref{fig:manipbifur}).
 
 If coinfected parasites are discordant, i.e. uncooperative in manipulations and show suppressed reproduction, they cannot persist (bottom left quadrants Figure \ref{fig:manipbifur}A-D). 
 On the other extreme, where they are highly cooperative in manipulation and show enhanced reproduction, i.e., an extreme level of coordination, there is a guaranteed single equilibrium for parasite existence (top right quadrants Figure \ref{fig:manipbifur}A-D). 
@@ -545,10 +545,14 @@ So, extinction is possible if manipulation in double infections is low.
 Our study specifically focuses on the ecological dynamics of a trophically transmitted parasite between two host species. 
 In nature, parasites with complex life cycles can have more than two hosts. 
 However, our model of a single intermediate host species already includes enough complexity to discuss the relationship between transmission and manipulation.
+In addition, we consider multiple infection of the same parasite species.
+Although in nature, a host can be co-infected by multiple parasites of the same or different species, results of our model stay valid as the key aspect in host manipulation is the alignment or conflict of interest between co-infecting parasites.
 Here, we introduce more realistic features compared to previous models, such as a free-living parasite pool and multiple infections, regardless of some simplifications, such as multiple infections being limited to at most two parasites. 
 In this way, we can obtain analytical results of the reproduction ratio and mathematical expressions for the existing condition of the parasite.
+
+
 Our model serves as a groundwork for future exploration into more complex and realistic systems, where numerical simulation may be the only possible approach.
-It calls for additional experiments and field work to quantify ecological parameters of trophically transmitted parasites, especially those from the parasite's perspective. 
+Given that few studies considered measuring different parameters of trophically transmitted parasites \citep{Seppl2004, Gopko2015}, our model calls for additional empirical work to measure relevant parameters, especially those from the parasite's perspective. 
 For intance, comparing the reproduction rate of parasites in single versus multiple infections (parameters $f_w$ and $f_{ww}$) sheds light on parasite cooperation in definitive hosts.
 Studying distribution of parasites in the environment (the variable $W$) informs us about feeding strategies and reflect distribution of parasites within intermediate hosts.
 Finally, comparing conditions of host (parameters $\alpha_w$, $\alpha_{ww}$, $\sigma_w$, and $\sigma_{ww}$) between noninfection, single and multiple infections illustrates the magnitude of parasite virulence. 
