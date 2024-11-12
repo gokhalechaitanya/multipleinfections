@@ -160,6 +160,7 @@ The larvae are then eaten by sticklebacks, reaching the third larval stage and g
 For the parasite to successfully reach its final host, a warm-blooded animal like a bird, it manipulates its intermediate hosts.
 The presence of multiple parasites in the same host can lead to competition and strategic decisions pertaining to investment in manipulation and growth.
 Indeed, a stickleback can be infected by numerous parasites, all vying for control, as shown and photographed by Martin Kalbe \citep{kalbe:JFB:2002}.
+While this is a specific example of a parasite with a complex lifecycle, our model abstracts the concept to generic multi-host lifecycles with an environmental component.
 }
 \label{fig:empirical}
 \end{figure}
@@ -395,8 +396,9 @@ This equilibrium is positive and stable if components of the parasite, such as r
 Here, as reproduction and transmission value of the parasite are not sufficient, it goes extinct (Figure \ref{fig:ecotraject:nonlinear}A, B), leaving the predator-prey dynamics attaining equilibrium (Figure \ref{fig:ecotraject:nonlinear}C, D)
 
 \begin{figure}[!ht]
+\centering
 \captionsetup{format=plain}
-\includegraphics[width=0.8\textwidth]{Figures/ecotraject_nonlinear.pdf}
+\includegraphics[width=0.85\textwidth]{Figures/ecotraject_nonlinear.pdf}
 \caption{\textbf{Ecological dynamics of the predator-prey-parasite system.} 
 On the left, we show the density dynamics of the susceptible intermediate and definitive hosts at different initial conditions (ic1, ic2, and ic3). 
 The detailed dynamics of infected compartments are further shown for specific initial conditions (ic2), including the free-living parasite dynamics.
@@ -545,24 +547,24 @@ So, extinction is possible if manipulation in double infections is low.
 Our study specifically focuses on the ecological dynamics of a trophically transmitted parasite between two host species. 
 In nature, parasites with complex life cycles can have more than two hosts. 
 However, our model of a single intermediate host species already includes enough complexity to discuss the relationship between transmission and manipulation.
-In addition, we consider multiple infection of the same parasite species.
-Although in nature, a host can be co-infected by multiple parasites of the same or different species, results of our model stay valid as the key aspect in host manipulation is the alignment or conflict of interest between co-infecting parasites.
+In addition, we consider multiple infections of the same parasite species.
+Although, in nature, a host can be co-infected by multiple parasites of the same or different species, the results of our model stay valid as the key aspect in host manipulation is the alignment or conflict of interest between co-infecting parasites.
 Here, we introduce more realistic features compared to previous models, such as a free-living parasite pool and multiple infections, regardless of some simplifications, such as multiple infections being limited to at most two parasites. 
 In this way, we can obtain analytical results of the reproduction ratio and mathematical expressions for the existing condition of the parasite.
 
 
 Our model serves as a groundwork for future exploration into more complex and realistic systems, where numerical simulation may be the only possible approach.
 Given that few studies considered measuring different parameters of trophically transmitted parasites \citep{Seppl2004, Gopko2015}, our model calls for additional empirical work to measure relevant parameters, especially those from the parasite's perspective. 
-For intance, comparing the reproduction rate of parasites in single versus multiple infections (parameters $f_w$ and $f_{ww}$) sheds light on parasite cooperation in definitive hosts.
-Studying distribution of parasites in the environment (the variable $W$) informs us about feeding strategies and reflect distribution of parasites within intermediate hosts.
-Finally, comparing conditions of host (parameters $\alpha_w$, $\alpha_{ww}$, $\sigma_w$, and $\sigma_{ww}$) between noninfection, single and multiple infections illustrates the magnitude of parasite virulence. 
-Although parasite virulence has been quantified in some studies, none have examined differences between single and multiple infection.
+For instance, comparing the reproduction rate of parasites in single versus multiple infections (parameters $f_w$ and $f_{ww}$) sheds light on parasite cooperation in definitive hosts.
+Studying the distribution of parasites in the environment (the variable $W$) informs us about feeding strategies and reflects the distribution of parasites within intermediate hosts.
+Finally, comparing conditions of host (parameters $\alpha_w$, $\alpha_{ww}$, $\sigma_w$, and $\sigma_{ww}$) between no infection, single and multiple infections illustrates the magnitude of parasite virulence. 
+Although parasite virulence has been quantified in some studies, none have examined differences between single and multiple infections.
 Eventually, the results of our ecological model are a baseline for further investigation of the evolution of host manipulation, where introducing the parasite pool may create interesting eco-evolutionary feedback to the system.
 
 
 %\section*{Acknowledgements} 
 %We thank the Swiss National Science Foundation Sinergia grant no CRSII5\_202290 for supporting Phuong Nguyen to work on this manuscript as a side project.
-%Funding from Bayerische Forschungsallianz and from the Max Planck Society if gratefully acknowledged (CSG).
+%Funding from Bayerische Forschungsallianz and from the Max Planck Society is gratefully acknowledged (CSG).
 %We also thank Tina Scheibe for helpful discussions.
 %This paper is dedicated to the memory of Martin Kalbe, an exceptional parasitologist who made remarkable contributions to the field.
 %Beyond his academic prowess, Martin was a truly exemplary friend and human being, touching the lives of those around him with his warmth, kindness, and unwavering support.
