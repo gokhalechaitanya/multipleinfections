@@ -276,11 +276,11 @@ Therefore, a singly infected definitive host can be further infected by another 
 \hline
 Parameters and Variables    &  Description & Dimensionality \\
 \hline
-$I_i$  & Density of intermediate hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ & $indv \ area^{-1}  t^{-1}$\\
+$I_i$  & Density of intermediate hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ & $[I_i] t^{-1}$\\
 \hline
-$D_i$ & Density of definitive hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ & $indv \ area^{-1}  t^{-1}$ \\
+$D_i$ & Density of definitive hosts that are susceptible $i=s$, singly infected $i=w$, or doubly infected $i=ww$ & $[D_i]  t^{-1}$ \\
 \hline
-$W$ & Density of parasites released from definitive hosts into the environment & $indv \ area^{-1}  t^{-1}$\\
+$W$ & Density of parasites released from definitive hosts into the environment & $[W]  t^{-1}$\\
 \hline
 $r$ & Reproduction rate of intermediate host & $t^{-1}$ \\
 \hline
@@ -292,11 +292,11 @@ $\alpha_i$ & Additional death rate of intermediate hosts due to infection by a s
 \hline
 $p$ & Probability that two parasites cotransmit from the environment to an intermediate host  & dimensionless\\
 \hline
-$\gamma$ & Transmission rate of parasites in the environment to intermediate hosts &  $t^{-1}  indv^{-1}$ \\
+$\gamma$ & Transmission rate of parasites in the environment to intermediate hosts &  $[W]^{-1} t^{-1}$ \\
 \hline
-$\rho$ & Baseline capture rate & $t^{-1} [I_i]^{-1}$ \\
+$\rho$ & Baseline capture rate & $[I_i]^{-1} t^{-1}$ \\
 \hline
-$c$ & Coefficient of energy conversion into new definitive host & Dimensionless \\
+$c$ & Coefficient of energy conversion into new definitive host & dimensionless \\
 \hline
 $\mu$ & Natural death rate of definitive hosts & $t^{-1}$ \\
 \hline
@@ -306,13 +306,15 @@ $\sigma_i$ & Additional death rate of the hosts due to being infected by a singl
 \hline
 $q$ & Probability that two parasites cotransmit from intermediate hosts to definitive hosts & dimensionless \\
 \hline
-$\beta_i$ & Transmission rate of parasites from intermediate hosts to definitive hosts & $t^{-1} indv^{-1}$\\
+$\beta_i$ & Transmission rate of parasites from intermediate hosts to definitive hosts & $[I_i]^{-1} t^{-1}$\\
 \hline
 $f_i$ & Reproduction rate of parasites in singly infected definitive hosts ($i = w$) or doubly infected hosts ($i = ww$) &  $t^{-1}$ \\
 \hline
 $\delta$ & Natural death rate of parasites in the environment & $t^{-1}$ \\
 \hline 
 $h$ & Probability that the parasites successfully established inside the definitive host &  dimensionless \\
+\hline
+\multicolumn{3}{l}{* $[I_i]$, $[D_i]$, and $[W]$ have the same unit $(individual \ area^{-1})$}
 \end{tabular}
 \end{table}
 
