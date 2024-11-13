@@ -105,14 +105,14 @@ Both authors wrote the manuscript.
 
 \begin{abstract}{
 \textbf{Abstract:} 
-Host manipulation is a common strategy of parasites with complex life cycle. 
+Host manipulation is a common strategy of parasites with complex life cycles. 
 It directly affects predator-prey dynamics in trophically transmitted parasites. 
 Theoretical studies suggest that predation-enhancing manipulation often decimates the prey population, making parasites prone to extinction. 
 Host manipulation, however, can also reduce predation due to conflicting interests when multiple parasites infect a host, which is often neglected in theoretical studies.
 Misaligned interests of coinfecting parasites can occur due to limited carrying capacity or parasitoid developmental stage.
 Including this realistic complexity in a mathematical model, the results depart from previous studies substantially. 
 We show that coinfecting multi-trophic parasites can preserve the predator-prey system and themselves through manipulation and reproduction parameters.
-Our study highlights the necessity of, and provides the means for, incorporating the reality of multiple parasites and their multi-trophic life cycles into the theory of parasite ecology.
+Our study highlights the necessity of and provides the means for incorporating the reality of multiple parasites and their multi-trophic life cycles into the theory of parasite ecology.
 }
 \end{abstract}
 
@@ -129,7 +129,7 @@ Our study highlights the necessity of, and provides the means for, incorporating
 Parasites infect life on earth ubiquitously, and many of these parasites have complex life cycles \citep{zimmer:book:2001}. 
 While a complex life cycle can be defined as abrupt ontogenic changes in morphology and ecology \citep{Benesh:2016dj}, it typically involves numerous host species that a parasite needs to traverse to complete its life cycle. 
 This complex life cycle results in the evolution of various strategies that enable successful parasite transmission from one host species to another. 
-One famous strategy that inspires many science fiction movies and novels is host manipulation, where a parasite can alter its host's morphology and/or behaviour to enhance its transmission to the next host \citep{Hughes2012}. 
+Host manipulation is a famous strategy that inspires many science fiction movies and novels, where a parasite can alter its host's morphology and/or behaviour to enhance its transmission to the next host \citep{Hughes2012}. 
 Host manipulation has been shown in many host-parasite systems, from parasites with simple life cycles to those with a complex life cycle that involves more than one host species \citep{Hughes2012,molyneux_jefferies1986}. 
 For instance, sand flies infected by \textit{Leishmania} parasites bite more and take more time for a blood meal from mammals (the definitive host of \textit{Leishmania}) compared to their uninfected counterparts \citep{Rogers2007}. 
 Copepods infected by cestode parasites are more active and accessible to sticklebacks (the cestodes' definitive hosts) than uninfected copepods \citep{Wedekind1996}.
@@ -158,9 +158,9 @@ These larvae are eaten by copepods, where they develop to the second larval stag
 However, the copepod is only the first intermediate host. 
 The larvae are then eaten by sticklebacks, reaching the third larval stage and growing prominently in size and weight. 
 For the parasite to successfully reach its final host, a warm-blooded animal like a bird, it manipulates its intermediate hosts.
-The presence of multiple parasites in the same host can lead to competition and strategic decisions pertaining to investment in manipulation and growth.
+The presence of multiple parasites in the same host can lead to competition and strategic decisions about investment in manipulation and growth.
 Indeed, a stickleback can be infected by numerous parasites, all vying for control, as shown and photographed by Martin Kalbe \citep{kalbe:JFB:2002}.
-While this is a specific example of a parasite with a complex lifecycle, our model abstracts the concept to generic multi-host lifecycles with an environmental component.
+While this is a specific example of a parasite with a complex life cycle, our model abstracts the concept to generic multi-host life cycles with an environmental component.
 }
 \label{fig:empirical}
 \end{figure}
@@ -213,7 +213,7 @@ Thus, while $I_s$ and $D_s$ are the susceptible intermediate and definitive host
 Our model is, therefore, more relevant to the macroparasitic system.
 Figure (\ref{fig:schematic}) illustrates the transmission dynamics, and details of the model's variables and parameters are shown in Table \ref{table:varpardescription}.
 Note that multiple infections in nature often involve more than two parasites.
-Typically, the number of parasites in multiple infections follows a negative binomial distribution, i.e. most hosts are infected with a few parasites while very few hosts are infected with many parasites \citep{wilson:FE:1996}.
+Typically, the number of parasites in multiple infections follows a negative binomial distribution, i.e. most hosts are infected with a few parasites, and few hosts are infected with many parasites \citep{wilson:FE:1996}.
 However, since we use a compartmental model, enabling binomial distribution would mean infinitely many differential equations, making it impossible to formulate and analyze the model.
 %Furthermore, what matters is the magnitude of the manipulative effect in multiple infections versus in single infection.
 Instead, we focus on another aspect of multiple infections, that is, co-transmission, which has been shown to affect the evolutionary trajectories of parasites in infectious disease \citep{Alizon2012}.
@@ -262,7 +262,7 @@ The dynamics of the free-living parasites in the environment are then given by,
 where $f_w$ and $f_{ww}$ are the reproduction rates of parasites in single and double infection, respectively, and parasites die naturally at a rate $\delta$.
 
 Here, we focus on manipulation that enhances transmission from intermediate hosts to definitive hosts; we thus simplify the transmission from the parasite pool to intermediate hosts so that no sequential infection occurs. 
-This assumption is motivated because the prey life cycle is often shorter than the predator's. 
+This assumption is motivated because the prey's life cycle is often shorter than the predator's. 
 A prey likely encounters the free-living parasite pool once and then dies due to predation, making sequential transmission less likely at this state.
 Sequential infection can happen when parasites transmit from intermediate hosts to definitive hosts. 
 Therefore, a singly infected definitive host can be further infected by another parasite if it consumes infected intermediate hosts. 
@@ -290,7 +290,7 @@ $d$ & Natural death rate of intermediate hosts & $t^{-1}$\\
 \hline
 $\alpha_i$ & Additional death rate of intermediate hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) & $t^{-1}$ \\
 \hline
-$p$ & Probability that two parasites cotransmit from the environment to an intermediate host  & dimensionless\\
+$p$ & Probability that two parasites co-transmit from the environment to an intermediate host  & dimensionless\\
 \hline
 $\gamma$ & Transmission rate of parasites in the environment to intermediate hosts &  $[W]^{-1} t^{-1}$ \\
 \hline
@@ -302,9 +302,9 @@ $\mu$ & Natural death rate of definitive hosts & $t^{-1}$ \\
 \hline
 $\sigma_i$ & Additional death rate of definitive hosts due to infection by a single parasite ($i = w$) or two parasites ($i = ww$) & $t^{-1}$ \\
 \hline
-$\sigma_i$ & Additional death rate of the hosts due to being infected by a singly parasite ($i = w$) or two parasites ($i = ww$) & $t^{-1}$\\
+$\sigma_i$ & Additional death rate of the hosts due to being infected by a single parasite ($i = w$) or two parasites ($i = ww$) & $t^{-1}$\\
 \hline
-$q$ & Probability that two parasites cotransmit from intermediate hosts to definitive hosts & dimensionless \\
+$q$ & Probability that two parasites co-transmit from intermediate hosts to definitive hosts & dimensionless \\
 \hline
 $\beta_i$ & Transmission rate of parasites from intermediate hosts to definitive hosts & $[I_i]^{-1} t^{-1}$\\
 \hline
@@ -395,7 +395,7 @@ I_s^* = \frac{\mu}{c \rho } \ ;\  D_s^* = \frac{c \rho  (r-d) - k \mu  r}{c \rho
 \end{align*}
 %
 This equilibrium is positive and stable if components of the parasite, such as reproduction and transmission, are sufficiently small; details of the condition can be found in section SI 4. 
-Here, as reproduction and transmission value of the parasite are not sufficient, it goes extinct (Figure \ref{fig:ecotraject:nonlinear}A, B), leaving the predator-prey dynamics attaining equilibrium (Figure \ref{fig:ecotraject:nonlinear}C, D)
+Here, as the reproduction and transmission values of the parasite are not sufficient, it goes extinct (Figure \ref{fig:ecotraject:nonlinear}A, B), leaving the predator-prey dynamics attaining equilibrium (Figure \ref{fig:ecotraject:nonlinear}C, D)
 
 \begin{figure}[!ht]
 \centering
@@ -446,7 +446,7 @@ A) A bifurcation graph for different reproduction values in single and double in
 B) Equilibrium density of intermediate host when $\epsilon = 4$ when bistability occurs at high values of $f_w$ (in pink), and $\epsilon = 4$ when only one stable equilibrium exists at high values of $f_w$ (in purple). 
 C) Details of the parasite population dynamics in the case of bistability shown through the infected intermediate hosts. 
 When the parasites start at high density, the parasite population persists, whereas when they start at lower density, they perish.
-Filled circles indicate stable equilibrium, and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.05, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$.
+Filled circles indicate stable equilibria, and open circles indicate unstable equilibrium. Parameter $\rho = 1.2, \  d = 0.9, \  r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} =  0, \ \beta_w = 1.5, \ \beta_{ww} = 1.5, \ p = 0.05, \  c = 1.4, \ \mu = 3.9,  \ \sigma_w = 0, \ \sigma_{ww} = 0, \  q = 0.05, \ \delta = 0.9, \ k = 0.26, \ h = 0.6$.
 }
 \label{fig:bistability}
 \end{figure}
@@ -488,8 +488,8 @@ Coordinating is advantageous if no significant tradeoffs and reproduction or man
 \centering
 \includegraphics[width=\textwidth]{Figures/manip_bifur.pdf}
 \caption{\textbf{Effect of manipulation and reproduction on bistability.}
-The bistability area (shaded areas) reduces as the reproduction rate ($f_w$) and manipulation ($\beta_w$) in single infection increases. 
-Reproduction in single infection decreases from the upper panels (A, B) to the lower panels (C, D) while manipulation in single infection increases from the left panels (A, C) to the right panels (B, D). Manipulation and reproduction levels are equal between single and double infection on the vertical and horizontal lines. On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of the vertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. On the upper part of the horizontal line, $f_{ww} > f_w$, indicating enhanced reproduction, whereas, on the lower part of the horizontal line, $f_{ww} < f_w$, indicating suppressed reproduction.
+The bistability area (shaded areas) reduces as the reproduction rate ($f_w$) and manipulation ($\beta_w$) in a single infection increases. 
+Reproduction in single infection decreases from the upper panels (A, B) to the lower panels (C, D), while manipulation in single infection increases from the left panels (A, C) to the right panels (B, D). Manipulation and reproduction levels are equal between single and double infection on the vertical and horizontal lines. On the left side of the vertical line, $\beta_{ww} > \beta_{w}$, indicating cooperation, whereas on the right side of the vertical line, $\beta_{ww} < \beta_{w}$, indicating sabotage. On the upper part of the horizontal line, $f_{ww} > f_w$, indicating enhanced reproduction, whereas, on the lower part of the horizontal line, $f_{ww} < f_w$, indicating suppressed reproduction.
 Common parameter:  $\rho = 1.2, \ d = 0.9, \ r = 2.5, \ \gamma = 2.9, \ \alpha_w = 0, \ \alpha_{ww} = 0, \ p = 0.05, \ c = 1.4, \ \mu = 3.9, \ \sigma_w = 0, \ \sigma_{ww} = 0, \ q = 0.05, \ \delta = 0.9, \ k = 0.26, \  \beta_w = 1.65, h = 0.6$.}
 \label{fig:manipbifur}
 \end{figure}
@@ -521,7 +521,8 @@ Our model shows that parasites cannot spread quickly in a cyclic predator-prey s
 This delay is an expected result since even though the parasite's basic reproduction ratio $R_0$ is larger than one, it is estimated at the predator and prey's unstable equilibrium (or cyclic equilibrium). 
 Thus, when the density of the prey and predator is at the minimum value of the cycle, the ``effective" $R_0$ of the parasite can be smaller than one. 
 Another interesting result is that the reproduction value is much larger than other parameter values, such as the \textit{per capita} reproduction rate of the intermediate host.
-This result is likely due to the introduction of a free-living parasitic pool. Our model shows that in making the system more realistic, we also obtain a more realistic quantitative value for parasitic reproduction.
+This result is likely due to the introduction of a free-living parasitic pool. 
+Our model shows that in making the system more realistic, we also obtain a more realistic quantitative value for parasitic reproduction.
 
 In the study by \cite{Rogawa2018}, a non-manipulative parasite can invade a susceptible prey-predator population and cause the system to cycle. 
 The system stops cycling and approaches a fixed point when the parasite becomes manipulative, and this stability increases with increased manipulation.
@@ -552,14 +553,13 @@ However, our model of a single intermediate host species already includes enough
 In addition, we consider multiple infections of the same parasite species.
 Although, in nature, a host can be co-infected by multiple parasites of the same or different species, the results of our model stay valid as the key aspect in host manipulation is the alignment or conflict of interest between co-infecting parasites.
 Here, we introduce more realistic features compared to previous models, such as a free-living parasite pool and multiple infections, regardless of some simplifications, such as multiple infections being limited to at most two parasites. 
-In this way, we can obtain analytical results of the reproduction ratio and mathematical expressions for the existing condition of the parasite.
-
+Thus, we can obtain analytical results of the reproduction ratio and mathematical expressions for the existing condition of the parasite.
 
 Our model serves as a groundwork for future exploration into more complex and realistic systems, where numerical simulation may be the only possible approach.
 Given that few studies considered measuring different parameters of trophically transmitted parasites \citep{Seppl2004, Gopko2015}, our model calls for additional empirical work to measure relevant parameters, especially those from the parasite's perspective. 
 For instance, comparing the reproduction rate of parasites in single versus multiple infections (parameters $f_w$ and $f_{ww}$) sheds light on parasite cooperation in definitive hosts.
 Studying the distribution of parasites in the environment (the variable $W$) informs us about feeding strategies and reflects the distribution of parasites within intermediate hosts.
-Finally, comparing conditions of host (parameters $\alpha_w$, $\alpha_{ww}$, $\sigma_w$, and $\sigma_{ww}$) between no infection, single and multiple infections illustrates the magnitude of parasite virulence. 
+Finally, comparing host condition (parameters $\alpha_w$, $\alpha_{ww}$, $\sigma_w$, and $\sigma_{ww}$) between no infection, single and multiple infections illustrates the magnitude of parasite virulence. 
 Although parasite virulence has been quantified in some studies, none have examined differences between single and multiple infections.
 Eventually, the results of our ecological model are a baseline for further investigation of the evolution of host manipulation, where introducing the parasite pool may create interesting eco-evolutionary feedback to the system.
 
